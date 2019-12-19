@@ -4,7 +4,7 @@ import xml.etree.ElementTree as ET
 
 def parse():
     file_dir = os.path.dirname(os.path.realpath('__file__'))
-    file_name = os.path.join(file_dir, 'data', 'JMdict_e')
+    file_name = os.path.join(file_dir, '..', 'data', 'JMdict_e')
     tree = ET.parse(file_name)
     root = tree.getroot()
     i = 10
