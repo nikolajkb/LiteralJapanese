@@ -10,7 +10,7 @@ class Grammar(Enum):
     I_ADJECTIVE = "i adjective"
     AUX_VERB = "auxiliary verb"
     SYMBOL = "symbol"
-    OOV = "oov"
+    OOV = "oov"  # todo what is this?
     BLANK = "blank"
     SUFFIX = "suffix"
     PRE_NOUN = "pre-noun adjectival"
@@ -27,6 +27,7 @@ class Grammar(Enum):
     UNKNOWN = "unknown word"
     HESITATE = "???"  # todo find out what this means
     ROMAJI = "transliteration of Japanese into the Latin alphabet"
+    MERGED = "verb with endings"
 
 
 def _make_grammar(tag):
@@ -64,7 +65,7 @@ class Token:
         self.grammar = grammar
 
     def __str__(self):
-        return "hello?"
+        return "(" + self.word + " | " + self.grammar.value + ")"
 
     def __repr__(self):
         return "(" + self.word + " | " + self.grammar.value + ")"
@@ -75,19 +76,32 @@ def _tokenize(text):
 
 
 def _merge_verb_endings(tokens):
-    return[]  # todo
+    merged = []
+    for i in range(len(tokens)):
+        if tokens[i].grammar == Grammar.VERB:
+            verb_with_endings = tokens[i].word
+            i += 1
+            while i < len(tokens) and tokens[i].grammar == Grammar.AUX_VERB:
+                verb_with_endings += tokens[i].word
+                i += 1
+            merged.append(Token(verb_with_endings, Grammar.MERGED))
+        elif tokens[i].grammar != Grammar.AUX_VERB:
+            merged.append(tokens[i])
+
+    return merged
 
 
 def _make_tokens(tokens):
-    print(tokens)
     words = []
     for word, tag in zip(tokens.words, tokens.postags):
         words.append(Token(word, _make_grammar(tag)))
     return words
 
 
-def get_tokens(word):
-    tokens = _tokenize(word)
+def get_tokens(text):
+    print(text)
+    tokens = _tokenize(text)
     tokens = _make_tokens(tokens)
+    #tokens = _merge_verb_endings(tokens)
     print(tokens)
-    return _merge_verb_endings(tokens)
+    return tokens
