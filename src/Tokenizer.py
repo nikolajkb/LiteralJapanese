@@ -1,4 +1,5 @@
-import nagisa
+from sudachipy import tokenizer
+from sudachipy import dictionary
 from enum import Enum
 
 
@@ -10,7 +11,7 @@ class Grammar(Enum):
     I_ADJECTIVE = "i adjective"
     AUX_VERB = "auxiliary verb"
     SYMBOL = "symbol"
-    OOV = "oov"  # todo what is this?
+    OOV = "out of vocabulary"
     BLANK = "blank"
     SUFFIX = "suffix"
     PRE_NOUN = "pre-noun adjectival"
@@ -28,6 +29,7 @@ class Grammar(Enum):
     HESITATE = "???"  # todo find out what this means
     ROMAJI = "transliteration of Japanese into the Latin alphabet"
     MERGED = "verb with endings"
+    NOT_IN_SWITCH = "did not match switch case"
 
 
 def _make_grammar(tag):
@@ -56,23 +58,30 @@ def _make_grammar(tag):
         "未知語": Grammar.UNKNOWN,
         "言いよどみ": Grammar.HESITATE,
         "ローマ字文": Grammar.ROMAJI
-    }.get(tag)
+    }.get(tag[0], Grammar.NOT_IN_SWITCH)
 
 
 class Token:
-    def __init__(self, word, grammar):
+    def __init__(self, word, grammar, root):
         self.word = word
         self.grammar = grammar
+        self.root = root
 
     def __str__(self):
         return "(" + self.word + " | " + self.grammar.value + ")"
 
     def __repr__(self):
-        return "(" + self.word + " | " + self.grammar.value + ")"
+        return "(" + self.word + " | " + self.grammar.value + " | " + self.root + ")"
 
 
 def _tokenize(text):
-    return nagisa.tagging(text)
+    tokenizer_obj = dictionary.Dictionary().create()
+    mode = tokenizer.Tokenizer.SplitMode.C
+
+    return [Token(m.surface(),
+                  _make_grammar(m.part_of_speech()),
+                  m.dictionary_form())
+            for m in tokenizer_obj.tokenize(text, mode)]
 
 
 def _merge_verb_endings(tokens):
@@ -91,17 +100,9 @@ def _merge_verb_endings(tokens):
     return merged
 
 
-def _make_tokens(tokens):
-    words = []
-    for word, tag in zip(tokens.words, tokens.postags):
-        words.append(Token(word, _make_grammar(tag)))
-    return words
-
-
 def get_tokens(text):
     print(text)
     tokens = _tokenize(text)
-    tokens = _make_tokens(tokens)
-    #tokens = _merge_verb_endings(tokens)
+    # tokens = _merge_verb_endings(tokens)
     print(tokens)
     return tokens
