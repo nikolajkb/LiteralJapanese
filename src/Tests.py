@@ -11,6 +11,13 @@ class Sentence:
         self.index = index
 
 
+class SentenceToken:
+    def __init__(self, japanese, english, indices):
+        self.english = english
+        self.japanese = japanese
+        self.indices = indices
+
+
 def test_tokenizer():
     return 0
 
@@ -28,11 +35,15 @@ def read_test_data():
         sentence.english = line[4:-1]
         line = data.readline()
 
+        index = 0
         while line and not line == "\n":
             pair = line[:-1].split(" ")
-            pair = (pair[0], pair[1])
-            sentence.tokens.append(pair)
+
+            sentence.tokens.append(SentenceToken(pair[0], pair[1], (index, index + pair[0].__len__())))
+
+            index += pair[0].__len__()
+
             line = data.readline()
 
         sentences.append(sentence)
-
+        line = data.readline()

@@ -18,7 +18,7 @@
 て -te
 き come
 た -past
-。 . 
+。 .
 
 #2
 #jp 日曜日に出社したので月曜日が代休だった。
@@ -169,7 +169,7 @@ He met his English teacher at the station by accident.
 神経質 nervous
 に <ni>
 なる become
-。.
+。 .
 
 #12
 #jp 彼は希望に満ち溢れていた。 
@@ -319,7 +319,7 @@ He met his English teacher at the station by accident.
 の <no>
 生徒 student
 です is
-。.
+。 .
 
 #23
 #jp 私はそのスピーチに深い感銘を受けた。
@@ -442,7 +442,7 @@ He met his English teacher at the station by accident.
 滞り hindrance
 の <no>
 ない nonexistant 
-、,
+、 ,
 優雅 elegantly
 な -na
 仕草 gesture
@@ -629,7 +629,7 @@ He met his English teacher at the station by accident.
 遅れ be late
 ないで -te-not
 よ <yo>
-。.
+。 .
 
 #45
 #jp 「この時計合ってるの？」「合ってるはずだよ。電波時計だもん」
@@ -690,19 +690,6 @@ He met his English teacher at the station by accident.
 どこ where
 だろう it seems
 ？ ?
-#8
-#jp 彼は、喫煙のくせがついた。
-#en He acquired the habit of smoking.
-彼 he
-は <wa>
-、 ,
-喫煙 smoking
-の <no>
-くせ habit
-が <ga>
-つい acquire
-た -past
-。 .
 
 #49
 #jp 日本との貿易は容易ではない。
@@ -722,19 +709,6 @@ He met his English teacher at the station by accident.
 #jp 楽しかった。
 #en I enjoyed myself.
 楽しかっ enjoy
-た -past
-。 .
-#11
-#jp トムは海岸で死体を発見した。
-#en Tom found a dead body on the beach.
-トム Tom
-は <wa>
-海岸 beach
-で <de>
-死体 dead body
-を <o>
-発見 find
-し do
 た -past
 。 .
 
@@ -1005,11 +979,11 @@ He met his English teacher at the station by accident.
 #70
 #jp 「次回だよ」と彼は言った。
 #en "Next time," he said.
-「"
+「 "
 次回 next time
 だ is
 よ <yo>
-」"
+」 "
 と <to>
 彼 he
 は <wa>
@@ -1029,7 +1003,7 @@ He met his English teacher at the station by accident.
 て -te
 い is
 た -past
-。.
+。 .
 
 #72
 #jp 会長が個人的に私の手紙に返事をくれるとは思いもよらなかった。
@@ -1056,7 +1030,7 @@ He met his English teacher at the station by accident.
 #73
 #jp 「この鉛筆お借りしていいですか？」「ええ、どうぞ」
 #en "May I use this pencil?" "Yes, you may."
-「"
+「 "
 この this
 鉛筆 pencil
 お pol-
@@ -1064,25 +1038,13 @@ He met his English teacher at the station by accident.
 して -pol-te
 いい alright
 ですか ?
-？
+？ ?
 」 "
 「 "
 ええ yes
 、 ,
 どうぞ you may
 」 "
-#35
-#jp ルネの指がドアに挟まっている 。
-#en René's fingers are caught in the door.
-ルネ René
-の <no>
-指 fingers
-が <ga>
-ドア door
-に <ni>
-挟まっ catch
-ている -ongoing
-。 .
 
 #74
 #jp 知らない人に名前聞かれても教えちゃだめだよ。
@@ -1116,12 +1078,12 @@ He met his English teacher at the station by accident.
 #76
 #jp さあお茶を一杯いかがですか。
 #en Would you like a cup of tea now?
-さあ
+さあ well then
 お pol-
 茶 tea
 を <o>
 一杯 one cup
-いかが how about
+いかが how about it
 ですか ?
 。 .
 
@@ -1297,5 +1259,43 @@ He met his English teacher at the station by accident.
 られない -can-not
 。 .
 
+#89
+#jp 彼は、喫煙のくせがついた。
+#en He acquired the habit of smoking.
+彼 he
+は <wa>
+、 ,
+喫煙 smoking
+の <no>
+くせ habit
+が <ga>
+つい acquire
+た -past
+。 .
 
+#90
+#jp トムは海岸で死体を発見した。
+#en Tom found a dead body on the beach.
+トム Tom
+は <wa>
+海岸 beach
+で <de>
+死体 dead body
+を <o>
+発見 find
+し do
+た -past
+。 .
 
+#91
+#jp ルネの指がドアに挟まっている 。
+#en René's fingers are caught in the door.
+ルネ René
+の <no>
+指 fingers
+が <ga>
+ドア door
+に <ni>
+挟まっ catch
+ている -ongoing
+。 .
