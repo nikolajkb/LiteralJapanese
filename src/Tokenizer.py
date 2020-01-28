@@ -103,8 +103,5 @@ def _merge_verb_endings(tokens):
 
 
 def get_tokens(text):
-    print(text)
     tokens = _tokenize(text)
-    # tokens = _merge_verb_endings(tokens)
-    print(tokens)
     return tokens
