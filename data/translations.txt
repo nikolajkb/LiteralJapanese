@@ -47,8 +47,8 @@
 。 .
 
 #4
-彼は駅で英語の先生にばったり会った。
-He met his English teacher at the station by accident. 
+#jp 彼は駅で英語の先生にばったり会った。
+#en He met his English teacher at the station by accident.
 彼 he
 は <wa>
 駅 station
@@ -437,7 +437,7 @@ He met his English teacher at the station by accident.
 。 .
 
 #31
-#jp 滞りのない、優雅な仕草でグラスに水を注ぎ込んだ。 
+#jp 滞りのない、優雅な仕草でグラスに水を注ぎ込んだ。
 #en She smoothly and elegantly poured the water into the glass.
 滞り hindrance
 の <no>
@@ -1132,7 +1132,7 @@ He met his English teacher at the station by accident.
 #en I hear from him every now and then.
 私 I
 には <niwa>
-時々now and then
+時々 now and then
 彼 he
 から <kara>
 の <no>
@@ -1288,7 +1288,7 @@ He met his English teacher at the station by accident.
 。 .
 
 #91
-#jp ルネの指がドアに挟まっている 。
+#jp ルネの指がドアに挟まっている。
 #en René's fingers are caught in the door.
 ルネ René
 の <no>

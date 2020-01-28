@@ -19,23 +19,25 @@ class SentenceToken:
         self.japanese = japanese
         self.indices = indices
 
+class Score:
+    def __init__(self, gold_len, system_len, correct):
+        self.precision = correct / system_len
+        self.recall = correct / gold_len
+        self.f1 = 2 * correct / (system_len + gold_len)
 
-def calc_score(gold_len, system_len, correct):
-    precision = correct / system_len
-    recall = correct / gold_len
-    f1 = 2 * correct / (system_len + gold_len)
-    print("precision:", precision)
-    print("recall:", recall)
-    print("f1:", f1)
-    print("\n")
-
+    def print(self):
+        print("precision:", self.precision)
+        print("recall:", self.recall)
+        print("f1:", self.f1)
+        print("\n")
 
 def test_tokenizer():
     sentences = read_test_data()
+    scores = []
 
     for sentence in sentences:
         print(" - sentence", sentence.index, " - ")
-        tokens = Tokenizer.get_tokens(sentence.japanese)
+        tokens = Tokenizer.get_tokens(sentence.japanese.strip())
         gold_tokens = sentence.tokens
         print("system:", [t.word for t in tokens])
         print("gold:", [t.japanese for t in gold_tokens])
@@ -50,7 +52,16 @@ def test_tokenizer():
                 si += 1
                 gi += 1
 
-        calc_score(len(gold_tokens), len(tokens), correct)
+        scores.append(Score(len(gold_tokens), len(tokens), correct))
+
+    final_precision = sum(s.precision for s in scores) / len(scores)
+    final_recall = sum(s.recall for s in scores) / len(scores)
+    final_f1 = sum(s.f1 for s in scores) / len(scores)
+    print("#### result ####")
+    print("precision:", final_precision)
+    print("recall:", final_recall)
+    print("f1:", final_f1)
+
 
 
 
