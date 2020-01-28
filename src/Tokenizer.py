@@ -62,10 +62,11 @@ def _make_grammar(tag):
 
 
 class Token:
-    def __init__(self, word, grammar, root):
+    def __init__(self, word, grammar, root, char_indices):
         self.word = word
         self.grammar = grammar
         self.root = root
+        self.char_indices = char_indices
 
     def __str__(self):
         return "(" + self.word + " | " + self.grammar.value + ")"
@@ -80,7 +81,8 @@ def _tokenize(text):
 
     return [Token(m.surface(),
                   _make_grammar(m.part_of_speech()),
-                  m.dictionary_form())
+                  m.dictionary_form(),
+                  (m.begin(), m.end()))
             for m in tokenizer_obj.tokenize(text, mode)]
 
 

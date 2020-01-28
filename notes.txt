@@ -1,4 +1,0 @@
- word/sentence segmenter: https://github.com/yanshao9798/segmenter
- training data for segmenter: https://universaldependencies.org
- aligning words (unsupervised): https://github.com/clab/fast_align
- machine translation: http://opennmt.net/
