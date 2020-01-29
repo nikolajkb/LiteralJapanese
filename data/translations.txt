@@ -596,7 +596,8 @@
 に <ni>
 来る come
 まで until
-には <niwa>
+に <ni>
+は <wa>
 暗く dark
 なっ become
 ている -ongoing
@@ -621,13 +622,14 @@
 の <no>
 朝 morning
 は <wa>
-八 ８
+八 8
 時 o'clock
 集合 regroup
 だから so
 、 ,
 遅れ be late
-ないで -te-not
+ない -not
+で -te
 よ <yo>
 。 .
 
@@ -670,11 +672,11 @@
 #jp 作り話やうわさなどでなく、本当にあった話。
 #en It's not fiction or rumour, etc., it's a true story.
 作り話 fiction
-や <ya>
+や or
 うわさ rumour
 など etc.
 で is
-なく -te-not
+なく -not
 、 ,
 本当に really
 あっ happen
@@ -688,7 +690,7 @@
 弟 brother
 は <wa>
 どこ where
-だろう it seems
+だろう I wonder
 ？ ?
 
 #49
@@ -701,8 +703,7 @@
 は <wa>
 容易 easy
 で is
-は <wa>
-ない -not
+はない -not
 。 .
 
 #50
@@ -717,7 +718,8 @@
 #en I feel relieved.
 安心 relief
 し do
-ました -pol-past
+まし -pol
+た -past
 。 .
 
 #52
@@ -767,9 +769,9 @@
 彼女 she
 は <wa>
 うふふ giggling
-と <to>
+と and
 照れ feeling embarrassed
-ながら -nagara
+ながら -while
 コンドーム condom
 を <o>
 差し出し hold out
@@ -797,8 +799,9 @@
 お pol-
 昼 lunch
 食べ eat
-てない -ongoing-not
-の <no>
+て -ongoing
+ない -not
+の ?
 ？ ?
 
 #58
@@ -813,7 +816,8 @@
 全部 all
 好き like
 じゃ is
-なかった -past-not
+なかっ -not
+た -past
 。 .
 
 #59
@@ -890,7 +894,7 @@
 #jp カーテンレールにたくさんのハンガーがかかっている。
 #en There are a lot of hangers on the curtain rail.
 カーテンレール curtain rail
-に <ni>
+に on
 たくさん a lot of
 の <no>
 ハンガー hangers
@@ -909,7 +913,7 @@
 彼 he
 を <o>
 助け help
-に <ni>
+に to
 やってき come
 た -past
 。 .
@@ -923,7 +927,8 @@
 電気 lights
 が <ga>
 つき turn on
-ません -pol-not
+ませ -pol
+ん -not
 。 .
 
 #67
@@ -942,11 +947,11 @@
 気持ち feeling
 は <wa>
 どこ where
-に <ni>
+に to
 行っちゃっ go unintentionally
 た -past
 ん <no>
-だろう it seems
+だろう I wonder
 。 .
 
 #68
@@ -957,7 +962,8 @@
 氷 ice
 に <ni>
 なり become
-ました -pol-past
+まし -pol
+た -past
 。 .
 
 #69
@@ -973,7 +979,7 @@
 友達 friends
 を <o>
 選び choose
-なさい -nasai
+なさい -please
 。 .
 
 #70
@@ -982,7 +988,7 @@
 「 "
 次回 next time
 だ is
-よ <yo>
+よ , you know?
 」 "
 と <to>
 彼 he
@@ -1000,8 +1006,7 @@
 が <ga>
 ドキドキ beat wildly
 し do
-て -te
-い is
+てい -ongoing
 た -past
 。 .
 
@@ -1015,7 +1020,7 @@
 私 me
 の <no>
 手紙 letter
-に <ni>
+に to
 返事 reply
 を <o>
 くれる give
@@ -1035,9 +1040,11 @@
 鉛筆 pencil
 お pol-
 借り borrow
-して -pol-te
+し -do
+て -te
 いい alright
-ですか ?
+です is
+か ?
 ？ ?
 」 "
 「 "
@@ -1061,7 +1068,7 @@
 ちゃ -tewa
 だめ wrong
 だ is
-よ <yo>
+よ , you know?
 。 .
 
 #75
@@ -1119,7 +1126,7 @@
 #en I like the slow rhythm of that song.
 あの that
 歌 song
-の <no>
+の s
 ゆっくりした slow
 リズム rhythm
 が <ga>
@@ -1131,7 +1138,8 @@
 #jp 私には時々彼からの便りがある。
 #en I hear from him every now and then.
 私 I
-には <niwa>
+に <ni>
+は <wa>
 時々 now and then
 彼 he
 から <kara>
@@ -1181,7 +1189,8 @@
 の <no>
 で is
 は <wa>
-なくて -te-not
+なく -not
+て -te
 生きる live
 ため sake
 に <ni>
@@ -1195,12 +1204,13 @@
 #en You may go home if you want to.
 帰り return
 たい -want
-なら <nara>
+なら then
 帰っ return
 て -te
 も <mo>
 構い mind
-ません -pol-not
+ま -pol
+せん -not
 。 .
 
 #85
@@ -1209,13 +1219,13 @@
 まだ yet
 寝 sleep
 ない -not
-の <no>
+の ?
 ？ ?
 もう already
 寝る sleep
 時間 time
 だ is
-よ <yo>
+よ , you know?
 。 .
 
 #86
@@ -1250,13 +1260,14 @@
 私たち we
 は <wa>
 彼 he
-に <ni>
+に for
 何 anything
 も <mo>
 し do
 て -te
 あげ do a favour
-られない -can-not
+られ -can
+ない -not
 。 .
 
 #89
@@ -1295,7 +1306,7 @@
 指 fingers
 が <ga>
 ドア door
-に <ni>
+に in
 挟まっ catch
 ている -ongoing
 。 .
