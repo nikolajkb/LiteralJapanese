@@ -1,23 +1,35 @@
-from src import Tokenizer, Dict_translator
+import getopt
+import Tokenizer
+import Dict_Translator
 import Tests
+import sys
 
 
 def translate(text):
     tokens = Tokenizer.get_tokens(text)
-    translations = Dict_translator.translate(tokens)
+    translations = Dict_Translator.translate(tokens)
     return translations
 
 
-Tokenizer.get_tokens("残ったものはなにひとつありませんでした。 ")
-Tokenizer.get_tokens("日曜日に出社したので月曜日が代休だった")
-Tokenizer.get_tokens("彼女は登校前によく髪を洗ったものだった。")
-Tokenizer.get_tokens("七夕は漫画によく出てくるので、私もそこそこ知っています。")
-Tokenizer.get_tokens("七夕は#漫画によく出てくるので、私もそこそこ知っています。")
+def main(argv):
+    options, args = getopt.getopt(argv, "t:o:p:b:dh", ["file="])
 
-Tests.test_tokenizer()
+    for option, arg in options:
+        if option == "-h":
+            print("-t = translate text")
+            print("-o = tokenize text")
+            print("-p = test tokens with file")
+            print("-b = test translations with file")
+            print("-d = run dev code (for testing)")
+        elif option == "-o":
+            print(arg)
+            print(Tokenizer.get_tokens(arg))
+        elif option == "-d":
+            Tests.test_tokenizer()
 
 
-
+if __name__ == "__main__":
+    main(sys.argv[1:])
 
 
 
