@@ -16,10 +16,10 @@ def main(argv):
 
     for option, arg in options:
         if option == "-h":
-            print("-t = translate text")
+            print("-t = translate text TODO")
             print("-o = tokenize text")
-            print("-p = test tokens with file")
-            print("-b = test translations with file")
+            print("-p = test tokens with file TODO")
+            print("-b = test translations with file TODO")
             print("-d = run dev code (for testing)")
         elif option == "-o":
             print(arg)
