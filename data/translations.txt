@@ -1310,3 +1310,164 @@
 挟まっ catch
 ている -ongoing
 。 .
+
+#92
+#jp 春は京都を訪れる最もよい季節です。
+#en Spring is the best season to visit Kyoto.
+春 spring
+は <wa>
+京都 Kyoto
+を <wo>
+訪れる visit
+最も most
+よい good
+季節 season
+です is
+。 .
+
+#93
+#jp トムには生まれ持った才能がある。
+#en Tom has a natural talent.
+トム Tom
+に <ni>
+は <wa>
+生まれ持っ born with
+た -past
+才能 talent
+が <ga>
+ある exist
+。 .
+
+#94
+#jp 申し訳ないけど、残業してもらいたいんだ。
+#en I'm afraid you have to work overtime.
+申し訳ない I'm sorry
+けど but
+、 ,
+残業 overtime
+し do
+て -te
+もらい receive
+たい -want
+ん <no>
+だ is
+。 .
+
+#95
+#jp こちらの用紙に記入してください。
+#en Please fill out this form.
+こちら this
+の <no>
+用紙 from
+に <ni>
+記入 fill out
+し do
+てください -please
+。 .
+
+#96
+#jp 三日前は残念なことにマグニチュード8.9の地震が日本の東北地方太平洋沖で発生した。
+#en Unfortunately, three days ago a magnitude 8.8 earthquake struck off the Pacific coast of Japan's Tohoku region.
+三日 three days
+前 ago
+は <wa>
+残念なことに unfortunately
+マグニチュード magnitude
+8.9 8.9
+の <no>
+地震 earthquake
+が <ga>
+日本 Japan
+の <no>
+東北地方 Tohoku region
+太平洋 Pacific Ocean
+沖 open sea
+で in
+発生 struck
+し do
+た -past
+。 .
+
+#97
+#jp 翌日になって初めて、彼らは彼女を見つけた。
+#en It was not until the next day that they found her.
+翌日 next day
+に <ni>
+なっ become
+て -te
+初めて not until
+、 ,
+彼ら they
+は <wa>
+彼女 her
+を <wo>
+見つけ find
+た -past
+。 .
+
+#98
+#jp 言葉はコミュニケーションのひとつの手段である。
+#en Language is a means of communication.
+言葉 language
+は <wa>
+コミュニケーション communication
+の <no>
+ひとつ only
+の <no>
+手段 way
+である is
+。 .
+
+#99
+#jp 電話が鳴ってますよ。もしよければ私が出ましょう。
+#en The telephone is ringing. If you want, I'll answer it.
+電話 phone
+が <ga>
+鳴っ ring
+て -ongoing
+ます -pol
+よ , you know?
+。 .
+もし in case
+よければ it is good
+私 I
+が <ga>
+出 answer
+ま -pol
+しょう -vol
+。 .
+
+#100
+#jp スミスさんは昼食をとりに出かけました。
+#en Mr. Smith went out to get lunch.
+スミス Smith
+さん san
+は <wa>
+昼食 lunch
+を <o>
+とり get
+に to
+出かけ leave
+まし -pol
+た -past
+。 .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
