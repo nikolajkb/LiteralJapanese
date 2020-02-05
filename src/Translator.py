@@ -2,7 +2,7 @@ import getopt
 import Tokenizer
 import Dict_Translator
 import Tests
-import XmlReader
+from XmlReader import XmlReader
 import sys
 
 
@@ -26,8 +26,8 @@ def main(argv):
             print(arg)
             print(Tokenizer.get_tokens(arg))
         elif option == "-d":
-            words = XmlReader.parse()
-            print(words)
+            translation = Dict_Translator.translate(Tokenizer.get_tokens("昨日すき焼きを食べました"))
+            print(translation)
 
 
 if __name__ == "__main__":

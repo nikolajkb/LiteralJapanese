@@ -9,3 +9,5 @@ machine translation: http://opennmt.net/
 Ideas for improvement:
    - use synonyms of english words
    - filter definitions that are too long
+   - remove usage of parentheses from definition
+   - remove "to" in definition e.g. "to eat" -> "eat"
