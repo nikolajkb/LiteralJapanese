@@ -1,31 +1,39 @@
 import os
 import xml.etree.ElementTree as ET
-
+import Word
+from Grammar import Grammar
 
 def parse():
     file_dir = os.path.dirname(os.path.realpath('__file__'))
     file_name = os.path.join(file_dir, '..', 'data', 'JMdict_e')
     tree = ET.parse(file_name)
     root = tree.getroot()
-    i = 10
+
+    words = []
+
     for entry in root:
-        k_ele_lst = entry.findall('k_ele')
-        sense_lst = entry.findall('sense')
-        if len(k_ele_lst) == 0 or len(sense_lst) == 0:
+        word = Word.make_empty()
+        k_ele = entry.find("k_ele")
+        sense = entry.find("sense")
+        if k_ele is None or sense is None:
             continue
-        i += 1
-        print("Japanese:")
-        for k_ele in k_ele_lst:
-            keb_lst = k_ele.findall('keb')
-            for keb in keb_lst:
-                print(" "+keb.text)
-        print("English:")
-        for sense in sense_lst:
-            gloss_lst = sense.findall('gloss')
-            for gloss in gloss_lst:
-                print(" "+gloss.text)
-        print('-----------------------------------------')
-        if i > 100:
-            break
+
+        for keb in k_ele.findall("keb"):
+            word.writings.append(keb.text)
+
+        for gloss in sense.findall("gloss"):
+            word.meanings.append(gloss.text)
+
+        for pos in sense.findall("pos"):
+            word.pos = make_grammar(pos.text)
+
+        words.append(word)
+
+    return words
 
 
+def make_grammar(tag):
+    return {
+        "noun (common) (futsuumeishi)": Grammar.NOUN,
+
+    }.get(tag, Grammar.NOT_IN_SWITCH)

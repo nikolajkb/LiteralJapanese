@@ -6,3 +6,6 @@ training data for segmenter: https://universaldependencies.org
 aligning words (unsupervised): https://github.com/clab/fast_align
 machine translation: http://opennmt.net/
 
+Ideas for improvement:
+   - use synonyms of english words
+   - filter definitions that are too long
