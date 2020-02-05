@@ -20,14 +20,18 @@ class XmlReader:
 
         for entry in root:
             word = Word.make_empty()
+
             k_ele = entry.find("k_ele")
+            if k_ele is not None:
+                for keb in k_ele.findall("keb"):
+                    word.writings.append(keb.text)
+
+            r_ele = entry.find("r_ele")
+            if r_ele is not None:
+                for reb in r_ele.findall("reb"):
+                    word.writings.append(reb.text)
+
             sense = entry.find("sense")
-            if k_ele is None or sense is None:
-                continue
-
-            for keb in k_ele.findall("keb"):
-                word.writings.append(keb.text)
-
             for gloss in sense.findall("gloss"):
                 word.meanings.append(gloss.text)
 
