@@ -11,6 +11,7 @@ class XmlReader:
         if XmlReader.dictionary is not None:
             return XmlReader.dictionary
 
+        print("Reading dictionary...")
         file_dir = os.path.dirname(os.path.realpath('__file__'))
         file_name = os.path.join(file_dir, '..', 'data', 'JMdict_e')
         tree = ET.parse(file_name)
@@ -36,12 +37,13 @@ class XmlReader:
                 word.meanings.append(gloss.text)
 
             for pos in sense.findall("pos"):
-                word.pos = make_grammar(pos.text)
+                word.pos.append(make_grammar(pos.text))
 
             for writing in word.writings:
                 dictionary[writing] = word
 
         XmlReader.dictionary = dictionary
+        print("done")
         return dictionary
 
 

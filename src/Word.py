@@ -1,4 +1,5 @@
 from typing import List
+from Grammar import Grammar
 
 
 # specification
@@ -9,8 +10,8 @@ class Word:
     def __init__(self, writings, meanings, pos):
         self.writings: List[str] = writings
         self.meanings: List[str] = meanings
-        self.pos: str = pos
+        self.pos: List[Grammar] = pos
 
 
 def make_empty():
-    return Word([], [], None)
+    return Word([], [], [])
