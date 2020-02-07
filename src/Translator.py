@@ -26,8 +26,7 @@ def main(argv):
             print(arg)
             print(Tokenizer.get_tokens(arg))
         elif option == "-d":
-            translation = Dict_Translator.translate(Tokenizer.get_tokens("昨日すき焼きを食べました"))
-            print(translation)
+            Tests.test_translator()
 
 
 if __name__ == "__main__":

@@ -1,3 +1,5 @@
+from typing import List
+
 import Tokenizer
 start = 0
 end = 1
@@ -51,6 +53,49 @@ def test_tokenizer():
     print("recall:", final_score.recall)
     print("f1:", final_score.f1)
     return final_score
+
+
+def test_translator():
+    sentences = read_test_data()
+    sentences = merge_word_endings(sentences)
+    print(sentences)
+
+
+def merge_word_endings(sentences):
+    merged = []
+    for sentence in sentences:
+        merged.append(merge_token_list(sentence.tokens))
+
+    return merged
+
+
+def merge_token_list(tokens: List[SentenceToken]):  # TODO this is kinda ugly code
+    merged = []
+    i = 0
+    while i < len(tokens):
+        if is_ending(tokens[i]):
+            ending = tokens[i]
+            i += 1
+            while i < len(tokens) and is_ending(tokens[i]):
+                ending = merge_tokens(ending, tokens[i])
+                i += 1
+            merged.append(ending)
+            i -= 1
+        elif not is_ending(tokens[i]):
+            merged.append(tokens[i])
+        i += 1
+
+    return merged
+
+
+def is_ending(token):
+    return token.english.startswith("-")
+
+
+def merge_tokens(t1, t2):
+    (min_i, _) = t1.indices
+    (_, max_i) = t2.indices
+    return SentenceToken(t1.japanese + t2.japanese, t1.english + t2.english, (min_i, max_i))
 
 
 def calc_sentence_score(sentence):
