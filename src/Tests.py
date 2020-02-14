@@ -1,6 +1,8 @@
 from typing import List
 
 import Tokenizer
+import Translator
+
 start = 0
 end = 1
 
@@ -58,15 +60,44 @@ def test_tokenizer():
 def test_translator():
     sentences = read_test_data()
     sentences = merge_word_endings(sentences)
-    print(sentences)
+
+    scores = []
+
+    for sentence in sentences:
+        system = Translator.translate(sentence.japanese)
+        gold = sentence.tokens
+        print(" - sentence", sentence.index, " - ")
+        print("system:", [t[1] for t in system])
+        print("gold:", [t.english for t in gold])
+        scores.append(translation_sentence_score(gold, system))
+
+    final_score = Score(1, 1, 1)
+    final_score.precision = sum(s.precision for s in scores) / len(scores)
+    final_score.recall = sum(s.recall for s in scores) / len(scores)
+    final_score.f1 = sum(s.f1 for s in scores) / len(scores)
+
+    print("#### average result ####")
+    print("precision:", final_score.precision)
+    print("recall:", final_score.recall)
+    print("f1:", final_score.f1)
+    return final_score
+
+
+def translation_sentence_score(gold, system):
+    correct = 0
+
+    for gold_token, system_token in zip(gold, system):
+        if gold_token.english == system_token[1]:
+            correct += 1
+
+    return Score(len(gold), len(system), correct)
 
 
 def merge_word_endings(sentences):
-    merged = []
     for sentence in sentences:
-        merged.append(merge_token_list(sentence.tokens))
+        sentence.tokens = merge_token_list(sentence.tokens)
 
-    return merged
+    return sentences
 
 
 def merge_token_list(tokens: List[SentenceToken]):  # TODO this is kinda ugly code
@@ -138,7 +169,7 @@ def read_test_data():
 
         index = 0
         while line and not line == "\n":  # read each token and split into English and Japanese
-            pair = line[:-1].split(" ")
+            pair = line[:-1].split(" ", 1)
             sentence.tokens.append(SentenceToken(pair[0], pair[1], (index, index + len(pair[0]) )))
             index += len(pair[0])
             line = data.readline()
