@@ -12,3 +12,4 @@ Ideas for improvement:
    - remove usage of parentheses from definition
    - remove "to" in definition e.g. "to eat" -> "eat"
    - add dictionary with names
+   - remove "to" from translation of verbs

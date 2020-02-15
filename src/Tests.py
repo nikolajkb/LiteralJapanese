@@ -74,9 +74,20 @@ def test_translator():
 
 def print_translated_sentence(sentence, system, gold):
     print(" - sentence", sentence.index, " - ")
-    print("japanese:", [t.japanese for t in gold])
-    print("system:  ", [t[1] for t in system])
-    print("gold:    ", [t.english for t in gold])
+
+    max_len = max(len(gold), len(system))
+    for i in range(max_len):
+        if i < len(gold):
+            g = gold[i]
+        else:
+            g = SentenceToken("", "", "")
+        if i < len(system):
+            s = system[i]
+        else:
+            s = ("", "")
+
+        just = g.english.ljust(15-len(g.english))
+        print(g.japanese.ljust(8-len(g.japanese)), " ", g.english.ljust(30-len(g.english)), s[1])
 
 
 def make_average_score(scores):

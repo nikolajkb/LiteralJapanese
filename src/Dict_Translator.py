@@ -4,20 +4,25 @@ import Word
 
 def translate(tokens):
     dicti = XmlReader().get_dict()
-    translation = []
+    translations = []
+
     for token in tokens:
         jp = token.word
-        special = match_special(jp)
-        if special:
-            translation.append((jp, special))
-        else:
-            eng = dicti.get(token.root)
-            if eng is None:
-                eng = Word.make_empty()
-                eng.meanings.append("ERROR")
-            translation.append((jp, eng.meanings[0]))
 
-    return translation
+        translation = match_special(jp)
+        if translation:
+            translations.append((jp, translation))
+            continue
+
+        translation = dicti.get(token.root)
+        if translation:
+            translations.append((jp, translation.meanings[0]))
+            continue
+
+        translation = Word.make_empty()
+        translation.meanings.append("ERROR")
+
+    return translations
 
 
 def match_special(token):
