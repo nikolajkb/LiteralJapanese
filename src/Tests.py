@@ -45,15 +45,10 @@ def test_tokenizer():
         score = calc_sentence_score(sentence)
         scores.append(score)
 
-    final_score = Score(1, 1, 1)
-    final_score.precision = sum(s.precision for s in scores) / len(scores)
-    final_score.recall = sum(s.recall for s in scores) / len(scores)
-    final_score.f1 = sum(s.f1 for s in scores) / len(scores)
+    final_score = make_average_score(scores)
 
     print("#### average result ####")
-    print("precision:", final_score.precision)
-    print("recall:", final_score.recall)
-    print("f1:", final_score.f1)
+    final_score.print()
     return final_score
 
 
@@ -66,20 +61,30 @@ def test_translator():
     for sentence in sentences:
         system = Translator.translate(sentence.japanese)
         gold = sentence.tokens
-        print(" - sentence", sentence.index, " - ")
-        print("system:", [t[1] for t in system])
-        print("gold:", [t.english for t in gold])
+        print_translated_sentence(sentence, system, gold)
         scores.append(translation_sentence_score(gold, system))
 
+    final_score = make_average_score(scores)
+
+    print("#### average result ####")
+    final_score.print()
+
+    return final_score
+
+
+def print_translated_sentence(sentence, system, gold):
+    print(" - sentence", sentence.index, " - ")
+    print("japanese:", [t.japanese for t in gold])
+    print("system:  ", [t[1] for t in system])
+    print("gold:    ", [t.english for t in gold])
+
+
+def make_average_score(scores):
     final_score = Score(1, 1, 1)
     final_score.precision = sum(s.precision for s in scores) / len(scores)
     final_score.recall = sum(s.recall for s in scores) / len(scores)
     final_score.f1 = sum(s.f1 for s in scores) / len(scores)
 
-    print("#### average result ####")
-    print("precision:", final_score.precision)
-    print("recall:", final_score.recall)
-    print("f1:", final_score.f1)
     return final_score
 
 
