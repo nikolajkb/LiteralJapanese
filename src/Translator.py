@@ -26,7 +26,7 @@ def main(argv):
             print(arg)
             print(Tokenizer.get_tokens(arg))
         elif option == "-d":
-            Tokenizer.get_tokens("トムが私に電話してきた。")
+            Tokenizer.get_tokens("も神経質になる。")
             Tests.test_translator()
 
 
