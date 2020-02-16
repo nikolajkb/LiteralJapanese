@@ -61,26 +61,26 @@ def _merge_verb_endings(tokens):
     merged = []
     i = 0
     while i < len(tokens):
+        merged.append(tokens[i])
         if tokens[i].grammar == Grammar.VERB:
-            merged.append(tokens[i])
             i += 1
             ending = ""
             start = tokens[i].char_indices[0]
             while i < len(tokens) and _is_ending(tokens[i]):
                 ending += tokens[i].word
                 i += 1
-            end = tokens[i-1].char_indices[1]
+            i -= 1
+            end = tokens[i].char_indices[1]
             merged.append(Token(ending, Grammar.MERGED, ending, (start, end)))
-        else:
-            merged.append(tokens[i])
-            i += 1
+
+        i += 1
 
     return merged
 
 
 def _is_ending(token):
     return token.grammar == Grammar.AUX_VERB \
-           or token.word == "て" or token.word == "い" or token.word == "ます"
+           or token.word == "て" or token.word == "い"
 
 
 def get_tokens(text):
