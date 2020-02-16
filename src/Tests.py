@@ -86,7 +86,6 @@ def print_translated_sentence(sentence, system, gold):
         else:
             s = ("", "")
 
-        just = g.english.ljust(15-len(g.english))
         print(g.japanese.ljust(8-len(g.japanese)), " ", g.english.ljust(30-len(g.english)), s[1])
 
 

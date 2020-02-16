@@ -26,5 +26,5 @@ class Grammar(Enum):
     UNKNOWN = "unknown word"
     HESITATE = "???"  # todo find out what this means
     ROMAJI = "transliteration of Japanese into the Latin alphabet"
-    MERGED = "verb with endings"
+    MERGED = "ending of word"
     NOT_IN_SWITCH = "did not match switch case"
