@@ -26,8 +26,18 @@ def main(argv):
             print(arg)
             print(Tokenizer.get_tokens(arg))
         elif option == "-d":
-            Tokenizer.get_tokens("も神経質になる。")
+            print_tokenization()
             Tests.test_translator()
+
+
+def print_tokenization():
+    data = open("../data/translations.txt", "r", encoding="utf-8")
+    line = data.readline()
+    sentences = []
+    while line:
+        if line.startswith("#jp"):
+            split = line.split(" ")
+        line = data.readline()
 
 
 if __name__ == "__main__":
