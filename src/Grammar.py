@@ -28,3 +28,14 @@ class Grammar(Enum):
     ROMAJI = "transliteration of Japanese into the Latin alphabet"
     MERGED = "ending of word"
     NOT_IN_SWITCH = "did not match switch case"
+
+
+class Ending(Enum):
+    NEGATIVE = "not"
+    POLITE = "pol"
+    PAST = "past"
+    TE_FORM = "te"
+    CAN_DO = "can"
+    PROGRESSIVE = "ongoing"
+    UNKNOWN = "unknown"
+    IGNORE = ""

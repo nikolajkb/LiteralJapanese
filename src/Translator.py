@@ -27,7 +27,7 @@ def main(argv):
             print(arg)
             print(Tokenizer.get_tokens(arg))
         elif option == "-d":
-            token = Tokenizer.Token("ddaadddd", Grammar.MERGED, "dqwe", (1, 1))
+            token = Tokenizer.Token("ませんでした", Grammar.MERGED, "dqwe", (1, 1))
 
             Dict_Translator.translate_ending(token)
 
