@@ -81,7 +81,7 @@ def _merge_verb_endings(tokens):
 
 def _is_ending(token):
     return token.grammar == Grammar.AUX_VERB \
-           or token.word == "て" or token.word == "い"
+           or token.word == "て" or token.word == "い" or token.word == "いる"
 
 
 def get_tokens(text):

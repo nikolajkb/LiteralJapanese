@@ -2,6 +2,7 @@ import getopt
 import Tokenizer
 import Dict_Translator
 import Tests
+from Grammar import Grammar
 from XmlReader import XmlReader
 import sys
 
@@ -26,8 +27,9 @@ def main(argv):
             print(arg)
             print(Tokenizer.get_tokens(arg))
         elif option == "-d":
-            print_tokenization()
-            Tests.test_translator()
+            token = Tokenizer.Token("ddaadddd", Grammar.MERGED, "dqwe", (1, 1))
+
+            Dict_Translator.translate_ending(token)
 
 
 def print_tokenization():
@@ -37,6 +39,9 @@ def print_tokenization():
     while line:
         if line.startswith("#jp"):
             split = line.split(" ")
+            print(" ")
+            print(split[1])
+            print(Tokenizer._tokenize(split[1]))
         line = data.readline()
 
 

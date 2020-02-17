@@ -1,3 +1,4 @@
+from Grammar import Grammar
 from XmlReader import XmlReader
 import Word
 
@@ -8,6 +9,11 @@ def translate(tokens):
 
     for token in tokens:
         jp = token.word
+
+        if is_ending(token):
+            translation = translate_ending(token)
+            translations.append((jp, translation))
+            continue
 
         translation = match_special(jp)
         if translation:
@@ -23,6 +29,23 @@ def translate(tokens):
         translation.meanings.append("ERROR")
 
     return translations
+
+
+def is_ending(token):
+    return token.grammar == Grammar.MERGED
+
+
+def translate_ending(token):
+    ending: str = token.word
+    matches = [s for s in endings if ending.startswith(s)]
+    if len(matches) == 0:
+        return "-ENDING NO FOUND"
+    else:
+        longest = max(matches, key=len)
+        print(longest)
+
+
+endings = ["d", "dd", "ddd"]
 
 
 def match_special(token):
