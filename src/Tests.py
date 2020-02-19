@@ -95,13 +95,23 @@ def print_translated_sentence_alt(sentence, system, gold):
         add_gold_len = len(add_gold)
         gold_translation += add_gold
 
-        add_original = original_t + spaces(max_word_len, original_t)
+        add_original = original_t + spaces_jp(max_word_len, original_t)
         add_original_len = len(add_original)
         original += add_original
 
     print(original)
     print(gold_translation)
     print(system_translation)
+
+
+def spaces_jp(maxi, string): # TODO ? this is really dumb, the japanese letters are wider in the console than the english ones so I remove more spaces, this still does not work since there is a bit of float on longer sentences
+    maxi += 10
+    ret = ""
+    strlen = len(string) * 1.75
+    strlen = round(strlen)
+    for i in range(maxi - strlen):
+        ret += " "
+    return ret
 
 
 def spaces(maxi, string):
