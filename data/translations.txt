@@ -1451,3 +1451,21 @@
 まし -pol
 た -past
 。 .
+
+#101
+#jp いいえ、いらなくなったので、昨日燃やしてしまいました。
+#enm No, since I don’t need them, I have burned them yesterday
+いいえ No
+、 ,
+いら need
+なく -neg
+なっ become
+た -past
+ので so
+、 ,
+昨日 yesterday
+燃や burn
+し do
+て -te
+しまいまし -unintentional
+た -past

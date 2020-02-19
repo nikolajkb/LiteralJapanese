@@ -1,4 +1,4 @@
-from Grammar import Grammar, Ending
+from Grammar import Grammar, Ending, endings
 from XmlReader import XmlReader
 import Word
 
@@ -44,16 +44,14 @@ def translate_ending(token):
     while ending:
         matches = [s for s in endings if ending.startswith(s[jp])]
         if len(matches) == 0:
-            return ending_en + "-ENDING_NOT_FOUND"
+            ending = ending[1:]
         else:
-            longest = max(matches, key=len)
-            ending_en += "-" + longest[en].value
+            longest = max(matches, key=lambda m: len(m[0]))
+            for end in longest[en]:
+                ending_en += "-" + end.value
             ending = ending[len(longest[jp]):]
 
     return ending_en
-
-
-endings = [("ま", Ending.POLITE), ("せんでし", Ending.NEGATIVE), ("た", Ending.PAST)]
 
 
 def match_special(token):
@@ -74,16 +72,4 @@ def match_special(token):
         "」": "\"",
         "～": "-",
         "･･･": "...",
-        "": "<>",
-        "": "<>",
-        "": "<>",
-        "": "<>",
-        "": "<>",
-        "": "<>",
-        "": "<>",
-        "": "<>",
-        "": "<>",
-        "": "<>",
-        "": "<>",
-        "": "<>"
     }.get(token, None)

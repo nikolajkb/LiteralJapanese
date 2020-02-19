@@ -1,5 +1,8 @@
 import unittest
+
+import Dict_Translator
 import Tokenizer
+from Grammar import Grammar
 
 
 class TokenTests(unittest.TestCase):
@@ -18,6 +21,28 @@ class TokenTests(unittest.TestCase):
     def test_token_root(self):
         tokens = Tokenizer.get_tokens("残ったものはなにひとつありませんでした。 ")
         self.assertEqual("残る", tokens[0].root)
+
+
+class EndingTranslatorTests(unittest.TestCase):
+    def test_ending_0(self):
+        token = Tokenizer.Token("ませんでした", Grammar.MERGED, "", (1, 1))
+        translation = Dict_Translator.translate_ending(token)
+        self.assertEqual(translation,"-polite-negative-past")
+
+    def test_ending_1(self):
+        token = Tokenizer.Token("ちゃった", Grammar.MERGED, "", (1, 1))
+        translation = Dict_Translator.translate_ending(token)
+        self.assertEqual(translation, "-unintentional-past")
+
+    def test_ending_2(self):
+        token = Tokenizer.Token("させられない", Grammar.MERGED, "", (1, 1))
+        translation = Dict_Translator.translate_ending(token)
+        self.assertEqual(translation, "-causative-passive-negative")
+
+    def test_ending_3(self):
+        token = Tokenizer.Token("ていない", Grammar.MERGED, "", (1, 1))
+        translation = Dict_Translator.translate_ending(token)
+        self.assertEqual(translation, "-ongoing-negative")
 
 
 if __name__ == '__main__':

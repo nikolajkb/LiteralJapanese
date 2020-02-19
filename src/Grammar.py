@@ -31,11 +31,25 @@ class Grammar(Enum):
 
 
 class Ending(Enum):
-    NEGATIVE = "not"
-    POLITE = "pol"
+    NEGATIVE = "negative"
+    POLITE = "polite"
     PAST = "past"
     TE_FORM = "te"
     CAN_DO = "can"
     PROGRESSIVE = "ongoing"
+    POTENTIAL = "potential"
+    PASSIVE = "passive"
+    POT_PAS = "potential or passive"
+    CAUSATIVE = "causative"
+    IMPERATIVE = "imperative"
+    UNINTENTIONAL = "unintentional"
     UNKNOWN = "unknown"
     IGNORE = ""
+
+
+endings = [("ま", [Ending.POLITE]), ("せん", [Ending.NEGATIVE]), ("た", [Ending.PAST]),
+           ("ない", [Ending.NEGATIVE]),("な", [Ending.NEGATIVE]), ("かった", [Ending.PAST]),
+           ("て", [Ending.TE_FORM]), ("られ", [Ending.POT_PAS]), ("させ", [Ending.CAUSATIVE]),
+           ("ろ", [Ending.IMPERATIVE]), ("るな", [Ending.IMPERATIVE, Ending.NEGATIVE]),
+           ("てい", [Ending.PROGRESSIVE]),("しま", [Ending.UNINTENTIONAL]),("じゃ", [Ending.UNINTENTIONAL]),
+           ("ちゃ", [Ending.UNINTENTIONAL]), ("させられ", [Ending.CAUSATIVE, Ending.PASSIVE])]
