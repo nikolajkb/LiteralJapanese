@@ -69,10 +69,10 @@ def _merge_verb_endings(tokens):
             while i < len(tokens) and _is_ending(tokens[i]):
                 ending += tokens[i].word
                 i += 1
+            i -= 1
             if ending != "":
                 end = tokens[i].char_indices[1]
                 merged.append(Token(ending, Grammar.MERGED, ending, (start, end)))
-            i -= 1
 
         i += 1
 

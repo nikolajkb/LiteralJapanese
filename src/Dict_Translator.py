@@ -57,6 +57,7 @@ def translate_ending(token):
 def match_special(token):
     return {
         "を": "<o>",
+        "が": "<ga>",
         "に": "<ni>",
         "で": "<de>",
         "の": "<no>",

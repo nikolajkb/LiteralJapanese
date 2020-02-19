@@ -61,7 +61,7 @@ def test_translator():
     for sentence in sentences:
         system = Translator.translate(sentence.japanese)
         gold = sentence.tokens
-        print_translated_sentence(sentence, system, gold)
+        print_translated_sentence_alt(sentence, system, gold)
         scores.append(translation_sentence_score(gold, system))
 
     final_score = make_average_score(scores)
@@ -70,6 +70,46 @@ def test_translator():
     final_score.print()
 
     return final_score
+
+
+def print_translated_sentence_alt(sentence, system, gold):
+    print(" - sentence", sentence.index, " - ")
+    en_just = 50
+    jp_just = 5
+
+    system_translation = ""
+    gold_translation = ""
+    original = ""
+    max_len = min(len(gold), len(system))
+    for i in range(max_len):
+        system_t = system[i][1]
+        gold_t = gold[i].english
+        original_t = gold[i].japanese
+        max_word_len = len(max(system_t,gold_t,original_t, key=len))
+
+        add_system = system_t + spaces(max_word_len, system_t)
+        add_sys_len = len(add_system)
+        system_translation += add_system
+
+        add_gold = gold_t + spaces(max_word_len, gold_t)
+        add_gold_len = len(add_gold)
+        gold_translation += add_gold
+
+        add_original = original_t + spaces(max_word_len, original_t)
+        add_original_len = len(add_original)
+        original += add_original
+
+    print(original)
+    print(gold_translation)
+    print(system_translation)
+
+
+def spaces(maxi, string):
+    maxi += 10
+    ret = ""
+    for i in range(maxi - len(string)):
+        ret += " "
+    return ret
 
 
 def print_translated_sentence(sentence, system, gold):
