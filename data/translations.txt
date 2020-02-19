@@ -1358,7 +1358,7 @@
 #en Please fill out this form.
 こちら this
 の <no>
-用紙 from
+用紙 form
 に <ni>
 記入 fill out
 し do

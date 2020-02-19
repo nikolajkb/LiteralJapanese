@@ -43,6 +43,8 @@ class Ending(Enum):
     CAUSATIVE = "causative"
     IMPERATIVE = "imperative"
     UNINTENTIONAL = "unintentional"
+    WANT = "want"
+    IF = "if"
     UNKNOWN = "unknown"
     IGNORE = ""
 
@@ -52,4 +54,5 @@ endings = [("ま", [Ending.POLITE]), ("せん", [Ending.NEGATIVE]), ("た", [End
            ("て", [Ending.TE_FORM]), ("られ", [Ending.POT_PAS]), ("させ", [Ending.CAUSATIVE]),
            ("ろ", [Ending.IMPERATIVE]), ("るな", [Ending.IMPERATIVE, Ending.NEGATIVE]),
            ("てい", [Ending.PROGRESSIVE]),("しま", [Ending.UNINTENTIONAL]),("じゃ", [Ending.UNINTENTIONAL]),
-           ("ちゃ", [Ending.UNINTENTIONAL]), ("させられ", [Ending.CAUSATIVE, Ending.PASSIVE])]
+           ("ちゃ", [Ending.UNINTENTIONAL]), ("させられ", [Ending.CAUSATIVE, Ending.PASSIVE]),
+           ("たい", [Ending.WANT]), ("たい", [Ending.WANT])]

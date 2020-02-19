@@ -27,9 +27,8 @@ def main(argv):
             print(arg)
             print(Tokenizer.get_tokens(arg))
         elif option == "-d":
-            print("    he   ")
-            print(" heeeeeee")
-            Tests.test_translator()
+            print(translate("帰りたいなら帰っても構いません。"))
+            # Tests.test_translator()
 
 
 def print_tokenization():
