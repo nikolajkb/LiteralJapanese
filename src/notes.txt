@@ -7,6 +7,7 @@ aligning words (unsupervised): https://github.com/clab/fast_align
 machine translation: http://opennmt.net/
 
 Ideas for improvement:
+   - make the translator get the correct type of word based on tokenizer pos!
    - use synonyms of english words
    - filter definitions that are too long
    - remove usage of parentheses from definition

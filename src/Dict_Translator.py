@@ -26,10 +26,8 @@ def translate(tokens):
         translation = dicti.get(token.root)
         if translation:
             translations.append((jp, translation.meanings[0]))
-            continue
-
-        translation = Word.make_empty()
-        translation.meanings.append("ERROR")
+        else:
+            translations.append((jp, "ERROR"))
 
     return translations
 

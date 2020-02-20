@@ -2,6 +2,7 @@ import os
 import xml.etree.ElementTree as ET
 import Word
 from Grammar import Grammar
+import pickle
 
 
 class XmlReader:
@@ -10,6 +11,10 @@ class XmlReader:
     def get_dict(self):
         if XmlReader.dictionary is not None:
             return XmlReader.dictionary
+
+        dictionary = load_dictionary()
+        if dictionary is not None:
+            return dictionary
 
         print("Reading dictionary...")
         file_dir = os.path.dirname(os.path.realpath('__file__'))
@@ -44,10 +49,29 @@ class XmlReader:
 
         XmlReader.dictionary = dictionary
         print("done")
+        save_dictionary(dictionary)
         return dictionary
 
 
-def make_grammar(tag):
+def save_dictionary(dictionary):
+    file_dir = os.path.dirname(os.path.realpath('__file__'))
+    file_name = os.path.join(file_dir, '..', 'data', 'JMdict_e_obj.obj')
+    file_handler = open(file_name, "wb")
+    pickle.dump(dictionary, file_handler)
+
+
+def load_dictionary():
+    file_dir = os.path.dirname(os.path.realpath('__file__'))
+    file_name = os.path.join(file_dir, '..', 'data', 'JMdict_e_obj.obj')
+    try:
+        file_handler = open(file_name, "rb")
+        dictionary = pickle.load(file_handler)
+        return dictionary
+    except IOError:
+        return None
+
+
+def make_grammar(tag): # TODO
     return {
         "noun (common) (futsuumeishi)": Grammar.NOUN,
 
