@@ -76,10 +76,7 @@ def load_dictionary():
 
 
 def make_grammar(tag):
-    if tag.startswith("v"):
-        return Grammar.VERB
-
-    return {
+    grammar = {
         "noun (common) (futsuumeishi)": Grammar.NOUN,
         "adjective (keiyoushi)": Grammar.I_ADJECTIVE,
         "adjective (keiyoushi) - yoi/ii class": Grammar.I_ADJECTIVE,
@@ -100,3 +97,9 @@ def make_grammar(tag):
         "word usually written using kana alone": Grammar.USUALLY_KANA
 
     }.get(tag, Grammar.NOT_IN_SWITCH)
+
+    if grammar == Grammar.NOT_IN_SWITCH:
+        if " verb" in tag:
+            grammar = Grammar.VERB
+
+    return grammar

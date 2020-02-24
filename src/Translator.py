@@ -27,16 +27,12 @@ def main(argv):
             print(arg)
             print(Tokenizer.get_tokens(arg))
         elif option == "-d":
-            print(Tokenizer.get_tokens("１３人？たったそんだけかよ"))
-            print(Tokenizer.get_tokens("彼は秘密を知っている様だ。"))
-            print(Tokenizer.get_tokens("じゃまた。"))
-            #Tests.test_translator()
+            Tests.test_translator()
 
 
 def print_tokenization():
     data = open("../data/translations.txt", "r", encoding="utf-8")
     line = data.readline()
-    sentences = []
     while line:
         if line.startswith("#jp"):
             split = line.split(" ")
