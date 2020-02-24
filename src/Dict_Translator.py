@@ -33,11 +33,16 @@ def get_translation_from_dictionary(word):
     translations = dictionary.get(word)
     if translations:
         meaning = translations[0].meanings[0]
-        meaning = re.sub(" ?\(.*\)", "", meaning)
-        meaning = re.sub("to ", "", meaning)
+        meaning = clean_word(meaning)
         return meaning
     else:
         return "ERROR"
+
+
+def clean_word(word):
+    word = re.sub(" ?\(.*\)", "", word)
+    word = re.sub("to ", "", word)
+    return word
 
 
 def is_ending(token):

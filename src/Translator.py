@@ -27,7 +27,10 @@ def main(argv):
             print(arg)
             print(Tokenizer.get_tokens(arg))
         elif option == "-d":
-            Tests.test_translator()
+            print(Tokenizer.get_tokens("１３人？たったそんだけかよ"))
+            print(Tokenizer.get_tokens("彼は秘密を知っている様だ。"))
+            print(Tokenizer.get_tokens("じゃまた。"))
+            #Tests.test_translator()
 
 
 def print_tokenization():

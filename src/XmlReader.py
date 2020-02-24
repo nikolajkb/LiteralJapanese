@@ -75,8 +75,28 @@ def load_dictionary():
         return None
 
 
-def make_grammar(tag):  # TODO
+def make_grammar(tag):
+    if tag.startswith("v"):
+        return Grammar.VERB
+
     return {
         "noun (common) (futsuumeishi)": Grammar.NOUN,
+        "adjective (keiyoushi)": Grammar.I_ADJECTIVE,
+        "adjective (keiyoushi) - yoi/ii class": Grammar.I_ADJECTIVE,
+        "adjectival nouns or quasi-adjectives (keiyodoshi)": Grammar.NA_ADJECTIVE,
+        "pre-noun adjectival (rentaishi)": Grammar.PRE_NOUN,
+        "`taru' adjective": Grammar.NA_ADJECTIVE,
+        "noun or verb acting prenominally": Grammar.NOUN,
+        "adverb (fukushi)": Grammar.ADVERB,
+        "adverb taking the `to' particle": Grammar.ADVERB,
+        "auxiliary verb": Grammar.AUX_VERB,
+        "conjunction": Grammar.CONJUNCTION,
+        "suffix": Grammar.SUFFIX,
+        "proper noun": Grammar.NOUN,
+        "pronoun": Grammar.PRONOUN,
+        "interjection (kandoushi)": Grammar.INTERJECTION,
+        "prefix": Grammar.PREFIX,
+        "word usually written using kanji alone": Grammar.USUALLY_KANJI,
+        "word usually written using kana alone": Grammar.USUALLY_KANA
 
     }.get(tag, Grammar.NOT_IN_SWITCH)

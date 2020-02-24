@@ -26,6 +26,8 @@ class Grammar(Enum):
     UNKNOWN = "unknown word"
     HESITATE = "???"  # todo find out what this means
     ROMAJI = "transliteration of Japanese into the Latin alphabet"
+    USUALLY_KANA = "usually written using only kana"
+    USUALLY_KANJI = "usually written using kanji"
     MERGED = "ending of word"
     NOT_IN_SWITCH = "did not match switch case"
 
