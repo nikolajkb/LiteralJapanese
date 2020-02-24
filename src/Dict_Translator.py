@@ -1,6 +1,6 @@
 from Grammar import Grammar, Ending, endings
 from XmlReader import XmlReader
-import Word
+import re
 
 jp = 0
 en = 1
@@ -32,7 +32,9 @@ def get_translation_from_dictionary(word):
     dictionary = XmlReader().get_dict()
     translations = dictionary.get(word)
     if translations:
-        return translations[0].meanings[0]
+        meaning = translations[0].meanings[0]
+        meaning = re.sub(" ?\(.*\)", "", meaning)
+        return meaning
     else:
         return "ERROR"
 
