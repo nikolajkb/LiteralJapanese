@@ -34,6 +34,7 @@ def get_translation_from_dictionary(word):
     if translations:
         meaning = translations[0].meanings[0]
         meaning = re.sub(" ?\(.*\)", "", meaning)
+        meaning = re.sub("to ", "", meaning)
         return meaning
     else:
         return "ERROR"
