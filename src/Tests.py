@@ -78,29 +78,32 @@ def print_translated_sentence_alt(sentence, system, gold):
     jp_just = 5
 
     system_translation = ""
+    system_tokens = ""
     gold_translation = ""
     original = ""
     max_len = min(len(gold), len(system))
     for i in range(max_len):
         system_t = system[i][1]
+        system_t_o = system[i][0]
         gold_t = gold[i].english
         original_t = gold[i].japanese
         max_word_len = len(max(system_t,gold_t,original_t, key=len))
 
+        add_system_o = system_t_o + spaces_jp(max_word_len, system_t_o)
+        system_tokens += add_system_o
+
         add_system = system_t + spaces(max_word_len, system_t)
-        add_sys_len = len(add_system)
         system_translation += add_system
 
         add_gold = gold_t + spaces(max_word_len, gold_t)
-        add_gold_len = len(add_gold)
         gold_translation += add_gold
 
         add_original = original_t + spaces_jp(max_word_len, original_t)
-        add_original_len = len(add_original)
         original += add_original
 
     print(original)
     print(gold_translation)
+    print(system_tokens)
     print(system_translation)
 
 

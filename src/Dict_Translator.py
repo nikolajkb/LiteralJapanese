@@ -22,7 +22,7 @@ def translate(tokens):
             translations.append((jp, translation))
             continue
 
-        translation = get_translation_from_dictionary(token.root)
+        translation = get_translation_from_dictionary(token)
         translations.append((jp, translation))
 
     return translations
@@ -30,11 +30,16 @@ def translate(tokens):
 
 def get_translation_from_dictionary(word):
     dictionary = XmlReader().get_dict()
-    translations = dictionary.get(word)
+    translations = dictionary.get(word.root)
     if translations:
-        meaning = translations[0].meanings[0]
-        meaning = clean_word(meaning)
-        return meaning
+        translation = translations[0]
+        pos_match = [t for t in translations if word.grammar in t.pos]
+        if pos_match:
+            translation = pos_match[0]
+        translation = translation.meanings[0]
+
+        translation = clean_word(translation)
+        return translation
     else:
         return "ERROR"
 
