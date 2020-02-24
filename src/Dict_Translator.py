@@ -7,7 +7,6 @@ en = 1
 
 
 def translate(tokens):
-    dicti = XmlReader().get_dict()
     translations = []
 
     for token in tokens:
@@ -23,13 +22,19 @@ def translate(tokens):
             translations.append((jp, translation))
             continue
 
-        translation = dicti.get(token.root)
-        if translation:
-            translations.append((jp, translation.meanings[0]))
-        else:
-            translations.append((jp, "ERROR"))
+        translation = get_translation_from_dictionary(token.root)
+        translations.append((jp, translation))
 
     return translations
+
+
+def get_translation_from_dictionary(word):
+    dictionary = XmlReader().get_dict()
+    translations = dictionary.get(word)
+    if translations:
+        return translations[0].meanings[0]
+    else:
+        return "ERROR"
 
 
 def is_ending(token):

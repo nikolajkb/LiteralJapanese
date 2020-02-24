@@ -14,6 +14,7 @@ class XmlReader:
 
         dictionary = load_dictionary()
         if dictionary is not None:
+            XmlReader.dictionary = dictionary
             return dictionary
 
         print("Reading dictionary...")
@@ -45,7 +46,10 @@ class XmlReader:
                 word.pos.append(make_grammar(pos.text))
 
             for writing in word.writings:
-                dictionary[writing] = word
+                if dictionary.get(writing) is None:
+                    dictionary[writing] = [word]
+                else:
+                    dictionary[writing].append(word)
 
         XmlReader.dictionary = dictionary
         print("done")
@@ -71,7 +75,7 @@ def load_dictionary():
         return None
 
 
-def make_grammar(tag): # TODO
+def make_grammar(tag):  # TODO
     return {
         "noun (common) (futsuumeishi)": Grammar.NOUN,
 

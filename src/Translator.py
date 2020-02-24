@@ -27,10 +27,7 @@ def main(argv):
             print(arg)
             print(Tokenizer.get_tokens(arg))
         elif option == "-d":
-            tok = Tokenizer.get_tokens("スミスさんは昼食をとりに出かけました。")
-            trans = translate("スミスさんは昼食をとりに出かけました。")
-            print(tok)
-            #Tests.test_translator()
+            Tests.test_translator()
 
 
 def print_tokenization():
