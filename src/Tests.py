@@ -223,16 +223,21 @@ def calc_sentence_score(sentence):
 
 # read test data into Sentence object
 def read_test_data():
-    data = open("../data/translations.txt", "r", encoding="utf-8")
+    data = open("../data/sentences_dev.txt", "r", encoding="utf-8")
+    linenr = 1
+    linenr += 1
     line = data.readline()
     sentences = []
     while line:
         sentence = Sentence()
         sentence.index = int(line[1:-1])
+        linenr += 1
         line = data.readline()
         sentence.japanese = line[4:-1]
+        linenr += 1
         line = data.readline()
         sentence.english = line[4:-1]
+        linenr += 1
         line = data.readline()
 
         index = 0
@@ -240,9 +245,11 @@ def read_test_data():
             pair = line[:-1].split(" ", 1)
             sentence.tokens.append(SentenceToken(pair[0], pair[1], (index, index + len(pair[0]) )))
             index += len(pair[0])
+            linenr += 1
             line = data.readline()
 
         sentences.append(sentence)
+        linenr += 1
         line = data.readline()
 
     return sentences
