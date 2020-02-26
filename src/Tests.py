@@ -1,7 +1,8 @@
 from typing import List
-
+import LevenshteinDistance
 import Tokenizer
 import Translator
+from statistics import mean
 
 start = 0
 end = 1
@@ -61,19 +62,19 @@ def test_translator():
     for sentence in sentences:
         system = Translator.translate(sentence.japanese)
         gold = sentence.tokens
-        print_translated_sentence_alt(sentence, system, gold)
-        scores.append(translation_sentence_score(gold, system))
+        score = translation_sentence_score(gold, system)
+        print_translated_sentence_alt(sentence, system, gold, score)
+        scores.append(score)
 
-    final_score = make_average_score(scores)
+    print("#### average result (Levenshtein distance) ####")
+    avg = mean(scores)
+    print(avg)
 
-    print("#### average result ####")
-    final_score.print()
-
-    return final_score
+    return avg
 
 
-def print_translated_sentence_alt(sentence, system, gold):
-    print(" - sentence", sentence.index, " - ")
+def print_translated_sentence_alt(sentence, system, gold, score):
+    print(" - sentence", sentence.index, " | score:", score, " - ")
     en_just = 50
     jp_just = 5
 
@@ -101,8 +102,10 @@ def print_translated_sentence_alt(sentence, system, gold):
         add_original = original_t + spaces_jp(max_word_len, original_t)
         original += add_original
 
+    print("gold:")
     print(original)
     print(gold_translation)
+    print("system:")
     print(system_tokens)
     print(system_translation)
 
@@ -152,13 +155,10 @@ def make_average_score(scores):
 
 
 def translation_sentence_score(gold, system):
-    correct = 0
+    gold = [x.english for x in gold]
+    system = [s[1] for s in system]
 
-    for gold_token, system_token in zip(gold, system):
-        if gold_token.english == system_token[1]:
-            correct += 1
-
-    return Score(len(gold), len(system), correct)
+    return LevenshteinDistance.distance(gold,system)
 
 
 def merge_word_endings(sentences):

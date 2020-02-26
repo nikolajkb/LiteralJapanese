@@ -4,6 +4,7 @@ import Dict_Translator
 import Tests
 from Grammar import Grammar
 from XmlReader import XmlReader
+import LevenshteinDistance
 import sys
 
 
