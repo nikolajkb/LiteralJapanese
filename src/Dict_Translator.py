@@ -56,6 +56,8 @@ def is_ending(token):
 
 def translate_ending(token):
     ending: str = token.word
+    if ending == "な":  # not including this special case would make the algorithm more complicated
+        return "-imperative-negative"
     ending_en = ""
     while ending:
         matches = [s for s in endings if ending.startswith(s[jp])]
@@ -89,4 +91,5 @@ def match_special(token):
         "」": "\"",
         "～": "-",
         "･･･": "...",
+        " ": " "
     }.get(token, None)

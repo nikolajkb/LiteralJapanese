@@ -10,6 +10,7 @@
 で -te
 く please
 れ -imperative
+\space \space
 電話 telephone
 も <mo>
 する do

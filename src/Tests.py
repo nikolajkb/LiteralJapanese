@@ -64,11 +64,11 @@ def test_translator():
         gold = sentence.tokens
         score = translation_sentence_score(gold, system)
         print_translated_sentence_alt(sentence, system, gold, score)
-        scores.append(score)
+        scores.append(Score(len(gold), len(system), score))
 
     print("#### average result (Levenshtein distance) ####")
-    avg = mean(scores)
-    print(avg)
+    avg = make_average_score(scores)
+    avg.print()
 
     return avg
 
@@ -243,6 +243,10 @@ def read_test_data():
         index = 0
         while line and not line == "\n":  # read each token and split into English and Japanese
             pair = line[:-1].split(" ", 1)
+            if pair[0] == "\space":
+                pair[0] = " "
+            if pair[1] == "\space":
+                pair[1] = " "
             sentence.tokens.append(SentenceToken(pair[0], pair[1], (index, index + len(pair[0]) )))
             index += len(pair[0])
             linenr += 1
