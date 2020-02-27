@@ -30,7 +30,7 @@ def main(argv):
         elif option == "-d":
             print(Tokenizer.get_tokens("いいえ、いらなくなったので、昨日燃やしてしまいました。"))
             print(translate("いいえ、いらなくなったので、昨日燃やしてしまいました。"))
-            #Tests.test_translator()
+            Tests.test_translator()
 
 
 def print_tokenization():
