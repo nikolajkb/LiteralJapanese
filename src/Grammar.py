@@ -1,5 +1,5 @@
 from enum import Enum
-
+import string
 
 class Grammar(Enum):
     VERB = "verb"
@@ -64,3 +64,11 @@ endings = [("ま", [Ending.POLITE]),("せん", [Ending.NEGATIVE]),("た", [Endin
            ("きゃ", [Ending.IF]),("ば", [Ending.IF]), ("ており",[Ending.PROGRESSIVE]),
            ("なさい",[Ending.REQUEST]), ("てます", [Ending.PROGRESSIVE]), ("で", [Ending.TE_FORM]),
            ("そう", [Ending.SEEMS]), ("たら", [Ending.TARA])]
+
+
+def is_kana(s: str):
+    kana = "あいうえおかきくけこがぎぐげごさしすせそざじずぜぞたちつてとだぢづでどなにぬねのはひふへほばびぶべぼぱぴぷぺぽまみむめもやゆよらりるれろわゐゑをん"
+    for c in list(s):
+        if kana.find(c) == -1:
+            return False
+    return True

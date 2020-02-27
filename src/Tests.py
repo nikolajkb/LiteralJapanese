@@ -58,6 +58,7 @@ def test_translator():
     sentences = merge_word_endings(sentences)
 
     scores = []
+    scores_temp = []
 
     print("gold tokens")
     print("gold translations")
@@ -67,12 +68,15 @@ def test_translator():
         system = Translator.translate(sentence.japanese)
         gold = sentence.tokens
         score = translation_sentence_score(gold, system)
+        scores_temp.append(score)
         print_translated_sentence_alt(sentence, system, gold, score)
         scores.append(Score(len(gold), len(system), score))
 
     print("#### average result (Levenshtein distance) ####")
     avg = make_average_score(scores)
     avg.print()
+
+    print(sum(scores_temp)/len(sentences))
 
     return avg
 

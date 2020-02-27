@@ -7,10 +7,13 @@ from Grammar import Grammar
 # meanings: meanings of the word in English
 # pos: part of speech type of word; verb, noun etc.
 class Word:
-    def __init__(self, writings, meanings, pos):
+    def __init__(self, writings, meanings, pos, misc=None):
+        if misc is None:
+            misc = []
         self.writings: List[str] = writings
         self.meanings: List[str] = meanings
         self.pos: List[Grammar] = pos
+        self.misc: List[Grammar] = misc
 
 
 def make_empty():

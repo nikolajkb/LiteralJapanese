@@ -45,6 +45,9 @@ class XmlReader:
             for pos in sense.findall("pos"):
                 word.pos.append(make_grammar(pos.text))
 
+            for misc in sense.findall("misc"):
+                word.misc.append(make_grammar(misc.text))
+
             for writing in word.writings:
                 if dictionary.get(writing) is None:
                     dictionary[writing] = [word]

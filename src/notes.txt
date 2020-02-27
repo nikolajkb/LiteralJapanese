@@ -15,3 +15,7 @@ Ideas for improvement:
    - allow translations to be correct as long as they contain the right word?
    - fix scoring
    - do something about w-question + ka
+
+performance:
+    before adding kana usually:
+    6.90
