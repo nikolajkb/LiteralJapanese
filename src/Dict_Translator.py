@@ -85,7 +85,7 @@ def match_special(token):
         "ので": "so",
         "か": "?",
         "て": "<te>",
-        "よ": "you know",
+        "よ": ", you know?",
         "ね": ", right?",
         "。": ".",
         "、": ",",

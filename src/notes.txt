@@ -7,10 +7,8 @@ aligning words (unsupervised): https://github.com/clab/fast_align
 machine translation: http://opennmt.net/
 
 Ideas for improvement:
-   - make the translator get the correct type of word based on tokenizer pos!
+   - make special rules for the copula (desu)
+   - change desu to -pol in places where it is just used as politeness. In the gold data
    - use synonyms of english words
    - filter definitions that are too long
-   - remove usage of parentheses from definition
-   - remove "to" in definition e.g. "to eat" -> "eat"
    - add dictionary with names
-   - remove "to" from translation of verbs

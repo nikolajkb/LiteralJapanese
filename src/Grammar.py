@@ -47,6 +47,7 @@ class Ending(Enum):
     UNINTENTIONAL = "unintentional"
     WANT = "want"
     IF = "if"
+    REQUEST = "please"
     UNKNOWN = "unknown"
     IGNORE = ""
 
@@ -58,4 +59,5 @@ endings = [("ま", [Ending.POLITE]),("せん", [Ending.NEGATIVE]),("た", [Endin
            ("てい", [Ending.PROGRESSIVE]),("しま", [Ending.UNINTENTIONAL]),("じゃ", [Ending.UNINTENTIONAL]),
            ("ちゃ", [Ending.UNINTENTIONAL]),("させられ", [Ending.CAUSATIVE, Ending.PASSIVE]),
            ("たい", [Ending.WANT]),("たい", [Ending.WANT]),("てる", [Ending.PROGRESSIVE]),
-           ("きゃ", [Ending.IF]),("ば", [Ending.IF])]
+           ("きゃ", [Ending.IF]),("ば", [Ending.IF]), ("ており",[Ending.PROGRESSIVE]),
+           ("なさい",[Ending.REQUEST]), ("てます", [Ending.PROGRESSIVE])]

@@ -516,7 +516,7 @@ treemaker treemaker
 れ -passive
 ている -ongoing
 
-#5
+#30
 #jp 元来は、数ブロック離れたH通りにあるワシントンの会員制のメトロポリタン・クラブに集まることになっていた。
 #en The gathering was originally slated for Washington’s private Metropolitan Club on H Street a few blocks away.
 元来 originally
@@ -544,19 +544,19 @@ H H
 た -past
 。 .
 
-#6
+#31
 #jp ドレスコードが堅苦しすぎるのだろう。
 #en Maybe the dress code was too stuffy.
 ドレス dress
 コード code
-が is
+が <ga>
 堅苦し stuffy
 すぎる too much
 の <no>
-だろう it seems
+だろう I wonder
 。 .
 
-#7
+#32
 #jp 例えば、独立したユニットとして科学的方法を教えるのではなく、それを適用することで、生徒は科学の内容を学習する。
 #en Rather than teaching the scientific method as a separate unit, for example, students learn science content by applying it.
 例えば for example
@@ -570,10 +570,9 @@ H H
 方法 method
 を <o>
 教える teach
-の <no>
-で <de>
-は <wa>
-なく -te-negative
+の thing
+ではな is not
+く -adverbial
 、 ,
 それ that
 を <o>
@@ -592,7 +591,7 @@ H H
 する do
 。 .
 
-#8
+#33
 #jp 彼らは、全国平均グレード4に位置し、全国平均グレード8よりも優れている。
 #en They are at the national average in grade 4 and better than national average in grade 8.
 彼ら they
@@ -604,7 +603,7 @@ H H
 ４ 4
 に <ni>
 位置 position
-し do
+し <shi>
 、 ,
 全国 national
 平均 average
@@ -613,20 +612,18 @@ H H
 より than
 も <mo>
 優れ excel
-て -te
-いる is
+ている -ongoing
 。 .
 
-#9
+#34
 #jp それに比べ、2004年にオープンした地下鉄ノマ新駅を建設するには、1370万ドルの費用がかかった。
 #en By comparison, it cost $13.7 million to build the NoMa infill Metro station, which opened in 2004.
 それ that
 に <ni>
 比べ compare
 、 ,
-２００４ 2004
-年 year
-に <ni>
+２００４年 2004
+に in
 オープン open
 し do
 た -past
@@ -647,16 +644,14 @@ H H
 た -past
 。 .
 
-#10
+#35
 #jp ジョージタウンBIDの社長ジョー・スターンリーブ氏は、「当社は多くの競争に直面しており、移行が役に立つと考える」と述べた。
 #en “We face a lot of competition, and we think transit can help,” said Joe Sternlieb, president of the Georgetown BID.
 ジョージタウン Georgetown
 BID BID
 の <no>
 社長 president
-ジョー Joe
-・ \space
-スターンリーブ Sternlieb
+ジョー スターンリーブ Joe Sternlieb
 氏 Mr.
 は <wa>
 、 ,
@@ -682,10 +677,10 @@ BID BID
 た -past
 。 .
 
-#11
+#36
 #jp 実現可能性調査は、ゴンドラでポトマック川を横断するには約4分かかるだろうと予測している。
 #en The feasibility study estimates that it would take passengers about four minutes to cross the Potomac River on the gondola.
-実現可能性 feasability
+実現可能性 feasibility
 調査 study
 は <wa>
 、 ,
@@ -705,11 +700,10 @@ BID BID
 と <to>
 予測 estimate
 し do
-て -te
-いる is
+ている -ongoing
 。 .
 
-#12
+#37
 #jp 証人は、4月に被害者が被疑者を攻撃した、と警察に言った。
 #en A witness told police that the victim had attacked the suspect in April.
 証人 witness
@@ -727,12 +721,12 @@ BID BID
 、 ,
 と <to>
 警察 police
-に <ni>
+に to
 言っ say
 た -past
 。 .
 
-#13
+#38
 #jp ゲームと私達の日常生活の間には類似点がある。
 #en There are parallels to draw here between games and our everyday lives.
 ゲーム games
@@ -750,7 +744,7 @@ BID BID
 ある exist
 。 .
 
-#14
+#39
 #jp 今、カンジルは孤独な豚かもしれないが、常にひとりぼっちではない。
 #en Today, Khanzir may be a lonely pig, but he isn’t always alone.
 今 now
@@ -760,20 +754,16 @@ BID BID
 孤独 lonely
 な <na>
 豚 pig
-かも maybe
-しれ know
-ない -negative
+かもしれない may be
 が but
 、 ,
 常 always
 に <ni>
 ひとりぼっち alone
-で <de>
-は <wa>
-ない -negative
+ではない isn't
 。 .
 
-#15
+#40
 #jp 「私たちは他の国に豚を含む様々な種の動物を動物園に迎えるのを助けてくれるよう要請している。」とサキブは言った。
 #en “We’ve requested other nations to help us populate the zoo with different species of animals, including a pig,” Saqib said.
 「 "
@@ -795,7 +785,7 @@ BID BID
 動物園 zoo
 に <ni>
 迎える bring in
-の <no>
+の thing
 を <o>
 助け help
 て -te
@@ -813,7 +803,7 @@ BID BID
 た -past
 。 .
 
-#16
+#41
 #jp パバルカル氏は、「建物を出る必要があると感じたときがあった。」と述べた。
 #en There was a time, Mr Panvalkar said, when he felt that they should leave the building.
 パバルカル Panvalkar
@@ -841,7 +831,7 @@ BID BID
 た -past
 。 .
 
-#17
+#42
 #jp 彼女は2歳の娘を殺そうとしたことについても起訴された。
 #en She has also been charged with trying to kill her two-year-old daughter.
 彼女 she
@@ -858,14 +848,14 @@ BID BID
 た -past
 こと incident
 について about
-も <mo>
+も also
 起訴 charge
 さ do
 れ -passive
 た -past
 。 .
 
-#18
+#43
 #jp 私はいずれにせよ刑務所に行くが、その価値がありますように。
 #en "I'm going to jail either way, hope it was worth it."
 私 I
@@ -887,7 +877,7 @@ BID BID
 に <ni>
 。 .
 
-#19
+#44
 #jp 最初にヤジディの女性の1人が、それから彼女の友人の1人が泣き始めた。
 #en First one of the Yazidi women started crying, then one of her friends.
 最初 first
@@ -913,7 +903,7 @@ BID BID
 た -past
 。 .
 
-#20
+#45
 #jp オズボーン氏は7月に解雇された後、米国のスピーカーの代理店と契約を結んでいる。
 #en Mr Osborne signed up with a US speakers agency after being sacked in July.
 オズボーン Osborne
@@ -922,7 +912,8 @@ BID BID
 7月 July
 に in
 解雇 dismiss
-され -passive
+さ do
+れ -passive
 た -past
 後 after
 、 ,
@@ -938,7 +929,7 @@ BID BID
 でいる -ongoing
 。 .
 
-#21
+#46
 #jp 有名人の名前が当初は非常にまれである場合、このことは最も明白である。
 #en It's most obvious when a celebrity's name is initially quite rare.
 有名人 celebrity
@@ -961,7 +952,7 @@ BID BID
 である is
 。 .
 
-#22
+#47
 #jp 韓国の会社は、当初バッテリ不具合が問題だと考え、自社製の部品を、サードパーティ製に切り替えた。
 #en The South Korean company initially thought a battery fault was to blame, and switched its own component for a third-party power cell.
 韓国 South Korea
@@ -990,11 +981,10 @@ BID BID
 た -past
 。 .
 
-#23
+#48
 #jp 何人かのアナリストが、ファーウェイがサムスンの挫折から最も享受する位置にいると予測した。
 #en Several analysts have suggested Huawei is best placed to benefit from Samsung's setback.
-何人 several
-か <ka>
+何人か several people
 の <no>
 アナリスト analyst
 が <ga>
@@ -1017,7 +1007,7 @@ BID BID
 た -past
 。 .
 
-#24
+#49
 #jp メイト9の電話には、GoogleアシスタントやAppleのSiriのような人工知能のインターフェイスが欠けている。
 #en The Mate 9 phones lack an artificial intelligence interface, like the Google Assistant or Apple's Siri.
 メイト Mate
@@ -1029,7 +1019,7 @@ BID BID
 、 ,
 Google Google
 アシスタント Assistant
-や and
+や or
 Apple Apple
 の <no>
 Siri Siri
@@ -1041,11 +1031,10 @@ Siri Siri
 インターフェイス interface
 が <ga>
 欠け lack
-て -te
-いる is
+ている -ongoing
 。 .
 
-#25
+#50
 #jp BAとIAGは問題を解決し、ある程度信頼できるものを提供できるようになったのかもしれない。
 #en "But it may be that BA and IAG have cracked it and can offer something vaguely reliable."
 BA BA
@@ -1059,7 +1048,7 @@ IAG IAG
 、 ,
 ある程度 reasonably
 信頼 reliable
-できる can
+できる possible
 もの thing
 を <o>
 提供 offer
@@ -1069,9 +1058,7 @@ IAG IAG
 なっ become
 た -past
 の <no>
-かも maybe
-しれ know
-ない -negative
+かもしれない may be
 。 .
 
 #51
@@ -1132,7 +1119,7 @@ IAG IAG
 うふふ giggling
 と and
 照れ feeling embarrassed
-ながら -while
+ながら while
 コンドーム condom
 を <o>
 差し出し hold out
@@ -1302,14 +1289,15 @@ IAG IAG
 好き like
 だっ is
 た -past
-のに <noni>
+のに so
 、 ,
 あの that
 気持ち feeling
 は <wa>
 どこ where
 に to
-行っちゃっ go unintentionally
+行っ go
+ちゃっ -unintentional
 た -past
 ん <no>
 だろう I wonder
@@ -1390,7 +1378,8 @@ IAG IAG
 思い thought
 も <mo>
 よら incline
-なかった -past-negative
+なかっ -negative
+た -past
 。 .
 
 #73
@@ -1411,7 +1400,7 @@ IAG IAG
 「 "
 ええ yes
 、 ,
-どうぞ you may
+どうぞ feel free
 」 "
 
 #74
@@ -1426,7 +1415,8 @@ IAG IAG
 て -te
 も <mo>
 教え tell
-ちゃ -tewa
+ち <te>
+ゃ <wa>
 だめ wrong
 だ is
 よ , you know?
@@ -1487,7 +1477,7 @@ IAG IAG
 #en I like the slow rhythm of that song.
 あの that
 歌 song
-の s
+の 's
 ゆっくりした slow
 リズム rhythm
 が <ga>
@@ -1503,7 +1493,7 @@ IAG IAG
 は <wa>
 時々 now and then
 彼 he
-から <kara>
+から from
 の <no>
 便り letter
 が <ga>
@@ -1513,9 +1503,7 @@ IAG IAG
 #81
 #jp 背の高い男性でした。
 #en He was a tall man.
-背 stature
-の <no>
-高い high
+背の高い tall
 男性 man
 でし is
 た -past
@@ -1533,8 +1521,8 @@ IAG IAG
 道 route
 を <o>
 教え tell
-て -te
-いただけません -pol
+ていただけ -please
+ません -pol
 か ?
 。 .
 
@@ -1790,7 +1778,7 @@ IAG IAG
 よ , you know?
 。 .
 もし in case
-よければ it is good
+よければ if it is good
 私 I
 が <ga>
 出 answer
