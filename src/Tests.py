@@ -59,6 +59,10 @@ def test_translator():
 
     scores = []
 
+    print("gold tokens")
+    print("gold translations")
+    print("system tokens")
+    print("system translations")
     for sentence in sentences:
         system = Translator.translate(sentence.japanese)
         gold = sentence.tokens
@@ -171,10 +175,7 @@ def read_test_data():
         index = 0
         while line and not line == "\n":  # read each token and split into English and Japanese
             pair = line[:-1].split(" ", 1)
-            if pair[0] == "\space":
-                pair[0] = " "
-            if pair[1] == "\space":
-                pair[1] = " "
+            pair = add_spaces(pair)
             sentence.tokens.append(SentenceToken(pair[0], pair[1], (index, index + len(pair[0]) )))
             index += len(pair[0])
             linenr += 1
@@ -185,3 +186,11 @@ def read_test_data():
         line = data.readline()
 
     return sentences
+
+
+def add_spaces(pair):
+    if pair[0] == "\space":
+        pair[0] = " "
+    if pair[1] == "\space":
+        pair[1] = " "
+    return pair

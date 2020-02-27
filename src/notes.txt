@@ -12,3 +12,6 @@ Ideas for improvement:
    - use synonyms of english words
    - filter definitions that are too long
    - add dictionary with names
+   - allow translations to be correct as long as they contain the right word?
+   - fix scoring
+   - do something about w-question + ka

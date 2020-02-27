@@ -33,10 +33,8 @@ def print_translated_sentence_alt(sentence, system, gold, score):
         add_original = original_t + spaces_jp(max_word_len, original_t)
         original += add_original
 
-    print("gold:")
     print(original)
     print(gold_translation)
-    print("system:")
     print(system_tokens)
     print(system_translation)
 

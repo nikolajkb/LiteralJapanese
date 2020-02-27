@@ -24,7 +24,7 @@
 け -imperative
 \space \space
 殺し kill
-そう might inadvertently
+そう -seems
 だ is
 \space \space
 わかっ understand
@@ -39,12 +39,12 @@
 \space \space
 仕事 work
 終わっ finish
-たら when
+たら -when
 \space \space
 医局 medical office
 に to
 来て come
-よ you know
+よ , you know?
 。 .
 
 #4

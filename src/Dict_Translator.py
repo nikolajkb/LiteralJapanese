@@ -93,5 +93,6 @@ def match_special(token):
         "」": "\"",
         "～": "-",
         "･･･": "...",
-        " ": " "
+        " ": " ",
+        "?": "?"
     }.get(token, None)

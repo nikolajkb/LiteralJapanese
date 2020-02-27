@@ -2,7 +2,7 @@ def distance(source, target):
     if source == target:
         return 0
 
-        # Prepare a matrix
+    # Prepare a matrix
     slen, tlen = len(source), len(target)
     dist = [[0 for i in range(tlen + 1)] for x in range(slen + 1)]
     for i in range(slen + 1):
@@ -20,20 +20,4 @@ def distance(source, target):
                 dist[i][j] + cost  # substitution
             )
     return dist[-1][-1]
-    #return lev_dist_rec(source, len(source), target, len(target))
 
-
-def lev_dist_rec(source, len_s, target, len_t):
-    if len_s == 0:
-        return len_t
-    if len_t == 0:
-        return len_s
-
-    if source[len_s - 1] == target[len_t - 1]:
-        cost = 0
-    else:
-        cost = 1
-
-    return min(lev_dist_rec(source, len_s - 1, target, len_t    ) + 1,
-               lev_dist_rec(source, len_s    , target, len_t - 1) + 1,
-               lev_dist_rec(source, len_s - 1, target, len_t - 1) + cost)
