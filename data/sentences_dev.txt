@@ -6,15 +6,14 @@
 に <ni>
 は <wa>
 来 come
-ない -not
+ない -negative
 で -te
-く please
-れ -imperative
+くれ please
 \space \space
 電話 telephone
-も <mo>
+も also
 する do
-な -imperative-not
+な -imperative-negative
 
 #2
 #jp 連れて行け 殺しそうだ わかったか?
@@ -23,9 +22,11 @@
 て -te
 行 go
 け -imperative
+\space \space
 殺し kill
 そう might inadvertently
 だ is
+\space \space
 わかっ understand
 た -past
 か ?
@@ -35,9 +36,11 @@
 #jp じゃあ 仕事終わったら 医局に来てよ。
 #en well then, when you're done work, come to the medical office.
 じゃあ well then
+\space \space
 仕事 work
 終わっ finish
 たら when
+\space \space
 医局 medical office
 に to
 来て come
@@ -48,7 +51,7 @@
 #jp 船長から他の誰かが扱った形跡がないかDNAを再調査するように頼まれました
 #en the captain asked me to reexamine the dna from the bomb... to see if anyone else might have handled it.
 船長 captain
-から <kara>
+から from
 他 other
 の <no>
 誰か someone
@@ -58,7 +61,7 @@
 形跡 signs
 が <ga>
 ない absent
-か <ka>
+か ?
 DNA DNA
 を <o>
 再調査 re-examine
@@ -75,11 +78,9 @@ DNA DNA
 長い long
 こと time
 友達 friend
-な is
-のに even though
+なのに and yet
 気付か notice
-な -not
-かっ -indicative
+なかっ -negative
 た -past
 の <no>
 か ?
@@ -99,7 +100,7 @@ ID ID
 に <ni>
 消え go out
 た -past
-わ <wa>
+わ feminine sentence end
 
 #7
 #jp なるほど 簡単にゃ入れそうにねえな
@@ -111,8 +112,8 @@ ID ID
 入れ enter
 そう likely
 に <ni>
-ねえ -not
-な -na
+ねえ -negative
+な musing sentence end
 
 #8
 #jp 中年まで老年性の病気にならないことから明らかなのです
@@ -124,13 +125,12 @@ ID ID
 病気 diseases
 に <ni>
 なら get
-ない -not
+ない -negative
 こと fact
-から <kara>
+から from
 明らか clear
-な is
-の <no>
-です -pol
+なの assuredly
+です is
 
 #9
 #jp 持っているだけで人を不幸にする呪われた本などというものは存在しないのです
@@ -155,14 +155,15 @@ ID ID
 は <wa>
 存在 exist
 し do
-ない -not
+ない -negative
 の <no>
-です -pol
+です is
 
 #10
-#jp 何か 悩むんが アホらしゅうなって来たわ。
+#jp 何か 悩むんがアホらしゅうなって来たわ。
 #en i'm starting to feel stupid for agonizing over it.
 何か somehow
+\space \space
 悩む agonise
 ん <no>
 が <ga>
@@ -172,11 +173,11 @@ ID ID
 て -te
 来 come
 た -past
-わ <wa>
+わ feminine sentence end
 。 .
 
 #11
-#jp 俺が隠している魔法を かけることもできる
+#jp 俺が隠している魔法をかけることもできる
 #en with furcifer gone, i can put a cloaking spell on her.
 俺 I
 が <ga>
@@ -185,19 +186,19 @@ ID ID
 魔法 magic
 を <o>
 かける cast
-こと occasion
-も <mo>
+こと thing
+も also
 できる can do
 
 #12
 #jp 今後もこの状況は続くと人口統計学者は予想しています
 #en that's the expectation from demographers, going forward.
 今後 henceforth
-も <mo>
+も also
 この these
 状況 conditions
 は <wa>
-続く contuinue
+続く continue
 と <to>
 人口統計学者 demographers
 は <wa>
@@ -219,10 +220,7 @@ ID ID
 指紋 finger print
 照合 matching
 を <o>
-し do
-て -te
-みれ -try
-ば if
+してみれば do in that case
 ? ?
 
 #14
@@ -238,12 +236,12 @@ ID ID
 は <wa>
 treemaker treemaker
 という called
-プログラム programme
+プログラム program
 を <o>
 書き write
 
 #15
-#jp 私はこの58人の患者の話が聞いてみたい―
+#jp 私はこの58人の患者の話が聞いてみたい
 #en i want to talk to the 58 patients down here
 私 I
 は <wa>
@@ -270,8 +268,8 @@ treemaker treemaker
 僕 I
 に <ni>
 与え give
-られ -can
-ない -not
+られ -potential
+ない -negative
 人 person
 に <ni>
 用 need
@@ -281,12 +279,11 @@ treemaker treemaker
 #17
 #jp 誰でも いつでも 何でも編集できるようにしたら
 #en that anybody can edit anything, at any time
-誰 anybody
-でも <demo>
-いつ when
-でも <demo>
-何 anything
-でも <demo>
+誰でも anyone
+\space \space
+いつでも at any time
+\space \space
+何でも anything
 編集 edit
 できる can
 よう like
@@ -310,7 +307,7 @@ treemaker treemaker
 てる -ongoing
 
 #19
-#jp それを 最も強く具現化したのが この ゼーレシュナイダーだ。
+#jp それを最も強く具現化したのが この ゼーレシュナイダーだ。
 #en it is this zeele schneider that embodied it most strongly
 それ that
 を <o>
@@ -319,9 +316,11 @@ treemaker treemaker
 具現化 embody
 し do
 た -past
-の <no>
+の thing
 が <ga>
+\space \space
 この this
+\space \space
 ゼーレシュナイダー Zeele Schneider
 だ is
 。 .
@@ -333,17 +332,19 @@ treemaker treemaker
 前 before
 に <ni>
 は <wa>
+\space \space
 まだ yet
 出来 can do
-なかっ -not
+なかっ -negative
 た -past
-んです -pol
+ん <no>
+です is
 よ you know
 
 #21
 #jp そういう訳で本当に ごめんなさいと彼に伝えたいの
 #en that's why i wanna tell him how sincerely sorry i am.
-そういう for that
+そういう that sort of
 訳 reason
 で <de>
 本当 really
@@ -359,13 +360,14 @@ treemaker treemaker
 #22
 #jp 例えば ブレント・ガーヴィーに レイプされた 3人の少女の両親のようにね
 #en the parents of the three young women raped by brent garvey, for example.
-例えば for eaxample
+例えば for example
+\space \space
 ブレント・ガーヴィー Brent Garvey
 に <ni>
 レイプ rape
-さ do
-れ -passive
+され done to
 た -past
+\space \space
 3人 three
 の <no>
 少女 girls
@@ -374,7 +376,7 @@ treemaker treemaker
 の <no>
 よう like
 に <ni>
-ね <ne>
+ね , right?
 
 #23
 #jp シリアルの箱の裏面、ボードゲームなど インクを使うあらゆるもので
@@ -387,12 +389,13 @@ treemaker treemaker
 、 ,
 ボードゲーム board games
 など etc
+\space \space
 インク ink
 を <o>
 使う use
 あらゆる all kinds of
 もの things
-で <de>
+で on
 
 #24
 #jp ターク、共和国はスパイスを持って来た?
@@ -417,17 +420,18 @@ treemaker treemaker
 心 mind
 を <o>
 読め read
-な -not
-きゃ -tara
+な -negative
+きゃ -if
+\space \space
 詐欺師 swindler
 は <wa>
 務まり manage
 ませ -pol
-ん -not
-から <kara>
-ね <ne>
+ん -negative
+から because
+ね , right?
 
-#1
+#26
 #jp ワシントンのキャピトルヒルでソーシャルメディアの移行をフォローした人にとっては、このことは少し違う。
 #en For those who follow social media transitions on Capitol Hill, this will be a little different.
 ワシントン Washington
@@ -452,27 +456,26 @@ treemaker treemaker
 違う different
 。 .
 
-#2
+#27
 #jp 新たな支出はクリントンの巨大な銀行口座によって充填されている。
 #en The new spending is fueled by Clinton’s large bank account.
 新た new
-な -na
+な <na>
 支出 spending
-は is
+は <wa>
 クリントン Clinton
-の <no>
+の 's
 巨大 large
-な -na
+な <na>
 銀行口座 bank account
 によって by
 充填 fuel
 さ do
 れ -passive
-て -te
-いる is
+ている -ongoing
 。 .
 
-#3
+#28
 #jp 彼女の言っていることと、やっていることは、実際に、信じられないことだ。
 #en What she’s saying and what she’s doing, it — actually, it’s unbelievable.
 彼女 she
@@ -491,13 +494,13 @@ treemaker treemaker
 に <ni>
 、 ,
 信じ believe
-られ -can
-ない -not
+られ -potential
+ない -negative
 こと thing
 だ is
 。 .
 
-#4
+#29
 #jp 最高一人あたり5,000ドルが、許可されている。
 #en $5,000 per person, the maximum allowed.
 最高 maximum
@@ -511,8 +514,7 @@ treemaker treemaker
 許可 allow
 さ do
 れ -passive
-て -te
-いる is
+ている -ongoing
 
 #5
 #jp 元来は、数ブロック離れたH通りにあるワシントンの会員制のメトロポリタン・クラブに集まることになっていた。
@@ -522,7 +524,7 @@ treemaker treemaker
 、 ,
 数 number
 ブロック blocks
-離れ remove
+離れ away
 た -past
 H H
 通り Street
@@ -532,9 +534,7 @@ H H
 の <no>
 会員制 private
 の <no>
-メトロポリタン Metroplolitan
-・ \space
-クラブ Club
+メトロポリタン・クラブ Metroplolitan Club
 に at
 集まる gather
 こと thing
@@ -573,7 +573,7 @@ H H
 の <no>
 で <de>
 は <wa>
-なく -te-not
+なく -te-negative
 、 ,
 それ that
 を <o>
@@ -758,11 +758,11 @@ BID BID
 カンジル Khanzir
 は <wa>
 孤独 lonely
-な -na
+な <na>
 豚 pig
 かも maybe
 しれ know
-ない -not
+ない -negative
 が but
 、 ,
 常 always
@@ -770,7 +770,7 @@ BID BID
 ひとりぼっち alone
 で <de>
 は <wa>
-ない -not
+ない -negative
 。 .
 
 #15
@@ -787,7 +787,7 @@ BID BID
 を <o>
 含む include
 様 various
-な -na
+な <na>
 種 species
 の <no>
 動物 animals
@@ -1035,7 +1035,7 @@ Apple Apple
 Siri Siri
 の <no>
 よう like
-な -na
+な <na>
 人工知能 artificial intelligence
 の <no>
 インターフェイス interface
@@ -1071,7 +1071,7 @@ IAG IAG
 の <no>
 かも maybe
 しれ know
-ない -not
+ない -negative
 。 .
 
 #51
@@ -1147,7 +1147,7 @@ IAG IAG
 彼女 girlfriend
 は <wa>
 欲しく want
-ない -not
+ない -negative
 と <to>
 言っ say
 ている -ongoing
@@ -1161,7 +1161,7 @@ IAG IAG
 昼 lunch
 食べ eat
 て -ongoing
-ない -not
+ない -negative
 の ?
 ？ ?
 
@@ -1177,7 +1177,7 @@ IAG IAG
 全部 all
 好き like
 じゃ is
-なかっ -not
+なかっ -negative
 た -past
 。 .
 
@@ -1229,7 +1229,7 @@ IAG IAG
 彼 he
 は <wa>
 いろいろ various
-な -na
+な <na>
 人種 races
 の <no>
 人 people
@@ -1289,7 +1289,7 @@ IAG IAG
 が <ga>
 つき turn on
 ませ -pol
-ん -not
+ん -negative
 。 .
 
 #67
@@ -1336,7 +1336,7 @@ IAG IAG
 に <ni>
 なる become
 よう like
-な -na
+な <na>
 友達 friends
 を <o>
 選び choose
@@ -1390,7 +1390,7 @@ IAG IAG
 思い thought
 も <mo>
 よら incline
-なかった -past-not
+なかった -past-negative
 。 .
 
 #73
@@ -1550,7 +1550,7 @@ IAG IAG
 の <no>
 で is
 は <wa>
-なく -not
+なく -negative
 て -te
 生きる live
 ため sake
@@ -1571,7 +1571,7 @@ IAG IAG
 も <mo>
 構い mind
 ま -pol
-せん -not
+せん -negative
 。 .
 
 #85
@@ -1579,7 +1579,7 @@ IAG IAG
 #en Aren't you sleeping yet? It's time to sleep.
 まだ yet
 寝 sleep
-ない -not
+ない -negative
 の ?
 ？ ?
 もう already
@@ -1627,8 +1627,8 @@ IAG IAG
 し do
 て -te
 あげ do a favour
-られ -can
-ない -not
+られ -potential
+ない -negative
 。 .
 
 #89
@@ -1828,5 +1828,6 @@ IAG IAG
 燃や burn
 し do
 て -te
-しまいまし -unintentional
+しまい -unintentional
+まし -polite
 た -past

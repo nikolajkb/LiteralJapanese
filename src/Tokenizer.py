@@ -79,8 +79,8 @@ def _merge_verb_endings(tokens):
     return merged
 
 
-def _is_ending(token):
-    return (token.grammar == Grammar.AUX_VERB or token.word == "て" or token.word == "い" or token.word == "いる" or token.word == "な") and token.word != "なら"
+def _is_ending(token): #                                                                                                                    v shimau is really a verb, but is used as an ending
+    return (token.grammar == Grammar.AUX_VERB or token.word == "て" or token.word == "い" or token.word == "いる" or token.word == "な" or token.root == "しまう") and token.word != "なら"
 
 
 def get_tokens(text):

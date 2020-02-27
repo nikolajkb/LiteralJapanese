@@ -29,7 +29,8 @@ def main(argv):
             print(Tokenizer.get_tokens(arg))
         elif option == "-d":
             print(Tokenizer.get_tokens("いいえ、いらなくなったので、昨日燃やしてしまいました。"))
-            Tests.test_translator()
+            print(translate("いいえ、いらなくなったので、昨日燃やしてしまいました。"))
+            #Tests.test_translator()
 
 
 def print_tokenization():

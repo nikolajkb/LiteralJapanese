@@ -51,10 +51,11 @@ class Ending(Enum):
     IGNORE = ""
 
 
-endings = [("ま", [Ending.POLITE]), ("せん", [Ending.NEGATIVE]), ("た", [Ending.PAST]),
-           ("ない", [Ending.NEGATIVE]),("な", [Ending.NEGATIVE]), ("かった", [Ending.PAST]),
-           ("て", [Ending.TE_FORM]), ("られ", [Ending.POT_PAS]), ("させ", [Ending.CAUSATIVE]),
-           ("ろ", [Ending.IMPERATIVE]), ("るな", [Ending.IMPERATIVE, Ending.NEGATIVE]),
+endings = [("ま", [Ending.POLITE]),("せん", [Ending.NEGATIVE]),("た", [Ending.PAST]),
+           ("ない", [Ending.NEGATIVE]),("な", [Ending.NEGATIVE]),("かった", [Ending.PAST]),
+           ("て", [Ending.TE_FORM]),("られ", [Ending.POT_PAS]),("させ", [Ending.CAUSATIVE]),
+           ("ろ", [Ending.IMPERATIVE]),("るな", [Ending.IMPERATIVE, Ending.NEGATIVE]),
            ("てい", [Ending.PROGRESSIVE]),("しま", [Ending.UNINTENTIONAL]),("じゃ", [Ending.UNINTENTIONAL]),
-           ("ちゃ", [Ending.UNINTENTIONAL]), ("させられ", [Ending.CAUSATIVE, Ending.PASSIVE]),
-           ("たい", [Ending.WANT]), ("たい", [Ending.WANT])]
+           ("ちゃ", [Ending.UNINTENTIONAL]),("させられ", [Ending.CAUSATIVE, Ending.PASSIVE]),
+           ("たい", [Ending.WANT]),("たい", [Ending.WANT]),("てる", [Ending.PROGRESSIVE]),
+           ("きゃ", [Ending.IF]),("ば", [Ending.IF])]
