@@ -28,9 +28,9 @@ def main(argv):
             print(arg)
             print(Tokenizer.get_tokens(arg))
         elif option == "-d":
-            print(Tokenizer.get_tokens("船長から他の誰かが扱った形跡がないかDNAを再調査するように頼まれました"))
+            print(Tokenizer.get_tokens("私は初めてだったんだけど思っていたよりも魚は新鮮でした。"))
             print(translate("いいえ、いらなくなったので、昨日燃やしてしまいました。"))
-            Tests.test_translator()
+            #Tests.test_translator()
 
 
 def print_tokenization():

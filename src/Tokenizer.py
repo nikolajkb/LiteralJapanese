@@ -49,7 +49,6 @@ class Token:
 def _tokenize(text):
     tokenizer_obj = dictionary.Dictionary().create()
     mode = tokenizer.Tokenizer.SplitMode.C
-
     return [Token(m.surface(),
                   _make_grammar(m.part_of_speech()),
                   m.dictionary_form(),
