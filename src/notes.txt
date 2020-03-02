@@ -10,12 +10,14 @@ Ideas for improvement:
    - make special rules for the copula (desu)
    - change desu to -pol in places where it is just used as politeness. In the gold data
    - use synonyms of english words
-   - filter definitions that are too long
    - add dictionary with names
    - allow translations to be correct as long as they contain the right word?
    - fix scoring
    - do something about w-question + ka
    - fix removal of "to"
+   - problems with tokenization, does not seem to take longest match
+   - use normalization to make making endings easier
+   - use same dictionary for tokenization as translation
 
 performance:
     before adding kana usually:

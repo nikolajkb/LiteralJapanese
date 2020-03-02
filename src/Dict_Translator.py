@@ -82,6 +82,7 @@ def translate_ending(token):
 def match_special(token):
     return {
         "を": "<o>",
+        "お": "pol-",
         "が": "<ga>",
         "に": "<ni>",
         "で": "<de>",
@@ -101,5 +102,7 @@ def match_special(token):
         "～": "-",
         "･･･": "...",
         " ": " ",
+        "？": "?",
         "?": "?"
+
     }.get(token, None)

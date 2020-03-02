@@ -45,6 +45,16 @@ class EndingTranslatorTests(unittest.TestCase):
         translation = Dict_Translator.translate_ending(token)
         self.assertEqual(translation, "-ongoing-negative")
 
+    def test_ending_4(self):
+        token = Tokenizer.Token("れて", Grammar.MERGED, "", (1, 1))
+        translation = Dict_Translator.translate_ending(token)
+        self.assertEqual(translation, "-passive-te")
+
+    def test_ending_5(self):
+        token = Tokenizer.Token("じゃなかった", Grammar.MERGED, "", (1, 1))
+        translation = Dict_Translator.translate_ending(token)
+        self.assertEqual(translation, "-negative-past")
+
 
 class GrammarTests(unittest.TestCase):
     def test_kana(self):

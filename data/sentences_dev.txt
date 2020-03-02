@@ -1163,8 +1163,7 @@ IAG IAG
 は <wa>
 全部 all
 好き like
-じゃ is
-なかっ -negative
+じゃなかっ do not
 た -past
 。 .
 
@@ -1390,7 +1389,7 @@ IAG IAG
 鉛筆 pencil
 お pol-
 借り borrow
-し -do
+し do
 て -te
 いい alright
 です is
@@ -1521,8 +1520,10 @@ IAG IAG
 道 route
 を <o>
 教え tell
-ていただけ -please
-ません -pol
+て -te
+いただけ give
+ま -polite
+せん -negative
 か ?
 。 .
 
@@ -1570,6 +1571,7 @@ IAG IAG
 ない -negative
 の ?
 ？ ?
+\space \space
 もう already
 寝る sleep
 時間 time
@@ -1819,3 +1821,4 @@ IAG IAG
 しまい -unintentional
 まし -polite
 た -past
+。 .
