@@ -1803,8 +1803,8 @@ IAG IAG
 
 #101
 #jp いいえ、いらなくなったので、昨日燃やしてしまいました。
-#enm No, since I don’t need them, I have burned them yesterday
-いいえ No
+#en no, since I don’t need them, I have burned them yesterday
+いいえ no
 、 ,
 いら need
 なく -neg

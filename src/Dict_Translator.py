@@ -1,4 +1,4 @@
-from Grammar import Grammar, Ending, endings
+from Grammar import Grammar, Ending, endings, is_hiragana
 from XmlReader import XmlReader
 import re
 
@@ -28,15 +28,22 @@ def translate(tokens):
     return translations
 
 
-def get_translation_from_dictionary(word):
+def get_translation_from_dictionary(token):
     dictionary = XmlReader().get_dict()
-    translations = dictionary.get(word.root)
+    translations = dictionary.get(token.root)
     if translations:
-        translation = translations[0]
-        pos_match = [t for t in translations if word.grammar in t.pos]
+        # if word is only kana, find definition that is usually written in kana
+        if is_hiragana(token.word):
+            kana_match = [t for t in translations if Grammar.USUALLY_KANA in t.misc]
+            if kana_match:
+                translations = kana_match
+
+        # attempt to match pos
+        pos_match = [t for t in translations if token.grammar in t.pos]
         if pos_match:
-            translation = pos_match[0]
-        translation = translation.meanings[0]
+            translations = pos_match
+
+        translation = translations[0].meanings[0]
 
         translation = clean_word(translation)
         return translation
@@ -82,7 +89,7 @@ def match_special(token):
         "は": "<wa>",
         "と": "<to>",
         "も": "<mo>",
-        "ので": "so",
+        "ので": "so", # todo this is not matched since it's two tokens
         "か": "?",
         "て": "<te>",
         "よ": ", you know?",

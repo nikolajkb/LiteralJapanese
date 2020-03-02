@@ -3,7 +3,7 @@ import unittest
 import Dict_Translator
 import Tokenizer
 from Grammar import Grammar
-from Grammar import is_kana
+from Grammar import is_hiragana
 
 
 class TokenTests(unittest.TestCase):
@@ -48,15 +48,15 @@ class EndingTranslatorTests(unittest.TestCase):
 
 class GrammarTests(unittest.TestCase):
     def test_kana(self):
-        self.assertEqual(is_kana("いいえ"), True)
-        self.assertEqual(is_kana("ない"), True)
-        self.assertEqual(is_kana("ばば"), True)
-        self.assertEqual(is_kana("ぱ"), True)
+        self.assertEqual(is_hiragana("いいえ"), True)
+        self.assertEqual(is_hiragana("ない"), True)
+        self.assertEqual(is_hiragana("ばば"), True)
+        self.assertEqual(is_hiragana("ぱ"), True)
 
-        self.assertEqual(is_kana("渡辺"), False)
-        self.assertEqual(is_kana("以上"), False)
-        self.assertEqual(is_kana("いつもお世話になっております。"), False)
-        self.assertEqual(is_kana("昔の"), False)
+        self.assertEqual(is_hiragana("渡辺"), False)
+        self.assertEqual(is_hiragana("以上"), False)
+        self.assertEqual(is_hiragana("いつもお世話になっております。"), False)
+        self.assertEqual(is_hiragana("昔の"), False)
 
 if __name__ == '__main__':
     unittest.main()

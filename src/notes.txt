@@ -15,7 +15,15 @@ Ideas for improvement:
    - allow translations to be correct as long as they contain the right word?
    - fix scoring
    - do something about w-question + ka
+   - fix removal of "to"
 
 performance:
     before adding kana usually:
     6.90
+    after:
+    6.83
+
+    before matching pos:
+    6.86
+    after:
+    6.82
