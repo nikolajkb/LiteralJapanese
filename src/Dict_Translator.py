@@ -29,7 +29,7 @@ def translate(tokens):
 
 
 def get_translation_from_dictionary(token):
-    dictionary = XmlReader().get_dict()
+    dictionary = XmlReader().get_dict().dictionary
     translations = dictionary.get(token.root)
     if translations:
         # if word is only kana, find definition that is usually written in kana
