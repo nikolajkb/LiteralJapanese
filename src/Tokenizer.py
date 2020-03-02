@@ -61,7 +61,7 @@ def _merge_verb_endings(tokens):
     i = 0
     while i < len(tokens):
         merged.append(tokens[i])
-        if True and i+1 < len(tokens):
+        if tokens[i].grammar == Grammar.VERB and i+1 < len(tokens):
             i += 1
             ending = ""
             start = tokens[i].char_indices[0]

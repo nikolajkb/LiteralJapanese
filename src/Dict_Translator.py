@@ -29,7 +29,8 @@ def translate(tokens):
 
 
 def get_translation_from_dictionary(token):
-    dictionary = XmlReader().get_dict().dictionary
+    xml_reader = XmlReader().get_dict()
+    dictionary = xml_reader.dictionary
     translations = dictionary.get(token.root)
     if translations:
         # if word is only kana, find definition that is usually written in kana
@@ -48,7 +49,12 @@ def get_translation_from_dictionary(token):
         translation = clean_word(translation)
         return translation
     else:
-        return "ERROR"
+        pn_dictionary = xml_reader.pn_dictionary
+        translations = pn_dictionary.get(token.root)
+        if translations:
+            return translations[0].meanings[0]
+        else:
+            return "OOV"
 
 
 def clean_word(word):
