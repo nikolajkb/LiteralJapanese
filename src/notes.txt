@@ -27,3 +27,8 @@ performance:
     6.86
     after:
     6.82
+
+    before fixing da/desu:
+    6.83
+    after:
+    6.7
