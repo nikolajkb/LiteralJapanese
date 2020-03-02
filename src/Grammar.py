@@ -45,6 +45,7 @@ class Ending(Enum):
     CAUSATIVE = "causative"
     IMPERATIVE = "imperative"
     UNINTENTIONAL = "unintentional"
+    VOLITIONAL = "-volitional"
     SEEMS = "seems"
     WANT = "want"
     IF = "if"
@@ -64,7 +65,7 @@ endings = [("ま", [Ending.POLITE]),("せん", [Ending.NEGATIVE]),("た", [Endin
            ("きゃ", [Ending.IF]),("ば", [Ending.IF]), ("ており",[Ending.PROGRESSIVE]),
            ("なさい",[Ending.REQUEST]), ("てます", [Ending.PROGRESSIVE]), ("で", [Ending.TE_FORM]),
            ("そう", [Ending.SEEMS]), ("たら", [Ending.TARA]), ("れ", [Ending.PASSIVE]),
-           ("でした", [Ending.PAST])]
+           ("でした", [Ending.PAST]), ("しょう", [Ending.VOLITIONAL])]
 
 
 def is_hiragana(s: str):

@@ -1784,8 +1784,8 @@ IAG IAG
 私 I
 が <ga>
 出 answer
-ま -pol
-しょう -vol
+ま -polite
+しょう -volitional
 。 .
 
 #100
