@@ -1,7 +1,7 @@
 import os
 import xml.etree.ElementTree as ET
 import Word
-from Grammar import Grammar
+from Grammar import Grammar, is_hiragana
 import pickle
 
 
@@ -47,6 +47,14 @@ class XmlReader:
 
             for misc in sense.findall("misc"):
                 word.misc.append(make_grammar(misc.text))
+
+            only_kana = True
+            for writing in word.writings:
+                if not is_hiragana(writing):
+                    only_kana = False
+                    break
+            if only_kana:
+                word.misc.append(Grammar.USUALLY_KANA)
 
             for writing in word.writings:
                 if dictionary.get(writing) is None:

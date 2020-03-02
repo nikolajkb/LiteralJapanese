@@ -58,5 +58,9 @@ class GrammarTests(unittest.TestCase):
         self.assertEqual(is_hiragana("いつもお世話になっております。"), False)
         self.assertEqual(is_hiragana("昔の"), False)
 
+        self.assertEqual(is_hiragana("きゅう"), True)
+        self.assertEqual(is_hiragana("にゃん"), True)
+        self.assertEqual(is_hiragana("やっぱり"), True)
+
 if __name__ == '__main__':
     unittest.main()
