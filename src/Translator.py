@@ -28,9 +28,8 @@ def main(argv):
             print(arg)
             print(Tokenizer.get_tokens(arg))
         elif option == "-d":
-            print(Tokenizer.get_tokens("私は初めてだったんだけど思っていたよりも魚は新鮮でした。"))
-            print(translate("いいえ、いらなくなったので、昨日燃やしてしまいました。"))
-            #Tests.test_translator()
+            print(Tokenizer.get_tokens("例えば ブレント・ガーヴィーに レイプされた 3人の少女の両親のようにね"))
+            Tests.test_translator()
 
 
 def print_tokenization():

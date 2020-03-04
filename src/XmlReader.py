@@ -1,21 +1,24 @@
 import os
 import xml.etree.ElementTree as ET
 import Word
-from Grammar import Grammar
+from Grammar import Grammar, is_hiragana
 import pickle
 
 
 class XmlReader:
     dictionary = None
+    pn_dictionary = None
 
     def get_dict(self):
         if XmlReader.dictionary is not None:
-            return XmlReader.dictionary
+            return XmlReader
 
-        dictionary = load_dictionary()
+        dictionary = load_dictionary("JMdict_e")
+        pn_dictionary = load_dictionary("JMnedict")
         if dictionary is not None:
             XmlReader.dictionary = dictionary
-            return dictionary
+            XmlReader.pn_dictionary = pn_dictionary
+            return XmlReader
 
         print("Reading dictionary...")
         file_dir = os.path.dirname(os.path.realpath('__file__'))
@@ -48,28 +51,83 @@ class XmlReader:
             for misc in sense.findall("misc"):
                 word.misc.append(make_grammar(misc.text))
 
+            only_kana = True
+            for writing in word.writings:
+                if not is_hiragana(writing):
+                    only_kana = False
+                    break
+            if only_kana:
+                word.misc.append(Grammar.USUALLY_KANA)
+
             for writing in word.writings:
                 if dictionary.get(writing) is None:
                     dictionary[writing] = [word]
                 else:
                     dictionary[writing].append(word)
 
+        pn_dict = read_pn_dictionary()
+        XmlReader.pn_dictionary = pn_dict
         XmlReader.dictionary = dictionary
         print("done")
-        save_dictionary(dictionary)
-        return dictionary
+        save_dictionary(dictionary, "JMdict_e")
+        save_dictionary(pn_dict, "JMnedict")
+        return XmlReader
 
 
-def save_dictionary(dictionary):
+def read_pn_dictionary():
     file_dir = os.path.dirname(os.path.realpath('__file__'))
-    file_name = os.path.join(file_dir, '..', 'data', 'JMdict_e_obj.obj')
+
+    file_name = os.path.join(file_dir, '..', 'data', 'JMnedict.xml')
+    tree = ET.parse(file_name)
+    root = tree.getroot()
+    dictionary = parse_pn_dict(root)
+
+    file_name = os.path.join(file_dir, '..', 'data', 'JMnedict_2.xml')
+    tree = ET.parse(file_name)
+    root = tree.getroot()
+    dictionary2 = parse_pn_dict(root)
+
+    dictionary.update(dictionary2)
+
+    return dictionary
+
+
+def parse_pn_dict(root):
+    dictionary = {}
+    for entry in root:
+        word = Word.make_empty()
+
+        k_ele = entry.find("k_ele")
+        if k_ele is not None:
+            keb = k_ele.find("keb")
+            word.writings.append(keb.text)
+
+        r_ele = entry.find("r_ele")
+        if r_ele is not None:
+            reb = r_ele.find("reb")
+            word.writings.append(reb.text)
+
+        trans = entry.find("trans")
+        if trans is not None:
+            trans_det = trans.find("trans_det")
+            if trans_det is not None:
+                word.meanings.append(trans_det.text)
+
+        dictionary[word.writings[0]] = [word]
+
+    return dictionary
+
+
+def save_dictionary(dictionary, name):
+    file_dir = os.path.dirname(os.path.realpath('__file__'))
+    file_name = os.path.join(file_dir, '..', 'data', name + ".obj")
     file_handler = open(file_name, "wb")
     pickle.dump(dictionary, file_handler)
 
 
-def load_dictionary():
+def load_dictionary(name):
     file_dir = os.path.dirname(os.path.realpath('__file__'))
-    file_name = os.path.join(file_dir, '..', 'data', 'JMdict_e_obj.obj')
+    file_name = os.path.join(file_dir, '..', 'data', name + ".obj")
     try:
         file_handler = open(file_name, "rb")
         dictionary = pickle.load(file_handler)

@@ -1,4 +1,4 @@
-#26
+#1
 #jp 1500ドルのコンピュータを使うことさえできれば、
 #en it is now anybody with access to a $1,500 computer
 1500 1500
@@ -9,11 +9,10 @@
 使う use
 こと occasion
 さえ <sae>
-できれ do
-ば if
+できれば if possible
 、 ,
 
-#27
+#2
 #jp オレたちには五感を超えた 心の目がある!
 #en we have something stronger than the five senses
 オレたち we
@@ -30,23 +29,24 @@
 ある exist
 ! !
 
-#28
+#3
 #jp ユージーンは とても聡明な男だった
 #en according to his brother, eugene was a very bright man.
 ユージーン Eugene
 は <wa>
+\space \space
 とても very
 聡明 bright
-な -na
+な <na>
 男 man
 だっ is
 た -past
 
-#29
+#4
 #jp その通り ここから歩いて出て行くか
 #en that's right. so, you can either walk out of here...
-その that's
-通り right
+その通り that's right
+\space \space
 ここ here
 から from
 歩い walk
@@ -56,8 +56,8 @@
 行く go
 か ?
 
-#30
-#jp 何のために 太刀を振るってるのか...。
+#5
+#jp 何のために太刀を振るってるのか...。
 #en i wonder what we are using our sword for .
 何 what
 の <no>
@@ -69,16 +69,17 @@
 てる -ongoing
 の <no>
 か ?
-...
-。
+... ...
+。 .
 
-#31
+#6
 #jp お腹一杯だ ここに来る途中に食べてきた
 #en l already ate. stopped at a steakhouse on the way.
 お pol-
 腹 stomach
 一杯 full
 だ is
+\space \space
 ここ here
 に <ni>
 来る come
@@ -89,8 +90,8 @@
 き come
 た -past
 
-#32
-#jp 尾行から逃げるのは 事態を悪化させるだけだ
+#7
+#jp 尾行から逃げるのは事態を悪化させるだけだ
 #en evading your tail will only make things worse
 尾行 tail
 から from
@@ -100,17 +101,19 @@
 事態 situation
 を <o>
 悪化 worsen
-さ do
-せる -causative
+させる make
 だけ only
 だ is
 
-#33
-#jp 年齢 収入 文化の垣根を越えて 人々を結びつける
+#8
+#jp 年齢 収入 文化 の垣根を越えて人々を結びつける
 #en can you find a unifying language that cuts across age
 年齢 age
+\space \space
 収入 income
+\space \space
 文化 culture
+\space \space
 の <no>
 垣根 barriers
 を <o>
@@ -120,14 +123,14 @@
 を <o>
 結びつける unify
 
-#34
-#jp 愛は重要じゃないと― そんなフリをしてるが いつも考えてる
+#9
+#jp 愛は重要じゃないと―そんなフリをしてるがいつも考えてる
 #en you pretend like love doesn't matter to you, when the truth is it's all you ever think about.
 愛 love
 は <wa>
 重要 important
 じゃ is
-ない -not
+ない -negative
 と <to>
 ― -
 そんな like that
@@ -140,12 +143,12 @@
 考え think
 てる -ongoing
 
-#35
+#10
 #jp しかしパッドや ソルボセインのような 素晴らしい衝撃吸収材のおかげで
 #en but we have padding, and fantastic shockabsorbing things like sorbothane
 しかし but
 パッド padding
-や and
+や or
 ソルボセイン sorbothane
 の <no>
 よう like
@@ -157,7 +160,7 @@
 おかげ thanks to
 で <de>
 
-#36
+#11
 #jp 許してくれ、ムッシュー・グスタフ 決して裏切るつもりは無かった
 #en forgive me, monsieur gustave. i never meant to betray you.
 許し forgive
@@ -165,6 +168,7 @@
 くれ grant
 、 ,
 ムッシュー・グスタフ Monsieur Gustave
+\space \space
 決して never
 裏切る betray
 つもり intention
@@ -172,15 +176,15 @@
 無かっ lack
 た -past
 
-#37
+#12
 #jp この惑星で起こる様々な物事の原因となっていました
 #en and are responsible for much of whats gone on on our planet.
 この this
 惑星 planet
 で <de>
 起こる happen
-様々various
-な -na
+様々 various
+な <na>
 物事 things
 の <no>
 原因 cause
@@ -190,7 +194,7 @@
 まし -pol
 た -past
 
-#38
+#13
 #jp 私は彼の目を矢で貫く 聖ウォーカーへようこそ 市会議員
 #en i will drive an arrow through his eye. welcome to st. walker's, alderman.
 私 I
@@ -202,12 +206,12 @@
 矢 arrow
 で with
 貫く pierce
-聖ウォーカーSt Walker's
+聖ウォーカー St Walker's
 へ to
 ようこそ welcome
 市会議員 alderman
 
-#39
+#14
 #jp 本当に一生懸命になって ブラジル中で売ろうとしました
 #en i worked really, really hard to distribute it everywhere in brazil.
 本当 really
@@ -216,17 +220,18 @@
 に <ni>
 なっ become
 て -te
+\space \space
 ブラジル Brazil
 中 throughout
 で <de>
 売ろ sell
-う -presumptive
+う -volitional
 と <to>
 し do
 まし -pol
 た -past
 
-#40
+#15
 #jp これが問題だとわかってなお 偽りの対策でごまかされていることです
 #en that this is a problem, but we've had to suffer fake fixes.
 これ this
@@ -244,13 +249,13 @@
 ごまかされ deceive
 ている -ongoing
 こと matter
-です-pol
+です -pol
 
-#41
+#16
 #jp 大切なイベントをめちゃくちゃにしかけたのになぜ何も言わないんだ?
 #en but why won't he say anything when he almost messed up the important event?
 大切 important
-な -na
+な <na>
 イベント event
 を <o>
 めちゃくちゃ mess up
@@ -259,16 +264,15 @@
 た -past
 のに even so
 なぜ why
-何 anything
-も <mo>
+何も anything
 言わ say
 ない -not
 ん <no>
 だ is
 ? ?
 
-#42
-#jp 君がアンヌ・マリーがやった罪を 終わらせてくれ
+#17
+#jp 君がアンヌ・マリーがやった罪を終わらせてくれ
 #en well, then you'll just have to finish what anne marie started.
 君 you
 が <ga>
@@ -283,13 +287,13 @@
 て -te
 くれ please
 
-#43
+#18
 #jp 今すごく大事な会議中で動けないの
 #en i can't move right now because i'm doing something really important.
 今 now
 すごく really
 大事 important
-な -na
+な <na>
 会議 meeting
 中 middle of
 で <de>
@@ -297,27 +301,28 @@
 ない -not
 の <no>
 
-#44
-#jp 緊急避難せよ 大統領は攻撃を受けている
+#19
+#jp 緊急避難せよ大統領は攻撃を受けている
 #en i repeat... emergency evacuation, the president is under attack.
 緊急 emergency
 避難 evacuation
-せよ do
+せ do
+よ -imperative
 大統領 president
-は is
+は <wa>
 攻撃 attack
 を <o>
 受け receive
 ている -ongoing
 
-#45
-#jp アンナには知らせない 真っ先にアンナに届けたら?
+#20
+#jp アンナには知らせない真っ先にアンナに届けたら?
 #en then anna gets her hands on a message that means nothing to her.
 アンナ Anna
 に <ni>
 は <wa>
 知らせ tell
-ない -not
+ない -negative
 真っ先 straight away
 に <ni>
 アンナ Anna
@@ -326,7 +331,7 @@
 たら -tara
 ? ?
 
-#46
+#21
 #jp ティミー ここで働いてた ジャックは知ってるか? 彼について話せる事は?
 #en hey, timmy, did you know jack who worked here? mmhmm. what can you tell me about him?
 ティミー Timmy
@@ -340,7 +345,7 @@
 知っ know
 てる -ongoing
 か ?
-?
+? ?
 彼 he
 に <ni>
 ついて about
@@ -349,25 +354,27 @@
 は <wa>
 ? ?
 
-#47
+#22
 #jp 調子にのるなよ! 自分のケガは 自分のミスだ!
 #en my injury is my fault. i'm not so weak that i have to be protected by you!
 調子にのる get carried away
-な imperative-not
-よ you know
+な -imperative-negative
+よ , you know?
 ! !
-自分 me
+\space \space
+自分 my
 の <no>
 ケガ injury
 は is
-自分 me
+\space \space
+自分 my
 の <no>
 ミス fault
 だ is
 ! !
 
-#48
-#jp 輸血をしてるんだ でも専門の医師に診せたい
+#23
+#jp 輸血をしてるんだでも専門の医師に診せたい
 #en i'm transfusing, but i would like to see a professional doctor
 輸血 transfusion
 を <o>
@@ -382,8 +389,8 @@
 診せ show
 たい -want
 
-#49
-#jp このリスクを理解していれば 民主主義制度を守るための断固たる措置を取れます
+#24
+#jp このリスクを理解していれば民主主義制度を守るための断固たる措置を取れます
 #en we can take decisive steps to preserve our democratic institutions
 この this
 リスク risk
@@ -391,7 +398,7 @@
 理解 understand
 し do
 ていれ -ongoing
-ば if
+ば -if
 民主主義 democracy
 制度 system
 を <o>
@@ -402,10 +409,10 @@
 措置 steps
 を <o>
 取 take
-れ -can
-ます -pol
+れ -potential
+ます -polite
 
-#50
+#25
 #jp 子どもの頃の誕生日会を 覚えてるだろ
 #en i mean, don't you remember your birthday party when you were a little girl?
 子ども child
@@ -415,8 +422,8 @@
 誕生日会 birthday party
 を <o>
 覚え remember
-てる -ongoig
-だろ I wonder
+てる -ongoing
+だろ right?
 
 #26
 #jp 同社はBBCに、乗客にアクセス料金を徴収するかどうかは、各航空会社の責任だと言った。
@@ -433,9 +440,7 @@ BBC BBC
 を <o>
 徴収 charge
 する do
-か <ka>
-どう whether
-か <ka>
+かどうか whether or not
 は <wa>
 、 ,
 各 each
@@ -611,22 +616,20 @@ GCHQ GCHQ
 結果 result
 、 ,
 歴史的 historic
-な -na
+な <na>
 量 amount
-の of
+の <no>
 データ data
 が <ga>
 、 ,
 混乱 disruption
 を <o>
 引き起こす cause
-の <no>
-に <ni>
+のに so
 使用 use
 さ do
 れ -passive
-て -te
-い is
+い -ongoing
 た -past
 こと fact
 が <ga>
@@ -635,10 +638,10 @@ GCHQ GCHQ
 。 .
 
 #35
-#jp 科学者たちの多くは、空気から炭素を削減する技術が、パリの目標を満たすために今すぐ必
-要であると述べている。
+#jp 科学者たちの多くは、空気から炭素を削減する技術が、パリの目標を満たすために今すぐ必要であると述べている。
 #en Many scientists say that technology to remove carbon from the air will now be needed to meet the Paris targets.
-科学者たち scientists
+科学者 scientist
+たち s
 の <no>
 多く many
 は <wa>
@@ -686,8 +689,7 @@ GCHQ GCHQ
 上昇 go up
 し do
 て -te
-2210 221
-億 billion
+221億 221 billion
 ドル dollars
 に <ni>
 なっ become
@@ -852,7 +854,7 @@ RHS RHS
 する do
 の <no>
 だ is
-、,
+、 ,
 と <to>
 タルロ Tarlo
 は <wa>
@@ -900,8 +902,7 @@ RHS RHS
 を <o>
 遂行 carry out
 し do
-て -te
-いる is
+ている -ongoing
 、 ,
 と <to>
 の <no>
@@ -918,7 +919,7 @@ RHS RHS
 以前 before
 、 ,
 型破り unconventional
-な -na
+な <na>
 罰則 penalties
 を <o>
 選ん choose
@@ -960,10 +961,10 @@ RHS RHS
 に for
 投票 vote
 する do
-か <ka>
+か ?
 理解 understand
 できる can
-か <ka>
+か ?
 、 ,
 後 afterwards
 で <de>
@@ -986,14 +987,15 @@ RHS RHS
 が <ga>
 できる can
 わけ case
-ではない is-not
+で is
+はない -negative
 。 .
 
 #49
 #jp 熱心なギタリストである彼は、同じ年にそこでコンサートを行った。
 #en A keen guitarist, he played a concert there the same year.
 熱心 keen
-な -na
+な <na>
 ギタリスト guitarist
 である is
 彼 he
@@ -1041,7 +1043,7 @@ RHS RHS
 た -past
 。 .
 
-#1
+#51
 #jp 家を出ようとしたら、トムが私に電話してきた。
 #en I was leaving home when Tom telephoned me.
 家 home
@@ -1063,7 +1065,7 @@ RHS RHS
 た -past
 。 .
 
-#2
+#52
 #jp 日曜日に出社したので月曜日が代休だった。
 #en I worked on Sunday, so I had Monday off.
 日曜日 Sunday

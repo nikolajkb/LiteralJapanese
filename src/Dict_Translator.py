@@ -1,4 +1,4 @@
-from Grammar import Grammar, Ending, endings
+from Grammar import Grammar, Ending, endings, is_hiragana
 from XmlReader import XmlReader
 import re
 
@@ -28,20 +28,33 @@ def translate(tokens):
     return translations
 
 
-def get_translation_from_dictionary(word):
-    dictionary = XmlReader().get_dict()
-    translations = dictionary.get(word.root)
+def get_translation_from_dictionary(token):
+    xml_reader = XmlReader().get_dict()
+    dictionary = xml_reader.dictionary
+    translations = dictionary.get(token.root)
     if translations:
-        translation = translations[0]
-        pos_match = [t for t in translations if word.grammar in t.pos]
+        # if word is only kana, find definition that is usually written in kana
+        if is_hiragana(token.word):
+            kana_match = [t for t in translations if Grammar.USUALLY_KANA in t.misc]
+            if kana_match:
+                translations = kana_match
+
+        # attempt to match pos
+        pos_match = [t for t in translations if token.grammar in t.pos]
         if pos_match:
-            translation = pos_match[0]
-        translation = translation.meanings[0]
+            translations = pos_match
+
+        translation = translations[0].meanings[0]
 
         translation = clean_word(translation)
         return translation
     else:
-        return "ERROR"
+        pn_dictionary = xml_reader.pn_dictionary
+        translations = pn_dictionary.get(token.root)
+        if translations:
+            return translations[0].meanings[0]
+        else:
+            return "OOV"
 
 
 def clean_word(word):
@@ -75,6 +88,7 @@ def translate_ending(token):
 def match_special(token):
     return {
         "を": "<o>",
+        "お": "pol-",
         "が": "<ga>",
         "に": "<ni>",
         "で": "<de>",
@@ -82,7 +96,8 @@ def match_special(token):
         "は": "<wa>",
         "と": "<to>",
         "も": "<mo>",
-        "ので": "so",
+        "ん": "<no>",
+        "ので": "so", # todo this is not matched since it's two tokens
         "か": "?",
         "て": "<te>",
         "よ": ", you know?",
@@ -94,5 +109,7 @@ def match_special(token):
         "～": "-",
         "･･･": "...",
         " ": " ",
+        "？": "?",
         "?": "?"
+
     }.get(token, None)
