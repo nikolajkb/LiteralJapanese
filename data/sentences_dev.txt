@@ -75,8 +75,7 @@ DNA DNA
 #5
 #jp 長いこと友達なのに 気付かなかったのか?
 #en because you and i are gonna be friends for a long time. you might as well know now.
-長い long
-こと time
+長いこと for a long time
 友達 friend
 なのに and yet
 気付か notice
@@ -136,8 +135,7 @@ ID ID
 #jp 持っているだけで人を不幸にする呪われた本などというものは存在しないのです
 #en there is no such thing as a curse in this world!
 持っ possess
-て -te
-いる is
+ている -ongoing
 だけ only
 で by
 人 people
@@ -495,9 +493,7 @@ treemaker treemaker
 実際 actually
 に <ni>
 、 ,
-信じ believe
-られ -potential
-ない -negative
+信じられない unbelievable
 こと thing
 だ is
 。 .
@@ -1615,8 +1611,7 @@ IAG IAG
 は <wa>
 彼 he
 に for
-何 anything
-も <mo>
+何も anything
 し do
 て -te
 あげ do a favour

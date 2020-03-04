@@ -1,6 +1,6 @@
 from sudachipy import tokenizer
-from sudachipy import dictionary
-from Grammar import Grammar
+from sudachipy import dictionary as sudachi_dict
+from Grammar import Grammar, is_hiragana
 import XmlReader
 
 def _make_grammar(tag):
@@ -47,7 +47,7 @@ class Token:
 
 
 def _tokenize(text):
-    tokenizer_obj = dictionary.Dictionary().create()
+    tokenizer_obj = sudachi_dict.Dictionary().create()
     mode = tokenizer.Tokenizer.SplitMode.C
     return [Token(m.surface(),
                   _make_grammar(m.part_of_speech()),
@@ -62,7 +62,7 @@ def _merge_word_endings(tokens):
     while i < len(tokens):
         merged.append(tokens[i])
         grammar = tokens[i].grammar
-        if grammar == Grammar.VERB or grammar == Grammar.I_ADJECTIVE and i+1 < len(tokens):
+        if (grammar == Grammar.VERB or grammar == Grammar.I_ADJECTIVE) and i+1 < len(tokens):
             i += 1
             ending = ""
             start = tokens[i].char_indices[0]
@@ -82,20 +82,17 @@ def _merge_word_endings(tokens):
 def _merge_words_using_dictionary(tokens):
     merged = []
     i = 0
-    dictionary = XmlReader.XmlReader.get_dict()
+    dictionary = XmlReader.XmlReader().get_dict().dictionary
     while i+1 < len(tokens):
-        combination = tokens[i].word + tokens[i+1]
-        if True and i + 1 < len(tokens):
-            i += 1
-            ending = ""
+        combination = tokens[i].word + tokens[i+1].word
+        dict_get = dictionary.get(combination)
+        if dict_get is not None and not is_hiragana(combination):
             start = tokens[i].char_indices[0]
-            while i < len(tokens) and _is_ending(tokens[i]):
-                ending += tokens[i].word
-                i += 1
-            i -= 1
-            if ending != "":
-                end = tokens[i].char_indices[1]
-                merged.append(Token(ending, Grammar.MERGED, ending, (start, end)))
+            end = tokens[i].char_indices[1]
+            merged.append(Token(dict_get[0].writings[0], dict_get[0].pos[0], dict_get[0].writings[0], (start, end)))
+            i += 1
+        else:
+            merged.append(tokens[i])
 
         i += 1
 
@@ -110,5 +107,5 @@ def _is_ending(token):
 def get_tokens(text):
     tokens = _tokenize(text)
     tokens = _merge_word_endings(tokens)
-    tokens = _merge_words_using_dictionary(tokens)
+    # tokens = _merge_words_using_dictionary(tokens)
     return tokens

@@ -28,7 +28,6 @@ def main(argv):
             print(arg)
             print(Tokenizer.get_tokens(arg))
         elif option == "-d":
-            print(Tokenizer.get_tokens("例えば ブレント・ガーヴィーに レイプされた 3人の少女の両親のようにね"))
             Tests.test_translator()
 
 
