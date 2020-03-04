@@ -94,7 +94,7 @@ def translation_sentence_score(gold, system):
     gold = [x.english for x in gold]
     system = [s[1] for s in system]
 
-    return LevenshteinDistance.distance(gold,system)
+    return LevenshteinDistance.distance(gold, system)
 
 
 def merge_word_endings(sentences):

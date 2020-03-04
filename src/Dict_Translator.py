@@ -96,6 +96,7 @@ def match_special(token):
         "は": "<wa>",
         "と": "<to>",
         "も": "<mo>",
+        "ん": "<no>",
         "ので": "so", # todo this is not matched since it's two tokens
         "か": "?",
         "て": "<te>",

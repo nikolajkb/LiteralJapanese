@@ -69,7 +69,7 @@ DNA DNA
 よう like
 に <ni>
 頼まれ ask
-まし -pol
+まし -polite
 た -past
 
 #5
@@ -205,10 +205,10 @@ ID ID
 予想 predict
 し do
 てい -ongoing
-ます -pol
+ます -polite
 
 #13
-#jp 他にも容疑者を探すなら 指紋照合をしてみれば?
+#jp 他にも容疑者を探すなら指紋照合をしてみれば?
 #en thought maybe you could run it through your system, that is if you're still open to other options.
 他 other
 に <ni>
@@ -362,7 +362,9 @@ treemaker treemaker
 #en the parents of the three young women raped by brent garvey, for example.
 例えば for example
 \space \space
-ブレント・ガーヴィー Brent Garvey
+ブレント Brent
+・ \space
+ガーヴィー Garvey
 に <ni>
 レイプ rape
 され done to
@@ -426,7 +428,7 @@ treemaker treemaker
 詐欺師 swindler
 は <wa>
 務まり manage
-ませ -pol
+ませ -polite
 ん -negative
 から because
 ね , right?
@@ -651,7 +653,7 @@ H H
 BID BID
 の <no>
 社長 president
-ジョー スターンリーブ Joe Sternlieb
+ジョー・スターンリーブ Joe Sternlieb
 氏 Mr.
 は <wa>
 、 ,
@@ -872,7 +874,7 @@ BID BID
 価値 worth
 が <ga>
 あり exist
-ます -pol
+ます -polite
 よう so that
 に <ni>
 。 .
@@ -1066,7 +1068,7 @@ IAG IAG
 #en I feel relieved.
 安心 relief
 し do
-まし -pol
+まし -polite
 た -past
 。 .
 
@@ -1274,7 +1276,7 @@ IAG IAG
 電気 lights
 が <ga>
 つき turn on
-ませ -pol
+ませ -polite
 ん -negative
 。 .
 
@@ -1310,7 +1312,7 @@ IAG IAG
 氷 ice
 に <ni>
 なり become
-まし -pol
+まし -polite
 た -past
 。 .
 
@@ -1405,7 +1407,8 @@ IAG IAG
 #74
 #jp 知らない人に名前聞かれても教えちゃだめだよ。
 #en Don't go telling strangers your name, even if they ask you what it is.
-知らない don't know
+知ら know
+ない -negative
 人 person
 に <ni>
 名前 name
@@ -1559,7 +1562,7 @@ IAG IAG
 て -te
 も <mo>
 構い mind
-ま -pol
+ま -polite
 せん -negative
 。 .
 
@@ -1776,7 +1779,7 @@ IAG IAG
 が <ga>
 鳴っ ring
 て -ongoing
-ます -pol
+ます -polite
 よ , you know?
 。 .
 もし in case
@@ -1799,7 +1802,7 @@ IAG IAG
 とり get
 に to
 出かけ leave
-まし -pol
+まし -polite
 た -past
 。 .
 
