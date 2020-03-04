@@ -1,7 +1,7 @@
 from sudachipy import tokenizer
 from sudachipy import dictionary
 from Grammar import Grammar
-
+import XmlReader
 
 def _make_grammar(tag):
     return {
@@ -56,12 +56,36 @@ def _tokenize(text):
             for m in tokenizer_obj.tokenize(text, mode)]
 
 
-def _merge_verb_endings(tokens):
+def _merge_word_endings(tokens):
     merged = []
     i = 0
     while i < len(tokens):
         merged.append(tokens[i])
-        if tokens[i].grammar == Grammar.VERB and i+1 < len(tokens):
+        grammar = tokens[i].grammar
+        if grammar == Grammar.VERB or grammar == Grammar.I_ADJECTIVE and i+1 < len(tokens):
+            i += 1
+            ending = ""
+            start = tokens[i].char_indices[0]
+            while i < len(tokens) and _is_ending(tokens[i]):
+                ending += tokens[i].word
+                i += 1
+            i -= 1
+            if ending != "":
+                end = tokens[i].char_indices[1]
+                merged.append(Token(ending, Grammar.MERGED, ending, (start, end)))
+
+        i += 1
+
+    return merged
+
+
+def _merge_words_using_dictionary(tokens):
+    merged = []
+    i = 0
+    dictionary = XmlReader.XmlReader.get_dict()
+    while i+1 < len(tokens):
+        combination = tokens[i].word + tokens[i+1]
+        if True and i + 1 < len(tokens):
             i += 1
             ending = ""
             start = tokens[i].char_indices[0]
@@ -80,10 +104,11 @@ def _merge_verb_endings(tokens):
 
 def _is_ending(token):
     return (token.grammar == Grammar.AUX_VERB or token.word == "て" or token.word == "で" or token.word == "い" or token.word == "いる"
-            or token.word == "な" or token.root == "しまう" or token.word == "そう") and token.word != "なら" and token.word != "だ"
+            or token.word == "な" or token.root == "しまう" or token.word == "そう" ) and token.word != "なら" and token.word != "だ"
 
 
 def get_tokens(text):
     tokens = _tokenize(text)
-    tokens = _merge_verb_endings(tokens)
+    tokens = _merge_word_endings(tokens)
+    tokens = _merge_words_using_dictionary(tokens)
     return tokens
