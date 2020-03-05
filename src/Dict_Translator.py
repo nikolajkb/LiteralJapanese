@@ -1,4 +1,4 @@
-from Grammar import Grammar, Ending, endings, is_hiragana
+from Grammar import Grammar, Ending, endings, is_hiragana, is_english
 from XmlReader import XmlReader
 import re
 
@@ -23,7 +23,14 @@ def translate(tokens):
             continue
 
         translation = get_translation_from_dictionary(token)
-        translations.append((jp, translation))
+        if translation:
+            translations.append((jp, translation))
+            continue
+
+        if is_english(jp):
+            translations.append((jp, jp))
+        else:
+            translations.append((jp, "OOV"))
 
     return translations
 
@@ -54,7 +61,7 @@ def get_translation_from_dictionary(token):
         if translations:
             return translations[0].meanings[0]
         else:
-            return "OOV"
+            return None
 
 
 def clean_word(word):

@@ -1,5 +1,5 @@
 from enum import Enum
-import string
+import re
 
 
 # marked with * are my own definitions that I was not able to confirm
@@ -85,3 +85,11 @@ def is_hiragana(s: str):
         if kana.find(c) == -1:
             return False
     return True
+
+
+def is_english(s: str):
+    match = re.match("^[a-zA-Z1-9]*$", s)
+    if match:
+        return True
+    else:
+        return False
