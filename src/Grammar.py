@@ -56,7 +56,7 @@ class Ending(Enum):
     CAUSATIVE = "causative"
     IMPERATIVE = "imperative"
     UNINTENTIONAL = "unintentional"
-    VOLITIONAL = "-volitional"
+    VOLITIONAL = "volitional"
     SEEMS = "seems"
     WANT = "want"
     IF = "if"
