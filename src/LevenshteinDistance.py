@@ -1,7 +1,6 @@
 def distance(source, target):
     if source == target:
-        return 0
-
+        return (0,0,0)
 
     slen, tlen = len(source), len(target)
     dist = [[(0,0,0) for i in range(tlen + 1)] for x in range(slen + 1)]
@@ -9,7 +8,6 @@ def distance(source, target):
         dist[i][0] = (i,0,0)
     for j in range(tlen + 1):
         dist[0][j] = (0,j,0)
-
 
     for i in range(slen):
         for j in range(tlen):
@@ -20,12 +18,8 @@ def distance(source, target):
                 add(dist[i][j], cost)  # substitution
                 , key=lambda x: total(x)
             )
-    (del_c,ins_c,sub_c) = dist[-1][-1]
-    print("")
-    print("del", del_c)
-    print("ins",ins_c)
-    print("sub",sub_c)
-    return total(dist[-1][-1])
+
+    return dist[-1][-1]
 
 
 def total(tup):

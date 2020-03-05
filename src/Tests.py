@@ -25,7 +25,7 @@ class SentenceToken:
         self.indices = indices
 
 
-class Score:
+class TokenScore:
     def __init__(self, gold_len, system_len, correct):
         self.precision = correct / system_len
         self.recall = correct / gold_len
@@ -36,6 +36,43 @@ class Score:
         print("recall:", self.recall)
         print("f1:", self.f1)
         print("")
+
+
+class TranslationScore:
+    def __init__(self, gold_len, errors):
+        (del_e,ins_e,sub_e) = errors
+        self.total_errors = LevenshteinDistance.total(errors)
+        self.deletions = del_e
+        self.insertions = ins_e
+        self.substitutions = sub_e
+        self.error_rate = LevenshteinDistance.total(errors) / gold_len
+        self.del_rate = del_e / gold_len
+        self.ins_rate = ins_e / gold_len
+        self.sub_rate = sub_e / gold_len
+
+    @staticmethod
+    def make_average(scores):
+        final_score = TranslationScore(1, (1,1,1))
+        final_score.total_errors = sum(s.total_errors for s in scores) / len(scores)
+        final_score.deletions = sum(s.deletions for s in scores) / len(scores)
+        final_score.insertions = sum(s.insertions for s in scores) / len(scores)
+        final_score.substitutions = sum(s.substitutions for s in scores) / len(scores)
+        final_score.error_rate = sum(s.error_rate for s in scores) / len(scores)
+        final_score.del_rate = sum(s.del_rate for s in scores) / len(scores)
+        final_score.ins_rate = sum(s.ins_rate for s in scores) / len(scores)
+        final_score.sub_rate = sum(s.sub_rate for s in scores) / len(scores)
+
+        return final_score
+
+    def print(self):
+        print("total errors:", self.total_errors)
+        print("deletions:", self.deletions)
+        print("insertions:", self.insertions)
+        print("substitutions:", self.substitutions)
+        print("error rate:", self.error_rate)
+        print("deletion rate:", self.del_rate)
+        print("insertion rate:", self.ins_rate)
+        print("substitution rate:", self.sub_rate)
 
 
 def test_tokenizer():
@@ -58,8 +95,7 @@ def test_translator():
     sentences = merge_word_endings(sentences)
 
     scores = []
-    scores_temp = []
-
+    print("- sentence x | score: (deletions, insertions, substitutions)")
     print("gold tokens")
     print("gold translations")
     print("system tokens")
@@ -68,21 +104,18 @@ def test_translator():
         system = Translator.translate(sentence.japanese)
         gold = sentence.tokens
         score = translation_sentence_score(gold, system)
-        scores_temp.append(score)
         print_translated_sentence_alt(sentence, system, gold, score)
-        scores.append(Score(len(gold), len(system), score))
+        scores.append(TranslationScore(len(gold), score))
 
     print("#### average result (Levenshtein distance) ####")
-    avg = make_average_score(scores)
+    avg = TranslationScore.make_average(scores)
     avg.print()
-
-    print(sum(scores_temp)/len(sentences))
 
     return avg
 
 
 def make_average_score(scores):
-    final_score = Score(1, 1, 1)
+    final_score = TokenScore(1, 1, 1)
     final_score.precision = sum(s.precision for s in scores) / len(scores)
     final_score.recall = sum(s.recall for s in scores) / len(scores)
     final_score.f1 = sum(s.f1 for s in scores) / len(scores)
@@ -152,7 +185,7 @@ def calc_sentence_score(sentence):
             si += 1
             gi += 1
 
-    score = Score(len(gold_tokens), len(tokens), correct)
+    score = TokenScore(len(gold_tokens), len(tokens), correct)
     score.print()
     return score
 
