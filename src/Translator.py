@@ -28,7 +28,7 @@ def main(argv):
             print(arg)
             print(Tokenizer.get_tokens(arg))
         elif option == "-d":
-            print(Tokenizer._tokenize("こちらの用紙に記入してください"))
+            print(Tokenizer._tokenize("人の心を読めなきゃ 詐欺師は務まりませんからね"))
             Tests.test_translator()
 
 
