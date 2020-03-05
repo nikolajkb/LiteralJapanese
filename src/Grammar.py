@@ -1,13 +1,22 @@
 from enum import Enum
 import string
 
+
+# marked with * are my own definitions that I was not able to confirm
 class Grammar(Enum):
     VERB = "verb"
     NOUN = "noun"
+    MOD_NOUN = "*noun that modifies another noun"
     PARTICLE = "particle"
+    PARTICLE_NO = "the no particle"
+    PARTICLE_CONJ = "conjugating particle"
+    PARTICLE_QUOTE = "quoting particle"
+    DETERMINER = "determiner"
     NA_ADJECTIVE = "na adjective"
     I_ADJECTIVE = "i adjective"
     AUX_VERB = "auxiliary verb"
+    ENDING = "word ending"
+    PROPER_NOUN = "proper noun"
     SYMBOL = "symbol"
     OOV = "out of vocabulary"
     BLANK = "blank"
@@ -23,7 +32,9 @@ class Grammar(Enum):
     URL = "url"
     ENGLISH = "english word"
     CHINESE = "chinese writing"
+    NUMBER = "number"
     UNKNOWN = "unknown word"
+    COUNTER = "counter"
     HESITATE = "???"  # todo find out what this means
     ROMAJI = "transliteration of Japanese into the Latin alphabet"
     USUALLY_KANA = "usually written using only kana"

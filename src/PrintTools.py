@@ -56,19 +56,3 @@ def spaces(maxi, string):
         ret += " "
     return ret
 
-
-def print_translated_sentence(sentence, system, gold):
-    print(" - sentence", sentence.index, " - ")
-
-    max_len = max(len(gold), len(system))
-    for i in range(max_len):
-        if i < len(gold):
-            g = gold[i]
-        else:
-            g = SentenceToken("", "", "")
-        if i < len(system):
-            s = system[i]
-        else:
-            s = ("", "")
-
-        print(g.japanese.ljust(8-len(g.japanese)), " ", g.english.ljust(30-len(g.english)), s[1])

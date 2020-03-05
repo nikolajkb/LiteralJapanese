@@ -107,5 +107,5 @@ def _is_ending(token):
 def get_tokens(text):
     tokens = _tokenize(text)
     tokens = _merge_word_endings(tokens)
-    # tokens = _merge_words_using_dictionary(tokens)
+    tokens = _merge_words_using_dictionary(tokens)
     return tokens
