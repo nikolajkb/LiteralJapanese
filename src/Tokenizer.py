@@ -3,6 +3,7 @@ from sudachipy import dictionary as sudachi_dict
 from Grammar import Grammar, is_hiragana
 import XmlReader
 
+
 def _make_grammar(tag):
     return {
         "名詞": Grammar.NOUN,
@@ -86,7 +87,7 @@ def _merge_words_using_dictionary(tokens):
     while i+1 < len(tokens):
         combination = tokens[i].word + tokens[i+1].word
         dict_get = dictionary.get(combination)
-        if dict_get is not None and not is_hiragana(combination):
+        if dict_get is not None and should_merge(combination, dict_get):
             start = tokens[i].char_indices[0]
             end = tokens[i].char_indices[1]
             merged.append(Token(dict_get[0].writings[0], dict_get[0].pos[0], dict_get[0].writings[0], (start, end)))
@@ -96,7 +97,12 @@ def _merge_words_using_dictionary(tokens):
 
         i += 1
 
+    merged.append(tokens[i])
     return merged
+
+
+def should_merge(combination, entry):
+    return (entry[0].pos[0] == Grammar.NOUN or entry[0].pos[0] == Grammar.PRONOUN) and entry[0].writings[0] == combination
 
 
 def _is_ending(token):
@@ -107,5 +113,5 @@ def _is_ending(token):
 def get_tokens(text):
     tokens = _tokenize(text)
     tokens = _merge_word_endings(tokens)
-    #tokens = _merge_words_using_dictionary(tokens)
+    tokens = _merge_words_using_dictionary(tokens)
     return tokens

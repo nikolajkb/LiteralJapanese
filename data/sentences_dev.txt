@@ -1666,7 +1666,7 @@ IAG IAG
 春 spring
 は <wa>
 京都 Kyoto
-を <wo>
+を <o>
 訪れる visit
 最も most
 よい good
@@ -1749,7 +1749,7 @@ IAG IAG
 彼ら they
 は <wa>
 彼女 her
-を <wo>
+を <o>
 見つけ find
 た -past
 。 .

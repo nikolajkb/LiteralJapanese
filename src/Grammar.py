@@ -88,7 +88,7 @@ def is_hiragana(s: str):
 
 
 def is_english(s: str):
-    match = re.match("^[a-zA-Z1-9]*$", s)
+    match = re.match("^[a-zA-Z0-9.,]*$", s)
     if match:
         return True
     else:

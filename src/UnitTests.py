@@ -4,6 +4,7 @@ import Dict_Translator
 import Tokenizer
 from Grammar import Grammar
 from Grammar import is_hiragana
+import Grammar
 
 
 class TokenTests(unittest.TestCase):
@@ -71,6 +72,11 @@ class GrammarTests(unittest.TestCase):
         self.assertEqual(is_hiragana("きゅう"), True)
         self.assertEqual(is_hiragana("にゃん"), True)
         self.assertEqual(is_hiragana("やっぱり"), True)
+
+    def test_is_english(self):
+        self.assertEqual(True, Grammar.is_english("2004"))
+        self.assertEqual(True, Grammar.is_english("2.4"))
+        self.assertEqual(True, Grammar.is_english("2,4"))
 
 if __name__ == '__main__':
     unittest.main()
