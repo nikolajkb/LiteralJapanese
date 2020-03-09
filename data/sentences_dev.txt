@@ -105,6 +105,7 @@ ID ID
 #jp なるほど 簡単にゃ入れそうにねえな
 #en i see... it doesn't look easy to get in...
 なるほど I see
+\space \space
 簡単 easy
 に <ni>
 ゃ <wa>
@@ -301,6 +302,7 @@ treemaker treemaker
 の <no>
 技術者 engineers
 を <o>
+\space \space
 守っ protect
 てる -ongoing
 
@@ -364,6 +366,7 @@ treemaker treemaker
 ・ \space
 ガーヴィー Garvey
 に <ni>
+\space \space
 レイプ rape
 され done to
 た -past
