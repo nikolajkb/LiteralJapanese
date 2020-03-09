@@ -81,6 +81,15 @@ endings = [("ま", [Ending.POLITE]),("せん", [Ending.NEGATIVE]),("た", [Endin
 
 def is_hiragana(s: str):
     kana = "あいうえおかきくけこがぎぐげごさしすせそざじずぜぞたちつてとだぢづでどなにぬねのはひふへほばびぶべぼぱぴぷぺぽまみむめもやゆよらりるれろわゐゑをんっゃゅょ"
+    return is_kana(s,kana)
+
+
+def is_katakana(s: str):
+    kana = "アイウエオカキクケコガギグゲゴサシスセソザジズゼゾタチツテトダヂヅデドナニヌネノハヒフヘホバビブベボパピプペポマミムメモヤユヨラリルレロワヰヱヲンッャュョ"
+    return is_kana(s,kana)
+
+
+def is_kana(s: str, kana):
     for c in list(s):
         if kana.find(c) == -1:
             return False
