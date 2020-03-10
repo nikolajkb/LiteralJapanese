@@ -12,11 +12,11 @@ Ideas for improvement:
    - use synonyms of english words
    - do something about w-question + ka
    - fix removal of "to"
-   - problems with tokenization, does not seem to take longest match
    - use normalization to make making endings easier
    - use same dictionary for tokenization as translation
    - what about word roots when using other pos?
    - readings and writings separately
+   - fix "toilet" error
 
 performance:
     before adding kana usually:

@@ -28,8 +28,8 @@ def main(argv):
             print(arg)
             print(Tokenizer.get_tokens(arg))
         elif option == "-d":
-            print(Tokenizer._tokenize("春は京都を訪れる最もよい季節です。"))
-            print(translate("春は京都を訪れる最もよい季節です。"))
+            #print(Tokenizer._tokenize("お手洗いの電気がつきません。"))
+            #print(translate("お手洗いの電気がつきません。"))
             Tests.test_translator()
 
 

@@ -102,7 +102,7 @@ def _merge_words_using_dictionary(tokens):
 
 
 def should_merge(combination, entry):
-    return (entry[0].pos[0] == Grammar.NOUN or entry[0].pos[0] == Grammar.PRONOUN) and entry[0].writings[0] == combination
+    return (entry[0].pos[0] == Grammar.NOUN or entry[0].pos[0] == Grammar.PRONOUN ) and entry[0].writings[0] == combination
 
 
 def _is_ending(token):
@@ -110,7 +110,9 @@ def _is_ending(token):
             or token.word == "な" or token.root == "しまう" or token.word == "そう") and token.word != "なら" and token.word != "だ"
 
 
-def get_tokens(text):
+def get_tokens(text: str):
+    if text.startswith("お"):
+        print("o")
     tokens = _tokenize(text)
     tokens = _merge_word_endings(tokens)
     tokens = _merge_words_using_dictionary(tokens)

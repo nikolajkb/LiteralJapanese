@@ -43,14 +43,17 @@ def get_translation_from_dictionary(token):
         # if word is only kana, find definition that is usually written in kana
         if is_hiragana(token.word):
             kana_match = [t for t in translations if Grammar.USUALLY_KANA in t.misc]
-            if kana_match:
-                translations = kana_match
+        else:
+            kana_match = [t for t in translations if Grammar.USUALLY_KANA not in t.misc]
+        if kana_match:
+            translations = kana_match
 
         # attempt to match pos
         pos_match = [t for t in translations if token.grammar in t.pos]
         if pos_match:
             translations = pos_match
 
+        # get the first translation available
         translation = translations[0].meanings[0]
 
         translation = clean_word(translation)
@@ -66,7 +69,7 @@ def get_translation_from_dictionary(token):
 
 def clean_word(word):
     word = re.sub(" ?\(.*\)", "", word)
-    word = re.sub("to ", "", word)
+    word = re.sub("^to ", "", word)
     return word
 
 
@@ -104,6 +107,7 @@ def match_special(token):
         "と": "<to>",
         "も": "<mo>",
         "ん": "<no>",
+        "な": "<na>",
         "ので": "so", # todo this is not matched since it's two tokens
         "か": "?",
         "て": "<te>",

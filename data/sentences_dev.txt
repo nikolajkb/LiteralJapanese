@@ -68,7 +68,8 @@ DNA DNA
 する do
 よう like
 に <ni>
-頼まれ ask
+頼ま ask
+れ -passive
 まし -polite
 た -past
 
@@ -216,7 +217,7 @@ ID ID
 を <o>
 探す search
 なら if
-指紋 finger print
+指紋 fingerprint
 照合 matching
 を <o>
 してみれば do in that case
@@ -1270,7 +1271,7 @@ IAG IAG
 #jp お手洗の電気がつきません。
 #en The lights in the bathroom aren't working.
 お pol-
-手洗い bathroom
+手洗 bathroom
 の <no>
 電気 lights
 が <ga>
@@ -1714,7 +1715,8 @@ IAG IAG
 に <ni>
 記入 fill out
 し do
-てください -please
+て -te
+ください please
 。 .
 
 #96
@@ -1810,7 +1812,7 @@ IAG IAG
 いいえ no
 、 ,
 いら need
-なく -neg
+なく -negative
 なっ become
 た -past
 ので so

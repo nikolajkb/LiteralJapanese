@@ -1,3 +1,27 @@
+def print_translated_sentence_alt_2(sentence, system, gold, score):
+    print(" - sentence", sentence.index, " | score:", score, " - ")
+
+    max_len = max(len(gold), len(system))
+    for i in range(max_len):
+
+        try:
+            system_t = system[i][1]
+            system_t_o = system[i][0]
+        except IndexError:
+            system_t = ""
+            system_t_o = ""
+        try:
+            gold_t = gold[i].english
+            original_t = gold[i].japanese
+        except IndexError:
+            gold_t = ""
+            original_t = ""
+
+        print(original_t,"\t\t",gold_t,"\t\t",system_t_o,"\t\t",system_t)
+
+    print("\n")
+
+
 def print_translated_sentence_alt(sentence, system, gold, score):
     print(" - sentence", sentence.index, " | score:", score, " - ")
 

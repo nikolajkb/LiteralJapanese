@@ -76,7 +76,8 @@ endings = [("ま", [Ending.POLITE]),("せん", [Ending.NEGATIVE]),("た", [Endin
            ("きゃ", [Ending.IF]),("ば", [Ending.IF]), ("ており",[Ending.PROGRESSIVE]),
            ("なさい",[Ending.REQUEST]), ("てます", [Ending.PROGRESSIVE]), ("で", [Ending.TE_FORM]),
            ("そう", [Ending.SEEMS]), ("たら", [Ending.TARA]), ("れ", [Ending.PASSIVE]),
-           ("でした", [Ending.PAST]), ("しょう", [Ending.VOLITIONAL]), ("でいる",Ending.PROGRESSIVE)]
+           ("でした", [Ending.PAST]), ("しょう", [Ending.VOLITIONAL]), ("でいる",[Ending.PROGRESSIVE]),
+           ("てます",[Ending.PROGRESSIVE,Ending.POLITE])]
 
 
 def is_hiragana(s: str):

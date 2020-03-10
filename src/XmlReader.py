@@ -31,8 +31,8 @@ class XmlReader:
         for entry in root:
             word = Word.make_empty()
 
-            k_ele = entry.find("k_ele")
-            if k_ele is not None:
+            k_ele_list = entry.findall("k_ele")
+            for k_ele in k_ele_list:
                 for keb in k_ele.findall("keb"):
                     word.writings.append(keb.text)
 
