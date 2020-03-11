@@ -9,6 +9,7 @@ from XmlReader import XmlReader
 import LevenshteinDistance
 import sys
 import argparse
+import Settings
 
 
 def translate(text):
@@ -20,15 +21,20 @@ def translate(text):
 def main(argv):
     parser = argparse.ArgumentParser()
     parser.add_argument("-t","--translate",type=str,help="translates a Japanese sentence to English and writes it to a file")
-    parser.add_argument("file", type=str)
+    parser.add_argument("file", nargs="?", type=str, default=None)
+    parser.add_argument("--test",type=str, help="tests translation system using file containing test cases")
+    parser.add_argument("-v","--verbose",action="store_true")
 
     args = parser.parse_args()
+    if args.verbose:
+        Settings.VERBOSE = True
     if args.translate:
         if args.file:
             PrintTools.write_to_file(translate(args.translate), args.file)
         else:
             print("no output file specified")
-
+    elif args.test:
+        Tests.test_translator(args.test)
 
 
 def print_tokenization():

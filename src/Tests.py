@@ -1,5 +1,6 @@
 from typing import List
 import LevenshteinDistance
+import Settings
 import Tokenizer
 import Translator
 from PrintTools import print_translated_sentence
@@ -90,25 +91,30 @@ def test_tokenizer():
     return final_score
 
 
-def test_translator():
-    sentences = read_test_data()
+def test_translator(file_path):
+    sentences = read_test_data(file_path)
     sentences = merge_word_endings(sentences)
 
     scores = []
-    print("- sentence x | score: (deletions, insertions, substitutions)")
-    print("gold tokens")
-    print("gold translations")
-    print("system tokens")
-    print("system translations")
+
+    print("translating sentences\n")
+    if Settings.VERBOSE:
+        print("print format:")
+        print("- sentence x | score: (deletions, insertions, substitutions) -")
+        print("gold tokens")
+        print("gold translations")
+        print("system tokens")
+        print("system translations\n")
     for sentence in sentences:
         system = Translator.translate(sentence.japanese)
         gold = sentence.tokens
         score = translation_sentence_score(gold, system)
-        print_translated_sentence(sentence, system, gold, score)
+        if Settings.VERBOSE:
+            print_translated_sentence(sentence, system, gold, score)
         scores.append(TranslationScore(len(gold), score))
 
-    print("#### average result (Levenshtein distance) ####")
     avg = TranslationScore.make_average(scores)
+    print("#### average result (Levenshtein distance) ####")
     avg.print()
 
     return avg
@@ -191,8 +197,9 @@ def calc_sentence_score(sentence):
 
 
 # read test data into Sentence object
-def read_test_data():
-    data = open("../data/sentences_dev.txt", "r", encoding="utf-8")
+def read_test_data(file_path):
+    print("reading test data")
+    data = open(file_path, "r", encoding="utf-8")
     linenr = 1
     linenr += 1
     line = data.readline()
