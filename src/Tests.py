@@ -2,7 +2,7 @@ from typing import List
 import LevenshteinDistance
 import Tokenizer
 import Translator
-from PrintTools import print_translated_sentence_alt
+from PrintTools import print_translated_sentence
 
 start = 0
 end = 1
@@ -104,7 +104,7 @@ def test_translator():
         system = Translator.translate(sentence.japanese)
         gold = sentence.tokens
         score = translation_sentence_score(gold, system)
-        print_translated_sentence_alt(sentence, system, gold, score)
+        print_translated_sentence(sentence, system, gold, score)
         scores.append(TranslationScore(len(gold), score))
 
     print("#### average result (Levenshtein distance) ####")

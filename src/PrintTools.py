@@ -1,5 +1,5 @@
 def write_to_file(system, file_path):
-    file = open(file_path, "w", encoding="utf-8")
+    file = open(file_path, "w+", encoding="utf-8")
 
     file.write("system tokens"+"\t"+"system translation"+"\n")
     for i in range(len(system)):
@@ -15,7 +15,7 @@ def write_to_file(system, file_path):
             file.write("\n")
 
 
-def print_translated_sentence_alt(sentence, system, gold, score):
+def print_translated_sentence(sentence, system, gold, score):
     print(" - sentence", sentence.index, " | score:", score, " - ")
 
     system_translation = ""
