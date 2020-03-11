@@ -1,10 +1,13 @@
+import os
 import unittest
 
 import Dict_Translator
 import Tokenizer
+import Translator
 from Grammar import Grammar
 from Grammar import is_hiragana
 import Grammar
+import PrintTools
 
 
 class TokenTests(unittest.TestCase):
@@ -77,6 +80,23 @@ class GrammarTests(unittest.TestCase):
         self.assertEqual(True, Grammar.is_english("2004"))
         self.assertEqual(True, Grammar.is_english("2.4"))
         self.assertEqual(True, Grammar.is_english("2,4"))
+
+
+class PrintTests(unittest.TestCase):
+    def test_write(self):
+        text = "system tokens" + "\t" + "system translation" + "\n"
+
+        file_name = "test_write"
+        file_dir = os.path.dirname(os.path.realpath('__file__'))
+        file_name = os.path.join(file_dir, '..', "data", file_name)
+
+        translation = Translator.translate("残ったものはなにひとつありませんでした")
+
+        PrintTools.write_to_file(translation,file_name)
+
+        file = open(file_name,"r",encoding="utf-8")
+        self.assertEqual(text,file.readline())
+
 
 if __name__ == '__main__':
     unittest.main()

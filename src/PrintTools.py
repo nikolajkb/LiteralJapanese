@@ -1,25 +1,18 @@
-def print_translated_sentence_alt_2(sentence, system, gold, score):
-    print(" - sentence", sentence.index, " | score:", score, " - ")
+def write_to_file(system, file_path):
+    file = open(file_path, "w", encoding="utf-8")
 
-    max_len = max(len(gold), len(system))
-    for i in range(max_len):
-
+    file.write("system tokens"+"\t"+"system translation"+"\n")
+    for i in range(len(system)):
         try:
-            system_t = system[i][1]
-            system_t_o = system[i][0]
+            system_translation = system[i][1]
+            system_token = system[i][0]
         except IndexError:
-            system_t = ""
-            system_t_o = ""
-        try:
-            gold_t = gold[i].english
-            original_t = gold[i].japanese
-        except IndexError:
-            gold_t = ""
-            original_t = ""
+            system_translation = ""
+            system_token = ""
 
-        print(original_t,"\t\t",gold_t,"\t\t",system_t_o,"\t\t",system_t)
-
-    print("\n")
+        file.write(system_token + "\t" + system_translation)
+        if i != len(system):
+            file.write("\n")
 
 
 def print_translated_sentence_alt(sentence, system, gold, score):

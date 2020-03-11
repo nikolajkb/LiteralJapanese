@@ -111,8 +111,6 @@ def _is_ending(token):
 
 
 def get_tokens(text: str):
-    if text.startswith("お"):
-        print("o")
     tokens = _tokenize(text)
     tokens = _merge_word_endings(tokens)
     tokens = _merge_words_using_dictionary(tokens)

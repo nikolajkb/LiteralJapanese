@@ -2,7 +2,7 @@ from typing import List
 import LevenshteinDistance
 import Tokenizer
 import Translator
-from PrintTools import print_translated_sentence_alt, print_translated_sentence_alt_2
+from PrintTools import print_translated_sentence_alt
 
 start = 0
 end = 1

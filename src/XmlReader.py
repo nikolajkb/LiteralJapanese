@@ -123,6 +123,7 @@ def save_dictionary(dictionary, name):
     file_name = os.path.join(file_dir, '..', 'data', name + ".obj")
     file_handler = open(file_name, "wb")
     pickle.dump(dictionary, file_handler)
+    file_handler.close()
 
 
 def load_dictionary(name):
@@ -131,6 +132,7 @@ def load_dictionary(name):
     try:
         file_handler = open(file_name, "rb")
         dictionary = pickle.load(file_handler)
+        file_handler.close()
         return dictionary
     except IOError:
         return None
