@@ -27,6 +27,11 @@ class TokenTests(unittest.TestCase):
         tokens = Tokenizer.get_tokens("残ったものはなにひとつありませんでした。 ")
         self.assertEqual("残る", tokens[0].root)
 
+    def test_token_merging(self):
+        tokens = Tokenizer.get_tokens("食べたくなかった")
+        self.assertEqual((0,2),tokens[0].char_indices)
+        self.assertEqual((2,6),tokens[1].char_indices)
+
 
 class EndingTranslatorTests(unittest.TestCase):
     def test_ending_0(self):
