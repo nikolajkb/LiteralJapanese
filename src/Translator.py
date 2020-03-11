@@ -18,14 +18,28 @@ def translate(text):
     return translations
 
 
+def start_interactive():
+    print("Type Japanese sentences, press enter to translate")
+    while True:
+        command = input("> ")
+        if command == "q" or command == "ｑ":
+            sys.exit()
+        else:
+            print(command)
+            print(translate(command))
+
+
 def main(argv):
     parser = argparse.ArgumentParser()
     parser.add_argument("-t","--translate",type=str,help="translates a Japanese sentence to English and writes it to a file")
     parser.add_argument("file", nargs="?", type=str, default=None)
     parser.add_argument("--test",type=str, help="tests translation system using file containing test cases")
-    parser.add_argument("-v","--verbose",action="store_true")
+    parser.add_argument("-v","--verbose", action="store_true")
+    parser.add_argument("-i", "--interactive", action="store_true")
 
     args = parser.parse_args()
+    if args.interactive:
+        start_interactive()
     if args.verbose:
         Settings.VERBOSE = True
     if args.translate:
