@@ -1825,3 +1825,20 @@ IAG IAG
 まし -polite
 た -past
 。 .
+
+#102
+#jp 飲めば頭が痛い
+#en if I drink, my head hurts
+飲め drink
+ば -if
+頭 head
+が <ga>
+痛い hurt
+
+#103
+#jp 食べたくなかった
+#en I didn't want to eat
+食べ eat
+たく -want
+なかっ -negative
+た -past

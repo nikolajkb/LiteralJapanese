@@ -107,12 +107,10 @@ def should_merge(combination, entry):
 
 def _is_ending(token):
     return (token.grammar == Grammar.AUX_VERB or token.word == "て" or token.word == "で" or token.word == "い" or token.word == "いる"
-            or token.word == "な" or token.root == "しまう" or token.word == "そう") and token.word != "なら" and token.word != "だ"
+            or token.word == "な" or token.root == "しまう" or token.word == "そう" or token.word == "ば") and token.word != "なら" and token.word != "だ"
 
 
 def get_tokens(text: str):
-    if text.startswith("お"):
-        print("o")
     tokens = _tokenize(text)
     tokens = _merge_word_endings(tokens)
     tokens = _merge_words_using_dictionary(tokens)

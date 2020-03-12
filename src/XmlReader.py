@@ -15,7 +15,7 @@ class XmlReader:
 
         dictionary = load_dictionary("JMdict_e")
         pn_dictionary = load_dictionary("JMnedict")
-        if dictionary is not None:
+        if dictionary is not None and pn_dictionary is not None:
             XmlReader.dictionary = dictionary
             XmlReader.pn_dictionary = pn_dictionary
             return XmlReader
@@ -123,6 +123,7 @@ def save_dictionary(dictionary, name):
     file_name = os.path.join(file_dir, '..', 'data', name + ".obj")
     file_handler = open(file_name, "wb")
     pickle.dump(dictionary, file_handler)
+    file_handler.close()
 
 
 def load_dictionary(name):
@@ -130,7 +131,9 @@ def load_dictionary(name):
     file_name = os.path.join(file_dir, '..', 'data', name + ".obj")
     try:
         file_handler = open(file_name, "rb")
+        print("loading dictionary")
         dictionary = pickle.load(file_handler)
+        file_handler.close()
         return dictionary
     except IOError:
         return None

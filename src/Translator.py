@@ -1,4 +1,6 @@
 import getopt
+
+import PrintTools
 import Tokenizer
 import Dict_Translator
 import Tests
@@ -6,6 +8,8 @@ from Grammar import Grammar
 from XmlReader import XmlReader
 import LevenshteinDistance
 import sys
+import argparse
+import Settings
 
 
 def translate(text):
@@ -14,23 +18,37 @@ def translate(text):
     return translations
 
 
-def main(argv):
-    options, args = getopt.getopt(argv, "t:o:p:b:dh", ["file="])
+def start_interactive():
+    print("Type Japanese sentences, press enter to translate")
+    while True:
+        command = input("> ")
+        if command == "q" or command == "ｑ":
+            sys.exit()
+        else:
+            print(command)
+            print(translate(command))
 
-    for option, arg in options:
-        if option == "-h":
-            print("-t = translate text TODO")
-            print("-o = tokenize text")
-            print("-p = test tokens with file TODO")
-            print("-b = test translations with file TODO")
-            print("-d = run dev code (for testing)")
-        elif option == "-o":
-            print(arg)
-            print(Tokenizer.get_tokens(arg))
-        elif option == "-d":
-            #print(Tokenizer._tokenize("お手洗いの電気がつきません。"))
-            #print(translate("お手洗いの電気がつきません。"))
-            Tests.test_translator()
+
+def main(argv):
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-t","--translate",type=str,help="translates a Japanese sentence to English and writes it to a file")
+    parser.add_argument("file", nargs="?", type=str, default=None)
+    parser.add_argument("--test",type=str, help="tests translation system using file containing test cases")
+    parser.add_argument("-v","--verbose", action="store_true")
+    parser.add_argument("-i", "--interactive", action="store_true")
+
+    args = parser.parse_args()
+    if args.interactive:
+        start_interactive()
+    if args.verbose:
+        Settings.VERBOSE = True
+    if args.translate:
+        if args.file:
+            PrintTools.write_to_file(translate(args.translate), args.file)
+        else:
+            print("no output file specified")
+    elif args.test:
+        Tests.test_translator(args.test)
 
 
 def print_tokenization():
