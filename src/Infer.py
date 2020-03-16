@@ -1,7 +1,6 @@
 import Dictionary
-from Grammar import Grammar
-import nltk
 import Translator
+import nltk
 
 
 # args are tokenized japanese and un-tokenized english

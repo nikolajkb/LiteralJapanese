@@ -111,6 +111,9 @@ def _is_ending(token):
 
 
 def get_tokens(text: str):
+    if text == "":
+        print("Empty string passed to get_tokens")
+        return []
     tokens = _tokenize(text)
     tokens = _merge_word_endings(tokens)
     tokens = _merge_words_using_dictionary(tokens)
