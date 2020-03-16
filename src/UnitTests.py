@@ -1,9 +1,9 @@
 import os
 import unittest
 
-import Dict_Translator
-import Tokenizer
 import Translator
+import Tokenizer
+import LiteralJapanese
 from Grammar import Grammar
 from Grammar import is_hiragana
 import Grammar
@@ -36,32 +36,32 @@ class TokenTests(unittest.TestCase):
 class EndingTranslatorTests(unittest.TestCase):
     def test_ending_0(self):
         token = Tokenizer.Token("ませんでした", Grammar.MERGED, "", (1, 1))
-        translation = Dict_Translator.translate_ending(token)
+        translation = Translator.translate_ending(token)
         self.assertEqual(translation,"-polite-negative-past")
 
     def test_ending_1(self):
         token = Tokenizer.Token("ちゃった", Grammar.MERGED, "", (1, 1))
-        translation = Dict_Translator.translate_ending(token)
+        translation = Translator.translate_ending(token)
         self.assertEqual(translation, "-unintentional-past")
 
     def test_ending_2(self):
         token = Tokenizer.Token("させられない", Grammar.MERGED, "", (1, 1))
-        translation = Dict_Translator.translate_ending(token)
+        translation = Translator.translate_ending(token)
         self.assertEqual(translation, "-causative-passive-negative")
 
     def test_ending_3(self):
         token = Tokenizer.Token("ていない", Grammar.MERGED, "", (1, 1))
-        translation = Dict_Translator.translate_ending(token)
+        translation = Translator.translate_ending(token)
         self.assertEqual(translation, "-ongoing-negative")
 
     def test_ending_4(self):
         token = Tokenizer.Token("れて", Grammar.MERGED, "", (1, 1))
-        translation = Dict_Translator.translate_ending(token)
+        translation = Translator.translate_ending(token)
         self.assertEqual(translation, "-passive-te")
 
     def test_ending_5(self):
         token = Tokenizer.Token("じゃなかった", Grammar.MERGED, "", (1, 1))
-        translation = Dict_Translator.translate_ending(token)
+        translation = Translator.translate_ending(token)
         self.assertEqual(translation, "-negative-past")
 
 
@@ -95,7 +95,7 @@ class PrintTests(unittest.TestCase):
         file_dir = os.path.dirname(os.path.realpath('__file__'))
         file_name = os.path.join(file_dir, '..', "data", file_name)
 
-        translation = Translator.translate("残ったものはなにひとつありませんでした")
+        translation = LiteralJapanese.translate("残ったものはなにひとつありませんでした")
 
         PrintTools.write_to_file(translation,file_name)
 

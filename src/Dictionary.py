@@ -5,20 +5,20 @@ from Grammar import Grammar, is_hiragana
 import pickle
 
 
-class XmlReader:
+class Dictionary:
     dictionary = None
     pn_dictionary = None
 
     def get_dict(self):
-        if XmlReader.dictionary is not None:
-            return XmlReader
+        if Dictionary.dictionary is not None:
+            return Dictionary
 
         dictionary = load_dictionary("JMdict_e")
         pn_dictionary = load_dictionary("JMnedict")
         if dictionary is not None and pn_dictionary is not None:
-            XmlReader.dictionary = dictionary
-            XmlReader.pn_dictionary = pn_dictionary
-            return XmlReader
+            Dictionary.dictionary = dictionary
+            Dictionary.pn_dictionary = pn_dictionary
+            return Dictionary
 
         print("Reading dictionary...")
         file_dir = os.path.dirname(os.path.realpath('__file__'))
@@ -66,12 +66,12 @@ class XmlReader:
                     dictionary[writing].append(word)
 
         pn_dict = read_pn_dictionary()
-        XmlReader.pn_dictionary = pn_dict
-        XmlReader.dictionary = dictionary
+        Dictionary.pn_dictionary = pn_dict
+        Dictionary.dictionary = dictionary
         print("done")
         save_dictionary(dictionary, "JMdict_e")
         save_dictionary(pn_dict, "JMnedict")
-        return XmlReader
+        return Dictionary
 
 
 def read_pn_dictionary():
@@ -131,7 +131,7 @@ def load_dictionary(name):
     file_name = os.path.join(file_dir, '..', 'data', name + ".obj")
     try:
         file_handler = open(file_name, "rb")
-        print("loading dictionary")
+        print("loading dictionary: "+name)
         dictionary = pickle.load(file_handler)
         file_handler.close()
         return dictionary

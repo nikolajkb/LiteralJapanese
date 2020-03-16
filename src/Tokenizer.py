@@ -1,7 +1,7 @@
 from sudachipy import tokenizer
 from sudachipy import dictionary as sudachi_dict
 from Grammar import Grammar, is_hiragana
-import XmlReader
+import Dictionary
 
 
 def _make_grammar(tag):
@@ -83,7 +83,7 @@ def _merge_word_endings(tokens):
 def _merge_words_using_dictionary(tokens):
     merged = []
     i = 0
-    dictionary = XmlReader.XmlReader().get_dict().dictionary
+    dictionary = Dictionary.Dictionary().get_dict().dictionary
     while i+1 < len(tokens):
         combination = tokens[i].word + tokens[i+1].word
         dict_get = dictionary.get(combination)

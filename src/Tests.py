@@ -2,7 +2,7 @@ from typing import List
 import LevenshteinDistance
 import Settings
 import Tokenizer
-import Translator
+import LiteralJapanese
 from PrintTools import print_translated_sentence
 
 start = 0
@@ -106,7 +106,7 @@ def test_translator(file_path):
         print("system tokens")
         print("system translations\n")
     for sentence in sentences:
-        system = Translator.translate(sentence.japanese)
+        system = LiteralJapanese.translate(sentence.japanese)
         gold = sentence.tokens
         score = translation_sentence_score(gold, system)
         if Settings.VERBOSE:
