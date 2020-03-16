@@ -1,5 +1,5 @@
-from Grammar import Grammar, Ending, endings, is_hiragana, is_english
-from Dictionary import Dictionary
+import Dictionary
+from Grammar import Grammar, endings, is_english
 import re
 
 jp = 0
@@ -36,31 +36,12 @@ def translate(tokens):
 
 
 def get_translation_from_dictionary(token):
-    xml_reader = Dictionary().get_dict()
-    dictionary = xml_reader.dictionary
-    translations = dictionary.get(token.root)
+    translations = Dictionary.match(token)
     if translations:
-        # if word is only kana, find definition that is usually written in kana
-        if is_hiragana(token.word):
-            kana_match = [t for t in translations if Grammar.USUALLY_KANA in t.misc]
-        else:
-            kana_match = [t for t in translations if Grammar.USUALLY_KANA not in t.misc]
-        if kana_match:
-            translations = kana_match
-
-        # attempt to match pos
-        pos_match = [t for t in translations if token.grammar in t.pos]
-        if pos_match:
-            translations = pos_match
-
-        # get the first translation available
-        translation = translations[0].meanings[0]
-
-        translation = clean_word(translation)
+        translation = clean_word(translations[0].meanings[0])
         return translation
     else:
-        pn_dictionary = xml_reader.pn_dictionary
-        translations = pn_dictionary.get(token.root)
+        translations = Dictionary.get_proper_noun(token.root)
         if translations:
             return translations[0].meanings[0]
         else:

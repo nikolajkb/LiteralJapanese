@@ -1,7 +1,7 @@
 import os
 import xml.etree.ElementTree as ET
 import Word
-from Grammar import Grammar, is_hiragana
+from Grammar import Grammar, is_hiragana, is_katakana
 import pickle
 
 
@@ -9,7 +9,8 @@ class Dictionary:
     dictionary = None
     pn_dictionary = None
 
-    def get_dict(self):
+    @staticmethod
+    def get_dict():
         if Dictionary.dictionary is not None:
             return Dictionary
 
@@ -167,3 +168,30 @@ def make_grammar(tag):
             grammar = Grammar.VERB
 
     return grammar
+
+
+# returns translations from dictionary that match pos/kana
+def match(token):
+    dictionary = Dictionary.get_dict().dictionary
+    translations = dictionary.get(token.root)
+    if translations:
+
+        # if word is only kana, find definition that is usually written in kana
+        if is_hiragana(token.word) or is_katakana(token.word):
+            kana_match = [t for t in translations if Grammar.USUALLY_KANA in t.misc]
+        else:
+            kana_match = [t for t in translations if Grammar.USUALLY_KANA not in t.misc]
+        if kana_match:
+            translations = kana_match
+
+        # attempt to match pos
+        pos_match = [t for t in translations if token.grammar in t.pos]
+        if pos_match:
+            translations = pos_match
+
+    return translations
+
+
+def get_proper_noun(word):
+    dictionary = Dictionary.get_dict().pn_dictionary
+    return dictionary.get(word)
