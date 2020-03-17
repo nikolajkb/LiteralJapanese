@@ -218,7 +218,8 @@ def read_test_data(file_path):
 
         index = 0
         while line and not line == "\n":  # read each token and split into English and Japanese
-            pair = line[:-1].split(" ", 1)
+            line = line.replace("\n", "")
+            pair = line.split(" ", 1)
             pair = add_spaces(pair)
             sentence.tokens.append(SentenceToken(pair[0], pair[1], (index, index + len(pair[0]) )))
             index += len(pair[0])
