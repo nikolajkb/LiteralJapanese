@@ -12,9 +12,9 @@ import argparse
 import Settings
 
 
-def translate(text):
+def translate(text, translation=None):
     tokens = Tokenizer.get_tokens(text)
-    translations = Translator.translate(tokens)
+    translations = Translator.translate(tokens,translation=translation)
     return translations
 
 

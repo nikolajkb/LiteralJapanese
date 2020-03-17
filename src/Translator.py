@@ -1,4 +1,5 @@
 import Dictionary
+import Infer
 from Grammar import Grammar, endings, is_english
 import re
 
@@ -6,16 +7,27 @@ jp = 0
 en = 1
 
 
-def translate(tokens):
+def translate(tokens, translation=None):
     translations = []
+    inferred_meanings = None
+    if translation is not None:
+        inferred_meanings = Infer.infer(tokens,translation)
 
+    i = -1
     for token in tokens:
+        i += 1
         jp = token.word
 
         if is_ending(token):
             translation = translate_ending(token)
             translations.append((jp, translation))
             continue
+
+        if inferred_meanings is not None:
+            translation = inferred_meanings[i]
+            if translation[1] is not None:
+                translations.append((jp, translation[1]))
+                continue
 
         translation = match_special(jp)
         if translation:

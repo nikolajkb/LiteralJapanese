@@ -106,7 +106,7 @@ def test_translator(file_path):
         print("system tokens")
         print("system translations\n")
     for sentence in sentences:
-        system = LiteralJapanese.translate(sentence.japanese)
+        system = LiteralJapanese.translate(sentence.japanese, translation=sentence.english)
         gold = sentence.tokens
         score = translation_sentence_score(gold, system)
         if Settings.VERBOSE:

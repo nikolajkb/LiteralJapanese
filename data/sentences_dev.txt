@@ -3,14 +3,14 @@
 #en don't come to the office anymore. don't call me either.
 もう anymore
 会社 office
-に <ni>
+に to
 は <wa>
 来 come
 ない -negative
 で -te
 くれ please
 \space \space
-電話 telephone
+電話 call
 も also
 する do
 な -imperative-negative
@@ -88,12 +88,12 @@ DNA DNA
 
 #6
 #jp ビルのID信号も5分前に消えたわ
-#en and bill talbot's tracker fell off the grid five minutes ago. ...taken by a witness here. we can show you these images now.
+#en and bill talbot's tracker fell off the grid five minutes ago.
 ビル Bill
-の <no>
+の 's
 ID ID
 信号 signal
-も <mo>
+も also
 5 5
 分 minutes
 前 before
@@ -178,7 +178,7 @@ ID ID
 
 #11
 #jp 俺が隠している魔法をかけることもできる
-#en with furcifer gone, i can put a cloaking spell on her.
+#en I can put a cloaking spell on her.
 俺 I
 が <ga>
 隠し hide
@@ -249,7 +249,7 @@ treemaker treemaker
 58人 58
 の <no>
 患者 patients
-の <no>
+の '
 話 stories
 が <ga>
 聞い hear
@@ -266,7 +266,7 @@ treemaker treemaker
 2つ two
 を <o>
 僕 I
-に <ni>
+に to
 与え give
 られ -potential
 ない -negative
@@ -353,7 +353,7 @@ treemaker treemaker
 ごめんなさい sorry
 と <to>
 彼 him
-に <ni>
+に to
 伝え tell
 たい -want
 の <no>
@@ -377,9 +377,7 @@ treemaker treemaker
 少女 girls
 の <no>
 両親 parents
-の <no>
-よう like
-に <ni>
+のように similar to
 ね , right?
 
 #23
@@ -420,7 +418,7 @@ treemaker treemaker
 #jp 人の心を読めなきゃ 詐欺師は務まりませんからね
 #en i cannot be a swindler unless i can read people's mind.
 人 people
-の <no>
+の 's
 心 mind
 を <o>
 読め read
@@ -536,7 +534,9 @@ H H
 の <no>
 会員制 private
 の <no>
-メトロポリタン・クラブ Metroplolitan Club
+メトロポリタン Metroplolitan
+・ \space
+クラブ Club
 に at
 集まる gather
 こと thing
@@ -603,7 +603,7 @@ H H
 平均 average
 グレード grade
 ４ 4
-に <ni>
+に at
 位置 position
 し <shi>
 、 ,
@@ -621,7 +621,7 @@ H H
 #jp それに比べ、2004年にオープンした地下鉄ノマ新駅を建設するには、1370万ドルの費用がかかった。
 #en By comparison, it cost $13.7 million to build the NoMa infill Metro station, which opened in 2004.
 それ that
-に <ni>
+に to
 比べ compare
 、 ,
 ２００４年 2004
@@ -653,7 +653,9 @@ H H
 BID BID
 の <no>
 社長 president
-ジョー・スターンリーブ Joe Sternlieb
+ジョー Joe
+・ \space
+スターンリーブ Sternlieb
 氏 Mr.
 は <wa>
 、 ,
@@ -687,7 +689,7 @@ BID BID
 は <wa>
 、 ,
 ゴンドラ gondola
-で <de>
+で by
 ポトマック川 Potomac River
 を <o>
 横断 cross
@@ -712,7 +714,7 @@ BID BID
 は <wa>
 、 ,
 ４月 April
-に <ni>
+に in
 被害者 victim
 が <ga>
 被疑者 suspect
@@ -733,8 +735,7 @@ BID BID
 #en There are parallels to draw here between games and our everyday lives.
 ゲーム games
 と and
-私達 us
-の <no>
+私達の our
 日常 daily
 生活 life
 の <no>
@@ -785,7 +786,7 @@ BID BID
 動物 animals
 を <o>
 動物園 zoo
-に <ni>
+に to
 迎える bring in
 の thing
 を <o>
@@ -816,7 +817,7 @@ BID BID
 建物 building
 を <o>
 出る leave
-必要 neccessity
+必要 necessity
 が <ga>
 ある exist
 と <to>
@@ -866,7 +867,7 @@ BID BID
 に <ni>
 せよ do
 刑務所 prison
-に <ni>
+に to
 行く go
 が but
 、 ,
@@ -935,7 +936,7 @@ BID BID
 #jp 有名人の名前が当初は非常にまれである場合、このことは最も明白である。
 #en It's most obvious when a celebrity's name is initially quite rare.
 有名人 celebrity
-の <no>
+の 's
 名前 name
 が <ga>
 当初 initially
@@ -978,7 +979,7 @@ BID BID
 、 ,
 サードパーティ third party
 製 manufacture
-に <ni>
+に to
 切り替え switch
 た -past
 。 .
@@ -994,7 +995,7 @@ BID BID
 ファーウェイ Huawei
 が <ga>
 サムスン Samsung
-の <no>
+の 's
 挫折 setback
 から from
 最も most
@@ -1023,7 +1024,7 @@ Google Google
 アシスタント Assistant
 や or
 Apple Apple
-の <no>
+の 's
 Siri Siri
 の <no>
 よう like
@@ -1078,7 +1079,7 @@ IAG IAG
 トム Tom
 は <wa>
 メアリー Mary
-に <ni>
+に to
 家 home
 へ <e>
 帰る go
@@ -1094,7 +1095,7 @@ IAG IAG
 彼 he
 は <wa>
 そこ there
-へ <e>
+へ to
 行く go
 決心 decision
 を <o>
@@ -1160,7 +1161,7 @@ IAG IAG
 トム Tom
 は <wa>
 メアリー Mary
-の <no>
+の 's
 冗談 jokes
 は <wa>
 全部 all
@@ -1186,7 +1187,7 @@ IAG IAG
 デイモン Damon
 は <wa>
 私 me
-に <ni>
+に to
 郵便切手 stamp
 の <no>
 アルバム album
@@ -1204,9 +1205,9 @@ IAG IAG
 は <wa>
 １０代 teens
 後半 late
-に <ni>
+に in
 アメリカ合衆国 the United States
-に <ni>
+に to
 渡っ go over
 た -past
 。 .
@@ -1272,7 +1273,7 @@ IAG IAG
 #en The lights in the bathroom aren't working.
 お pol-
 手洗 bathroom
-の <no>
+の 's
 電気 lights
 が <ga>
 つき turn on
@@ -1367,8 +1368,7 @@ IAG IAG
 が <ga>
 個人的 in person
 に <ni>
-私 me
-の <no>
+私の my
 手紙 letter
 に to
 返事 reply
@@ -1410,12 +1410,12 @@ IAG IAG
 知ら know
 ない -negative
 人 person
-に <ni>
+に to
 名前 name
 聞か ask
 れ -passive
 て -te
-も <mo>
+も even if
 教え tell
 ち <te>
 ゃ <wa>
@@ -1480,7 +1480,9 @@ IAG IAG
 あの that
 歌 song
 の 's
-ゆっくりした slow
+ゆっくり slowly
+し do
+た -past
 リズム rhythm
 が <ga>
 好き like
@@ -1515,10 +1517,10 @@ IAG IAG
 #jp すみませんが、駅へ行く道を教えていただけませんか。
 #en Could you tell me the way to the station?
 すみません sorry
-が <ga>
+が but
 、 ,
 駅 station
-へ <e>
+へ to
 行く go
 道 route
 を <o>
@@ -1540,9 +1542,7 @@ IAG IAG
 に <ni>
 生きる live
 の <no>
-で is
-は <wa>
-なく -negative
+ではなく is not
 て -te
 生きる live
 ため sake
@@ -1655,7 +1655,7 @@ IAG IAG
 #jp ルネの指がドアに挟まっている。
 #en René's fingers are caught in the door.
 ルネ René
-の <no>
+の 's
 指 fingers
 が <ga>
 ドア door

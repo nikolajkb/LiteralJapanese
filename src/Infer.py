@@ -11,7 +11,7 @@ def infer(source,target):
         inferred_translation = ""
         entries = Dictionary.match(token)
         if entries is None:
-            inferred_translations.append((token.word, "NO TRANSLATION"))
+            inferred_translations.append((token.word, None))
             continue
         translations = []
         for entry in entries:
@@ -23,10 +23,7 @@ def infer(source,target):
                 inferred_translation = translation
                 break
         if inferred_translation == "":
-            inferred_translations.append((token.word,"NO TRANSLATION"))
+            inferred_translations.append((token.word,None))
         else:
             inferred_translations.append((token.word,inferred_translation))
-    print(source)
-    print(target)
-    print(inferred_translations)
     return inferred_translations
