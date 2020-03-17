@@ -17,7 +17,7 @@ def infer(source,target):
         for entry in entries:
             translations.extend(entry.meanings)
 
-        translations = [Translator.clean_word(t) for t in translations]
+        translations = [Translator.clean_word(t).strip() for t in translations]
         for translation in translations:
             if translation in target:
                 inferred_translation = translation

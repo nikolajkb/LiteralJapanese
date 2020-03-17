@@ -42,15 +42,16 @@ class Dictionary:
                 for reb in r_ele.findall("reb"):
                     word.writings.append(reb.text)
 
-            sense = entry.find("sense")
-            for gloss in sense.findall("gloss"):
-                word.meanings.append(gloss.text)
+            sense_list = entry.findall("sense")
+            for sense in sense_list:
+                for gloss in sense.findall("gloss"):
+                    word.meanings.append(gloss.text)
 
-            for pos in sense.findall("pos"):
-                word.pos.append(make_grammar(pos.text))
+                for pos in sense.findall("pos"):
+                    word.pos.append(make_grammar(pos.text))
 
-            for misc in sense.findall("misc"):
-                word.misc.append(make_grammar(misc.text))
+                for misc in sense.findall("misc"):
+                    word.misc.append(make_grammar(misc.text))
 
             only_kana = True
             for writing in word.writings:
@@ -88,7 +89,26 @@ def read_pn_dictionary():
     root = tree.getroot()
     dictionary2 = parse_pn_dict(root)
 
-    dictionary.update(dictionary2)
+    dictionary3 = parse_csv_name_dict()
+
+    dictionary3.update(dictionary2)
+    dictionary3.update(dictionary)
+    return dictionary3
+
+
+def parse_csv_name_dict():
+    dictionary = {}
+    file_dir = os.path.dirname(os.path.realpath('__file__'))
+    file_name = os.path.join(file_dir, '..', 'data', "Wikipedia_name_corpus", 'data_dict_convert.csv')
+    file = open(file_name,"r",encoding="utf-8")
+    line = file.readline()
+    while line:
+        (jp,en) = line[:-1].split(",",1)
+        word = Word.make_empty()
+        word.meanings.append(en)
+        word.writings.append(jp)
+        dictionary[jp] = [word]
+        line = file.readline()
 
     return dictionary
 
@@ -159,7 +179,11 @@ def make_grammar(tag):
         "interjection (kandoushi)": Grammar.INTERJECTION,
         "prefix": Grammar.PREFIX,
         "word usually written using kanji alone": Grammar.USUALLY_KANJI,
-        "word usually written using kana alone": Grammar.USUALLY_KANA
+        "word usually written using kana alone": Grammar.USUALLY_KANA,
+        "adverbial noun (fukushitekimeishi)": Grammar.NOUN,
+        "noun, used as a suffix": Grammar.NOUN,
+        "noun, used as a prefix": Grammar.NOUN,
+        "noun (temporal) (jisoumeishi)": Grammar.NOUN
 
     }.get(tag, Grammar.NOT_IN_SWITCH)
 
