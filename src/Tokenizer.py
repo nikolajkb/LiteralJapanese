@@ -47,8 +47,9 @@ class Token:
         return "(" + self.word + " | " + self.grammar.value + " | " + self.root + ")"
 
 
-def _tokenize(text):
+def tokenize_sudachi(text):
     tokenizer_obj = sudachi_dict.Dictionary().create()
+
     mode = tokenizer.Tokenizer.SplitMode.C
     return [Token(m.surface(),
                   _make_grammar(m.part_of_speech()),
@@ -114,7 +115,7 @@ def get_tokens(text: str):
     if text == "":
         print("Empty string passed to get_tokens")
         return []
-    tokens = _tokenize(text)
+    tokens = tokenize_sudachi(text)
     tokens = _merge_word_endings(tokens)
     tokens = _merge_words_using_dictionary(tokens)
     return tokens

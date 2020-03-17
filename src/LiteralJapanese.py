@@ -59,7 +59,7 @@ def print_tokenization():
             split = line.split(" ")
             print(" ")
             print(split[1])
-            print(Tokenizer._tokenize(split[1]))
+            print(Tokenizer.tokenize_sudachi(split[1]))
         line = data.readline()
 
 

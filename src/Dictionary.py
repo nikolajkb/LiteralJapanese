@@ -23,7 +23,7 @@ class Dictionary:
 
         print("Reading dictionary...")
         file_dir = os.path.dirname(os.path.realpath('__file__'))
-        file_name = os.path.join(file_dir, '..', 'data', 'JMdict_e')
+        file_name = os.path.join(file_dir, '..', 'data',"JMdict_dictionary", 'JMdict_e')
         tree = ET.parse(file_name)
         root = tree.getroot()
 
@@ -78,12 +78,12 @@ class Dictionary:
 def read_pn_dictionary():
     file_dir = os.path.dirname(os.path.realpath('__file__'))
 
-    file_name = os.path.join(file_dir, '..', 'data', 'JMnedict.xml')
+    file_name = os.path.join(file_dir, '..', 'data',"JMdict_dictionary", 'JMnedict.xml')
     tree = ET.parse(file_name)
     root = tree.getroot()
     dictionary = parse_pn_dict(root)
 
-    file_name = os.path.join(file_dir, '..', 'data', 'JMnedict_2.xml')
+    file_name = os.path.join(file_dir, '..', 'data',"JMdict_dictionary", 'JMnedict_2.xml')
     tree = ET.parse(file_name)
     root = tree.getroot()
     dictionary2 = parse_pn_dict(root)
@@ -121,7 +121,7 @@ def parse_pn_dict(root):
 
 def save_dictionary(dictionary, name):
     file_dir = os.path.dirname(os.path.realpath('__file__'))
-    file_name = os.path.join(file_dir, '..', 'data', name + ".obj")
+    file_name = os.path.join(file_dir, '..', 'data',"JMdict_dictionary", name + ".obj")
     file_handler = open(file_name, "wb")
     pickle.dump(dictionary, file_handler)
     file_handler.close()
@@ -129,7 +129,7 @@ def save_dictionary(dictionary, name):
 
 def load_dictionary(name):
     file_dir = os.path.dirname(os.path.realpath('__file__'))
-    file_name = os.path.join(file_dir, '..', 'data', name + ".obj")
+    file_name = os.path.join(file_dir, '..', 'data',"JMdict_dictionary", name + ".obj")
     try:
         file_handler = open(file_name, "rb")
         print("loading dictionary: "+name)
