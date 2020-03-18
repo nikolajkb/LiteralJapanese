@@ -34,6 +34,7 @@ def main(argv):
     parser.add_argument("-t","--translate",type=str,help="translates a Japanese sentence to English and writes it to a file")
     parser.add_argument("file", nargs="?", type=str, default=None)
     parser.add_argument("--test",type=str, help="tests translation system using file containing test cases")
+    parser.add_argument("--tt", type=str, help="tests the tokenization using a file")
     parser.add_argument("-v","--verbose", action="store_true")
     parser.add_argument("-i", "--interactive", action="store_true")
 
@@ -49,6 +50,10 @@ def main(argv):
             print("no output file specified")
     elif args.test:
         Tests.test_translator(args.test)
+    elif args.tt:
+        Tests.test_tokenizer()
+    else:
+        print(parser.usage)
 
 
 def print_tokenization():

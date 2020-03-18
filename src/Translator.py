@@ -9,9 +9,10 @@ en = 1
 
 def translate(tokens, translation=None):
     translations = []
+
     inferred_meanings = None
     if translation is not None:
-        inferred_meanings = Infer.infer(tokens,translation)
+        inferred_meanings = None#Infer.infer(tokens,translation)
 
     i = -1
     for token in tokens:
@@ -24,9 +25,9 @@ def translate(tokens, translation=None):
             continue
 
         if inferred_meanings is not None:
-            translation = inferred_meanings[i]
-            if translation[1] is not None:
-                translations.append((jp, translation[1]))
+            translation = inferred_meanings.get(token.word)
+            if translation is not None:
+                translations.append((jp, translation))
                 continue
 
         translation = match_special(jp)
