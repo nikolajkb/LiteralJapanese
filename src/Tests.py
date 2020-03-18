@@ -76,8 +76,8 @@ class TranslationScore:
         print("substitution rate:", self.sub_rate)
 
 
-def test_tokenizer():
-    sentences = read_test_data()
+def test_tokenizer(file_path):
+    sentences = read_test_data(file_path)
     scores = []
 
     for sentence in sentences:
@@ -173,12 +173,14 @@ def merge_tokens(t1, t2):
 
 
 def calc_sentence_score(sentence):
+    if sentence.index == 97:
+        print("")
     tokens = Tokenizer.get_tokens(sentence.japanese.strip())
-    gold_tokens = sentence.tokens
+    gold_tokens = merge_token_list(sentence.tokens)
 
     print(" - sentence", sentence.index, " - ")
     print("system:", [t.word for t in tokens])
-    print("gold:", [t.japanese for t in gold_tokens])
+    print("gold:  ", [t.japanese for t in gold_tokens])
 
     correct, gi, si = 0, 0, 0
     while gi < len(gold_tokens) and si < len(tokens):

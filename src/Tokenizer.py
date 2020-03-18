@@ -90,7 +90,7 @@ def _merge_words_using_dictionary(tokens):
         dict_get = dictionary.get(combination)
         if dict_get is not None and should_merge(combination, dict_get):
             start = tokens[i].char_indices[0]
-            end = tokens[i].char_indices[1]
+            end = tokens[i+1].char_indices[1]
             merged.append(Token(dict_get[0].writings[0], dict_get[0].pos[0], dict_get[0].writings[0], (start, end)))
             i += 1
         else:

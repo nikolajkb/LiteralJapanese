@@ -1669,7 +1669,7 @@ IAG IAG
 #en Spring is the best season to visit Kyoto.
 春 spring
 は <wa>
-京都 Kyoto
+京都 Kyōto
 を <o>
 訪れる visit
 最も most

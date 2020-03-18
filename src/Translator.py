@@ -94,6 +94,7 @@ def translate_ending(token):
 
 def match_special(token):
     return {
+        # particles
         "を": "<o>",
         "お": "pol-",
         "が": "<ga>",
@@ -110,6 +111,8 @@ def match_special(token):
         "て": "<te>",
         "よ": ", you know?",
         "ね": ", right?",
+
+        # symbols
         "。": ".",
         "、": ",",
         "「": "\"",
@@ -119,6 +122,15 @@ def match_special(token):
         " ": " ",
         "？": "?",
         "?": "?",
-        "・": " "
-
+        "・": " ",
+        
+        # name suffixes
+        "さん": "san",
+        "ちゃん": "chan",
+        "さま": "sama",
+        "様": "sama",
+        "くん": "kun",
+        "たん": "tan",
+        "殿": "dono",
+        "どの": "dono"
     }.get(token, None)

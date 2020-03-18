@@ -51,7 +51,7 @@ def main(argv):
     elif args.test:
         Tests.test_translator(args.test)
     elif args.tt:
-        Tests.test_tokenizer()
+        Tests.test_tokenizer(args.tt)
     else:
         print(parser.usage)
 
