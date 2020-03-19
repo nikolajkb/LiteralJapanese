@@ -64,9 +64,10 @@ def get_translation_from_dictionary(token):
 # the point of this method is to make the word look more
 # like a word in a sentence and less like a dictionary entry
 def clean_word(word):
-    word = re.sub(" ?\(.*\)", "", word)
+    word = re.sub("\([^)]*\)", "", word)
     word = re.sub("^to ", "", word)
     word = re.sub("^be ","",word)
+    word = word.strip()
     return word
 
 

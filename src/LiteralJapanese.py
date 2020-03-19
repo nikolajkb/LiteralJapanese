@@ -34,15 +34,18 @@ def main(argv):
     parser.add_argument("-t","--translate",type=str,help="translates a Japanese sentence to English and writes it to a file")
     parser.add_argument("file", nargs="?", type=str, default=None)
     parser.add_argument("--test",type=str, help="tests translation system using file containing test cases")
-    parser.add_argument("--tt", type=str, help="tests the tokenization using a file")
+    parser.add_argument("--tt", type=str, help="tests the tokenizing using a file")
     parser.add_argument("-v","--verbose", action="store_true")
-    parser.add_argument("-i", "--interactive", action="store_true")
+    parser.add_argument("-i", "--interactive", action="store_true", help="run an interactive version of the system")
+    parser.add_argument("-p", "--paraphrase", action="store_true", help="count translations as correct during testing if they are paraphrases of the gold translation")
 
     args = parser.parse_args()
+
+    Settings.VERBOSE = args.verbose
+    Settings.PARAPHRASE = args.paraphrase
+
     if args.interactive:
         start_interactive()
-    if args.verbose:
-        Settings.VERBOSE = True
     if args.translate:
         if args.file:
             PrintTools.write_to_file(translate(args.translate), args.file)
@@ -53,7 +56,7 @@ def main(argv):
     elif args.tt:
         Tests.test_tokenizer(args.tt)
     else:
-        print(parser.usage)
+        parser.print_help()
 
 
 def print_tokenization():
