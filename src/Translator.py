@@ -1,6 +1,7 @@
 import Dictionary
 import Infer
-from Grammar import Grammar, endings, is_english, is_katakana
+import Numbers
+from Grammar import Grammar, endings, is_english, is_katakana, is_number
 import re
 import Katakana
 
@@ -47,8 +48,13 @@ def translate(tokens, translation=None):
 
         if is_english(jp):
             translations.append((jp, jp))
-        else:
-            translations.append((jp, "OOV"))
+            continue
+
+        if is_number(jp):
+            translations.append((jp,Numbers.convert(jp)))
+            continue
+
+        translations.append((jp, "OOV"))
 
     return translations
 

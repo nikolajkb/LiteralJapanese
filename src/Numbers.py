@@ -13,10 +13,10 @@ def convert(number):
 
 # the library used cannot parse the full width Japanese numbers
 def convert_number_chars(nr):
-    return "".join([convert_number_char(c) for c in nr])
+    return "".join([number_normal_writing(c) for c in nr])
 
 
-def convert_number_char(c):
+def number_normal_writing(c):
     return {
         "１": "1",
         "２": "2",
@@ -31,4 +31,16 @@ def convert_number_char(c):
     }.get(c,c)
 
 
-
+def number_japanese_writing(c):
+    return {
+        "1": "１",
+        "2": "２",
+        "3": "３",
+        "4": "４",
+        "5": "５",
+        "6": "６",
+        "7": "７",
+        "8": "８",
+        "9": "９",
+        "0": "０",
+    }.get(c,c)

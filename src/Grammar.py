@@ -80,17 +80,32 @@ endings = [("ま", [Ending.POLITE]),("せん", [Ending.NEGATIVE]),("た", [Endin
            ("てます",[Ending.PROGRESSIVE, Ending.POLITE]),("たく",[Ending.WANT])]
 
 
-def is_hiragana(s: str):
+def is_hiragana(s):
     kana = "あいうえおかきくけこがぎぐげごさしすせそざじずぜぞたちつてとだぢづでどなにぬねのはひふへほばびぶべぼぱぴぷぺぽまみむめもやゆよらりるれろわゐゑをんっゃゅょぃーゔ"
-    return is_kana(s,kana)
+    return check_alphabet(s, kana)
 
 
-def is_katakana(s: str):
+def is_katakana(s):
     kana = "アイウエオカキクケコガギグゲゴサシスセソザジズゼゾタチツテトダヂヅデドナニヌネノハヒフヘホバビブベボパピプペポマミムメモヤユヨラリルレロワヰヱヲンッャュョィーヴ"
-    return is_kana(s,kana)
+    return check_alphabet(s, kana)
 
 
-def is_kana(s: str, kana):
+def is_number(s):
+    numbers = "1234567890１２３４５６７８９０〇一二三四五六七八十千万億兆京"
+    return check_alphabet(s,numbers)
+
+
+def is_small_number(s):
+    numbers = "1234567890１２３４５６７８９０〇一二三四五六七八十"
+    return check_alphabet(s,numbers)
+
+
+def is_day_or_month(s):
+    day_and_month = "日月"
+    return check_alphabet(s,day_and_month)
+
+
+def check_alphabet(s: str, kana):
     for c in list(s):
         if kana.find(c) == -1:
             return False
@@ -99,7 +114,4 @@ def is_kana(s: str, kana):
 
 def is_english(s: str):
     match = re.match("^[a-zA-Z0-9.,]*$", s)
-    if match:
-        return True
-    else:
-        return False
+    return match is not None

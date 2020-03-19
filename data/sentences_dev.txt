@@ -329,7 +329,8 @@ treemaker treemaker
 #20
 #jp 4カ月前には まだ出来なかったんですよ
 #en she couldn't stick that four months ago.
-4カ月 4 months
+4 4
+カ月 months
 前 before
 に <ni>
 は <wa>

@@ -1,6 +1,7 @@
 from sudachipy import tokenizer
 from sudachipy import dictionary as sudachi_dict
-from Grammar import Grammar, is_hiragana
+from Grammar import Grammar, is_small_number, is_day_or_month
+from Numbers import number_japanese_writing
 import Dictionary
 
 
@@ -34,14 +35,17 @@ def _make_grammar(tag):
 
 
 class Token:
-    def __init__(self, word, grammar, root, char_indices):
+    def __init__(self, word, grammar=Grammar.UNKNOWN, root="", char_indices=(0,0)):
         self.word = word
         self.grammar = grammar
-        self.root = root
+        if root == "":
+            self.root = word
+        else:
+            self.root = root
         self.char_indices = char_indices
 
     def __str__(self):
-        return "(" + self.word + " | " + self.grammar.value + ")"
+        return "(" + self.word + " | " + self.grammar.value + " | " + self.root + ")"
 
     def __repr__(self):
         return "(" + self.word + " | " + self.grammar.value + " | " + self.root + ")"
@@ -84,11 +88,13 @@ def _merge_word_endings(tokens):
 def _merge_words_using_dictionary(tokens):
     merged = []
     i = 0
-    dictionary = Dictionary.Dictionary().get_dict().dictionary
     while i+1 < len(tokens):
-        combination = tokens[i].word + tokens[i+1].word
-        dict_get = dictionary.get(combination)
-        if dict_get is not None and should_merge(combination, dict_get):
+        current = tokens[i].word
+        next_ = tokens[i+1].word
+        combination = current + next_
+        combination = normalize_numbers(combination)
+        dict_get = Dictionary.match(Token(combination), match_pos=False)
+        if dict_get is not None and should_merge(current,next_, dict_get):
             start = tokens[i].char_indices[0]
             end = tokens[i+1].char_indices[1]
             merged.append(Token(dict_get[0].writings[0], dict_get[0].pos[0], dict_get[0].writings[0], (start, end)))
@@ -102,8 +108,15 @@ def _merge_words_using_dictionary(tokens):
     return merged
 
 
-def should_merge(combination, entry):
-    return (entry[0].pos[0] == Grammar.NOUN or entry[0].pos[0] == Grammar.PRONOUN ) and entry[0].writings[0] == combination
+def should_merge(current, next_, entry):
+    if is_small_number(current) and is_day_or_month(next_):
+        return True
+    else:  # these tags are accepted since they have a low chance of producing an incorrect result
+        return (entry[0].pos[0] == Grammar.NOUN or entry[0].pos[0] == Grammar.PRONOUN) and entry[0].writings[0] == current+next_
+
+
+def normalize_numbers(string):
+    return "".join([number_japanese_writing(c) for c in string])
 
 
 def _is_ending(token):
