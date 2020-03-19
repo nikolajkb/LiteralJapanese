@@ -1,7 +1,8 @@
 import Dictionary
 import Infer
-from Grammar import Grammar, endings, is_english
+from Grammar import Grammar, endings, is_english, is_katakana
 import re
+import Katakana
 
 jp = 0
 en = 1
@@ -38,6 +39,10 @@ def translate(tokens, translation=None):
         translation = get_translation_from_dictionary(token)
         if translation:
             translations.append((jp, translation))
+            continue
+
+        if is_katakana(jp):
+            translations.append((jp,Katakana.translate(jp)))
             continue
 
         if is_english(jp):

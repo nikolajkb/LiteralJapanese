@@ -4,8 +4,7 @@ import LiteralJapanese
 from scripts import AlignCorpus
 import nltk
 from nltk.corpus import wordnet
+import Katakana
 
-syns = wordnet.synsets("painful")
-print(syns)
-
-
+q = Katakana.translate("ガーヴィー")
+print(q)
