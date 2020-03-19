@@ -1,6 +1,7 @@
 import os
 import unittest
 
+import Numbers
 import Translator
 import Tokenizer
 import LiteralJapanese
@@ -101,6 +102,28 @@ class PrintTests(unittest.TestCase):
 
         file = open(file_name,"r",encoding="utf-8")
         self.assertEqual(text,file.readline())
+
+
+class NumberTests(unittest.TestCase):
+    def test_number_1(self):
+        number = "１２３８３万"
+        english = Numbers.convert(number)
+        self.assertEqual("123.83 million",english)
+
+    def test_number_2(self):
+        number = "三一一"
+        english = Numbers.convert(number)
+        self.assertEqual("311",english)
+
+    def test_number_3(self):
+        number = "二〇〇"
+        english = Numbers.convert(number)
+        self.assertEqual("200",english)
+
+    def test_number_4(self):
+        number = "90億"
+        english = Numbers.convert(number)
+        self.assertEqual("9 billion",english)
 
 
 if __name__ == '__main__':
