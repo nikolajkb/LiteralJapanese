@@ -12,7 +12,7 @@ def translate(jp):
         try:
             current = hepburn[i]
             next_ = hepburn[i+1]
-            if current == next_:
+            if current == next_ and is_vowel(current):
                 hepburn = merge(i,hepburn)
         except IndexError:
             pass
@@ -26,6 +26,11 @@ def merge(i, word: str):
     return word_start + convert_long_vowel(word[i]) + word_end
 
 
+# y is not included since it does not exist in Japanese
+def is_vowel(letter):
+    return letter in "aeiou"
+
+
 def convert_long_vowel(vowel):
     return {
         "a": "ā",
@@ -33,6 +38,5 @@ def convert_long_vowel(vowel):
         "i": "ī",
         "o": "ō",
         "u": "ū",
-        "y": "ȳ"
     }.get(vowel)
 
