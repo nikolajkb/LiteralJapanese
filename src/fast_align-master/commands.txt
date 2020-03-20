@@ -1,0 +1,7 @@
+./fast_align -i aligned_corpus -d -o -v -s > forward.align
+
+./fast_align -i /home/nikolaj/PycharmProjects/LitteralJapaneseTranslation/data/JPara.align -d -v -o -p fwd_params >fwd_align 2>fwd_err
+./fast_align -i /home/nikolaj/PycharmProjects/LitteralJapaneseTranslation/data/JPara.align -r -d -v -o -p rev_params >rev_align 2>rev_err
+
+python2.7 force_align.py fwd_params fwd_err rev_params rev_err <aligned_corpus >aligned_corpus.gdfa
+python2.7 force_align.py fwd_params fwd_err rev_params rev_err -s <sentences_dev.align >sentences_dev.gdfa
