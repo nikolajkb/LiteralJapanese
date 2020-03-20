@@ -4,4 +4,6 @@
 ./fast_align -i /home/nikolaj/PycharmProjects/LitteralJapaneseTranslation/data/JPara.align -r -d -v -o -p rev_params >rev_align 2>rev_err
 
 python2.7 force_align.py fwd_params fwd_err rev_params rev_err <aligned_corpus >aligned_corpus.gdfa
-python2.7 force_align.py fwd_params fwd_err rev_params rev_err -s <sentences_dev.align >sentences_dev.gdfa
+python2.7 build/force_align.py fwd_params fwd_err rev_params rev_err <sentences_dev.parallel >sentences_dev.align
+
+./build/fast_align -i -d -T 1 -m 1 -f fwd_params
