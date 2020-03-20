@@ -1,5 +1,7 @@
 from sudachipy import tokenizer
 from sudachipy import dictionary as sudachi_dict
+
+import Settings
 from Grammar import Grammar, is_small_number, is_day_or_month
 from Numbers import number_japanese_writing
 import Dictionary
@@ -52,14 +54,12 @@ class Token:
 
 
 def tokenize_sudachi(text):
-    tokenizer_obj = sudachi_dict.Dictionary().create()
-
     mode = tokenizer.Tokenizer.SplitMode.C
     return [Token(m.surface(),
                   _make_grammar(m.part_of_speech()),
                   m.dictionary_form(),
                   (m.begin(), m.end()))
-            for m in tokenizer_obj.tokenize(text, mode)]
+            for m in Settings.tokenizer.tokenize(text, mode)]
 
 
 def _merge_word_endings(tokens):
@@ -98,7 +98,8 @@ def _merge_words_using_dictionary(tokens):
             start = tokens[i].char_indices[0]
             end = tokens[i+1].char_indices[1]
             merged.append(Token(dict_get[0].writings[0], dict_get[0].pos[0], dict_get[0].writings[0], (start, end)))
-            i += 1
+            if i+2 < len(tokens):
+                i += 1
         else:
             merged.append(tokens[i])
 
