@@ -1,6 +1,7 @@
 import Paraphrase
 import Settings
 
+
 def distance(source, target):
     if source == target:
         return (0,0,0)
@@ -40,8 +41,16 @@ def equals(source, target):
     if source == target:
         return True
     if Settings.PARAPHRASE:
-        paraphrases = Paraphrase.Ppdb.get_ppdb()
-        similar = paraphrases.get(source,[])
-        return target in similar
+        return is_paraphrase(source,target) or is_substring(source,target)
     else:
         return False
+
+
+def is_paraphrase(source, target):
+    paraphrases = Paraphrase.Ppdb.get_ppdb()
+    similar = paraphrases.get(source, [])
+    return target in similar
+
+
+def is_substring(source: str,target: str):
+    return target in source or source in target
