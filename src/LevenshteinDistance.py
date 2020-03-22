@@ -42,6 +42,6 @@ def equals(source, target):
     if Settings.PARAPHRASE:
         paraphrases = Paraphrase.Ppdb.get_ppdb()
         similar = paraphrases.get(source,[])
-        return source in similar
+        return target in similar
     else:
         return False

@@ -1,12 +1,10 @@
-import getopt
+
+import os
 
 import PrintTools
 import Tokenizer
 import Translator
 import Tests
-from Grammar import Grammar
-from Dictionary import Dictionary
-import LevenshteinDistance
 import sys
 import argparse
 import Settings
@@ -57,18 +55,6 @@ def main(argv):
         Tests.test_tokenizer(args.tt)
     else:
         parser.print_help()
-
-
-def print_tokenization():
-    data = open("../data/translations.txt", "r", encoding="utf-8")
-    line = data.readline()
-    while line:
-        if line.startswith("#jp"):
-            split = line.split(" ")
-            print(" ")
-            print(split[1])
-            print(Tokenizer.tokenize_sudachi(split[1]))
-        line = data.readline()
 
 
 if __name__ == "__main__":

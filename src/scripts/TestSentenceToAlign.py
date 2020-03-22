@@ -11,7 +11,7 @@ line = input_file.readline()
 while line:
     if line.startswith("#jp"):
         jp = line[4:-1]
-        jp = Tokenizer.tokenize_sudachi(jp)
+        jp = Tokenizer.get_tokens(jp)
         jp = [t.word for t in jp]
         jp = " ".join(jp)
         line = input_file.readline()
