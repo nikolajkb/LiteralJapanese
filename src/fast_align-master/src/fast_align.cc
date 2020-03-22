@@ -460,7 +460,7 @@ int main(int argc, char** argv) {
         return 1;
       }
       double log_prob = Md::log_poisson(trg.size(), 0.05 + src.size() * mean_srclen_multiplier);
-
+      vector<double> final_probs(trg.size() + 1); //nbje
       // compute likelihood
       for (unsigned j = 0; j < trg.size(); ++j) {
         unsigned f_j = trg[j];
@@ -483,6 +483,7 @@ int main(int argc, char** argv) {
           if (pat > max_pat) { max_pat = pat; a_j = i; }
           sum += pat;
         }
+        final_probs[j] = max_pat;
         log_prob += log(sum);
         if (true) {
           if (a_j > 0) {
@@ -494,8 +495,13 @@ int main(int argc, char** argv) {
           }
         }
       }
+      std::string probstr; //nbje
+      std::string space = " "; //nbje
+      for (unsigned ind = 0; ind <= final_probs.size()-2; ++ind){ //nbje
+            probstr = probstr + space + std::to_string(final_probs[ind]); //nbje
+      } //nbje
       tlp += log_prob;
-      cout << " ||| " << log_prob << endl << flush;
+      cout << " ||| " << log_prob << " |||" << probstr << endl << flush;
     } // loop over test set sentences
     cerr << "TOTAL LOG PROB " << tlp << endl;
   }
