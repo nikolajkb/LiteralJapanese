@@ -1,7 +1,7 @@
 from sudachipy import tokenizer
 from sudachipy import dictionary as sudachi_dict
 
-import Settings
+import Constants
 from Grammar import Grammar, is_small_number, is_day_or_month
 from Numbers import number_japanese_writing
 import Dictionary
@@ -59,7 +59,7 @@ def tokenize_sudachi(text):
                   _make_grammar(m.part_of_speech()),
                   m.dictionary_form(),
                   (m.begin(), m.end()))
-            for m in Settings.tokenizer.tokenize(text, mode)]
+            for m in Constants.tokenizer.tokenize(text, mode)]
 
 
 def _merge_word_endings(tokens):

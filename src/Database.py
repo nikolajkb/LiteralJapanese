@@ -1,6 +1,6 @@
 import os
 import pickledb
-import Settings
+import Constants
 
 
 class Database:
@@ -30,7 +30,7 @@ class Database:
 
 
 def _make_db(name):
-    file_dir = Settings.project_dir
+    file_dir = Constants.project_dir
     file_path = os.path.join(file_dir, "..", "data","PickleDB",name)
     return pickledb.load(file_path,False)
 

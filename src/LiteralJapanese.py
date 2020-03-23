@@ -7,7 +7,7 @@ import Translator
 import Tests
 import sys
 import argparse
-import Settings
+import Constants
 
 
 def translate(text, translation=None):
@@ -39,8 +39,8 @@ def main(argv):
 
     args = parser.parse_args()
 
-    Settings.VERBOSE = args.verbose
-    Settings.PARAPHRASE = args.paraphrase
+    Constants.VERBOSE = args.verbose
+    Constants.PARAPHRASE = args.paraphrase
 
     if args.interactive:
         start_interactive()

@@ -1,8 +1,13 @@
+import Constants
 import Paraphrase
-import Settings
+import Constants
+
+from Similarity import Similarity
 
 
 def distance(source, target):
+    init_similarity()
+
     if source == target:
         return (0,0,0)
 
@@ -40,8 +45,10 @@ def add(tup,tup2):
 def equals(source, target):
     if source == target:
         return True
-    if Settings.PARAPHRASE:
-        return is_paraphrase(source,target) or is_substring(source,target)
+    if Constants.PARAPHRASE:
+        return is_paraphrase(source,target) or \
+               is_substring(source,target) or \
+               is_similar(source,target)
     else:
         return False
 
@@ -54,3 +61,12 @@ def is_paraphrase(source, target):
 
 def is_substring(source: str,target: str):
     return target in source or source in target
+
+
+def is_similar(source,target):
+    return Constants.similarity.similarity(source,target)
+
+
+def init_similarity():
+    if Constants.PARAPHRASE and Constants.similarity is None:
+        Constants.similarity = Similarity()

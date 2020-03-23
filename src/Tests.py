@@ -1,6 +1,6 @@
 from typing import List
 import LevenshteinDistance
-import Settings
+import Constants
 import Tokenizer
 import LiteralJapanese
 from PrintTools import print_translated_sentence
@@ -98,7 +98,7 @@ def test_translator(file_path):
     scores = []
 
     print("translating sentences\n")
-    if Settings.VERBOSE:
+    if Constants.VERBOSE:
         print("print format:")
         print("- sentence x | score: (deletions, insertions, substitutions) -")
         print("gold tokens")
@@ -109,7 +109,7 @@ def test_translator(file_path):
         system = LiteralJapanese.translate(sentence.japanese, translation=sentence.english)
         gold = sentence.tokens
         score = translation_sentence_score(gold, system)
-        if Settings.VERBOSE:
+        if Constants.VERBOSE:
             print_translated_sentence(sentence, system, gold, score)
         scores.append(TranslationScore(len(gold), score))
 
