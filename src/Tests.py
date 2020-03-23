@@ -4,6 +4,7 @@ import Constants
 import Tokenizer
 import LiteralJapanese
 from PrintTools import print_translated_sentence
+from Similarity import Similarity
 
 start = 0
 end = 1
@@ -196,6 +197,21 @@ def calc_sentence_score(sentence):
     score = TokenScore(len(gold_tokens), len(tokens), correct)
     score.print()
     return score
+
+
+def print_equalities():
+    Constants.similarity = Similarity()
+    Constants.PARAPHRASE = True
+    sentences = read_test_data(r"C:\Users\Nikolaj\PycharmProjects\LitteralJapaneseTranslation\data\sentences_dev.txt")
+    for sentence in sentences:
+        print([t.english for t in sentence.tokens])
+        translations = LiteralJapanese.translate(sentence.japanese)
+        print([t[1] for t in translations])
+        for translation in translations:
+            for token in sentence.tokens:
+                (equal,rule) = LevenshteinDistance.equals_rule(token.english,translation[1])
+                if equal:
+                    print(token.english + " = " + translation[1] + "\t" + "("+rule+")")
 
 
 # read test data into Sentence object

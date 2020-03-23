@@ -13,19 +13,24 @@ class Similarity:
         self.vectors = self._load_vectors()
 
     def is_similar(self, s1: str, s2: str):
-        return self.similarity(s1,s2) > 0.4
+        is_sim = self._similarity(s1,s2) > 0.4
+        return is_sim
 
-    def similarity(self, s1: str,s2: str):
+    def _similarity(self, s1: str,s2: str):
         if self._is_valid_expression(s1) and self._is_valid_expression(s2):
-            if len(s1) == 1 and len(s2) == 1:
-                return self._word_similarity(s1,s2)
+            if " " in s1 == 1 and " " in s2:
+                return self._expression_similarity(s1, s2)
             else:
-                return self._expression_similarity(s1,s2)
+                return self._word_similarity(s1, s2)
         else:
             return 0
 
     def _word_similarity(self,s1,s2):
-        return self.vectors.similarity(s1,s2)
+        try:
+            sim = self.vectors.similarity(s1,s2)
+        except KeyError:
+            sim = 0
+        return sim
 
     def _expression_similarity(self,e1,e2):
         e1 = self._remove_stopwords(e1).split()
