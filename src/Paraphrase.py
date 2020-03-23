@@ -1,28 +1,27 @@
 import os
 import re
+from Database import Database
 
 
 def _parse_ppdb():
     print("loading paraphrase database")
-    file_dir = os.path.dirname(os.path.realpath('__file__'))
-    file_path = os.path.join(file_dir, "..", "data", "PPDB", "ppdb-2.0-s-all")
-    file = open(file_path, "r")
+    database = Database("ppdb_small.db")
+    if database.is_empty():
+        file_dir = os.path.dirname(os.path.realpath('__file__'))
+        ppdb_path = os.path.join(file_dir, "..", "data", "PPDB", "ppdb-2.0-s-all")
+        ppdb = open(ppdb_path, "r")
 
-    dictionary = {}
-    line = file.readline()
-    while line:
-        split = line.split("|||")
-        phrase = _clean(split[1])
-        paraphrase = _clean(split[2])
+        line = ppdb.readline()
+        while line:
+            split = line.split("|||")
+            phrase = _clean(split[1])
+            paraphrase = _clean(split[2])
 
-        current = dictionary.get(phrase)
-        if current is None:
-            dictionary[phrase] = {paraphrase}
-        else:
-            current.add(paraphrase)
-        line = file.readline()
+            database.add_to_list(phrase,paraphrase)
+            line = ppdb.readline()
 
-    return dictionary
+        database.write_to_disk()
+    return database
 
 
 def _clean(string):

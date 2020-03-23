@@ -112,6 +112,9 @@ def check_alphabet(s: str, kana):
     return True
 
 
-def is_english(s: str):
-    match = re.match("^[a-zA-Z0-9.,]*$", s)
-    return match is not None
+def is_english(s):
+    return re.match("^[a-zA-Z0-9.,]*$", s) is not None
+
+
+def is_english_words_no_symbols(s):
+    return re.match("^[a-zA-Z0-9 ]*$", s) is not None

@@ -1588,7 +1588,8 @@ IAG IAG
 #en I think we'd better talk outside.
 外 outside
 で <de>
-話した talk
+話し talk
+た -past
 ほう option
 が <ga>
 よさそう better
