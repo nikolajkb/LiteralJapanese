@@ -55,4 +55,4 @@ class Similarity:
     def _load_vectors(self):
         file_dir = Constants.project_dir
         file_path = os.path.join(file_dir,"..","data","GoogleNewsVectors","GoogleNews-vectors-negative300.bin")
-        return KeyedVectors.load_word2vec_format(datapath(file_path), binary=True, limit=1_000_000)
+        return KeyedVectors.load_word2vec_format(datapath(file_path), binary=True, limit=100_000)

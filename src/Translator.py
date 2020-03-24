@@ -14,7 +14,7 @@ def translate(tokens, translation=None):
 
     inferred_meanings = None
     if translation is not None:
-        inferred_meanings = None#Infer.infer(tokens,translation)
+        inferred_meanings = Infer.infer(tokens,translation)
 
     i = -1
     for token in tokens:
@@ -75,9 +75,9 @@ def get_translation_from_dictionary(token):
 # the point of this method is to make the word look more
 # like a word in a sentence and less like a dictionary entry
 def clean_word(word):
-    word = re.sub("\([^)]*\)", "", word)
-    word = re.sub("^to ", "", word)
-    word = re.sub("^be ","",word)
+    word = re.sub("\([^)]*\)", "", word)  # remove anything in parentheses
+    word = re.sub("^to (?=.+)", "", word)  # remove to in "to play" etc.
+    word = re.sub("^be (?=.+)","",word)  # remove be in "be happy" etc.
     word = word.strip()
     return word
 
@@ -118,7 +118,6 @@ def match_special(token):
         "も": "<mo>",
         "ん": "<no>",
         "な": "<na>",
-        "ので": "so", # todo this is not matched since it's two tokens
         "か": "?",
         "て": "<te>",
         "よ": ", you know?",
