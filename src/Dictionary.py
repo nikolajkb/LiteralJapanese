@@ -195,10 +195,16 @@ def make_grammar(tag):
 
 
 # returns translations from dictionary that match pos/kana
-def match(token, match_kana=True, match_pos=True):
+def match(token, match_kana=True, match_pos=True, match_common=True):
     dictionary = Dictionary.get_dict().dictionary
     translations = dictionary.get(token.root)
     if translations:
+
+        if match_pos:
+            # attempt to match pos
+            pos_match = [t for t in translations if token.grammar in t.pos]
+            if pos_match:
+                translations = pos_match
 
         if match_kana:
             # if word is only kana, find definition that is usually written in kana
@@ -209,12 +215,7 @@ def match(token, match_kana=True, match_pos=True):
             if kana_match:
                 translations = kana_match
 
-        if match_pos:
-            # attempt to match pos
-            pos_match = [t for t in translations if token.grammar in t.pos]
-            if pos_match:
-                translations = pos_match
-
+        #TODO sort by frequency
     return translations
 
 

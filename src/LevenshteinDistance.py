@@ -73,8 +73,8 @@ def not_small_words(source,length):
 
 def is_paraphrase(source, target):
     paraphrases = Paraphrase.Ppdb.get_ppdb()
-    similar = paraphrases.get(source, [])
-    return target in similar
+    similar = paraphrases.get(target, [])
+    return source in similar
 
 
 def is_substring(source: str,target: str):

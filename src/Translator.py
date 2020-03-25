@@ -130,5 +130,6 @@ def match_special(token):
         "くん": "kun",
         "たん": "tan",
         "殿": "dono",
-        "どの": "dono"
+        "どの": "dono",
+        "氏": "shi"
     }.get(token, None)

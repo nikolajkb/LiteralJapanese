@@ -2,7 +2,7 @@ from sudachipy import tokenizer
 
 import Constants
 import Deinflect
-from Grammar import Grammar, is_small_number, is_day_or_month
+from Grammar import Grammar, is_small_number, is_day_or_month, is_wh_question
 from Numbers import number_japanese_writing
 import Dictionary
 
@@ -83,7 +83,9 @@ def merge_endings(tokens):
 
             # current is an inflection itself
             deinflict = Deinflect.get_ending(original_token, original_token)
-            if deinflict is not None:
+            dictionary = Dictionary.Dictionary().get_dict().dictionary
+            not_word = dictionary.get(original_token) is None
+            if deinflict is not None and not_word:
                 root_len = len(deinflict.root)
                 start = current_indices[0] + root_len
                 end = current_indices[1]
@@ -112,7 +114,7 @@ def merge_endings(tokens):
                 i += 1
                 ending += next_.word
             if root != "":
-                merged.append(Token(current_word, current_grammar, root, current_indices))  # word that is conjugated
+                merged.append(Token(current_word, current_grammar, current.root, current_indices))  # word that is conjugated
                 merged.append(Token(ending_final, Grammar.MERGED, char_indices=(start, end), endings=deinflict_reasons))  # ending to that word
                 i = last_match + 2
             else:
@@ -126,7 +128,7 @@ def merge_endings(tokens):
     return merged
 
 def _make_token_root(original):
-    return Token(original.word, original.grammar, original.word, original.char_indices)
+    return Token(original.word, original.grammar, original.root, original.char_indices)
 
 def _conjugates(current):
     return current.grammar == Grammar.VERB or current.grammar == Grammar.I_ADJECTIVE or current.grammar == Grammar.AUX_VERB
@@ -140,7 +142,7 @@ def _merge_words_using_dictionary(tokens):
     merged = []
     i = 0
     while i+1 < len(tokens):
-        to_add = Token(tokens[i].word,tokens[i].grammar,tokens[i].root,tokens[i].char_indices)
+        to_add = Token(tokens[i].word,tokens[i].grammar,tokens[i].root,tokens[i].char_indices,tokens[i].endings)
         start = i
         combination = tokens[i].word + tokens[i + 1].word
         combination = normalize_numbers(combination)
