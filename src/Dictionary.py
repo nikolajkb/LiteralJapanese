@@ -37,10 +37,20 @@ class Dictionary:
                 for keb in k_ele.findall("keb"):
                     word.writings.append(keb.text)
 
+                for ke_pri in k_ele.findall("ke_pri"):
+                    if ke_pri.text.startswith("nf"):
+                        word.priority = int(ke_pri.text[2:])
+
             r_ele = entry.find("r_ele")
             if r_ele is not None:
                 for reb in r_ele.findall("reb"):
                     word.writings.append(reb.text)
+
+                for re_pri in r_ele.findall("re_pri"):
+                    if re_pri.text.startswith("nf"):
+                        priority = int(re_pri.text[2:])
+                        if priority < word.priority:
+                            word.priority = priority
 
             sense_list = entry.findall("sense")
             for sense in sense_list:
@@ -52,6 +62,8 @@ class Dictionary:
 
                 for misc in sense.findall("misc"):
                     word.misc.append(make_grammar(misc.text))
+
+
 
             only_kana = True
             for writing in word.writings:
