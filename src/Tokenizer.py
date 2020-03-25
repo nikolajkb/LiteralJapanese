@@ -1,7 +1,7 @@
 from sudachipy import tokenizer
 
 import Constants
-from Grammar import Grammar, is_small_number, is_day_or_month
+from Grammar import Grammar, is_small_number, is_day_or_month, is_wh_question
 from Numbers import number_japanese_writing
 import Dictionary
 
@@ -36,7 +36,7 @@ def _make_grammar(tag):
 
 
 class Token:
-    def __init__(self, word, grammar=Grammar.UNKNOWN, root="", char_indices=(0,0)):
+    def __init__(self, word="", grammar=Grammar.UNKNOWN, root="", char_indices=(0,0)):
         self.word = word
         self.grammar = grammar
         if root == "":
@@ -88,28 +88,36 @@ def _merge_words_using_dictionary(tokens):
     merged = []
     i = 0
     while i+1 < len(tokens):
-        current = tokens[i].word
-        next_ = tokens[i+1].word
-        combination = current + next_
+        to_add = Token(tokens[i].word,tokens[i].grammar,tokens[i].root,tokens[i].char_indices)
+        start = i
+        combination = tokens[i].word + tokens[i + 1].word
         combination = normalize_numbers(combination)
-        dict_get = Dictionary.match(Token(combination), match_pos=False)
-        if dict_get is not None and should_merge(current,next_, dict_get):
-            start = tokens[i].char_indices[0]
-            end = tokens[i+1].char_indices[1]
-            merged.append(Token(dict_get[0].writings[0], dict_get[0].pos[0], dict_get[0].writings[0], (start, end)))
-            if i+2 < len(tokens):
-                i += 1
-        else:
-            merged.append(tokens[i])
+        dict_entry = Dictionary.match(Token(combination), match_pos=False)
 
+        while dict_entry is not None and should_merge(tokens[i].word,tokens[i+1].word,dict_entry):
+            to_add.char_indices = (tokens[start].char_indices[0],tokens[i+1].char_indices[1])
+            to_add.root = dict_entry[0].writings[0]
+            to_add.pos = dict_entry[0].pos[0]
+            to_add.word = to_add.root
+
+            i += 1
+            if i+1 == len(tokens):
+                break
+            combination = tokens[i].word + tokens[i+1].word
+            combination = normalize_numbers(combination)
+            dict_entry = Dictionary.match(Token(combination), match_pos=False)
+
+        merged.append(to_add)
         i += 1
-
     merged.append(tokens[i])
+
     return merged
 
 
 def should_merge(current, next_, entry):
     if is_small_number(current) and is_day_or_month(next_):
+        return True
+    elif is_wh_question(current):
         return True
     else:  # these tags are accepted since they have a low chance of producing an incorrect result
         return (entry[0].pos[0] == Grammar.NOUN or entry[0].pos[0] == Grammar.PRONOUN) and entry[0].writings[0] == current+next_
