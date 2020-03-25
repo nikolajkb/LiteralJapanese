@@ -1,5 +1,4 @@
 from sudachipy import tokenizer
-from sudachipy import dictionary as sudachi_dict
 
 import Constants
 from Grammar import Grammar, is_small_number, is_day_or_month
