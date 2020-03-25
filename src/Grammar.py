@@ -1,7 +1,7 @@
 from enum import Enum
 import re
 
-
+# TODO remove unknown
 # marked with * are my own definitions that I was not able to confirm
 class Grammar(Enum):
     VERB = "verb"
