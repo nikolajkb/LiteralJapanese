@@ -1,7 +1,7 @@
 from enum import Enum
 import re
 
-
+# TODO remove unknown
 # marked with * are my own definitions that I was not able to confirm
 class Grammar(Enum):
     VERB = "verb"
@@ -79,7 +79,6 @@ endings = [("ま", [Ending.POLITE]),("せん", [Ending.NEGATIVE]),("た", [Endin
            ("でした", [Ending.PAST]), ("しょう", [Ending.VOLITIONAL]), ("でいる",[Ending.PROGRESSIVE]),
            ("てます",[Ending.PROGRESSIVE, Ending.POLITE]),("たく",[Ending.WANT])]
 
-
 def is_hiragana(s):
     kana = "あいうえおかきくけこがぎぐげごさしすせそざじずぜぞたちつてとだぢづでどなにぬねのはひふへほばびぶべぼぱぴぷぺぽまみむめもやゆよらりるれろわゐゑをんっゃゅょぃーゔぇ"
     return check_alphabet(s, kana)
@@ -118,3 +117,8 @@ def is_english(s):
 
 def is_english_words_no_symbols(s):
     return re.match("^[a-zA-Z0-9 ]*$", s) is not None
+
+
+def is_wh_question(word: str):
+    questions = ["何","誰","いつ","どこ"]
+    return True in [word.startswith(q) for q in questions]
