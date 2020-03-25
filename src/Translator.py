@@ -87,21 +87,8 @@ def is_ending(token):
 
 
 def translate_ending(token):
-    ending: str = token.word
-    if ending == "な":  # not including this special case would make the algorithm more complicated
-        return "-imperative-negative"
-    ending_en = ""
-    while ending:
-        matches = [s for s in endings if ending.startswith(s[jp])]
-        if len(matches) == 0:
-            ending = ending[1:]
-        else:
-            longest = max(matches, key=lambda m: len(m[0]))
-            for end in longest[en]:
-                ending_en += "-" + end.value
-            ending = ending[len(longest[jp]):]
-
-    return ending_en
+    ending = [r.value for r in token.endings]
+    return "".join(ending)
 
 
 def match_special(token):

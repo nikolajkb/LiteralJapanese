@@ -1,6 +1,7 @@
 from sudachipy import tokenizer
 
 import Constants
+import Deinflect
 from Grammar import Grammar, is_small_number, is_day_or_month
 from Numbers import number_japanese_writing
 import Dictionary
@@ -36,7 +37,7 @@ def _make_grammar(tag):
 
 
 class Token:
-    def __init__(self, word, grammar=Grammar.UNKNOWN, root="", char_indices=(0,0)):
+    def __init__(self, word, grammar=Grammar.UNKNOWN, root="", char_indices=(0,0), endings=None):
         self.word = word
         self.grammar = grammar
         if root == "":
@@ -44,6 +45,7 @@ class Token:
         else:
             self.root = root
         self.char_indices = char_indices
+        self.endings = endings
 
     def __str__(self):
         return "(" + self.word + " | " + self.grammar.value + " | " + self.root + ")"
@@ -61,27 +63,77 @@ def tokenize_sudachi(text):
             for m in Constants.tokenizer.tokenize(text, mode)]
 
 
-def _merge_word_endings(tokens):
-    merged = []
+def merge_endings(tokens):
     i = 0
+    merged = []
     while i < len(tokens):
-        merged.append(tokens[i])
-        grammar = tokens[i].grammar
-        if (grammar == Grammar.VERB or grammar == Grammar.I_ADJECTIVE) and i+1 < len(tokens):
-            i += 1
+        current = tokens[i]
+        current_word = current.word
+        current_grammar = current.grammar
+        current_indices = current.char_indices
+        if _conjugates(current) and i+1 < len(tokens):
             ending = ""
-            start = tokens[i].char_indices[0]
-            while i < len(tokens) and _is_ending(tokens[i]):
-                ending += tokens[i].word
-                i += 1
-            i -= 1
-            if ending != "":
-                end = tokens[i].char_indices[1]
-                merged.append(Token(ending, Grammar.MERGED, ending, (start, end)))
+            ending_final = ""
+            root = ""
+            start = tokens[i + 1].char_indices[0]
+            end = tokens[i + 1].char_indices[1]
+            deinflict_reasons = []
+            last_match = i
+            original_token = tokens[i].word
 
+            # current is an inflection itself
+            deinflict = Deinflect.get_ending(original_token, original_token)
+            if deinflict is not None:
+                root_len = len(deinflict.root)
+                start = current_indices[0] + root_len
+                end = current_indices[1]
+                current_indices = (current_indices[0],start)
+                current_word = current.word[:root_len]
+                root = deinflict.word
+                ending_final = current.word[root_len:]
+                deinflict_reasons = deinflict.reasons[0]
+
+            while i + 1 < len(tokens):
+                next_ = tokens[i + 1]
+                if _might_be_ending(next_):
+                    combination = current.word + ending + next_.word
+                    deinflict = Deinflect.get_ending(combination, original_token)
+                    if deinflict is not None:
+                        current_word = current.word
+                        current_indices = current_indices
+
+                        end = next_.char_indices[1]
+                        root = deinflict.word
+                        deinflict_reasons = deinflict.reasons[0]
+                        last_match = i
+                        ending_final = ending + next_.word
+                else:
+                    break
+                i += 1
+                ending += next_.word
+            if root != "":
+                merged.append(Token(current_word, current_grammar, root, current_indices))  # word that is conjugated
+                merged.append(Token(ending_final, Grammar.MERGED, char_indices=(start, end), endings=deinflict_reasons))  # ending to that word
+                i = last_match + 2
+            else:
+                merged.append(_make_token_root(current))
+                i = last_match + 1
+            continue
+
+        merged.append(_make_token_root(current))
         i += 1
 
     return merged
+
+def _make_token_root(original):
+    return Token(original.word, original.grammar, original.word, original.char_indices)
+
+def _conjugates(current):
+    return current.grammar == Grammar.VERB or current.grammar == Grammar.I_ADJECTIVE or current.grammar == Grammar.AUX_VERB
+
+def _might_be_ending(token):
+    return token.grammar == Grammar.PARTICLE or \
+           token.grammar == Grammar.AUX_VERB or True
 
 
 def _merge_words_using_dictionary(tokens):
@@ -129,6 +181,6 @@ def get_tokens(text: str):
         print("Empty string passed to get_tokens")
         return []
     tokens = tokenize_sudachi(text)
-    tokens = _merge_word_endings(tokens)
+    tokens = merge_endings(tokens)
     tokens = _merge_words_using_dictionary(tokens)
     return tokens
