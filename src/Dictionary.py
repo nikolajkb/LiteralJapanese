@@ -227,7 +227,7 @@ def match(token, match_kana=True, match_pos=True, match_common=True):
             if kana_match:
                 translations = kana_match
 
-        #TODO sort by frequency
+        translations.sort(key=lambda t: t.priority)
     return translations
 
 
