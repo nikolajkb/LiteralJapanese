@@ -92,6 +92,7 @@ def merge_endings(tokens):
                 current_indices = (current_indices[0],start)
                 current_word = current.word[:root_len]
                 root = deinflict.word
+                current.root = deinflict.word
                 ending_final = current.word[root_len:]
                 deinflict_reasons = deinflict.reasons[0]
 
@@ -135,7 +136,7 @@ def _conjugates(current):
 
 def _might_be_ending(token):
     return token.grammar == Grammar.PARTICLE or \
-           token.grammar == Grammar.AUX_VERB or True
+           token.grammar == Grammar.AUX_VERB or True  #TODO
 
 
 def _merge_words_using_dictionary(tokens):
