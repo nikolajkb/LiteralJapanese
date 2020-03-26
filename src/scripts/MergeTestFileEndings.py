@@ -5,10 +5,10 @@ import os
 
 
 def convert():
-    sentences = read_test_data(r"C:\Users\Nikolaj\PycharmProjects\LitteralJapaneseTranslation\data\sentences_test.txt")
+    sentences = read_test_data(r"C:\Users\Nikolaj\PycharmProjects\LitteralJapaneseTranslation\data\sentences_dev.txt")
     sentences = merge_word_endings(sentences)
 
-    new_file_path = r"C:\Users\Nikolaj\PycharmProjects\LitteralJapaneseTranslation\data\sentences_test_m.txt"
+    new_file_path = r"C:\Users\Nikolaj\PycharmProjects\LitteralJapaneseTranslation\data\sentences_dev_m.txt"
     new_file = open(new_file_path,"w+", encoding="utf-8")
     for sentence in sentences:
         new_file.write("#"+str(sentence.index)+"\n")

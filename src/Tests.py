@@ -94,7 +94,6 @@ def test_tokenizer(file_path):
 
 def test_translator(file_path):
     sentences = read_test_data(file_path)
-    sentences = merge_word_endings(sentences)
 
     scores = []
 
@@ -137,47 +136,11 @@ def translation_sentence_score(gold, system):
     return LevenshteinDistance.distance(gold, system)
 
 
-def merge_word_endings(sentences):
-    for sentence in sentences:
-        sentence.tokens = merge_token_list(sentence.tokens)
-
-    return sentences
-
-
-def merge_token_list(tokens: List[SentenceToken]):  # TODO this is kinda ugly code
-    merged = []
-    i = 0
-    while i < len(tokens):
-        if is_ending(tokens[i]):
-            ending = tokens[i]
-            i += 1
-            while i < len(tokens) and is_ending(tokens[i]):
-                ending = merge_tokens(ending, tokens[i])
-                i += 1
-            merged.append(ending)
-            i -= 1
-        elif not is_ending(tokens[i]):
-            merged.append(tokens[i])
-        i += 1
-
-    return merged
-
-
-def is_ending(token):
-    return token.english.startswith("-")
-
-
-def merge_tokens(t1, t2):
-    (min_i, _) = t1.indices
-    (_, max_i) = t2.indices
-    return SentenceToken(t1.japanese + t2.japanese, t1.english + t2.english, (min_i, max_i))
-
-
 def calc_sentence_score(sentence):
     if sentence.index == 97:
         print("")
     tokens = Tokenizer.get_tokens(sentence.japanese.strip())
-    gold_tokens = merge_token_list(sentence.tokens)
+    gold_tokens = sentence.tokens
 
     print(" - sentence", sentence.index, " - ")
     print("system:", [t.word for t in tokens])
@@ -238,7 +201,7 @@ def read_test_data(file_path):
             index = 0
             while line and not line == "\n":  # read each token and split into English and Japanese
                 line = line.replace("\n", "")
-                pair = line.split(" ", 1)
+                pair = line.split("\t", 1)
                 pair = add_spaces(pair)
                 sentence.tokens.append(SentenceToken(pair[0], pair[1], (index, index + len(pair[0]) )))
                 index += len(pair[0])

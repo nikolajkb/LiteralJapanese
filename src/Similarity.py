@@ -26,40 +26,31 @@ class Similarity:
             return 0
 
     def _word_similarity(self,s1,s2):
-        print("wordsim","\"",s1,"\"","|","\"",s2,"\"")
         try:
             sim = self.vectors.similarity(s1,s2)
         except KeyError:
             sim = 0
-        print("\wordsim")
         return sim
 
     def _expression_similarity(self,e1,e2):
-        print("exprsim",e1,e2)
         e1 = self._remove_stopwords(e1).split()
         e2 = self._remove_stopwords(e2).split()
         if self._either_empty(e1,e2):
-            print("\exprsim")
             return 0  # TODO
         try:
-            print("\exprsim")
             return self.vectors.n_similarity(e1,e2)
         except KeyError:
-            print("\exprsim")
             return 0  # one or more words are not in vocab
 
     def _either_empty(self,l1,l2):
         return len(l1) == 0 or len(l2) == 0
 
     def _remove_stopwords(self, s):
-        print("rem s")
         return remove_stopwords(s)
 
     def _is_valid_expression(self, s):
-        print("is val",s)
         # match anything that consists of numbers and letters, possibly with spaces around them
         ma = re.match("^[a-zA-Z0-9 ]*$",s)
-        print("is val d")
         return ma
 
     def _load_vectors(self):
