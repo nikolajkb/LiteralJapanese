@@ -1,0 +1,1812 @@
+#1
+#jp	もう会社には来ないでくれ 電話もするな
+#en	don't come to the office anymore. don't call me either.
+もう	anymore
+会社	office
+に	to
+は	<wa>
+来	come
+ないで	-negative-te
+くれ	please
+\space	\space
+電話	call
+も	also
+する	do
+な	-imperative-negative
+
+#2
+#jp	連れて行け 殺しそうだ わかったか?
+#en	get him out of here, because i will fucking kill him.
+連れ	take
+て	-te
+行	go
+け	-imperative
+\space	\space
+殺し	kill
+そう	-seems
+だ	is
+\space	\space
+わかっ	understand
+た	-past
+か	?
+?	?
+
+#3
+#jp	じゃあ 仕事終わったら 医局に来てよ。
+#en	well then, when you're done work, come to the medical office.
+じゃあ	well then
+\space	\space
+仕事	work
+終わっ	finish
+たら	-when
+\space	\space
+医局	medical office
+に	to
+来て	come
+よ	, you know?
+。	.
+
+#4
+#jp	船長から他の誰かが扱った形跡がないかDNAを再調査するように頼まれました
+#en	the captain asked me to reexamine the dna from the bomb... to see if anyone else might have handled it.
+船長	captain
+から	from
+他	other
+の	<no>
+誰か	someone
+が	<ga>
+扱っ	handle
+た	-past
+形跡	signs
+が	<ga>
+ない	absent
+か	?
+DNA	DNA
+を	<o>
+再調査	re-examine
+する	do
+よう	like
+に	<ni>
+頼ま	ask
+れました	-passive-polite-past
+
+#5
+#jp	長いこと友達なのに 気付かなかったのか?
+#en	because you and i are gonna be friends for a long time. you might as well know now.
+長いこと	for a long time
+友達	friend
+なのに	and yet
+気付か	notice
+なかった	-negative-past
+の	<no>
+か	?
+?	?
+
+#6
+#jp	ビルのID信号も5分前に消えたわ
+#en	and bill talbot's tracker fell off the grid five minutes ago.
+ビル	Bill
+の	's
+ID	ID
+信号	signal
+も	also
+5	5
+分	minutes
+前	before
+に	<ni>
+消え	go out
+た	-past
+わ	feminine sentence end
+
+#7
+#jp	なるほど 簡単にゃ入れそうにねえな
+#en	i see... it doesn't look easy to get in...
+なるほど	I see
+\space	\space
+簡単	easy
+に	<ni>
+ゃ	<wa>
+入れ	enter
+そう	likely
+に	<ni>
+ねえ	-negative
+な	musing sentence end
+
+#8
+#jp	中年まで老年性の病気にならないことから明らかなのです
+#en	because we don't get age-related diseases until we're in middle age
+中年	middle age
+まで	until
+老年性	age-related
+の	<no>
+病気	diseases
+に	<ni>
+なら	get
+ない	-negative
+こと	fact
+から	from
+明らか	clear
+なの	assuredly
+です	is
+
+#9
+#jp	持っているだけで人を不幸にする呪われた本などというものは存在しないのです
+#en	there is no such thing as a curse in this world!
+持っ	possess
+ている	-ongoing
+だけ	only
+で	by
+人	people
+を	<o>
+不幸	unhappy
+に	<ni>
+する	make
+呪わ	curse
+れた	-passive-past
+本	book
+など	such
+という	like
+もの	thing
+は	<wa>
+存在	exist
+し	do
+ない	-negative
+の	<no>
+です	is
+
+#10
+#jp	何か 悩むんがアホらしゅうなって来たわ。
+#en	i'm starting to feel stupid for agonizing over it.
+何か	somehow
+\space	\space
+悩む	agonise
+ん	<no>
+が	<ga>
+アホ	stupid
+らしゅう	like
+なっ	become
+て	-te
+来	come
+た	-past
+わ	feminine sentence end
+。	.
+
+#11
+#jp	俺が隠している魔法をかけることもできる
+#en	I can put a cloaking spell on her.
+俺	I
+が	<ga>
+隠し	hide
+ている	-ongoing
+魔法	magic
+を	<o>
+かける	cast
+こと	thing
+も	also
+できる	can do
+
+#12
+#jp	今後もこの状況は続くと人口統計学者は予想しています
+#en	that's the expectation from demographers, going forward.
+今後	henceforth
+も	also
+この	these
+状況	conditions
+は	<wa>
+続く	continue
+と	<to>
+人口統計学者	demographers
+は	<wa>
+予想	predict
+し	do
+ています	-ongoing-polite
+
+#13
+#jp	他にも容疑者を探すなら指紋照合をしてみれば?
+#en	thought maybe you could run it through your system, that is if you're still open to other options.
+他	other
+に	<ni>
+も	<mo>
+容疑者	suspects
+を	<o>
+探す	search
+なら	if
+指紋	fingerprint
+照合	matching
+を	<o>
+してみれば	do in that case
+?	?
+
+#14
+#jp	そこで何年も前にわたしはtreemakerというプログラムを書き
+#en	so i wrote a computer program a bunch of years ago
+そこで	so
+何	several
+年	years
+も	<mo>
+前	before
+に	<ni>
+わたし	I
+は	<wa>
+treemaker	treemaker
+という	called
+プログラム	program
+を	<o>
+書き	write
+
+#15
+#jp	私はこの58人の患者の話が聞いてみたい
+#en	i want to talk to the 58 patients down here
+私	I
+は	<wa>
+この	these
+58人	58
+の	<no>
+患者	patients
+の	'
+話	stories
+が	<ga>
+聞い	hear
+て	-te
+み	try
+たい	-want
+
+#16
+#jp	僕はその2つを僕に与えられない人に用はない
+#en	and anyone who can't give me those two things has no place in my life.
+僕	I
+は	<wa>
+その	that
+2つ	two
+を	<o>
+僕	I
+に	to
+与え	give
+られない	-potential-negative
+人	person
+に	<ni>
+用	need
+は	<wa>
+ない	lack
+
+#17
+#jp	誰でも いつでも 何でも編集できるようにしたら
+#en	that anybody can edit anything, at any time
+誰でも	anyone
+\space	\space
+いつでも	at any time
+\space	\space
+何でも	anything
+編集	edit
+できる	can
+よう	like
+に	<ni>
+し	do
+たら	if
+
+#18
+#jp	彼らは送水口で働いているの技術者を 守ってる
+#en	they look after the engineers working on the darn.
+彼ら	they
+は	<wa>
+送水口	water outlet
+で	at
+働い	work
+ている	-ongoing
+の	<no>
+技術者	engineers
+を	<o>
+\space	\space
+守っ	protect
+てる	-ongoing
+
+#19
+#jp	それを最も強く具現化したのが この ゼーレシュナイダーだ。
+#en	it is this zeele schneider that embodied it most strongly
+それ	that
+を	<o>
+最も	most
+強く	strongly
+具現化	embody
+し	do
+た	-past
+の	thing
+が	<ga>
+\space	\space
+この	this
+\space	\space
+ゼーレシュナイダー	Zeele Schneider
+だ	is
+。	.
+
+#20
+#jp	4カ月前には まだ出来なかったんですよ
+#en	she couldn't stick that four months ago.
+4	4
+カ月	months
+前	before
+に	<ni>
+は	<wa>
+\space	\space
+まだ	yet
+出来	can do
+なかった	-negative-past
+ん	<no>
+です	is
+よ	you know
+
+#21
+#jp	そういう訳で本当に ごめんなさいと彼に伝えたいの
+#en	that's why i wanna tell him how sincerely sorry i am.
+そういう	that sort of
+訳	reason
+で	<de>
+本当	really
+に	<ni>
+ごめんなさい	sorry
+と	<to>
+彼	him
+に	to
+伝え	tell
+たい	-want
+の	<no>
+
+#22
+#jp	例えば ブレント・ガーヴィーに レイプされた 3人の少女の両親のようにね
+#en	the parents of the three young women raped by brent garvey, for example.
+例えば	for example
+\space	\space
+ブレント	Brent
+・	\space
+ガーヴィー	Garvey
+に	<ni>
+\space	\space
+レイプ	rape
+され	done to
+た	-past
+\space	\space
+3人	three
+の	<no>
+少女	girls
+の	<no>
+両親	parents
+のように	similar to
+ね	, right?
+
+#23
+#jp	シリアルの箱の裏面、ボードゲームなど インクを使うあらゆるもので
+#en	on the back of cereal boxes, board games. any place you use ink
+シリアル	cereal
+の	<no>
+箱	box
+の	<no>
+裏面	back
+、	,
+ボードゲーム	board games
+など	etc
+\space	\space
+インク	ink
+を	<o>
+使う	use
+あらゆる	all kinds of
+もの	things
+で	on
+
+#24
+#jp	ターク、共和国はスパイスを持って来た?
+#en	well, turk did the republic arrive with my spice?
+ターク	Turk
+、	,
+共和国	republic
+は	<wa>
+スパイス	spice
+を	<o>
+持っ	carry
+て	-te
+来	come
+た	-past
+?	?
+
+#25
+#jp	人の心を読めなきゃ 詐欺師は務まりませんからね
+#en	i cannot be a swindler unless i can read people's mind.
+人	people
+の	's
+心	mind
+を	<o>
+読め	read
+なきゃ	-negative-if
+\space	\space
+詐欺師	swindler
+は	<wa>
+務まり	manage
+ません	-polite-negative
+から	because
+ね	, right?
+
+#26
+#jp	ワシントンのキャピトルヒルでソーシャルメディアの移行をフォローした人にとっては、このことは少し違う。
+#en	For those who follow social media transitions on Capitol Hill, this will be a little different.
+ワシントン	Washington
+の	<no>
+キャピトルヒル	Capitol Hill
+で	at
+ソーシャルメディア	social media
+の	<no>
+移行	transitions
+を	<o>
+フォロー	follow
+し	do
+た	-past
+人	people
+にとって	for
+は	<wa>
+、	,
+この	this
+こと	case
+は	<wa>
+少し	a little
+違う	different
+。	.
+
+#27
+#jp	新たな支出はクリントンの巨大な銀行口座によって充填されている。
+#en	The new spending is fueled by Clinton’s large bank account.
+新た	new
+な	<na>
+支出	spending
+は	<wa>
+クリントン	Clinton
+の	's
+巨大	large
+な	<na>
+銀行口座	bank account
+によって	by
+充填	fuel
+さ	do
+れている	-passive-ongoing
+。	.
+
+#28
+#jp	彼女の言っていることと、やっていることは、実際に、信じられないことだ。
+#en	What she’s saying and what she’s doing, it — actually, it’s unbelievable.
+彼女	she
+の	<no>
+言っ	say
+ている	-ongoing
+こと	thing
+と	and
+、	,
+やっ	do
+ている	-ongoing
+こと	thing
+は	<wa>
+、	,
+実際	actually
+に	<ni>
+、	,
+信じられない	unbelievable
+こと	thing
+だ	is
+。	.
+
+#29
+#jp	最高一人あたり5,000ドルが、許可されている。
+#en	$5,000 per person, the maximum allowed.
+最高	maximum
+一	one
+人	person
+あたり	per
+５，０００	5,000
+ドル	dollars
+が	<ga>
+、	,
+許可	allow
+さ	do
+れている	-passive-ongoing
+
+#30
+#jp	元来は、数ブロック離れたH通りにあるワシントンの会員制のメトロポリタン・クラブに集まることになっていた。
+#en	The gathering was originally slated for Washington’s private Metropolitan Club on H Street a few blocks away.
+元来	originally
+は	<wa>
+、	,
+数	number
+ブロック	blocks
+離れ	away
+た	-past
+H	H
+通り	Street
+に	at
+ある	exist
+ワシントン	Washington
+の	<no>
+会員制	private
+の	<no>
+メトロポリタン	Metroplolitan
+・	\space
+クラブ	Club
+に	at
+集まる	gather
+こと	thing
+に	<ni>
+なっ	become
+ていた	-ongoing-past
+。	.
+
+#31
+#jp	ドレスコードが堅苦しすぎるのだろう。
+#en	Maybe the dress code was too stuffy.
+ドレス	dress
+コード	code
+が	<ga>
+堅苦し	stuffy
+すぎる	too much
+の	<no>
+だろう	I wonder
+。	.
+
+#32
+#jp	例えば、独立したユニットとして科学的方法を教えるのではなく、それを適用することで、生徒は科学の内容を学習する。
+#en	Rather than teaching the scientific method as a separate unit, for example, students learn science content by applying it.
+例えば	for example
+、	,
+独立	independent
+し	do
+た	-past
+ユニット	unit
+として	as
+科学的	scientific
+方法	method
+を	<o>
+教える	teach
+の	thing
+ではな	is not
+く	-adverbial
+、	,
+それ	that
+を	<o>
+適用	apply
+する	do
+こと	thing
+で	by
+、	,
+生徒	students
+は	<wa>
+科学	science
+の	<no>
+内容	content
+を	<o>
+学習	learn
+する	do
+。	.
+
+#33
+#jp	彼らは、全国平均グレード4に位置し、全国平均グレード8よりも優れている。
+#en	They are at the national average in grade 4 and better than national average in grade 8.
+彼ら	they
+は	<wa>
+、	,
+全国	national
+平均	average
+グレード	grade
+４	4
+に	at
+位置	position
+し	<shi>
+、	,
+全国	national
+平均	average
+グレード	grade
+８	8
+より	than
+も	<mo>
+優れ	excel
+ている	-ongoing
+。	.
+
+#34
+#jp	それに比べ、2004年にオープンした地下鉄ノマ新駅を建設するには、1370万ドルの費用がかかった。
+#en	By comparison, it cost $13.7 million to build the NoMa infill Metro station, which opened in 2004.
+それ	that
+に	to
+比べ	compare
+、	,
+２００４年	2004
+に	in
+オープン	open
+し	do
+た	-past
+地下鉄	metro
+ノマ	NoMa
+新駅	new station
+を	<o>
+建設	build
+に	<ni>
+は	<wa>
+、	,
+１３７０	万 13.7 million
+ドル	dollars
+の	<no>
+費用	cost
+が	<ga>
+かかっ	spend
+た	-past
+。	.
+
+#35
+#jp	ジョージタウンBIDの社長ジョー・スターンリーブ氏は、「当社は多くの競争に直面しており、移行が役に立つと考える」と述べた。
+#en	“We face a lot of competition, and we think transit can help,” said Joe Sternlieb, president of the Georgetown BID.
+ジョージタウン	Georgetown
+BID	BID
+の	<no>
+社長	president
+ジョー	Joe
+・	\space
+スターンリーブ	Sternlieb
+氏	Mr.
+は	<wa>
+、	,
+「	"
+当社	we
+は	<wa>
+多く	many
+の	<no>
+競争	competition
+に	<ni>
+直面	face
+し	do
+ており	-ongoing
+、	,
+移行	transit
+が	<ga>
+役に立つ	help
+と	<to>
+考える	think
+」	"
+と	<to>
+述べ	say
+た	-past
+。	.
+
+#36
+#jp	実現可能性調査は、ゴンドラでポトマック川を横断するには約4分かかるだろうと予測している。
+#en	The feasibility study estimates that it would take passengers about four minutes to cross the Potomac River on the gondola.
+実現可能性	feasibility
+調査	study
+は	<wa>
+、	,
+ゴンドラ	gondola
+で	by
+ポトマック川	Potomac River
+を	<o>
+横断	cross
+する	do
+に	<ni>
+は	<wa>
+約	approximately
+４	4
+分	minutes
+かかる	take
+だろう	it seems
+と	<to>
+予測	estimate
+し	do
+ている	-ongoing
+。	.
+
+#37
+#jp	証人は、4月に被害者が被疑者を攻撃した、と警察に言った。
+#en	A witness told police that the victim had attacked the suspect in April.
+証人	witness
+は	<wa>
+、	,
+４月	April
+に	in
+被害者	victim
+が	<ga>
+被疑者	suspect
+を	<o>
+攻撃	attack
+し	do
+た	-past
+、	,
+と	<to>
+警察	police
+に	to
+言っ	say
+た	-past
+。	.
+
+#38
+#jp	ゲームと私達の日常生活の間には類似点がある。
+#en	There are parallels to draw here between games and our everyday lives.
+ゲーム	games
+と	and
+私達の	our
+日常	daily
+生活	life
+の	<no>
+間	between
+に	<ni>
+は	<wa>
+類似点	parallels
+が	<ga>
+ある	exist
+。	.
+
+#39
+#jp	今、カンジルは孤独な豚かもしれないが、常にひとりぼっちではない。
+#en	Today, Khanzir may be a lonely pig, but he isn’t always alone.
+今	now
+、	,
+カンジル	Khanzir
+は	<wa>
+孤独	lonely
+な	<na>
+豚	pig
+かもしれない	may be
+が	but
+、	,
+常	always
+に	<ni>
+ひとりぼっち	alone
+ではない	isn't
+。	.
+
+#40
+#jp	「私たちは他の国に豚を含む様々な種の動物を動物園に迎えるのを助けてくれるよう要請している。」とサキブは言った。
+#en	“We’ve requested other nations to help us populate the zoo with different species of animals, including a pig,” Saqib said.
+「	"
+私たち	we
+は	<wa>
+他	other
+の	<no>
+国	nations
+に	<ni>
+豚	pig
+を	<o>
+含む	include
+様	various
+な	<na>
+種	species
+の	<no>
+動物	animals
+を	<o>
+動物園	zoo
+に	to
+迎える	bring in
+の	thing
+を	<o>
+助け	help
+て	-te
+くれる	give
+よう	for
+要請	request
+し	do
+ている	-ongoing
+。	.
+」	"
+と	<to>
+サキブ	Saqib
+は	<wa>
+言っ	say
+た	-past
+。	.
+
+#41
+#jp	パバルカル氏は、「建物を出る必要があると感じたときがあった。」と述べた。
+#en	There was a time, Mr Panvalkar said, when he felt that they should leave the building.
+パバルカル	Panvalkar
+氏	Mr.
+は	<wa>
+、	,
+「	"
+建物	building
+を	<o>
+出る	leave
+必要	necessity
+が	<ga>
+ある	exist
+と	<to>
+感じ	feel
+た	-past
+とき	time
+が	<ga>
+あっ	exist
+た	-past
+。	.
+」	"
+と	<to>
+述べ	say
+た	-past
+。	.
+
+#42
+#jp	彼女は2歳の娘を殺そうとしたことについても起訴された。
+#en	She has also been charged with trying to kill her two-year-old daughter.
+彼女	she
+は	<wa>
+2	2
+歳	year old
+の	<no>
+娘	daughter
+を	<o>
+殺そ	kill
+う	-volitional
+と	<to>
+し	do
+た	-past
+こと	incident
+について	about
+も	also
+起訴	charge
+さ	do
+れた	-passive-past
+。	.
+
+#43
+#jp	私はいずれにせよ刑務所に行くが、その価値がありますように。
+#en	"I'm going to jail either way, hope it was worth it."
+私	I
+は	<wa>
+いずれ	whatever
+に	<ni>
+せよ	do
+刑務所	prison
+に	to
+行く	go
+が	but
+、	,
+その	that
+価値	worth
+が	<ga>
+あり	exist
+ます	-polite
+よう	so that
+に	<ni>
+。	.
+
+#44
+#jp	最初にヤジディの女性の1人が、それから彼女の友人の1人が泣き始めた。
+#en	First one of the Yazidi women started crying, then one of her friends.
+最初	first
+に	<ni>
+ヤジディ	Yazidi
+の	<no>
+女性	women
+の	<no>
+1	1
+人	person
+が	<ga>
+、	,
+それから	then
+彼女	her
+の	<no>
+友人	friend
+の	<no>
+1	1
+人	person
+が	<ga>
+泣き	cry
+始め	start
+た	-past
+。	.
+
+#45
+#jp	オズボーン氏は7月に解雇された後、米国のスピーカーの代理店と契約を結んでいる。
+#en	Mr Osborne signed up with a US speakers agency after being sacked in July.
+オズボーン	Osborne
+氏	Mr.
+は	<wa>
+7月	July
+に	in
+解雇	dismiss
+さ	do
+れた	-passive-past
+後	after
+、	,
+米国	US
+の	<no>
+スピーカー	speaker
+の	<no>
+代理店	agency
+と	with
+契約	contract
+を	<o>
+結ん	agree
+でいる	-ongoing
+。	.
+
+#46
+#jp	有名人の名前が当初は非常にまれである場合、このことは最も明白である。
+#en	It's most obvious when a celebrity's name is initially quite rare.
+有名人	celebrity
+の	's
+名前	name
+が	<ga>
+当初	initially
+は	<wa>
+非常	extremely
+に	<ni>
+まれ	rare
+である	is
+場合	case
+、	,
+この	this
+こと	thing
+は	is
+最も	most
+明白	clear
+である	is
+。	.
+
+#47
+#jp	韓国の会社は、当初バッテリ不具合が問題だと考え、自社製の部品を、サードパーティ製に切り替えた。
+#en	The South Korean company initially thought a battery fault was to blame, and switched its own component for a third-party power cell.
+韓国	South Korea
+の	<no>
+会社	company
+は	<wa>
+、	,
+当初	initially
+バッテリ	battery
+不具合	fault
+が	<ga>
+問題	problem
+だ	is
+と	<to>
+考え	think
+、	,
+自社製	manufactured by themselves
+の	<no>
+部品	components
+を	<o>
+、	,
+サードパーティ	third party
+製	manufacture
+に	to
+切り替え	switch
+た	-past
+。	.
+
+#48
+#jp	何人かのアナリストが、ファーウェイがサムスンの挫折から最も享受する位置にいると予測した。
+#en	Several analysts have suggested Huawei is best placed to benefit from Samsung's setback.
+何人か	several people
+の	<no>
+アナリスト	analyst
+が	<ga>
+、	,
+ファーウェイ	Huawei
+が	<ga>
+サムスン	Samsung
+の	's
+挫折	setback
+から	from
+最も	most
+享受	benefit
+する	do
+位置	position
+に	<ni>
+いる	is
+と	<to>
+予測	estimate
+し	do
+た	-past
+。	.
+
+#49
+#jp	メイト9の電話には、GoogleアシスタントやAppleのSiriのような人工知能のインターフェイスが欠けている。
+#en	The Mate 9 phones lack an artificial intelligence interface, like the Google Assistant or Apple's Siri.
+メイト	Mate
+9	9
+の	<no>
+電話	telephone
+に	<ni>
+は	<wa>
+、	,
+Google	Google
+アシスタント	Assistant
+や	or
+Apple	Apple
+の	's
+Siri	Siri
+の	<no>
+よう	like
+な	<na>
+人工知能	artificial intelligence
+の	<no>
+インターフェイス	interface
+が	<ga>
+欠け	lack
+ている	-ongoing
+。	.
+
+#50
+#jp	BAとIAGは問題を解決し、ある程度信頼できるものを提供できるようになったのかもしれない。
+#en	"But it may be that BA and IAG have cracked it and can offer something vaguely reliable."
+BA	BA
+と	and
+IAG	IAG
+は	<wa>
+問題	problem
+を	<o>
+解決	resolve
+し	do
+、	,
+ある程度	reasonably
+信頼	reliable
+できる	possible
+もの	thing
+を	<o>
+提供	offer
+できる	can
+よう	like
+に	<ni>
+なっ	become
+た	-past
+の	<no>
+かもしれない	may be
+。	.
+
+#51
+#jp	安心しました。
+#en	I feel relieved.
+安心	relief
+し	do
+ました	-polite-past
+。	.
+
+#52
+#jp	トムはメアリーに家へ帰るように言った。
+#en	Tom told Mary to go home.
+トム	Tom
+は	<wa>
+メアリー	Mary
+に	to
+家	home
+へ	<e>
+帰る	go
+よう	make sure
+に	<ni>
+言っ	say
+た	-past
+。	.
+
+#53
+#jp	彼はそこへ行く決心をした。
+#en	He made up his mind to go there.
+彼	he
+は	<wa>
+そこ	there
+へ	to
+行く	go
+決心	decision
+を	<o>
+し	do
+た	-past
+。	.
+
+#54
+#jp	彼女のことが好きだ。
+#en	I love her.
+彼女	she
+の	<no>
+こと	about
+が	<ga>
+好き	love
+だ	is
+。	.
+
+#55
+#jp	彼女はうふふと照れながらコンドームを差し出した。
+#en	Giggling with embarrassment, she held out the condom.
+彼女	she
+は	<wa>
+うふふ	giggling
+と	and
+照れ	feeling embarrassed
+ながら	while
+コンドーム	condom
+を	<o>
+差し出し	hold out
+た	-past
+。	.
+
+#56
+#jp	トムは彼女は欲しくないと言っている。
+#en	Tom says he doesn't want a girlfriend.
+トム	Tom
+は	<wa>
+彼女	girlfriend
+は	<wa>
+欲しく	want
+ない	-negative
+と	<to>
+言っ	say
+ている	-ongoing
+。	.
+
+#57
+#jp	まだお昼食べてないの？
+#en	Haven't you eaten lunch yet?
+まだ	yet
+お	pol-
+昼	lunch
+食べ	eat
+てない	-ongoing-negative
+の	?
+？	?
+
+#58
+#jp	トムはメアリーの冗談は全部好きじゃなかった。
+#en	Tom didn't like Mary's jokes at all.
+トム	Tom
+は	<wa>
+メアリー	Mary
+の	's
+冗談	jokes
+は	<wa>
+全部	all
+好き	like
+じゃなかっ	do not
+た	-past
+。	.
+
+#59
+#jp	今回だけは許してあげる。
+#en	I'll forgive you just this once.
+今回	this time
+だけ	alone
+は	<wa>
+許し	forgive
+て	-te
+あげる	do a favour
+。	.
+
+#60
+#jp	デイモンは私に郵便切手のアルバムを見せてくれた。
+#en	Damon showed me his stamp album.
+デイモン	Damon
+は	<wa>
+私	me
+に	to
+郵便切手	stamp
+の	<no>
+アルバム	album
+を	<o>
+見せ	show
+て	-te
+くれ	do a favour
+た	-past
+。	.
+
+#61
+#jp	メアリーは１０代後半にアメリカ合衆国に渡った。
+#en	Mary went over to the United States in her late teens.
+メアリー	Mary
+は	<wa>
+１０代	teens
+後半	late
+に	in
+アメリカ合衆国	the United States
+に	to
+渡っ	go over
+た	-past
+。	.
+
+#62
+#jp	彼はいろいろな人種の人と接触している。
+#en	He is in touch with all kinds of people.
+彼	he
+は	<wa>
+いろいろ	various
+な	<na>
+人種	races
+の	<no>
+人	people
+と	<to>
+接触	contact
+し	do
+ている	-ongoing
+。	.
+
+#63
+#jp	彼はロシア語の読み書きができる。
+#en	He can both speak and write Russian.
+彼	he
+は	<wa>
+ロシア語	Russian
+の	<no>
+読み書き	read and write
+が	<ga>
+できる	can do
+。	.
+
+#64
+#jp	カーテンレールにたくさんのハンガーがかかっている。
+#en	There are a lot of hangers on the curtain rail.
+カーテンレール	curtain rail
+に	on
+たくさん	a lot of
+の	<no>
+ハンガー	hangers
+が	<ga>
+かかっ	hang
+ている	-ongoing
+。	.
+
+#65
+#jp	町の人たちが彼を助けにやってきた。
+#en	People in the town came to help him.
+町	town
+の	<no>
+人たち	people
+が	<ga>
+彼	he
+を	<o>
+助け	help
+に	to
+やってき	come
+た	-past
+。	.
+
+#66
+#jp	お手洗の電気がつきません。
+#en	The lights in the bathroom aren't working.
+お	pol-
+手洗	bathroom
+の	's
+電気	lights
+が	<ga>
+つき	turn on
+ません	-polite-negative
+。	.
+
+#67
+#jp	トムのことあんなに好きだったのに、あの気持ちはどこに行っちゃったんだろう。
+#en	I used to like Tom so much, I wonder what happened to that feeling.
+トム	Tom
+の	<no>
+こと	about
+あんなに	so much
+好き	like
+だっ	is
+た	-past
+のに	so
+、	,
+あの	that
+気持ち	feeling
+は	<wa>
+どこ	where
+に	to
+行っ	go
+ちゃった	-unintentional-past
+ん	<no>
+だろう	I wonder
+。	.
+
+#68
+#jp	水は氷になりました。
+#en	The water turned into ice.
+水	water
+は	<wa>
+氷	ice
+に	<ni>
+なり	become
+ました	-polite-past
+。	.
+
+#69
+#jp	あなたにとって頼りになるような友達を選びなさい。
+#en	Choose friends you can rely on.
+あなた	you
+にとって	for
+頼り	reliable
+に	<ni>
+なる	become
+よう	like
+な	<na>
+友達	friends
+を	<o>
+選び	choose
+なさい	-please
+。	.
+
+#70
+#jp	「次回だよ」と彼は言った。
+#en	"Next time," he said.
+「	"
+次回	next time
+だ	is
+よ	, you know?
+」	"
+と	<to>
+彼	he
+は	<wa>
+言っ	say
+た	-past
+。	.
+
+#71
+#jp	彼女は胸がドキドキしていた。
+#en	Her heart was beating wildly.
+彼女	she
+は	<wa>
+胸	heart
+が	<ga>
+ドキドキ	beat wildly
+し	do
+ていた	-ongoing-past
+。	.
+
+#72
+#jp	会長が個人的に私の手紙に返事をくれるとは思いもよらなかった。
+#en	I didn't imagine the chairman would reply to my letter in person.
+会長	chairman
+が	<ga>
+個人的	in person
+に	<ni>
+私の	my
+手紙	letter
+に	to
+返事	reply
+を	<o>
+くれる	give
+と	<to>
+は	<ha>
+思い	thought
+も	<mo>
+よら	incline
+なかった	-negative-past
+。	.
+
+#73
+#jp	「この鉛筆お借りしていいですか？」「ええ、どうぞ」
+#en	"May I use this pencil?" "Yes, you may."
+「	"
+この	this
+鉛筆	pencil
+お	pol-
+借り	borrow
+し	do
+て	-te
+いい	alright
+です	is
+か	?
+？	?
+」	"
+「	"
+ええ	yes
+、	,
+どうぞ	feel free
+」	"
+
+#74
+#jp	知らない人に名前聞かれても教えちゃだめだよ。
+#en	Don't go telling strangers your name, even if they ask you what it is.
+知ら	know
+ない	-negative
+人	person
+に	to
+名前	name
+聞か	ask
+れて	-passive-te
+も	even if
+教え	tell
+ち	<te>
+ゃ	<wa>
+だめ	wrong
+だ	is
+よ	, you know?
+。	.
+
+#75
+#jp	映画はどうでしたか。
+#en	How did you enjoy the movie?
+映画	film
+は	<wa>
+どう	how
+でし	is
+た	-past
+か	?
+。	.
+
+#76
+#jp	さあお茶を一杯いかがですか。
+#en	Would you like a cup of tea now?
+さあ	well then
+お	pol-
+茶	tea
+を	<o>
+一杯	one cup
+いかが	how about it
+ですか	?
+。	.
+
+#77
+#jp	百歳の誕生日の数日前になくなった。
+#en	He died a few days before his hundredth birthday.
+百	one hundred
+歳	years
+の	<no>
+誕生日	birthday
+の	<no>
+数日	few days
+前	before
+に	<ni>
+なくなっ	die
+た	-past
+。	.
+
+#78
+#jp	ちょっと待って。靴ひもほどけた。
+#en	Hold on a minute. My shoelaces are untied.
+ちょっと	a little
+待っ	wait
+て	-te
+。	.
+靴ひも	shoelaces
+ほどけ	untie
+た	-past
+。	.
+
+#79
+#jp	あの歌のゆっくりしたリズムが好きです。
+#en	I like the slow rhythm of that song.
+あの	that
+歌	song
+の	's
+ゆっくり	slowly
+し	do
+た	-past
+リズム	rhythm
+が	<ga>
+好き	like
+です	is
+。	.
+
+#80
+#jp	私には時々彼からの便りがある。
+#en	I hear from him every now and then.
+私	I
+に	<ni>
+は	<wa>
+時々	now and then
+彼	he
+から	from
+の	<no>
+便り	letter
+が	<ga>
+ある	exist
+。	.
+
+#81
+#jp	背の高い男性でした。
+#en	He was a tall man.
+背の高い	tall
+男性	man
+でし	is
+た	-past
+。	.
+
+#82
+#jp	すみませんが、駅へ行く道を教えていただけませんか。
+#en	Could you tell me the way to the station?
+すみません	sorry
+が	but
+、	,
+駅	station
+へ	to
+行く	go
+道	route
+を	<o>
+教え	tell
+て	-te
+いただけ	give
+ません	-polite-negative
+か	?
+。	.
+
+#83
+#jp	人は食べるために生きるのではなくて生きるために食べるのだ。
+#en	People do not live to eat but eat to live.
+人	people
+は	<wa>
+食べる	eat
+ため	sake
+に	<ni>
+生きる	live
+の	<no>
+ではなく	is not
+て	-te
+生きる	live
+ため	sake
+に	<ni>
+食べる	eat
+の	<no>
+だ	is
+。	.
+
+#84
+#jp	帰りたいなら帰っても構いません。
+#en	You may go home if you want to.
+帰り	return
+たい	-want
+なら	then
+帰っ	return
+て	-te
+も	<mo>
+構い	mind
+ません	-polite-negative
+。	.
+
+#85
+#jp	まだ寝ないの？ もう寝る時間だよ。
+#en	Aren't you sleeping yet? It's time to sleep.
+まだ	yet
+寝	sleep
+ない	-negative
+の	?
+？	?
+\space	\space
+もう	already
+寝る	sleep
+時間	time
+だ	is
+よ	, you know?
+。	.
+
+#86
+#jp	外で話したほうがよさそうだ。
+#en	I think we'd better talk outside.
+外	outside
+で	<de>
+話し	talk
+た	-past
+ほう	option
+が	<ga>
+よさそう	better
+だ	is
+。	.
+
+#87
+#jp	わたしは一人のアメリカ人女性に会った。
+#en	I met an American woman.
+わたし	I
+は	<wa>
+一人	one
+の	<no>
+アメリカ人	American
+女性	woman
+に	<ni>
+会っ	meet
+た	-past
+。	.
+
+#88
+#jp	私たちは彼に何もしてあげられない。
+#en	We can do nothing for him.
+私たち	we
+は	<wa>
+彼	he
+に	for
+何も	anything
+し	do
+て	-te
+あげ	do a favour
+られない	-potential-negative
+。	.
+
+#89
+#jp	彼は、喫煙のくせがついた。
+#en	He acquired the habit of smoking.
+彼	he
+は	<wa>
+、	,
+喫煙	smoking
+の	<no>
+くせ	habit
+が	<ga>
+つい	acquire
+た	-past
+。	.
+
+#90
+#jp	トムは海岸で死体を発見した。
+#en	Tom found a dead body on the beach.
+トム	Tom
+は	<wa>
+海岸	beach
+で	<de>
+死体	dead body
+を	<o>
+発見	find
+し	do
+た	-past
+。	.
+
+#91
+#jp	ルネの指がドアに挟まっている。
+#en	René's fingers are caught in the door.
+ルネ	René
+の	's
+指	fingers
+が	<ga>
+ドア	door
+に	in
+挟まっ	catch
+ている	-ongoing
+。	.
+
+#92
+#jp	春は京都を訪れる最もよい季節です。
+#en	Spring is the best season to visit Kyoto.
+春	spring
+は	<wa>
+京都	Kyōto
+を	<o>
+訪れる	visit
+最も	most
+よい	good
+季節	season
+です	is
+。	.
+
+#93
+#jp	トムには生まれ持った才能がある。
+#en	Tom has a natural talent.
+トム	Tom
+に	<ni>
+は	<wa>
+生まれ持っ	born with
+た	-past
+才能	talent
+が	<ga>
+ある	exist
+。	.
+
+#94
+#jp	申し訳ないけど、残業してもらいたいんだ。
+#en	I'm afraid you have to work overtime.
+申し訳ない	I'm sorry
+けど	but
+、	,
+残業	overtime
+し	do
+て	-te
+もらい	receive
+たい	-want
+ん	<no>
+だ	is
+。	.
+
+#95
+#jp	こちらの用紙に記入してください。
+#en	Please fill out this form.
+こちら	this
+の	<no>
+用紙	form
+に	<ni>
+記入	fill out
+し	do
+て	-te
+ください	please
+。	.
+
+#96
+#jp	三日前は残念なことにマグニチュード8.9の地震が日本の東北地方太平洋沖で発生した。
+#en	Unfortunately, three days ago a magnitude 8.8 earthquake struck off the Pacific coast of Japan's Tohoku region.
+三日	three days
+前	ago
+は	<wa>
+残念なことに	unfortunately
+マグニチュード	magnitude
+8.9	8.9
+の	<no>
+地震	earthquake
+が	<ga>
+日本	Japan
+の	<no>
+東北地方	Tohoku region
+太平洋	Pacific Ocean
+沖	open sea
+で	in
+発生	struck
+し	do
+た	-past
+。	.
+
+#97
+#jp	翌日になって初めて、彼らは彼女を見つけた。
+#en	It was not until the next day that they found her.
+翌日	next day
+に	<ni>
+なっ	become
+て	-te
+初めて	not until
+、	,
+彼ら	they
+は	<wa>
+彼女	her
+を	<o>
+見つけ	find
+た	-past
+。	.
+
+#98
+#jp	言葉はコミュニケーションのひとつの手段である。
+#en	Language is a means of communication.
+言葉	language
+は	<wa>
+コミュニケーション	communication
+の	<no>
+ひとつ	only
+の	<no>
+手段	way
+である	is
+。	.
+
+#99
+#jp	電話が鳴ってますよ。もしよければ私が出ましょう。
+#en	The telephone is ringing. If you want, I'll answer it.
+電話	phone
+が	<ga>
+鳴っ	ring
+てます	-ongoing-polite
+よ	, you know?
+。	.
+もし	in case
+よければ	if it is good
+私	I
+が	<ga>
+出	answer
+ましょう	-polite-volitional
+。	.
+
+#100
+#jp	スミスさんは昼食をとりに出かけました。
+#en	Mr. Smith went out to get lunch.
+スミス	Smith
+さん	san
+は	<wa>
+昼食	lunch
+を	<o>
+とり	get
+に	to
+出かけ	leave
+ました	-polite-past
+。	.
+
+#101
+#jp	いいえ、いらなくなったので、昨日燃やしてしまいました。
+#en	no, since I don’t need them, I have burned them yesterday
+いいえ	no
+、	,
+いら	need
+なく	-negative
+なっ	become
+た	-past
+ので	so
+、	,
+昨日	yesterday
+燃や	burn
+し	do
+てしまいました	-te-unintentional-polite-past
+。	.
+
+#102
+#jp	飲めば頭が痛い
+#en	if I drink, my head hurts
+飲め	drink
+ば	-if
+頭	head
+が	<ga>
+痛い	hurt
+
+#103
+#jp	食べたくなかった
+#en	I didn't want to eat
+食べ	eat
+たくなかった	-want-negative-past
