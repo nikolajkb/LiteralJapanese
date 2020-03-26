@@ -19,7 +19,7 @@ class DeinflectReason(Enum):
     Causative = "-causative"
     PotentialOrPassive = "-potential or passive"
     Toku = "-prepare"
-    Sou = "-seemingly"
+    Sou = "-seems"
     Tai = "-want"
     Polite = "-polite"
     Past = "-past"

@@ -62,7 +62,7 @@ def tokenize_sudachi(text):
                   (m.begin(), m.end()))
             for m in Constants.tokenizer.tokenize(text, mode)]
 
-
+# TODO fix error with indices
 def merge_endings(tokens):
     i = 0
     merged = []
@@ -135,8 +135,8 @@ def _conjugates(current):
     return current.grammar == Grammar.VERB or current.grammar == Grammar.I_ADJECTIVE or current.grammar == Grammar.AUX_VERB
 
 def _might_be_ending(token):
-    return token.grammar == Grammar.PARTICLE or \
-           token.grammar == Grammar.AUX_VERB or True  #TODO
+    return token.grammar in [Grammar.PARTICLE,Grammar.ADVERB,Grammar.AUX_VERB,
+                             Grammar.I_ADJECTIVE, Grammar.VERB, Grammar.NA_ADJECTIVE]
 
 
 def _merge_words_using_dictionary(tokens):
