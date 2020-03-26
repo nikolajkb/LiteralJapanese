@@ -8,7 +8,7 @@
 を <o>
 使う use
 こと occasion
-さえ <sae>
+さえ only
 できれば if possible
 、 ,
 
@@ -22,6 +22,7 @@
 を <o>
 超え transcend
 た -past
+\space \space
 心 mind
 の <no>
 目 eyes
@@ -31,7 +32,7 @@
 
 #3
 #jp ユージーンは とても聡明な男だった
-#en according to his brother, eugene was a very bright man.
+#en eugene was a very bright man.
 ユージーン Eugene
 は <wa>
 \space \space
@@ -119,7 +120,7 @@
 を <o>
 越え cross
 て -te
-人々people
+人々 people
 を <o>
 結びつける unify
 
@@ -167,7 +168,9 @@
 て -te
 くれ grant
 、 ,
-ムッシュー・グスタフ Monsieur Gustave
+ムッシュー Monsieur
+・ \space
+グスタフ Monsieur Gustave
 \space \space
 決して never
 裏切る betray
@@ -246,10 +249,11 @@
 の <no>
 対策 strategies
 で <de>
-ごまかされ deceive
+ごまか deceive
+され -passive
 ている -ongoing
 こと matter
-です -pol
+です is
 
 #16
 #jp 大切なイベントをめちゃくちゃにしかけたのになぜ何も言わないんだ?
@@ -266,7 +270,7 @@
 なぜ why
 何も anything
 言わ say
-ない -not
+ない -negative
 ん <no>
 だ is
 ? ?
@@ -276,7 +280,9 @@
 #en well, then you'll just have to finish what anne marie started.
 君 you
 が <ga>
-アンヌ・マリー Anne Marie
+アンヌ Anne
+・ \space
+マリー Marie
 が <ga>
 やっ do
 た -past
@@ -451,7 +457,7 @@ BBC BBC
 と <to>
 言っ say
 た -past
-。.
+。 .
 
 #27
 #jp ほとんどの人は飛行機の中で電子メールを送信できるようになるより、空港のWi-Fiのほうが便利であると思うだろう。
@@ -664,7 +670,7 @@ GCHQ GCHQ
 に <ni>
 今 now
 すぐ immediately
-必要 neccessary
+必要 necessary
 である is
 と <to>
 述べ say
@@ -680,8 +686,7 @@ GCHQ GCHQ
 の <no>
 投資 investment
 は <wa>
-2015 2015
-年 year
+2015年 2015
 まで by
 に <ni>
 6 6
@@ -717,7 +722,7 @@ GCHQ GCHQ
 で <de>
 は <wa>
 1.5 1.5
-C degrees
+℃ degrees
 の <no>
 目標 target
 に <ni>
@@ -913,7 +918,7 @@ RHS RHS
 #jp 深センの交通警察は以前、型破りな罰則を選んだ。
 #en Shenzhen's traffic police have opted for unconventional penalties before.
 深セン Shenzhen
-の <no>
+の 's
 交通警察 traffic police
 は <wa>
 以前 before
@@ -987,8 +992,7 @@ RHS RHS
 が <ga>
 できる can
 わけ case
-で is
-はない -negative
+ではない is not
 。 .
 
 #49
@@ -1080,7 +1084,7 @@ RHS RHS
 だった was
 。 .
 
-#3
+#53
 #jp 日本はアジアにあります。
 #en Japan is situated in Asia. 
 日本 Japan
@@ -1091,7 +1095,7 @@ RHS RHS
 ます -pol
 。 .
 
-#4
+#54
 #jp 彼は駅で英語の先生にばったり会った。
 #en He met his English teacher at the station by accident.
 彼 he
@@ -1106,12 +1110,12 @@ RHS RHS
 会っ meet
 た。 -past
 
-#5
+#55
 #jp 急がば回れ。
 #en More haste, less speed.
 急がば回れ。 More haste, less speed. 
 
-#6
+#56
 #jp 君の好きなヘヴィメタルのギタリストは誰？
 #en Who's your favorite heavy metal guitarist?
 君 your
@@ -1125,7 +1129,7 @@ RHS RHS
 誰 who
 ？ ?
 
-#7
+#57
 #jp 七夕は漫画によく出てくるので、私もそこそこ知っています。
 #en Tanabata comes up in manga a lot so I also know it fairly well. 
 七夕 Tanabata 
@@ -1144,7 +1148,7 @@ RHS RHS
 ます -pol
 。 .
 
-#8
+#58
 #jp 私の目は青いです。 
 #en My eyes are blue.
 私 me
@@ -1155,7 +1159,7 @@ RHS RHS
 です are
 。 .
 
-#9
+#59
 #jp コーネル大学の研究によると、ブサイクな被告はイケメン、美女の被告より２２パーセント高い確率で有罪になるんだって。
 #en According to a Cornell University study, unattractive defendants are 22 percent more likely to be convicted than good-looking ones. 
 コーネル大学 Cornell University
@@ -1185,7 +1189,7 @@ RHS RHS
 だって they say
 。 .
 
-#10
+#60
 #jp 彼女は登校前によく髪を洗ったものだった。
 #en She used to wash her hair before going to school. 
 彼女 She
@@ -1202,7 +1206,7 @@ RHS RHS
 だった was
 。 .
 
-#11
+#61
 #jp 試合の直前はいつも神経質になる。
 #en I always get nervous just before a match. 
 試合 match 
@@ -1216,7 +1220,7 @@ RHS RHS
 なる become
 。 .
 
-#12
+#62
 #jp 彼は希望に満ち溢れていた。 
 #en He was brimming over with hope. 
 彼 he
@@ -1228,7 +1232,7 @@ RHS RHS
 た -past
 。 . 
 
-#13
+#63
 #jp どう見ても彼らの行動は実を結んでいない。 
 #en To all appearances, their actions haven't borne fruit. 
 どう見ても to all apperances
@@ -1241,7 +1245,7 @@ RHS RHS
 ない -not
 。 .
 
-#14
+#64
 #jp 伝言をお願いできますか。 
 #en Can I leave a message? 
 伝言 message
@@ -1252,7 +1256,7 @@ RHS RHS
 か ?
 。 .
 
-#15
+#65
 #jp これは、最近の写真？ 
 #en Is this a recent photo? 
 これ this
@@ -1263,7 +1267,7 @@ RHS RHS
 写真 photo
 ？ ?
 
-#16
+#66
 #jp これらの本はショーウィンドウに飾ってある。
 #en Those books were on display in the window. 
 これら those
@@ -1277,7 +1281,7 @@ RHS RHS
 ある were
 。 .
 
-#17
+#67
 #jp 残ったものはなにひとつありませんでした。
 #en There was nothing left over. 
 残っ left
@@ -1291,7 +1295,7 @@ RHS RHS
 でした -past
 。 .
 
-#18
+#68
 #jp 先程言ったように、彼はここにいません
 #en As I told you earlier, he's not here. 
 先程 earlier
@@ -1308,7 +1312,7 @@ RHS RHS
 ませ -pol
 ん -not
 
-#19
+#69
 #jp 私は簡単だといったことがない。
 #en I never said it would be simple. 
 私 I
@@ -1321,7 +1325,7 @@ RHS RHS
 ことがない has never happened
 。 .
 
-#20 
+#70
 #jp 彼女の行為が正しかったなんて、私は言ってないよ。 
 #en I'm not saying that what she did was right. 
 彼女 she
@@ -1340,7 +1344,7 @@ RHS RHS
 よ you know
 。 .
 
-#21
+#71
 #jp チャンスを最大限に活用してみるべきだ
 #en You should try to make the most of your opportunities. 
 チャンス opportunity
@@ -1354,7 +1358,7 @@ RHS RHS
 だ is
 。 .
 
-#22
+#72
 #jp 彼はこの大学の生徒です。 
 #en He's a student at this college. 
 彼 he
@@ -1366,7 +1370,7 @@ RHS RHS
 です is
 。 .
 
-#23
+#73
 #jp 私はそのスピーチに深い感銘を受けた。
 #en I was greatly impressed by the speech. 
 私 I
@@ -1381,7 +1385,7 @@ RHS RHS
 た -past
 。 .
 
-#24
+#74
 #jp 開封後はなるべくお早めにお召し上がりください。 
 #en After opening, please eat as soon as possible. 
 開封 opening
@@ -1396,7 +1400,7 @@ RHS RHS
 ください please
 。 .
 
-#25
+#75
 #jp 勘定書の総額は１００ドルになった。 
 #en The bill amounted to 100 dollars. 
 勘定書 bill
@@ -1410,7 +1414,7 @@ RHS RHS
 た -past
 。 . 
 
-#26
+#76
 #jp トムはウィンクした。
 #en Tom winked. 
 トム Tom
@@ -1419,7 +1423,7 @@ RHS RHS
 し do
 た -past
 
-#27
+#77
 #jp 彼女は音楽の勉強をするためにオーストリアに行った。
 #en She went to Austria for the purpose of studying music.
 彼女 She
@@ -1436,7 +1440,7 @@ RHS RHS
 た -past
 。 .
 
-#28
+#78
 #jp お前は、オレには絶対勝てないだろう。 
 #en You will never defeat me! 
 お前 You
@@ -1452,7 +1456,7 @@ RHS RHS
 だろう it seems
 。 .
 
-#29
+#79
 #jp 恋人がいるのですか。どこで出会ったのですか。
 #en Do you have a boyfriend or a girlfriend? Where did you meet them? 
 恋人 sweetheart 
@@ -1468,7 +1472,7 @@ RHS RHS
 の <no>
 ですか ?
 
-#30
+#80
 #jp 彼はその問題について考えています。
 #en He is thinking about the problem. 
 彼 he
@@ -1481,7 +1485,7 @@ RHS RHS
 ます -pol
 。 .
 
-#31
+#81
 #jp 滞りのない、優雅な仕草でグラスに水を注ぎ込んだ。
 #en She smoothly and elegantly poured the water into the glass.
 滞り hindrance
@@ -1499,7 +1503,7 @@ RHS RHS
 注ぎ込ん pour
 だ -past
 
-#32
+#82
 #jp あなたの長所は何ですか。 
 #en What are your strong points? 
 あなた your
@@ -1510,7 +1514,7 @@ RHS RHS
 ですか ?
 。 .
 
-#33 
+#83
 #jp 彼は自立した。 
 #en He is now on his own. 
 彼 he
@@ -1520,7 +1524,7 @@ RHS RHS
 た -past
 。 .
 
-#34
+#84
 #jp 手がかじかんで指がうまく動かないよ。 
 #en My hand is so numb with cold that I can't move my fingers. 
 手 hand
@@ -1535,7 +1539,7 @@ RHS RHS
 よ you know
 。 .
 
-#35
+#85
 #jp この問題はとても重要です。 
 #en This matter is of great importance. 
 この this
@@ -1546,7 +1550,7 @@ RHS RHS
 です is
 。 .
 
-#36
+#86
 #jp 彼女がナイフを購入するのが問題ないというなら、一体どうして私が購入できないのか? 
 #en If it's okay for her to buy a knife, then why on earth can't I? 
 彼女 her
@@ -1574,7 +1578,7 @@ RHS RHS
 か ?
 ? ?
 
-#37
+#87
 #jp 今日の午後のミーティングに出ますか？ 
 #en Are you going to be at this afternoon's meeting? 
 今日 today
@@ -1588,7 +1592,7 @@ RHS RHS
 か ?
 ？ ?
 
-#38
+#88
 #jp ミラノからいつ戻るの？ 
 #en When are you going to return from Milan? 
 ミラノ Milan
@@ -1598,7 +1602,7 @@ RHS RHS
 の <no>
 ？ ?
 
-#39
+#89
 #jp 私は幸せだ。
 #en I am happy. 
 私 I
@@ -1607,7 +1611,7 @@ RHS RHS
 だ am
 。 .
 
-#40
+#90
 #jp あの二人はどうもできているらしい。
 #en They seem to be in love with each other.
 あの that
@@ -1619,7 +1623,7 @@ RHS RHS
 らしい it seems
 。 .
 
-#41
+#92
 #jp 悪いのは君ではなく僕だ。 
 #en It's my fault, not yours. 
 悪い at fault
@@ -1632,7 +1636,7 @@ RHS RHS
 だ is
 。 .
 
-#42
+#92
 #jp 警察がここに来るまでには暗くなっているだろう。
 #en It will be dark by the time the police come here.
 警察 police
@@ -1649,7 +1653,7 @@ RHS RHS
 だろう I think
 。 .
 
-#43
+#93
 #jp 彼女は病気だと思う。
 #en I think she is sick.
 彼女 she
@@ -1660,7 +1664,7 @@ RHS RHS
 思う think
 。 .
 
-#44
+#94
 #jp 明日の朝は八時集合だから、遅れないでよ。
 #en Tomorrow morning, we will regroup at 8 o'clock, don't be late.
 明日 tomorrow
@@ -1673,12 +1677,12 @@ RHS RHS
 だから so
 、 ,
 遅れ be late
-ない -not
+ない -negative
 で -te
 よ <yo>
 。 .
 
-#45
+#95
 #jp 「この時計合ってるの？」「合ってるはずだよ。電波時計だもん」
 #en "Is this clock on time?" "It should be. It gets set automatically."
 「 "
@@ -1696,12 +1700,12 @@ RHS RHS
 だ is
 よ <yo>
 。 .
-電波時計 a radio clock
+電波時計 radio clock
 だ is
 もん <mon>
 」 ”
 
-#46
+#96
 #jp ついに剣道の呼吸をつかんだ。
 #en I've finally got the knack of kendo.
 ついに at last
@@ -1713,7 +1717,7 @@ RHS RHS
 だ -past
 。 .
 
-#47
+#97
 #jp 作り話やうわさなどでなく、本当にあった話。
 #en It's not fiction or rumour, etc., it's a true story.
 作り話 fiction
@@ -1729,7 +1733,7 @@ RHS RHS
 話 story
 。 .
 
-#48
+#98
 #jp 弟はどこだろう？
 #en Where is my brother?
 弟 brother
@@ -1738,7 +1742,7 @@ RHS RHS
 だろう I wonder
 ？ ?
 
-#49
+#99
 #jp 日本との貿易は容易ではない。
 #en Trading with Japan is not easy.
 日本 Japan
@@ -1751,7 +1755,7 @@ RHS RHS
 はない -not
 。 .
 
-#50
+#100
 #jp 楽しかった。
 #en I enjoyed myself.
 楽しかっ enjoy

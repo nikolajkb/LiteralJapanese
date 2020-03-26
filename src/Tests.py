@@ -216,39 +216,42 @@ def print_equalities():
 
 # read test data into Sentence object
 def read_test_data(file_path):
-    print("reading test data")
-    data = open(file_path, "r", encoding="utf-8")
     linenr = 1
-    linenr += 1
-    line = data.readline()
-    sentences = []
-    while line:
-        sentence = Sentence()
-        sentence.index = int(line[1:-1])
+    try:
+        print("reading test data")
+        data = open(file_path, "r", encoding="utf-8")
         linenr += 1
         line = data.readline()
-        sentence.japanese = line[4:-1]
-        linenr += 1
-        line = data.readline()
-        sentence.english = line[4:-1]
-        linenr += 1
-        line = data.readline()
-
-        index = 0
-        while line and not line == "\n":  # read each token and split into English and Japanese
-            line = line.replace("\n", "")
-            pair = line.split(" ", 1)
-            pair = add_spaces(pair)
-            sentence.tokens.append(SentenceToken(pair[0], pair[1], (index, index + len(pair[0]) )))
-            index += len(pair[0])
+        sentences = []
+        while line:
+            sentence = Sentence()
+            sentence.index = int(line[1:-1])
+            linenr += 1
+            line = data.readline()
+            sentence.japanese = line[4:-1]
+            linenr += 1
+            line = data.readline()
+            sentence.english = line[4:-1]
             linenr += 1
             line = data.readline()
 
-        sentences.append(sentence)
-        linenr += 1
-        line = data.readline()
+            index = 0
+            while line and not line == "\n":  # read each token and split into English and Japanese
+                line = line.replace("\n", "")
+                pair = line.split(" ", 1)
+                pair = add_spaces(pair)
+                sentence.tokens.append(SentenceToken(pair[0], pair[1], (index, index + len(pair[0]) )))
+                index += len(pair[0])
+                linenr += 1
+                line = data.readline()
 
-    return sentences
+            sentences.append(sentence)
+            linenr += 1
+            line = data.readline()
+        return sentences
+    except:
+        print("Error in reading test data around line "+str(linenr))
+        exit(-1)
 
 
 def add_spaces(pair):
