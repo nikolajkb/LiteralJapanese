@@ -75,7 +75,7 @@ def get_translation_from_dictionary(token):
 # the point of this method is to make the word look more
 # like a word in a sentence and less like a dictionary entry
 def clean_word(word):
-    word = re.sub("\([^)]*\) ?", "", word)  # remove anything in parentheses
+    word = re.sub("\(.*\) ?", "", word)  # remove anything in parentheses
     word = re.sub("^to (?=.+)", "", word)  # remove to in "to play" etc.
     word = re.sub("^be (?=.+)","",word)  # remove be in "be happy" etc.
     word = word.strip()
