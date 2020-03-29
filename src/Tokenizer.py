@@ -82,6 +82,8 @@ def merge_endings(tokens):
 
             if ending.grammar == Grammar.MERGED:
                 merged.append(conjugated_word)  # word that is conjugated
+
+                ending.char_indices[0] = conjugated_word.char_indices[1]
                 merged.append(ending)  # ending to that word
                 i = last_match + 2
             else:  # no endings found
