@@ -712,7 +712,7 @@ def get_ending(word, root):
         is_word = dictionary.get(candidate.word) is not None #todo check for usually kana
         if is_word and len(candidate.reasons) != 0 and len(candidate.word) < len(root)+2:
             if candidate.reasons[0][0] == DeinflectReason.MasuStem:
-                candidate.root = root
+                return None  # the stem does not have an ending
             else:
                 candidate.root = candidate.word[:-len(candidate.from_)]
             return candidate

@@ -73,20 +73,9 @@ def merge_endings(tokens):
         conjugated_word = _copy_token(current)
         ending = Token()
         if _conjugates(current) and i < len(tokens):
+
             # current is an inflection itself
-            deinflict = Deinflect.get_ending(current.word, current.word)
-            dictionary = Dictionary.Dictionary().get_dict().dictionary
-            not_word = dictionary.get(current.word) is None
-            if deinflict is not None and not_word:
-                root_len = len(deinflict.root)
-                ending.char_indices[0] = conjugated_word.char_indices[0] + root_len
-                ending.char_indices[1] = conjugated_word.char_indices[1]
-                conjugated_word.char_indices = (conjugated_word.char_indices[0],ending.char_indices[0])
-                conjugated_word.word = current.word[:root_len]
-                conjugated_word.root = deinflict.word
-                ending.word = current.word[root_len:]
-                ending.endings = deinflict.reasons[0]
-                ending.grammar = Grammar.MERGED
+            _split_conjugated_token(conjugated_word,ending,current)
 
             ending_to_test = ""
             last_match = i
@@ -122,6 +111,21 @@ def merge_endings(tokens):
         i += 1
 
     return merged
+
+def _split_conjugated_token(conjugated_word, ending,current):
+    deinflict = Deinflect.get_ending(current.word, current.word)
+    dictionary = Dictionary.Dictionary().get_dict().dictionary
+    not_word = dictionary.get(current.word) is None
+    if deinflict is not None and not_word:
+        root_len = len(deinflict.root)
+        ending.char_indices[0] = conjugated_word.char_indices[0] + root_len
+        ending.char_indices[1] = conjugated_word.char_indices[1]
+        conjugated_word.char_indices = [conjugated_word.char_indices[0], ending.char_indices[0]]
+        conjugated_word.word = current.word[:root_len]
+        conjugated_word.root = deinflict.word
+        ending.word = current.word[root_len:]
+        ending.endings = deinflict.reasons[0]
+        ending.grammar = Grammar.MERGED
 
 def _copy_token(original):
     return Token(original.word, original.grammar, original.root, original.char_indices)
