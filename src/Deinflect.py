@@ -599,13 +599,15 @@ def getDeinflectRuleGroups():
                 ruleGroup.rules.append(rule)
     return deinflectRuleGroups
 
-
+# from = the dictionary forms ending, to = the conjugated ending of the word
 class CandidateWord:
-    def __init__(self, word: str, reasons: List[List[DeinflectReason]], type_: int, root=""):
+    def __init__(self, word: str, reasons: List[List[DeinflectReason]], type_: int, from_="", to=""):
         self.word = word
         self.reasons = reasons
         self.type_ = type_
-        self.root = root
+        self.from_ = from_
+        self.to = to
+        self.root = None
 
     # The de-inflected candidate word
     # word: string;
@@ -691,6 +693,7 @@ def deinflect(word: str):
                             newWord,
                             reasons,
                             rule.type_ >> 8,
+                            rule.to,
                             rule.from_
                         )
                         result.append(candidate)
@@ -708,4 +711,8 @@ def get_ending(word, root):
     for candidate in inflections:
         is_word = dictionary.get(candidate.word) is not None #todo check for usually kana
         if is_word and len(candidate.reasons) != 0 and len(candidate.word) < len(root)+2:
+            if candidate.reasons[0][0] == DeinflectReason.MasuStem:
+                candidate.root = root
+            else:
+                candidate.root = candidate.word[:-len(candidate.from_)]
             return candidate

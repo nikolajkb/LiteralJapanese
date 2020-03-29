@@ -62,7 +62,7 @@ def tokenize_sudachi(text):
                   (m.begin(), m.end()))
             for m in Constants.tokenizer.tokenize(text, mode)]
 
-# TODO fix error with indices
+
 def merge_endings(tokens):
     i = 0
     merged = []
@@ -71,12 +71,10 @@ def merge_endings(tokens):
         current_word = current.word
         current_grammar = current.grammar
         current_indices = current.char_indices
-        if _conjugates(current) and i+1 < len(tokens):
+        if _conjugates(current) and i < len(tokens):
             ending = ""
             ending_final = ""
             root = ""
-            start = tokens[i + 1].char_indices[0]
-            end = tokens[i + 1].char_indices[1]
             deinflict_reasons = []
             last_match = i
             original_token = tokens[i].word
@@ -102,8 +100,9 @@ def merge_endings(tokens):
                     combination = current.word + ending + next_.word
                     deinflict = Deinflect.get_ending(combination, original_token)
                     if deinflict is not None:
+                        start = current.char_indices[1]
                         current_word = current.word
-                        current_indices = current_indices
+                        current_indices = current.char_indices
 
                         end = next_.char_indices[1]
                         root = deinflict.word
