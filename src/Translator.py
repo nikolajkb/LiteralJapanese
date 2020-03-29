@@ -1,7 +1,7 @@
 import Dictionary
 import Infer
 import Numbers
-from Grammar import Grammar, endings, is_english, is_katakana, is_number
+from Grammar import Grammar, is_english, is_katakana, is_number
 import re
 import Katakana
 
@@ -109,6 +109,7 @@ def match_special(token):
         "て": "<te>",
         "よ": ", you know?",
         "ね": ", right?",
+        "や": "or",
 
         # symbols
         "。": ".",

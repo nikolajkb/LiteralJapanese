@@ -85,7 +85,7 @@ def merge_endings(tokens):
 
                 ending.char_indices[0] = conjugated_word.char_indices[1]
                 merged.append(ending)  # ending to that word
-                i = last_match + 2
+                i = last_match + 1
             else:  # no endings found
                 merged.append(current)
                 i = last_match + 1
@@ -111,7 +111,7 @@ def _add_endings(i,tokens,current,ending):
                 ending.word = ending_to_test + next_.word
                 ending.grammar = Grammar.MERGED
 
-                last_match = i
+                last_match = i + 1
         else:
             break
         i += 1
