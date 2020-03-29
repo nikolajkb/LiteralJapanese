@@ -37,7 +37,9 @@ def _make_grammar(tag):
 
 
 class Token:
-    def __init__(self, word, grammar=Grammar.UNKNOWN, root="", char_indices=(0,0), endings=None):
+    def __init__(self, word="", grammar=Grammar.UNKNOWN, root="", char_indices=None, endings=None):
+        if char_indices is None:
+            char_indices = [-1, -1]
         self.word = word
         self.grammar = grammar
         if root == "":
@@ -68,66 +70,60 @@ def merge_endings(tokens):
     merged = []
     while i < len(tokens):
         current = tokens[i]
-        current_word = current.word
-        current_grammar = current.grammar
-        current_indices = current.char_indices
+        conjugated_word = _copy_token(current)
+        ending = Token()
         if _conjugates(current) and i < len(tokens):
-            ending = ""
-            ending_final = ""
-            root = ""
-            deinflict_reasons = []
-            last_match = i
-            original_token = tokens[i].word
-
             # current is an inflection itself
-            deinflict = Deinflect.get_ending(original_token, original_token)
+            deinflict = Deinflect.get_ending(current.word, current.word)
             dictionary = Dictionary.Dictionary().get_dict().dictionary
-            not_word = dictionary.get(original_token) is None
+            not_word = dictionary.get(current.word) is None
             if deinflict is not None and not_word:
                 root_len = len(deinflict.root)
-                start = current_indices[0] + root_len
-                end = current_indices[1]
-                current_indices = (current_indices[0],start)
-                current_word = current.word[:root_len]
-                root = deinflict.word
-                current.root = deinflict.word
-                ending_final = current.word[root_len:]
-                deinflict_reasons = deinflict.reasons[0]
+                ending.char_indices[0] = conjugated_word.char_indices[0] + root_len
+                ending.char_indices[1] = conjugated_word.char_indices[1]
+                conjugated_word.char_indices = (conjugated_word.char_indices[0],ending.char_indices[0])
+                conjugated_word.word = current.word[:root_len]
+                conjugated_word.root = deinflict.word
+                ending.word = current.word[root_len:]
+                ending.endings = deinflict.reasons[0]
+                ending.grammar = Grammar.MERGED
 
+            ending_to_test = ""
+            last_match = i
             while i + 1 < len(tokens):
                 next_ = tokens[i + 1]
                 if _might_be_ending(next_):
-                    combination = current.word + ending + next_.word
-                    deinflict = Deinflect.get_ending(combination, original_token)
+                    combination = current.word + ending_to_test + next_.word
+                    deinflict = Deinflect.get_ending(combination, current.word)
                     if deinflict is not None:
-                        start = current.char_indices[1]
-                        current_word = current.word
-                        current_indices = current.char_indices
+                        ending.char_indices[0] = current.char_indices[1]
+                        conjugated_word.word = current.word
+                        conjugated_word.char_indices = current.char_indices
 
-                        end = next_.char_indices[1]
-                        root = deinflict.word
-                        deinflict_reasons = deinflict.reasons[0]
+                        ending.char_indices[1] = next_.char_indices[1]
+                        ending.endings = deinflict.reasons[0]
                         last_match = i
-                        ending_final = ending + next_.word
+                        ending.word = ending_to_test + next_.word
+                        ending.grammar = Grammar.MERGED
                 else:
                     break
                 i += 1
-                ending += next_.word
-            if root != "":
-                merged.append(Token(current_word, current_grammar, current.root, current_indices))  # word that is conjugated
-                merged.append(Token(ending_final, Grammar.MERGED, char_indices=(start, end), endings=deinflict_reasons))  # ending to that word
+                ending_to_test += next_.word
+            if ending.grammar == Grammar.MERGED:
+                merged.append(conjugated_word)  # word that is conjugated
+                merged.append(ending)  # ending to that word
                 i = last_match + 2
             else:
-                merged.append(_make_token_root(current))
+                merged.append(current)
                 i = last_match + 1
             continue
 
-        merged.append(_make_token_root(current))
+        merged.append(current)
         i += 1
 
     return merged
 
-def _make_token_root(original):
+def _copy_token(original):
     return Token(original.word, original.grammar, original.root, original.char_indices)
 
 def _conjugates(current):
