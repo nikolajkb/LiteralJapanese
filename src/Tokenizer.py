@@ -72,37 +72,19 @@ def merge_endings(tokens):
         current = tokens[i]
         conjugated_word = _copy_token(current)
         ending = Token()
-        if _conjugates(current) and i < len(tokens):
+        if _conjugates(current):
 
-            # current is an inflection itself
+            # in case current is an inflection itself
             _split_conjugated_token(conjugated_word,ending,current)
 
-            ending_to_test = ""
-            last_match = i
-            while i + 1 < len(tokens):
-                next_ = tokens[i + 1]
-                if _might_be_ending(next_):
-                    combination = current.word + ending_to_test + next_.word
-                    deinflict = Deinflect.get_ending(combination, current.word)
-                    if deinflict is not None:
-                        ending.char_indices[0] = current.char_indices[1]
-                        conjugated_word.word = current.word
-                        conjugated_word.char_indices = current.char_indices
+            # add together all endings
+            last_match = _add_endings(i,tokens,current,ending)
 
-                        ending.char_indices[1] = next_.char_indices[1]
-                        ending.endings = deinflict.reasons[0]
-                        last_match = i
-                        ending.word = ending_to_test + next_.word
-                        ending.grammar = Grammar.MERGED
-                else:
-                    break
-                i += 1
-                ending_to_test += next_.word
             if ending.grammar == Grammar.MERGED:
                 merged.append(conjugated_word)  # word that is conjugated
                 merged.append(ending)  # ending to that word
                 i = last_match + 2
-            else:
+            else:  # no endings found
                 merged.append(current)
                 i = last_match + 1
             continue
@@ -111,6 +93,28 @@ def merge_endings(tokens):
         i += 1
 
     return merged
+
+# returns the index of the last token that contributed to a valid ending
+def _add_endings(i,tokens,current,ending):
+    ending_to_test = ""
+    last_match = i
+    while i + 1 < len(tokens):
+        next_ = tokens[i + 1]
+        if _might_be_ending(next_):
+            combination = current.word + ending_to_test + next_.word
+            deinflict = Deinflect.get_ending(combination, current.word)
+            if deinflict is not None:
+                ending.char_indices[1] = next_.char_indices[1]
+                ending.endings = deinflict.reasons[0]
+                ending.word = ending_to_test + next_.word
+                ending.grammar = Grammar.MERGED
+
+                last_match = i
+        else:
+            break
+        i += 1
+        ending_to_test += next_.word
+    return last_match
 
 def _split_conjugated_token(conjugated_word, ending,current):
     deinflict = Deinflect.get_ending(current.word, current.word)
