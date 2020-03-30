@@ -159,7 +159,7 @@ def _merge_words_using_dictionary(tokens):
         combined_words = [tokens[i].word]
         dict_entry = Dictionary.match(Token(combination), match_pos=False)
         fails = 0
-        fail_limit = 2
+        fail_limit = 2  # this setting dictates how far the system will look ahead to find valid combinations
 
         while fails < fail_limit:
             if dict_entry and should_merge(combined_words,combination,dict_entry):

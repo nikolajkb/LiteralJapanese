@@ -6,6 +6,14 @@ from typing import List
 from Dictionary import Dictionary
 
 
+class WordType(Enum):
+    IchidanVerb = 1 << 0,  # i.e.ru - verbs
+    GodanVerb = 1 << 1,  # i.e.u - verbs
+    IAdj = 1 << 2,
+    KuruVerb = 1 << 3,
+    SuruVerb = 1 << 4,
+
+
 class DeinflectReason(Enum):
     PolitePastNegative = "-polite-negative-past"
     PoliteNegative = "-polite-negative"
@@ -391,6 +399,7 @@ deinflectRuleData = [
     ['きた', 'くる', 2176, DeinflectReason.Past],
     ['きて', 'くる', 2176, DeinflectReason.Te],
     ['くて', 'い', 1152, DeinflectReason.Te],
+    ['いで', 'い', 1152, DeinflectReason.Te], #nbje
     ['けば', 'く', 640, DeinflectReason.Ba],
     ['げば', 'ぐ', 640, DeinflectReason.Ba],
     ['ける', 'く', 513, DeinflectReason.Potential],
@@ -599,7 +608,7 @@ def getDeinflectRuleGroups():
                 ruleGroup.rules.append(rule)
     return deinflectRuleGroups
 
-# from = the dictionary forms ending, to = the conjugated ending of the word
+
 class CandidateWord:
     def __init__(self, word: str, reasons: List[List[DeinflectReason]], type_: int, from_="", to=""):
         self.word = word
@@ -693,7 +702,7 @@ def deinflect(word: str):
                             newWord,
                             reasons,
                             rule.type_ >> 8,
-                            rule.to,
+                            rule.to,  # nbje: I have intentionally swapped to/from here, since it will make more sense this way in the rest of the system
                             rule.from_
                         )
                         result.append(candidate)
