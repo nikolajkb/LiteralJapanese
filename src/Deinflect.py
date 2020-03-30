@@ -713,7 +713,7 @@ def get_ending(word, root):
         if is_word and len(candidate.reasons) != 0 and len(candidate.word) < len(root)+2:
             if candidate.reasons[0][0] == DeinflectReason.MasuStem:
                 return None  # the stem does not have an ending
-            elif candidate.root is None:  # this happens when the entire word is changed in the inflection
+            elif len(candidate.word) == len(candidate.from_):  # this happens when the entire word is changed in the inflection
                 # make the root everything but the last char. The root is actually lost,
                 # but we want to display both the word and the endings anyway.
                 candidate.root = candidate.to[:-1]

@@ -1758,7 +1758,8 @@ IAG	IAG
 よ	, you know?
 。	.
 もし	in case
-よければ	if it is good
+よけれ	good
+ば	-if
 私	I
 が	<ga>
 出	answer
@@ -1793,7 +1794,9 @@ IAG	IAG
 昨日	yesterday
 燃や	burn
 し	do
-てしまいました	-te-unintentional-polite-past
+て	-te
+しまい	unintentionally
+ました	-polite-past
 。	.
 
 #102

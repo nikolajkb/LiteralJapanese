@@ -14,7 +14,7 @@ def translate(tokens, translation=None):
 
     inferred_meanings = None
     if translation is not None:
-        inferred_meanings = Infer.infer(tokens,translation)
+        inferred_meanings =None# Infer.infer(tokens,translation)
 
     i = -1
     for token in tokens:

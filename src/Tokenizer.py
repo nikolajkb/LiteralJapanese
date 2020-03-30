@@ -61,7 +61,7 @@ def tokenize_sudachi(text):
     return [Token(m.surface(),
                   _make_grammar(m.part_of_speech()),
                   m.dictionary_form(),
-                  (m.begin(), m.end()))
+                  [m.begin(), m.end()])
             for m in Constants.tokenizer.tokenize(text, mode)]
 
 
@@ -78,7 +78,7 @@ def merge_endings(tokens):
             _split_conjugated_token(conjugated_word,ending,current)
 
             # add together all endings
-            last_match = _add_endings(i,tokens,current,ending)
+            last_match = _add_endings(i,tokens,current,ending,conjugated_word)
 
             if ending.grammar == Grammar.MERGED:
                 merged.append(conjugated_word)  # word that is conjugated
@@ -97,7 +97,7 @@ def merge_endings(tokens):
     return merged
 
 # returns the index of the last token that contributed to a valid ending
-def _add_endings(i,tokens,current,ending):
+def _add_endings(i,tokens,current,ending,conjugated_word):
     ending_to_test = ""
     last_match = i
     while i + 1 < len(tokens):
@@ -110,6 +110,10 @@ def _add_endings(i,tokens,current,ending):
                 ending.endings = deinflict.reasons[0]
                 ending.word = ending_to_test + next_.word
                 ending.grammar = Grammar.MERGED
+
+                # if the word had been split, we want to revert it at this point.
+                conjugated_word.word = combination[:-len(ending.word)]
+                conjugated_word.char_indices[1] = conjugated_word.char_indices[0] + len(conjugated_word.word)
 
                 last_match = i + 1
         else:
@@ -155,7 +159,7 @@ def _merge_words_using_dictionary(tokens):
         dict_entry = Dictionary.match(Token(combination), match_pos=False)
 
         while dict_entry is not None and should_merge(tokens[i].word,tokens[i+1].word,dict_entry):
-            to_add.char_indices = (tokens[start].char_indices[0],tokens[i+1].char_indices[1])
+            to_add.char_indices = [tokens[start].char_indices[0],tokens[i+1].char_indices[1]]
             to_add.root = dict_entry[0].writings[0]
             to_add.pos = dict_entry[0].pos[0]
             to_add.word = to_add.root
