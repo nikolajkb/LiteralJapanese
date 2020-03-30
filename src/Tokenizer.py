@@ -156,35 +156,43 @@ def _merge_words_using_dictionary(tokens):
         start = i
         combination = tokens[i].word + tokens[i + 1].word
         combination = normalize_numbers(combination)
+        combined_words = [tokens[i].word]
         dict_entry = Dictionary.match(Token(combination), match_pos=False)
+        fails = 0
+        fail_limit = 2
 
-        while dict_entry is not None and should_merge(tokens[i].word,tokens[i+1].word,dict_entry):
-            to_add.char_indices = [tokens[start].char_indices[0],tokens[i+1].char_indices[1]]
-            to_add.root = dict_entry[0].writings[0]
-            to_add.pos = dict_entry[0].pos[0]
-            to_add.word = to_add.root
+        while fails < fail_limit:
+            if dict_entry and should_merge(combined_words,combination,dict_entry):
+                to_add.char_indices = [tokens[start].char_indices[0],tokens[i+1].char_indices[1]]
+                to_add.root = dict_entry[0].writings[0]
+                to_add.pos = dict_entry[0].pos[0]
+                to_add.word = combination
+                fails = 0
+            else:
+                fails += 1
 
             i += 1
             if i+1 == len(tokens):
                 break
-            combination = tokens[i].word + tokens[i+1].word
+            combination += tokens[i+1].word
             combination = normalize_numbers(combination)
+            combined_words.append(tokens[i].word)
             dict_entry = Dictionary.match(Token(combination), match_pos=False)
 
         merged.append(to_add)
-        i += 1
+        i += 1 - fails
     merged.append(tokens[i])
 
     return merged
 
 
-def should_merge(current, next_, entry):
-    if is_small_number(current) and is_day_or_month(next_):
+def should_merge(words,combination, entry):
+    if len(words) == 2 and is_small_number(words[0]) and is_day_or_month(words[1]):
         return True
-    elif is_wh_question(current):
+    elif is_wh_question(words[0]):
         return True
     else:  # these tags are accepted since they have a low chance of producing an incorrect result
-        return (entry[0].pos[0] == Grammar.NOUN or entry[0].pos[0] == Grammar.PRONOUN) and entry[0].writings[0] == current+next_
+        return (entry[0].pos[0] == Grammar.NOUN or entry[0].pos[0] == Grammar.PRONOUN) and entry[0].writings[0] == combination
 
 
 def normalize_numbers(string):
