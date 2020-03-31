@@ -20,6 +20,7 @@ def translate(tokens, translation=None):
     for token in tokens:
         i += 1
         jp = token.word
+        is_last = i == len(tokens) - 1
 
         if is_ending(token):
             translation = translate_ending(token)
@@ -32,7 +33,7 @@ def translate(tokens, translation=None):
                 translations.append((jp, translation))
                 continue
 
-        translation = match_special(jp)
+        translation = match_special(jp,is_last)
         if translation:
             translations.append((jp, translation))
             continue
@@ -75,9 +76,9 @@ def get_translation_from_dictionary(token):
 # the point of this method is to make the word look more
 # like a word in a sentence and less like a dictionary entry
 def clean_word(word):
-    word = re.sub("\(.*\) ?", "", word)  # remove anything in parentheses
+    word = re.sub("\(.*\) ?", "", word)    # remove anything in parentheses
     word = re.sub("^to (?=.+)", "", word)  # remove to in "to play" etc.
-    word = re.sub("^be (?=.+)","",word)  # remove be in "be happy" etc.
+    word = re.sub("^be (?=.+)","",word)    # remove be in "be happy" etc.
     word = word.strip()
     return word
 
@@ -91,8 +92,8 @@ def translate_ending(token):
     return "".join(ending)
 
 
-def match_special(token):
-    return {
+def match_special(token, is_last):
+    universal = {
         # particles
         "を": "<o>",
         "お": "pol-",
@@ -107,8 +108,6 @@ def match_special(token):
         "な": "<na>",
         "か": "?",
         "て": "<te>",
-        "よ": ", you know?",
-        "ね": ", right?",
         "や": "or",
 
         # symbols
@@ -133,4 +132,22 @@ def match_special(token):
         "殿": "dono",
         "どの": "dono",
         "氏": "shi"
-    }.get(token, None)
+    }
+
+    # se = sentence ending
+    ends = {
+        "な": "musing (se)",
+        "の": "explain (se)",  # the only ambiguous end, 'no' might be used as a question marker or as the 'explainer'-no. logic for translation: Explain could mean explain to me or I'm explaining to you
+        "ぞ": "! (se)",
+        "わ": "feminine (se)",  # not a formal definition, but is mostly used by women to make the sentence "softer"
+        "かな": "i wonder (se)",
+        "ぜ": "! (se)",
+        "さ": "hey (se)",  # used when trying to get someones attention
+        "よ": ", you know? (se)",  # used to present new information
+        "ね": ", right? (se)",  # used to seem agreement
+    }
+
+    if is_last:
+        return ends.get(token,universal.get(token,None))
+    else:
+        return universal.get(token,None)

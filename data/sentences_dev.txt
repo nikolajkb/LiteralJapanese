@@ -306,7 +306,8 @@ treemaker	treemaker
 それ	that
 を	<o>
 最も	most
-強く	strongly
+強	strong
+く	-adverbial
 具現化	embody
 し	do
 た	-past

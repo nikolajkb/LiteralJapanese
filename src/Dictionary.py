@@ -206,6 +206,11 @@ def make_grammar(tag):
     return grammar
 
 
+# returns the raw results of a lookup in the dictionary
+def get(word):
+    return Dictionary.get_dict().dictionary.get(word)
+
+
 # returns translations from dictionary that match pos/kana
 def match(token, match_kana=True, match_pos=True):
     dictionary = Dictionary.get_dict().dictionary

@@ -1,11 +1,13 @@
 # adapted from:
 # https://github.com/birtles/rikaichamp/blob/master/src/deinflect.ts
+# All changes or comments made by Nikolaj are marked "nbje"
 
 from enum import Enum
 from typing import List
-from Dictionary import Dictionary
+import Dictionary
+from Grammar import Grammar
 
-
+# nbje: enum taken from data.ts
 class WordType(Enum):
     IchidanVerb = 1 << 0,  # i.e.ru - verbs
     GodanVerb = 1 << 1,  # i.e.u - verbs
@@ -608,7 +610,7 @@ def getDeinflectRuleGroups():
                 ruleGroup.rules.append(rule)
     return deinflectRuleGroups
 
-
+# nbje: changed this to include from and to
 class CandidateWord:
     def __init__(self, word: str, reasons: List[List[DeinflectReason]], type_: int, from_="", to=""):
         self.word = word
@@ -696,7 +698,7 @@ def deinflect(word: str):
                             else:
                                 firstReason.insert(0, rule.reason)
                         else:
-                            reasons.append([rule.reason])
+                            reasons.append([rule.reason])  # nbje: I'm not sure why this is added as a list, it results in reasons being a list of length one lists
 
                         candidate = CandidateWord(
                             newWord,
@@ -713,13 +715,11 @@ def deinflect(word: str):
 
     return result
 
-
+# All code below this point: nbje
 def get_ending(word, root):
-    dictionary = Dictionary().get_dict().dictionary
     inflections = deinflect(word)
     for candidate in inflections:
-        is_word = dictionary.get(candidate.word) is not None #todo check for usually kana
-        if is_word and len(candidate.reasons) != 0 and len(candidate.word) < len(root)+2:
+        if is_valid_candidate(candidate,root):
             if candidate.reasons[0][0] == DeinflectReason.MasuStem:
                 return None  # the stem does not have an ending
             elif len(candidate.word) == len(candidate.from_):  # this happens when the entire word is changed in the inflection
@@ -729,3 +729,38 @@ def get_ending(word, root):
             else:
                 candidate.root = candidate.word[:-len(candidate.from_)]
             return candidate
+
+def is_valid_candidate(candidate, root):
+    return is_word(candidate) and \
+           is_inflected(candidate) and \
+           is_same_word(candidate,root.word) and \
+           inflection_valid_for_pos(candidate,root)
+
+def is_word(candidate):
+    return Dictionary.get(candidate.word) is not None  # todo check for usually kana
+
+def is_inflected(candidate):
+    return len(candidate.reasons) != 0
+
+def is_same_word(candidate, word):
+    return len(candidate.word) < len(word)+2
+
+# only some inflections are valid for adjectives (all are valid for verbs)
+def inflection_valid_for_pos(candidate, root):
+    if root.grammar == Grammar.I_ADJECTIVE:
+        return all([reason[0] not in invalid_adjective_inflections for reason in candidate.reasons])
+    else:
+        return True
+
+
+# may be incomplete
+invalid_adjective_inflections = [DeinflectReason.Chau,
+                                 DeinflectReason.Nasai,
+                                 DeinflectReason.PotentialOrPassive,
+                                 DeinflectReason.Tai,
+                                 DeinflectReason.Polite,
+                                 DeinflectReason.Volitional,
+                                 DeinflectReason.Zu,
+                                 DeinflectReason.MasuStem,
+                                 DeinflectReason.ImperativeNegative,
+                                 DeinflectReason.Continuous]

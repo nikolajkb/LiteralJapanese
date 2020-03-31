@@ -104,7 +104,7 @@ def _add_endings(i,tokens,current,ending,conjugated_word):
         next_ = tokens[i + 1]
         if _might_be_ending(next_):
             combination = current.word + ending_to_test + next_.word
-            deinflict = Deinflect.get_ending(combination, current.word)
+            deinflict = Deinflect.get_ending(combination, current)
             if deinflict is not None:
                 ending.char_indices[1] = next_.char_indices[1]
                 ending.endings = deinflict.reasons[0]
@@ -122,10 +122,11 @@ def _add_endings(i,tokens,current,ending,conjugated_word):
         ending_to_test += next_.word
     return last_match
 
+# splits tokens that are conjugated into a root and an ending
 def _split_conjugated_token(conjugated_word, ending,current):
-    deinflict = Deinflect.get_ending(current.word, current.word)
+    deinflict = Deinflect.get_ending(current.word, current)
     dictionary = Dictionary.Dictionary().get_dict().dictionary
-    not_word = dictionary.get(current.word) is None
+    not_word = dictionary.get(current.word) is None #TODO?
     if deinflict is not None and not_word:
         root_len = len(deinflict.root)
         ending.char_indices[0] = conjugated_word.char_indices[0] + root_len
