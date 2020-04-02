@@ -143,8 +143,8 @@ def match_special(token, is_last):
         "かな": "i wonder (se)",
         "ぜ": "! (se)",
         "さ": "hey (se)",  # used when trying to get someones attention
-        "よ": ", you know? (se)",  # used to present new information
-        "ね": ", right? (se)",  # used to seem agreement
+        "よ": "you know? (se)",  # used to present new information
+        "ね": "right? (se)",  # used to seek agreement
     }
 
     if is_last:

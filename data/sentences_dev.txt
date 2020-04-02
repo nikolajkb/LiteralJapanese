@@ -43,7 +43,7 @@
 医局	medical office
 に	to
 来て	come
-よ	, you know?
+よ	you know? (se)
 。	.
 
 #4
@@ -96,7 +96,7 @@ ID	ID
 に	<ni>
 消え	go out
 た	-past
-わ	feminine sentence end
+わ	feminine (se)
 
 #7
 #jp	なるほど 簡単にゃ入れそうにねえな
@@ -110,7 +110,7 @@ ID	ID
 そう	likely
 に	<ni>
 ねえ	-negative
-な	musing sentence end
+な	musing (se)
 
 #8
 #jp	中年まで老年性の病気にならないことから明らかなのです
@@ -168,7 +168,7 @@ ID	ID
 て	-te
 来	come
 た	-past
-わ	feminine sentence end
+わ	feminine (se)
 。	.
 
 #11
@@ -243,7 +243,7 @@ treemaker	treemaker
 58人	58
 の	<no>
 患者	patients
-の	'
+の	's
 話	stories
 が	<ga>
 聞い	hear
@@ -334,7 +334,7 @@ treemaker	treemaker
 なかった	-negative-past
 ん	<no>
 です	is
-よ	you know
+よ	you know? (se)
 
 #21
 #jp	そういう訳で本当に ごめんなさいと彼に伝えたいの
@@ -350,7 +350,7 @@ treemaker	treemaker
 に	to
 伝え	tell
 たい	-want
-の	<no>
+の	explain (se)
 
 #22
 #jp	例えば ブレント・ガーヴィーに レイプされた 3人の少女の両親のようにね
@@ -372,7 +372,7 @@ treemaker	treemaker
 の	<no>
 両親	parents
 のように	similar to
-ね	, right?
+ね	right? (se)
 
 #23
 #jp	シリアルの箱の裏面、ボードゲームなど インクを使うあらゆるもので
@@ -423,7 +423,7 @@ treemaker	treemaker
 務まり	manage
 ません	-polite-negative
 から	because
-ね	, right?
+ね	right? (se)
 
 #26
 #jp	ワシントンのキャピトルヒルでソーシャルメディアの移行をフォローした人にとっては、このことは少し違う。
@@ -1322,7 +1322,7 @@ IAG	IAG
 「	"
 次回	next time
 だ	is
-よ	, you know?
+よ	you know? (se)
 」	"
 と	<to>
 彼	he
@@ -1401,7 +1401,7 @@ IAG	IAG
 ゃ	<wa>
 だめ	wrong
 だ	is
-よ	, you know?
+よ	you know? (se)
 。	.
 
 #75
@@ -1550,14 +1550,14 @@ IAG	IAG
 まだ	yet
 寝	sleep
 ない	-negative
-の	?
+の	explain (se)
 ？	?
 \space	\space
 もう	already
 寝る	sleep
 時間	time
 だ	is
-よ	, you know?
+よ	you know? (se)
 。	.
 
 #86
@@ -1757,7 +1757,7 @@ IAG	IAG
 が	<ga>
 鳴っ	ring
 てます	-ongoing-polite
-よ	, you know?
+よ	you know? (se)
 。	.
 もし	in case
 よけれ	good
