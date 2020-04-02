@@ -1,12 +1,6 @@
-import Constants
-import Paraphrase
-import Constants
-
-from Similarity import Similarity
-
+from Equality import equals
 
 def distance(source, target):
-    init_similarity()
 
     if source == target:
         return (0,0,0)
@@ -40,53 +34,3 @@ def add(tup,tup2):
     (a,b,c) = tup
     (x,y,z) = tup2
     return (a+x,b+y,c+z)
-
-
-def equals(source, target):
-    if source == target:
-        return True
-    if Constants.PARAPHRASE and not_small_words(source,target):
-        return is_paraphrase(source,target) or \
-               is_substring(source,target) or \
-               is_similar(source,target)
-    else:
-        return False
-
-
-def equals_rule(source, target):
-    if source == target:
-        return True,"strict equality"
-    if not_small_words(source,target):
-        if is_paraphrase(source,target):
-            return True,"is paraphrase"
-        elif is_substring(source,target):
-            return True,"is substring"
-        elif is_similar(source,target):
-            return True,"vector is similar"
-
-    return False, "not equal"
-
-
-def not_small_words(source,length):
-    return len(source) > 2 and len(length) > 2
-
-
-def is_paraphrase(source, target):
-    paraphrases = Paraphrase.Ppdb.get_ppdb()
-    similar = paraphrases.get(target, [])
-    return source in similar
-
-
-def is_substring(source: str,target: str):
-    return (target in source or source in target) and \
-           ("-" not in source and "-" not in target)  # '-' is used to represent inflections of words. Not filtering this
-                                                      # would result in false positives like: -polite-past = -past
-
-
-def is_similar(source,target):
-    return Constants.similarity.is_similar(source,target)
-
-
-def init_similarity():
-    if Constants.PARAPHRASE and Constants.similarity is None:
-        Constants.similarity = Similarity()

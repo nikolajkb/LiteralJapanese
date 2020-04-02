@@ -3,8 +3,8 @@ import LevenshteinDistance
 import Constants
 import Tokenizer
 import LiteralJapanese
-from PrintTools import print_translated_sentence
-from Similarity import Similarity
+from PrintTools import print_translated_sentence, print_translated_sentence_v
+from Similarity import Similarity, init_similarity
 
 start = 0
 end = 1
@@ -94,6 +94,7 @@ def test_tokenizer(file_path):
 
 def test_translator(file_path):
     sentences = read_test_data(file_path)
+    init_similarity()
 
     scores = []
 
@@ -110,7 +111,7 @@ def test_translator(file_path):
         gold = sentence.tokens
         score = translation_sentence_score(gold, system)
         if Constants.VERBOSE:
-            print_translated_sentence(sentence, system, gold, score)
+            print_translated_sentence_v(sentence, system, gold, score)
         scores.append(TranslationScore(len(gold), score))
 
     avg = TranslationScore.make_average(scores)
