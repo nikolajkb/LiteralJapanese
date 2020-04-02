@@ -126,5 +126,27 @@ class NumberTests(unittest.TestCase):
         self.assertEqual("9 billion",english)
 
 
+class ParenthesesTests(unittest.TestCase):
+    def test_parentheses_1(self):
+        word = "this (something or someone close to the speaker (including the speaker), or ideas expressed by the speaker)"
+        reduced = Translator.remove_parentheses(word)
+        self.assertEqual("this",reduced.strip())
+
+    def test_parentheses_2(self):
+        word = "this (something or someone close to the speaker)"
+        reduced = Translator.remove_parentheses(word)
+        self.assertEqual("this",reduced.strip())
+
+    def test_parentheses_3(self):
+        word = "(not) either (in a negative sentence)"
+        reduced = Translator.remove_parentheses(word)
+        self.assertEqual("either",reduced.strip())
+
+    def test_parentheses_4(self):
+        word = "(not) either"
+        reduced = Translator.remove_parentheses(word)
+        self.assertEqual("either",reduced.strip())
+
+
 if __name__ == '__main__':
     unittest.main()

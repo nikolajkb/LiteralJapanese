@@ -76,10 +76,29 @@ def get_translation_from_dictionary(token):
 # the point of this method is to make the word look more
 # like a word in a sentence and less like a dictionary entry
 def clean_word(word):
-    word = re.sub("\(.*\) ?", "", word)    # remove anything in parentheses
+    word = remove_parentheses(word)        # remove anything in parentheses
     word = re.sub("^to (?=.+)", "", word)  # remove to in "to play" etc.
     word = re.sub("^be (?=.+)","",word)    # remove be in "be happy" etc.
     word = word.strip()
+    return word
+
+
+# regular expressions do not cut it here since parentheses may be nested
+def remove_parentheses(word: str):
+    start = None
+    depth = 0
+    i = 0
+    for char in word:
+        if char == "(":
+            if depth == 0:
+                start = i
+            depth += 1
+        elif char == ")":
+            if depth == 1:
+                removed = word[:start] + word[i+1:]
+                return remove_parentheses(removed)  # this allows for multiple pairs of parentheses
+            depth -= 1
+        i += 1
     return word
 
 
