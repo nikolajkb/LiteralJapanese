@@ -217,7 +217,6 @@ def match(token, match_kana=True, match_pos=True):
     dictionary = Dictionary.get_dict().dictionary
     translations = dictionary.get(token.root)
     if translations:
-
         if match_pos:
             # attempt to match pos
             pos_match = [t for t in translations if token.grammar in t.pos]

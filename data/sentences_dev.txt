@@ -645,7 +645,7 @@ BID	BID
 ジョー	Joe
 ・	\space
 スターンリーブ	Sternlieb
-氏	Mr.
+氏	shi
 は	<wa>
 、	,
 「	"
@@ -799,7 +799,7 @@ BID	BID
 #jp	パバルカル氏は、「建物を出る必要があると感じたときがあった。」と述べた。
 #en	There was a time, Mr Panvalkar said, when he felt that they should leave the building.
 パバルカル	Panvalkar
-氏	Mr.
+氏	shi
 は	<wa>
 、	,
 「	"
@@ -899,7 +899,7 @@ BID	BID
 #jp	オズボーン氏は7月に解雇された後、米国のスピーカーの代理店と契約を結んでいる。
 #en	Mr Osborne signed up with a US speakers agency after being sacked in July.
 オズボーン	Osborne
-氏	Mr.
+氏	shi
 は	<wa>
 7月	July
 に	in
