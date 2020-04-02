@@ -14,7 +14,6 @@ def _make_grammar(tag):
         "形状詞": Grammar.NA_ADJECTIVE,
         "助動詞": Grammar.AUX_VERB,
         "補助記号": Grammar.SUB_SYMBOL,
-        "oov": Grammar.OOV,
         "空白": Grammar.BLANK,
         "接尾辞": Grammar.SUFFIX,
         "動詞": Grammar.VERB,
@@ -26,13 +25,6 @@ def _make_grammar(tag):
         "接続詞": Grammar.CONJUNCTION,
         "副詞": Grammar.ADVERB,
         "代名詞": Grammar.PRONOUN,
-        "web誤脱": Grammar.ERROR,
-        "URL": Grammar.URL,
-        "英単語": Grammar.ENGLISH,
-        "漢文": Grammar.CHINESE,
-        "未知語": Grammar.UNKNOWN,
-        "言いよどみ": Grammar.HESITATE,
-        "ローマ字文": Grammar.ROMAJI
     }.get(tag[0], Grammar.NOT_IN_SWITCH)
 
 

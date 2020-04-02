@@ -195,7 +195,8 @@ def make_grammar(tag):
         "adverbial noun (fukushitekimeishi)": Grammar.NOUN,
         "noun, used as a suffix": Grammar.NOUN,
         "noun, used as a prefix": Grammar.NOUN,
-        "noun (temporal) (jisoumeishi)": Grammar.NOUN
+        "noun (temporal) (jisoumeishi)": Grammar.NOUN,
+        "particle": Grammar.PARTICLE
 
     }.get(tag, Grammar.NOT_IN_SWITCH)
 
