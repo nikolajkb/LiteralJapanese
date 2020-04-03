@@ -118,7 +118,7 @@ def _add_endings(i,tokens,current,ending,conjugated_word):
 def _split_conjugated_token(conjugated_word, ending,current):
     deinflict = Deinflect.get_ending(current.word, current)
     dictionary = Dictionary.Dictionary().get_dict().dictionary
-    not_word = dictionary.get(current.word) is [] #TODO?
+    not_word = dictionary.get(current.word) is None #TODO?
     if deinflict is not None and not_word:
         root_len = len(deinflict.root)
         ending.char_indices[0] = conjugated_word.char_indices[0] + root_len
