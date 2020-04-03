@@ -30,24 +30,23 @@ for sentence in sentences:
                     particle_error += 1
                     continue
                 entries = Dictionary.get(s_token.token.root)
-                equality_found = False
-                for entry in entries:
-                    is_chosen_word = False
-                    if Translator.clean_word(entry.meanings[0]) == s_token.english:
-                        is_chosen_word = True
-                    else:
-                        stophere = 1
+                if entries:
+                    equality_found = False
+                    for entry in entries:
+                        is_chosen_word = False
+                        if Translator.clean_word(entry.meanings[0]) == s_token.english:
+                            is_chosen_word = True
 
-                    if any([Translator.clean_word(m) == g_token.english for m in entry.meanings]):
-                        if is_chosen_word:
-                            wrong_def += 1
-                            equality_found = True
-                        else:
-                            wrong_word += 1
-                            equality_found = True
-                        break
-                if not equality_found:
-                    other += 1
+                        if any([Translator.clean_word(m) == g_token.english for m in entry.meanings]):
+                            if is_chosen_word:
+                                wrong_def += 1
+                                equality_found = True
+                            else:
+                                wrong_word += 1
+                                equality_found = True
+                            break
+                    if not equality_found:
+                        other += 1
 
 print("wrong definition", wrong_def)
 print("wrong word      ", wrong_word)
