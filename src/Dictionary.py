@@ -42,8 +42,8 @@ class Dictionary:
                     if ke_pri.text.startswith("nf"):
                         word.priority = int(ke_pri.text[2:])
 
-            r_ele = entry.find("r_ele")
-            if r_ele is not None:
+            r_ele_list = entry.findall("r_ele")
+            for r_ele in r_ele_list:
                 for reb in r_ele.findall("reb"):
                     word.writings.append(reb.text)
 
