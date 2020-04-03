@@ -20,3 +20,7 @@ class Word:
 
 def make_empty():
     return Word([], [], [])
+
+
+def copy(word):
+    return Word(word.writings.copy(),word.meanings.copy(),word.pos.copy(),word.misc.copy(),word.priority)

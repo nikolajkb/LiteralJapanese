@@ -32,9 +32,12 @@ class Dictionary:
         for entry in root:
             word = Word.make_empty()
 
+            # shared
             k_ele_list = entry.findall("k_ele")
             for k_ele in k_ele_list:
                 for keb in k_ele.findall("keb"):
+                    if keb.text == "歌":
+                        print("st")
                     word.writings.append(keb.text)
 
                 for ke_pri in k_ele.findall("ke_pri"):
@@ -52,19 +55,6 @@ class Dictionary:
                         if priority < word.priority:
                             word.priority = priority
 
-            sense_list = entry.findall("sense")
-            for sense in sense_list:
-                for gloss in sense.findall("gloss"):
-                    word.meanings.append(gloss.text)
-
-                for pos in sense.findall("pos"):
-                    word.pos.append(make_grammar(pos.text))
-
-                for misc in sense.findall("misc"):
-                    word.misc.append(make_grammar(misc.text))
-
-
-
             only_kana = True
             for writing in word.writings:
                 if not is_hiragana(writing):
@@ -73,11 +63,44 @@ class Dictionary:
             if only_kana:
                 word.misc.append(Grammar.USUALLY_KANA)
 
-            for writing in word.writings:
-                if dictionary.get(writing) is None:
-                    dictionary[writing] = [word]
+            # individual
+            first_pos = []
+            first_misc = []
+            first = True
+            sense_list = entry.findall("sense")
+            for sense in sense_list:
+                word_cpy = Word.copy(word)
+                for gloss in sense.findall("gloss"):
+                    word_cpy.meanings.append(gloss.text)
+
+                for pos in sense.findall("pos"):
+                    word_cpy.pos.append(make_grammar(pos.text))
+
+                for misc in sense.findall("misc"):
+                    word_cpy.misc.append(make_grammar(misc.text))
+
+                # the dictionary defines that pos and misc tags count for all senses, unless those senses redefine these.
+                if first:
+                    first_pos = word_cpy.pos
+                    first_misc = word_cpy.misc
+                    first = False
                 else:
-                    dictionary[writing].append(word)
+                    if not word_cpy.pos:
+                        word_cpy.pos = first_pos
+                    if not word_cpy.misc:
+                        word_cpy.misc = first_misc
+
+                # these elements indicate that this sense only applies for some readings/writings
+                restrictions = []
+                for stagr in sense.findall("stagr"):
+                    restrictions.append(stagr.text)
+                for stagk in sense.findall("stagk"):
+                    restrictions.append(stagk.text)
+
+                if restrictions:
+                    word_cpy.writings = restrictions
+
+                _add_to_dictionary(word_cpy,dictionary)
 
         pn_dict = read_pn_dictionary()
         Dictionary.pn_dictionary = pn_dict
@@ -86,6 +109,14 @@ class Dictionary:
         save_dictionary(dictionary, "JMdict_e")
         save_dictionary(pn_dict, "JMnedict")
         return Dictionary
+
+
+def _add_to_dictionary(word, dictionary):
+    for writing in word.writings:
+        if dictionary.get(writing) is None:
+            dictionary[writing] = [word]
+        else:
+            dictionary[writing].append(word)
 
 
 def read_pn_dictionary():
@@ -156,6 +187,7 @@ def save_dictionary(dictionary, name):
     file_name = os.path.join(file_dir, '..', 'data',"JMdict_dictionary", name + ".obj")
     file_handler = open(file_name, "wb")
     pickle.dump(dictionary, file_handler)
+    file_handler.flush()
     file_handler.close()
 
 
