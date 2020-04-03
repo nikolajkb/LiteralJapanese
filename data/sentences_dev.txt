@@ -78,7 +78,7 @@ DNA	DNA
 なのに	and yet
 気付か	notice
 なかった	-negative-past
-の	<no>
+の	explain (se)
 か	?
 ?	?
 
@@ -1139,7 +1139,7 @@ IAG	IAG
 昼	lunch
 食べ	eat
 てない	-ongoing-negative
-の	?
+の	explain (se)
 ？	?
 
 #58
@@ -1681,7 +1681,7 @@ IAG	IAG
 て	-te
 もらい	receive
 たい	-want
-ん	<no>
+ん	explain (se)
 だ	is
 。	.
 

@@ -24,7 +24,10 @@ def translate(tokens, translation=None):
     for token in tokens:
         i += 1
         jp = token.word
-        is_last = i == len(tokens) - 1
+        last = i == len(tokens) - 1
+        if not last:
+            if is_sentence_ending_symbol(tokens[i+1].word):
+                last = True
 
         if is_ending(token):
             translation = translate_ending(token)
@@ -37,7 +40,7 @@ def translate(tokens, translation=None):
                 translations.append(Translation(token, translation))
                 continue
 
-        translation = match_special(jp,is_last)
+        translation = match_special(jp,last)
         if translation:
             translations.append(Translation(token, translation))
             continue
@@ -110,6 +113,10 @@ def is_ending(token):
     return token.grammar == Grammar.MERGED
 
 
+def is_sentence_ending_symbol(string):
+    return string in ["。","か","ね","な", "だ","？","?", ".", "」"]
+
+
 def translate_ending(token):
     ending = [r.value for r in token.endings]
     return "".join(ending)
@@ -172,6 +179,7 @@ def match_special(token, is_last):
     ends = {
         "な": "musing (se)",
         "の": "explain (se)",  # the only ambiguous end, 'no' might be used as a question marker or as the 'explainer'-no. logic for translation: Explain could mean explain to me or I'm explaining to you
+        "ん": "explain (se)",  # short version of no
         "ぞ": "! (se)",
         "わ": "feminine (se)",  # not a formal definition, but is mostly used by women to make the sentence "softer"
         "かな": "i wonder (se)",
