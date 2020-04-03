@@ -1,4 +1,6 @@
 from typing import List
+
+import Equality
 import LevenshteinDistance
 import Constants
 import Tokenizer
@@ -173,7 +175,7 @@ def print_equalities():
         print([t[1] for t in translations])
         for translation in translations:
             for token in sentence.tokens:
-                (equal,rule) = LevenshteinDistance.equals_rule(token.english,translation[1])
+                (equal,rule) = Equality.equals_rule(token.english,translation[1])
                 if equal:
                     print(token.english + " = " + translation[1] + "\t" + "("+rule+")")
 

@@ -5,8 +5,12 @@ from Grammar import Grammar, is_english, is_katakana, is_number
 import re
 import Katakana
 
-jp = 0
-en = 1
+
+class Translation:
+    def __init__(self,token, english):
+        self.japanese = token.word  # this is technically redundant, but provides nicer access pattern
+        self.english = english
+        self.token = token
 
 
 def translate(tokens, translation=None):
@@ -24,38 +28,38 @@ def translate(tokens, translation=None):
 
         if is_ending(token):
             translation = translate_ending(token)
-            translations.append((jp, translation))
+            translations.append(Translation(token, translation))
             continue
 
         if inferred_meanings is not None:
             translation = inferred_meanings.get(token.word)
             if translation is not None:
-                translations.append((jp, translation))
+                translations.append(Translation(token, translation))
                 continue
 
         translation = match_special(jp,is_last)
         if translation:
-            translations.append((jp, translation))
+            translations.append(Translation(token, translation))
             continue
 
         translation = get_translation_from_dictionary(token)
         if translation:
-            translations.append((jp, translation))
+            translations.append(Translation(token, translation))
             continue
 
         if is_katakana(jp):
-            translations.append((jp,Katakana.translate(jp)))
+            translations.append(Translation(token,Katakana.translate(jp)))
             continue
 
         if is_english(jp):
-            translations.append((jp, jp))
+            translations.append(Translation(token, jp))
             continue
 
         if is_number(jp):
-            translations.append((jp,Numbers.convert(jp)))
+            translations.append(Translation(token,Numbers.convert(jp)))
             continue
 
-        translations.append((jp, "OOV"))
+        translations.append(Translation(token, "OOV"))
 
     return translations
 

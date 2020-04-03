@@ -209,7 +209,7 @@ def make_grammar(tag):
 
 # returns the raw results of a lookup in the dictionary
 def get(word):
-    return Dictionary.get_dict().dictionary.get(word)
+    return Dictionary.get_dict().dictionary.get(word,[])
 
 
 # returns translations from dictionary that match pos/kana
