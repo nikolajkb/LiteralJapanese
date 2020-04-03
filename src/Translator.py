@@ -154,7 +154,18 @@ def match_special(token, is_last):
         "たん": "tan",
         "殿": "dono",
         "どの": "dono",
-        "氏": "shi"
+        "氏": "shi",
+        
+        # copula
+        "だ": "is",
+        "です": "is",
+        "である": "is",
+        "であります": "is",
+        "でござる": "is",
+        "で御座る": "is",
+        "でご座る": "is",
+        "でございます": "is",
+        "っす": "is",
     }
 
     # se = sentence ending

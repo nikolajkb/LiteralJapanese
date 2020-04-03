@@ -344,6 +344,7 @@ treemaker	treemaker
 で	<de>
 本当	really
 に	<ni>
+\space	\space
 ごめんなさい	sorry
 と	<to>
 彼	him

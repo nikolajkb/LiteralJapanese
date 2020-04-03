@@ -36,8 +36,6 @@ class Dictionary:
             k_ele_list = entry.findall("k_ele")
             for k_ele in k_ele_list:
                 for keb in k_ele.findall("keb"):
-                    if keb.text == "歌":
-                        print("st")
                     word.writings.append(keb.text)
 
                 for ke_pri in k_ele.findall("ke_pri"):
@@ -87,8 +85,8 @@ class Dictionary:
                 else:
                     if not word_cpy.pos:
                         word_cpy.pos = first_pos
-                    if not word_cpy.misc:
-                        word_cpy.misc = first_misc
+
+                word_cpy.misc.extend(first_misc)
 
                 # these elements indicate that this sense only applies for some readings/writings
                 restrictions = []
