@@ -7,8 +7,8 @@ def write_to_file(system, file_path):
     file.write("system tokens"+"\t"+"system translation"+"\n")
     for i in range(len(system)):
         try:
-            system_translation = system[i][1]
-            system_token = system[i][0]
+            system_translation = system[i].english
+            system_token = system[i].japanese
         except IndexError:
             system_translation = ""
             system_token = ""
@@ -23,8 +23,8 @@ def print_translated_sentence_v(sentence, system, gold, score):
     max_len = max(len(gold), len(system))
     for i in range(max_len):
         try:
-            system_en = system[i][1]
-            system_jp = system[i][0]
+            system_en = system[i].english
+            system_jp = system[i].japanese
         except IndexError:
             system_en = ""
             system_jp = ""
@@ -56,8 +56,8 @@ def print_translated_sentence(sentence, system, gold, score):
     max_len = max(len(gold), len(system))
     for i in range(max_len):
         try:
-            system_t = system[i][1]
-            system_t_o = system[i][0]
+            system_t = system[i].english
+            system_t_o = system[i].japanese
         except IndexError:
             system_t = ""
             system_t_o = ""

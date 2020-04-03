@@ -737,7 +737,7 @@ def is_valid_candidate(candidate, root):
            inflection_valid_for_pos(candidate,root)
 
 def is_word(candidate):
-    return Dictionary.get(candidate.word) is not None  # todo check for usually kana
+    return Dictionary.get(candidate.word) is not []  # todo check for usually kana
 
 def is_inflected(candidate):
     return len(candidate.reasons) != 0

@@ -134,7 +134,7 @@ def make_average_score(scores):
 
 def translation_sentence_score(gold, system):
     gold = [x.english for x in gold]
-    system = [s[1] for s in system]
+    system = [s.english for s in system]
 
     return LevenshteinDistance.distance(gold, system)
 
@@ -172,12 +172,12 @@ def print_equalities():
     for sentence in sentences:
         print([t.english for t in sentence.tokens])
         translations = LiteralJapanese.translate(sentence.japanese)
-        print([t[1] for t in translations])
+        print([t.english for t in translations])
         for translation in translations:
             for token in sentence.tokens:
                 (equal,rule) = Equality.equals_rule(token.english,translation[1])
                 if equal:
-                    print(token.english + " = " + translation[1] + "\t" + "("+rule+")")
+                    print(token.english + " = " + translation.english + "\t" + "("+rule+")")
 
 
 # read test data into Sentence object
