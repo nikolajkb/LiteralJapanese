@@ -6,9 +6,9 @@ from Grammar import Grammar
 # writings: kanji and kana writings of the word, used as search key
 # meanings: meanings of the word in English
 # pos: part of speech type of word; verb, noun etc.
-# priority: priority of the word i.e. how common it it. set to 501 as default since 500 is the lowest in the dataset.
+# priority: priority of the word i.e. how common it is.
 class Word:
-    def __init__(self, writings, meanings, pos, misc=None, priority=501):
+    def __init__(self, writings, meanings, pos, misc=None, priority=99999):
         if misc is None:
             misc = []
         self.writings: List[str] = writings

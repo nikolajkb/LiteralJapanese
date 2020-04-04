@@ -3,6 +3,7 @@ import xml.etree.ElementTree as ET
 import Word
 from Grammar import Grammar, is_hiragana, is_katakana
 import pickle
+import WordFrequency
 
 
 class Dictionary:
