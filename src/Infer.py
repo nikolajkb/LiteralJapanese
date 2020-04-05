@@ -9,7 +9,7 @@ def infer(source,target):
     target = [t for t in nltk.tokenize.word_tokenize(target)]
     target = merge_s(target)
     original = target.copy()
-    inferred_translations = {}
+    inferred_translations = []
     for token in source:
         inferred_translation = ""
 
@@ -29,8 +29,9 @@ def infer(source,target):
                 break
 
         if inferred_translation != "":
-            inferred_translations[token.word] = inferred_translation
-
+            inferred_translations.append(inferred_translation)
+        else:
+            inferred_translations.append(None)
     return inferred_translations
 
 

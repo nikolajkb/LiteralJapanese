@@ -34,16 +34,16 @@ def translate(tokens, translation=None):
             translations.append(Translation(token, translation))
             continue
 
-        if inferred_meanings is not None:
-            translation = inferred_meanings.get(token.word)
-            if translation is not None:
-                translations.append(Translation(token, translation))
-                continue
-
         translation = match_special(jp,last)
         if translation:
             translations.append(Translation(token, translation))
             continue
+
+        if inferred_meanings is not None:
+            translation = inferred_meanings[i]
+            if translation is not None:
+                translations.append(Translation(token, translation))
+                continue
 
         translation = get_translation_from_dictionary(token)
         if translation:

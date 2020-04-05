@@ -523,7 +523,7 @@ H	H
 に	at
 ある	exist
 ワシントン	Washington
-の	<no>
+の	's
 会員制	private
 の	<no>
 メトロポリタン	Metroplolitan
@@ -1712,7 +1712,7 @@ IAG	IAG
 地震	earthquake
 が	<ga>
 日本	Japan
-の	<no>
+の	's
 東北地方	Tohoku region
 太平洋	Pacific Ocean
 沖	open sea
