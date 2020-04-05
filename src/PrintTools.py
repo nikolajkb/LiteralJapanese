@@ -36,7 +36,7 @@ def print_translated_sentence_v(sentence, system, gold, score):
             gold_jp = ""
 
         line = gold_jp + "\t" + gold_en + "\t" + system_jp + "\t" + system_en
-        if len(gold) == len(system):
+        if gold_jp == system_jp:
             if Equality.equals(system_en,gold_en):
                 print(add_color(line,"green"))
             else:

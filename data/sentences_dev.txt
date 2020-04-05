@@ -1795,8 +1795,7 @@ IAG	IAG
 ので	so
 、	,
 昨日	yesterday
-燃や	burn
-し	do
+燃やし	burn
 て	-te
 しまい	unintentionally
 ました	-polite-past

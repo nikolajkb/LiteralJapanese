@@ -1,11 +1,12 @@
 import Dictionary
 import Translator
 import nltk
+import re
 
 
 # args are tokenized japanese and un-tokenized english
 def infer(source,target):
-    target = [t.lower() for t in nltk.tokenize.word_tokenize(target)]
+    #target = [t.lower() for t in nltk.tokenize.word_tokenize(target)]
     inferred_translations = {}
     for token in source:
         inferred_translation = ""
@@ -15,7 +16,8 @@ def infer(source,target):
         for translation in translations:
             if translation in target:
                 inferred_translation = translation
-                target.remove(translation)
+                target.replace(translation,"")
+                #target.remove(translation)
                 break
 
         if inferred_translation != "":
@@ -31,5 +33,5 @@ def get_all_meanings(token):
     translations = []
     for entry in entries:
         translations.extend(entry.meanings)
-    translations = [Translator.clean_word(t).strip().lower() for t in translations]
+    translations = [Translator.clean_word(t).strip() for t in translations]
     return translations
