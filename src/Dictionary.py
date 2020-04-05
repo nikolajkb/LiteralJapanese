@@ -3,7 +3,6 @@ import xml.etree.ElementTree as ET
 import Word
 from Grammar import Grammar, is_hiragana, is_katakana
 import pickle
-import WordFrequency
 
 
 class Dictionary:
@@ -101,6 +100,7 @@ class Dictionary:
 
                 _add_to_dictionary(word_cpy,dictionary)
 
+        _add_custom_definitions(dictionary)
         pn_dict = read_pn_dictionary()
         Dictionary.pn_dictionary = pn_dict
         Dictionary.dictionary = dictionary
@@ -108,6 +108,16 @@ class Dictionary:
         save_dictionary(dictionary, "JMdict_e")
         save_dictionary(pn_dict, "JMnedict")
         return Dictionary
+
+
+def _add_custom_definitions(dictionary): #TODO
+    _add_definition(dictionary,"の","\'s",Grammar.PARTICLE,Grammar.USUALLY_KANA,100)
+
+
+def _add_definition(dictionary, jp, en, pos, misc=None, priority=999999):
+    word = Word.Word([jp],[en],[pos],[misc],priority)
+    old_entries = dictionary.get(jp,[])
+    old_entries.append(word)
 
 
 def _add_to_dictionary(word, dictionary):
