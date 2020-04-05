@@ -76,6 +76,7 @@ DNA	DNA
 長いこと	for a long time
 友達	friend
 なのに	and yet
+\space	\space
 気付か	notice
 なかった	-negative-past
 の	explain (se)

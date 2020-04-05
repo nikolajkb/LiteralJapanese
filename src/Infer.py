@@ -16,13 +16,14 @@ def infer(source,target):
         translations = get_all_meanings(token)
 
         for translation in translations:
-            should_check = True
             if token.grammar == Grammar.PARTICLE:
                 small_distance = noun_distance_is_small(source, original, token, translation)
-                if not small_distance:
-                    should_check = False
+                if small_distance:
+                    inferred_translation = translation
+                    target.remove(translation)
+                break
 
-            if translation in target and should_check:
+            if translation in target:
                 inferred_translation = translation
                 target.remove(translation)
                 break
@@ -55,13 +56,21 @@ def noun_distance_is_small(jp_tokens, en_tokens, jp, en):
     if en not in en_tokens:
         return False
     last_jp_noun = find_last_jp_noun(jp_tokens,jp)
-    translations = get_all_meanings(last_jp_noun)
-    distance = en_distance_to_noun(translations,en,en_tokens)
+    noun_meanings = get_all_meanings(last_jp_noun)
+    distance = en_distance_to_noun(noun_meanings,en,en_tokens)
     return distance < 3
 
 
 def en_distance_to_noun(noun_meanings, en, en_tokens):
-    index = en_tokens.index(en)
+    index = None
+    for meaning in noun_meanings:
+        try:
+            index = en_tokens.index(meaning)
+        except ValueError:
+            pass
+    if index is None:
+        return 999
+
     i = 0
     searching = True
     no_left = False
@@ -70,18 +79,20 @@ def en_distance_to_noun(noun_meanings, en, en_tokens):
         i += 1
         try:
             word = en_tokens[index+i]
-            if word in noun_meanings:
+            if word == en:
                 return i
         except IndexError:
             no_right = True
         try:
             word = en_tokens[index-i]
-            if word in noun_meanings:
+            if word == en:
                 return i
         except IndexError:
             no_left = True
 
         searching = not (no_left and no_right)
+
+    return 999
 
 
 # Japanese nouns always come before the particle that modifies them
