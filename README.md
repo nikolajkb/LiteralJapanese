@@ -1,4 +1,8 @@
 # Literal Japanese Translation
+**Note: this system was created as a Bachelor's project and should not be viewed as a functional library**
+#### About
+Literal Japanese is a Japanese-English translator that translates word by word and thus preserves Japanese grammar. 
+Literal Japanese is intended as a tool for Japanese learners who want to learn about Japanese sentence structure.
 #### Installation
 1. run setup.py
 2. install sudachipy dictionary\
@@ -22,7 +26,7 @@ This will return a list of Translation objects that have three attributes.
 3. ``token`` (a token object with info on POS etc., refer to Tokenizer.py)
 
 #### Testing
-To test, you need to provide a test file. Two test files are provided in the data folder.\
+To test the system, you need to provide a test file. Two test files are provided in the data folder.\
 Example command:\
 `LiteralJapanese.py --test "...LiteralJapaneseTranslation\data\sentences_dev.txt" -v -p` \
 You can also test only the tokenization using the --tt command
