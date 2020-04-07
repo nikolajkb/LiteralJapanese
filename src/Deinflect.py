@@ -5,7 +5,7 @@
 from enum import Enum
 from typing import List
 import Dictionary
-from Grammar import Grammar
+from Grammar import Grammar, conjugates
 
 # nbje: enum taken from data.ts
 class WordType(Enum):
@@ -715,14 +715,13 @@ def deinflect(word: str):
 
     return result
 
+
 # All code below this point: nbje
 def get_ending(word, root):
     inflections = deinflect(word)
     for candidate in inflections:
         if is_valid_candidate(candidate,root):
-            if candidate.reasons[0][0] == DeinflectReason.MasuStem:
-                return None  # the stem does not have an ending
-            elif len(candidate.word) == len(candidate.from_):  # this happens when the entire word is changed in the inflection
+            if len(candidate.word) == len(candidate.from_):  # this happens when the entire word is changed in the inflection
                 # make the root everything but the last char. The root is actually lost,
                 # but we want to display both the word and the endings anyway.
                 candidate.root = candidate.to[:-1]
@@ -730,14 +729,33 @@ def get_ending(word, root):
                 candidate.root = candidate.word[:-len(candidate.from_)]
             return candidate
 
+
 def is_valid_candidate(candidate, root):
-    return is_word(candidate) and \
-           is_inflected(candidate) and \
+    return is_inflected(candidate) and \
+           is_not_masu_stem and \
+           is_word(candidate) and \
            is_same_word(candidate,root.word) and \
            inflection_valid_for_pos(candidate,root)
 
+
+def is_not_masu_stem(candidate):
+    return candidate.reasons[0] == DeinflectReason.MasuStem  # the stem does not have an ending
+
+
 def is_word(candidate):
-    return Dictionary.get(candidate.word) is not None  # todo check for usually kana
+    entries = Dictionary.get(candidate.word)
+    if entries is None:
+        return False
+    else:
+        for entry in entries:
+            for pos in entry.pos:
+                if conjugates(pos) or might_be_copula(pos,candidate):
+                    return True
+    return False
+
+# this makes it so that the copula is viewed as a word that can be conjugated
+def might_be_copula(pos, candidate):
+    return pos == Grammar.NOT_IN_SWITCH or candidate.word == "だつ"
 
 def is_inflected(candidate):
     return len(candidate.reasons) != 0

@@ -2,7 +2,7 @@ from sudachipy import tokenizer
 
 import Constants
 import Deinflect
-from Grammar import Grammar, is_small_number, is_day_or_month, is_wh_question
+from Grammar import Grammar, is_small_number, is_day_or_month, is_wh_question, conjugates
 from Numbers import number_japanese_writing
 import Dictionary
 
@@ -134,7 +134,7 @@ def _copy_token(original):
     return Token(original.word, original.grammar, original.root, original.char_indices)
 
 def _conjugates(current):
-    return current.grammar == Grammar.VERB or current.grammar == Grammar.I_ADJECTIVE or current.grammar == Grammar.AUX_VERB
+    return conjugates(current.grammar)
 
 def _might_be_ending(token):
     return token.grammar in [Grammar.PARTICLE,Grammar.ADVERB,Grammar.AUX_VERB,

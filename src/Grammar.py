@@ -31,6 +31,10 @@ class Grammar(Enum):
     UNKNOWN = "grammar not known"
 
 
+def conjugates(grammar):
+    return grammar in [Grammar.VERB,Grammar.AUX_VERB,Grammar.I_ADJECTIVE]
+
+
 def is_hiragana(s):
     kana = "あいうえおかきくけこがぎぐげごさしすせそざじずぜぞたちつてとだぢづでどなにぬねのはひふへほばびぶべぼぱぴぷぺぽまみむめもやゆよらりるれろわゐゑをんっゃゅょぃーゔぇ"
     return check_alphabet(s, kana)
