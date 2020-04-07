@@ -1,10 +1,10 @@
 import Equality
 from colored import fg, attr
 
-def write_to_file(system, file_path):
-    file = open(file_path, "w+", encoding="utf-8")
 
-    file.write("system tokens"+"\t"+"system translation"+"\n")
+def write_to_file(system, file_path):
+    file = open(file_path, "a+", encoding="utf-8")
+
     for i in range(len(system)):
         try:
             system_translation = system[i].english
@@ -16,6 +16,7 @@ def write_to_file(system, file_path):
         file.write(system_token + "\t" + system_translation)
         if i != len(system):
             file.write("\n")
+    file.write("\n")
 
 
 def print_translated_sentence_v(sentence, system, gold, score):
