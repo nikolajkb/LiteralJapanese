@@ -1,7 +1,11 @@
+# adapted from the following implementation:
+# https://stackoverflow.com/a/5567464
+# result changed to tuple in order to show which operations were performed
+
 from Equality import equals
 
-def distance(source, target):
 
+def distance(source, target):
     if source == target:
         return (0,0,0)
 

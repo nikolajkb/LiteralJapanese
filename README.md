@@ -1,5 +1,5 @@
 # Literal Japanese Translation
-**Note: this system was created as a Bachelor's project and should not be viewed as a functional library**
+**Note: this system was created as a Bachelor's project and should not be viewed as a production ready library**
 #### About
 Literal Japanese is a Japanese-English translator that translates word by word and thus preserves Japanese grammar. 
 Literal Japanese is intended as a tool for Japanese learners who want to learn about Japanese sentence structure.
@@ -28,7 +28,7 @@ This will return a list of Translation objects that have three attributes.
 #### Testing
 To test the system, you need to provide a test file. Two test files are provided in the data folder.\
 Example command:\
-`LiteralJapanese.py --test "...LiteralJapaneseTranslation\data\sentences_dev.txt" -v -p` \
+`LiteralJapanese.py --test "...LiteralJapaneseTranslation\data\sentences_dev.txt" -v` \
 You can also test only the tokenization using the --tt command
 
 ##### Test file format

@@ -20,5 +20,6 @@ setup(
         "japanese-numbers-python",
         "millify",
         "colored",
+        "gensim"
     ]
 )

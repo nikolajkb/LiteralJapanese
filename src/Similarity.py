@@ -13,10 +13,11 @@ class Similarity:
         self.vectors = self._load_vectors()
 
     def is_similar(self, s1: str, s2: str):
-        is_sim = self._similarity(s1.strip(),s2.strip()) > 0.4
-        return is_sim
+        return self.similarity(s1,s2) > 0.4
 
-    def _similarity(self, s1: str,s2: str):
+    def similarity(self, s1: str,s2: str):
+        s1 = s1.strip()
+        s2 = s2.strip()
         if self._is_valid_expression(s1) and self._is_valid_expression(s2):
             if " " in s1 or " " in s2:
                 return self._expression_similarity(s1, s2)
@@ -50,8 +51,7 @@ class Similarity:
 
     def _is_valid_expression(self, s):
         # match anything that consists of numbers and letters, possibly with spaces around them
-        ma = re.match("^[a-zA-Z0-9 ]*$",s)
-        return ma
+        return re.match("^[a-zA-Z0-9 ]*$",s)
 
     def _load_vectors(self):
         file_dir = Constants.project_dir
