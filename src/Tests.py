@@ -166,7 +166,7 @@ def calc_sentence_score(sentence):
 
 
 def print_equalities():
-    Constants.similarity = Similarity()
+    Constants.SIMILARITY = Similarity()
     Constants.PARAPHRASE = True
     sentences = read_test_data(r"C:\Users\Nikolaj\PycharmProjects\LitteralJapaneseTranslation\data\sentences_dev.txt")
     for sentence in sentences:

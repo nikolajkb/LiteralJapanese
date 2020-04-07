@@ -29,7 +29,16 @@ This will return a list of Translation objects that have three attributes.
 To test the system, you need to provide a test file. Two test files are provided in the data folder.\
 Example command:\
 `LiteralJapanese.py --test "...LiteralJapaneseTranslation\data\sentences_dev.txt" -v` \
-You can also test only the tokenization using the --tt command
+You can also test only the tokenization using the --tt command\
+\
+The system can count translations as correct if they are synonyms of the gold translation using the ``-p`` argument. 
+This requires two additional files.
+1. Google news vectors  
+https://code.google.com/archive/p/word2vec/ \
+must be located in ``data/GoogleNewsVectors/GoogleNews-vectors-negative300.bin``
+2. Paraphrase database \
+http://paraphrase.org/#/download (small version) \
+must be located in `data/PPDB/ppdb-2.0-s-all`
 
 ##### Test file format
 A test file consists of Sentences. For each sentence can have four elements.

@@ -3,6 +3,7 @@
 # result changed to tuple in order to show which operations were performed
 
 from Equality import equals
+import Constants
 
 
 def distance(source, target):
@@ -18,7 +19,13 @@ def distance(source, target):
 
     for i in range(slen):
         for j in range(tlen):
-            cost = (0,0,0) if equals(source[i],target[j]) else (0,0,1)
+            equal = equals(source[i],target[j])
+            if Constants.WEIGHTED_SIMILARITY and not equal:
+                # similarity approaches 1 as words are more similar.
+                similarity = Constants.SIMILARITY.similarity(source[i],target[j])
+                cost = (0,0,1-similarity)
+            else:
+                cost = (0,0,0) if equal else (0,0,1)
             dist[i + 1][j + 1] = min(
                 add(dist[i][j + 1], (1,0,0)),  # deletion
                 add(dist[i + 1][j], (0,1,0)),  # insertion

@@ -30,7 +30,7 @@ class Database:
 
 
 def _make_db(name):
-    file_dir = Constants.project_dir
+    file_dir = Constants.PROJECT_DIR
     file_path = os.path.join(file_dir, "..", "data","PickleDB",name)
     return pickledb.load(file_path,False)
 

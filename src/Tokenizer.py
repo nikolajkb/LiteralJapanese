@@ -54,7 +54,7 @@ def tokenize_sudachi(text):
                   _make_grammar(m.part_of_speech()),
                   m.dictionary_form(),
                   [m.begin(), m.end()])
-            for m in Constants.tokenizer.tokenize(text, mode)]
+            for m in Constants.TOKENIZER.tokenize(text, mode)]
 
 
 def merge_endings(tokens):

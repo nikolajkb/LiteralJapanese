@@ -44,4 +44,4 @@ def is_substring(source: str,target: str):
 
 
 def is_similar(source,target):
-    return Constants.similarity.is_similar(source,target)
+    return Constants.SIMILARITY.is_similar(source, target)

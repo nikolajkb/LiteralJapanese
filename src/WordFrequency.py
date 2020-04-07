@@ -6,7 +6,7 @@ import Grammar
 
 # input: a dictionary as defined in Dictionary.py
 def add_frequency(dictionary):
-    freq_file_path = os.path.join(Constants.project_dir,"..","data","LeedsWordFrequency","44492-japanese-words-latin-lines-removed.txt")
+    freq_file_path = os.path.join(Constants.PROJECT_DIR, "..", "data", "LeedsWordFrequency", "44492-japanese-words-latin-lines-removed.txt")
     frequencies = open(freq_file_path,"r", encoding="utf-8")
 
     line = frequencies.readline()
