@@ -17,7 +17,9 @@ A translation can also be saved to a specified file:\
 `--translate "勉強すればするほど分かる。" --output "translation.txt"`\
 This will write the translated tokens one line at a time, first the Japanese then the English separated by a tap (`\t`) character.\
 A file containing one or more sentences can also be specified:\
-`--batch-translate --input "input.txt" --output "output.txt"`\
+`--batch-translate --input "input.txt" --output "output.txt"`
+
+(will append to output file if it already exists)
 
 ##### Using python
 Translations can be done programmatically by calling the `translate(text)` function located in LiteralJapanese.py.
