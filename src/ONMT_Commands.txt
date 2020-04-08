@@ -1,0 +1,2 @@
+onmt_translate -gpu 0 -model ../data/JParaCrawlPreTrain/big.pretrain.pt -src ../data/raw_sentences.txt -output ../data/nmt_pred.txt -replace_unk -verbose
+onmt_translate -gpu 0 -model ../../data/JParaCrawlPreTrain/big.pretrain.pt -src ../../data/raw_sentences.txt -output ../../data/nmt_pred.txt -replace_unk -verbose
