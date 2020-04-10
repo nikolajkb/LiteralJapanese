@@ -7,12 +7,13 @@ Examples of the type of translations this program produces can be seem in the se
 More in depth information can be read in the report written about the project: TODO
 #### Installation
 1. run setup.py
-2. install sudachipy dictionary\
+2. install sudachipy dictionary using\
 `pip install https://object-storage.tyo2.conoha.io/v1/nc_2520839e1f9641b08211a5c85243124a/sudachi/SudachiDict_core-20191224.tar.gz`
-3. run LiteralJapanese.py\
+3. Run the NltkDownload.py script to download nltk packages
+4. Download the small version of PPDB and unzip it to the PPDB folder
+   http://paraphrase.org/#/download
+5. run LiteralJapanese.py\
 use the `-h` argument to display available commands
-5. Run the NltkDownload.py script to download nltk packages
-6. pickledb TODO
 
 #### Translating
 Translations can be done interactively in the command line:\
