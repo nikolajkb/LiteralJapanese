@@ -7,7 +7,7 @@
 コンピュータ	computer
 を	<o>
 使う	use
-こと	occasion
+こと	thing
 さえ	only
 できれば	if possible
 、	,
@@ -150,6 +150,7 @@
 しかし	but
 パッド	padding
 や	or
+\space	\space
 ソルボセイン	sorbothane
 の	<no>
 よう	like
@@ -193,7 +194,7 @@
 原因	cause
 と	<to>
 なっ	become
-ていました	-ongoing-pol-past
+ていました	-ongoing-polite-past
 
 #13
 #jp	私は彼の目を矢で貫く 聖ウォーカーへようこそ 市会議員
@@ -225,11 +226,11 @@
 ブラジル	Brazil
 中	throughout
 で	<de>
-売ろ	sell
-う	-volitional
+売	sell
+ろう	-volitional
 と	<to>
 し	do
-ました	-pol-past
+ました	-polite-past
 
 #15
 #jp	これが問題だとわかってなお 偽りの対策でごまかされていることです
@@ -267,7 +268,7 @@
 何も	anything
 言わ	say
 ない	-negative
-ん	<no>
+ん	explain (se)
 だ	is
 ?	?
 
@@ -336,10 +337,12 @@
 #jp	ティミー ここで働いてた ジャックは知ってるか? 彼について話せる事は?
 #en	hey, timmy, did you know jack who worked here? mmhmm. what can you tell me about him?
 ティミー	Timmy
+\space	\space
 ここ	here
 で	<de>
 働い	work
 てた	-ongoing-past
+\space	\space
 ジャック	Jack
 は	<wa>
 知っ	know
@@ -419,6 +422,7 @@
 の	<no>
 誕生日会	birthday party
 を	<o>
+\space	\space
 覚え	remember
 てる	-ongoing
 だろ	right?
@@ -1001,7 +1005,7 @@ RHS	RHS
 。	.
 
 #50
-#jp	今年の初め、シ-ガルは、首都ベオグラードで武術学校の設立を申し出た後に、セルビア国籍を与えられた。
+#jp	今年の初め、シ―ガルは、首都ベオグラードで武術学校の設立を申し出た後に、セルビア国籍を与えられた。
 #en	Earlier this year Seagal was given Serbian nationality after offering to set up a martial arts school in the capital Belgrade.
 今年	this year
 の	of
@@ -1036,10 +1040,10 @@ RHS	RHS
 家	home
 を	<o>
 出	leave
-よう	-vol
+よう	-volitional
 と	<to>
 し	do
-たら	-tara
+たら	-if
 、	,
 トム	Tom
 が	<ga>
@@ -1075,7 +1079,7 @@ RHS	RHS
 アジア	Asia
 に	<ni>
 あり	exist
-ます	-pol
+ます	-polite
 。	.
 
 #54
@@ -1127,7 +1131,7 @@ RHS	RHS
 も	also
 そこそこ	fairly
 知っ	know
-ています	-ongoing-pol
+ています	-ongoing-polite
 。	.
 
 #58
@@ -1168,7 +1172,8 @@ RHS	RHS
 に	<ni>
 なる	become
 ん	<no>
-だって	they say
+だっ	is
+て	<te>
 。	.
 
 #60
@@ -1222,7 +1227,7 @@ RHS	RHS
 行動	actions
 は	<wa>
 実を結ん	bear fruit
-でいない	-ongoing -not
+でいない	-ongoing-negative
 。	.
 
 #64
@@ -1232,7 +1237,7 @@ RHS	RHS
 を	<o>
 お願い	please
 でき	possible
-ます	-pol
+ます	-polite
 か	?
 。	.
 
@@ -1270,7 +1275,7 @@ RHS	RHS
 は	<wa>
 なにひとつ	not one
 あり	was
-ませんでした	-pol-not-past
+ませんでした	-polite-negative-past
 。	.
 
 #68
@@ -1287,7 +1292,7 @@ RHS	RHS
 ここ	here
 に	<ni>
 い	is
-ません	-pol-not
+ません	-polite-negative
 
 #69
 #jp	私は簡単だといったことがない。
@@ -1316,7 +1321,7 @@ RHS	RHS
 私	I
 は	<wa>
 言っ	say
-てない	-te-not
+てない	-te-negative
 よ	you know? (se)
 。	.
 
@@ -1329,7 +1334,8 @@ RHS	RHS
 に	<ni>
 活用	practical use
 し	do
-てみる	-try
+て	-te
+みる	try
 べき	should
 だ	is
 。	.
@@ -1427,7 +1433,7 @@ RHS	RHS
 は	<wa>
 絶対	definitely
 勝	win
-てない	-potential-not
+てない	-potential-negative
 だろう	it seems
 。	.
 
@@ -1446,6 +1452,7 @@ RHS	RHS
 た	-past
 の	explain (se)
 ですか	?
+。	.
 
 #80
 #jp	彼はその問題について考えています。
@@ -1456,7 +1463,7 @@ RHS	RHS
 問題	problem
 について	about
 考え	thinking
-ています	-ongoing-pol
+ています	-ongoing-polite
 。	.
 
 #81
@@ -1476,6 +1483,7 @@ RHS	RHS
 を	<o>
 注ぎ込ん	pour
 だ	-past
+。	.
 
 #82
 #jp	あなたの長所は何ですか。 
@@ -1536,7 +1544,7 @@ RHS	RHS
 の	<no>
 が	<ga>
 問題	problem
-ない	-not
+ない	not
 と	<to>
 いう	say
 なら	if
@@ -1547,7 +1555,7 @@ RHS	RHS
 が	<ga>
 購入	buy
 でき	possible
-ない	-not
+ない	-negative
 の	explain (se)
 か	?
 ?	?
@@ -1562,7 +1570,7 @@ RHS	RHS
 ミーティング	meeting
 に	<ni>
 出	come to
-ます	-pol
+ます	-polite
 か	?
 ？	?
 

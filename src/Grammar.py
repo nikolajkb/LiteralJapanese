@@ -77,5 +77,4 @@ def is_english_words_no_symbols(s):
 
 # what, who, when, where
 def is_wh_question(word: str):
-    questions = ["何","誰","いつ","どこ"]
-    return True in [word.startswith(q) for q in questions]
+    return word in ["何","誰","いつ","どこ"]

@@ -69,14 +69,23 @@ class TranslationScore:
         return final_score
 
     def print(self):
-        print("total errors:", self.total_errors)
+        print(self.total_errors)
+        print(self.deletions)
+        print(self.insertions)
+        print(self.substitutions)
+        print(self.error_rate)
+        print(self.del_rate)
+        print(self.ins_rate)
+        print(self.sub_rate)
+        '''print("total errors:", self.total_errors)
         print("deletions:", self.deletions)
         print("insertions:", self.insertions)
         print("substitutions:", self.substitutions)
         print("error rate:", self.error_rate)
         print("deletion rate:", self.del_rate)
         print("insertion rate:", self.ins_rate)
-        print("substitution rate:", self.sub_rate)
+        print("substitution rate:", self.sub_rate)'''
+
 
 
 def test_tokenizer(file_path):
@@ -215,8 +224,9 @@ def read_test_data(file_path):
             linenr += 1
             line = data.readline()
         return sentences
-    except:
+    except IndexError:
         print("Error in reading test data around line "+str(linenr))
+        print("This is most likely due to a missing tap between token and translation")
         exit(-1)
 
 
