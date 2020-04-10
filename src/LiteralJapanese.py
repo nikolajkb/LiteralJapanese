@@ -14,7 +14,6 @@ import GoogleTranslate
 def translate(text, translation=None):
     #translation = GoogleTranslate.translate_google(text)
     #translation = translation[:1].lower() + translation[1:]
-    translation = None
     tokens = Tokenizer.get_tokens(text)
     translations = Translator.translate(tokens,translation=translation)
     return translations
