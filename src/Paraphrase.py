@@ -7,6 +7,8 @@ def _parse_ppdb():
     print("loading paraphrase database")
     database = Database("ppdb_small.db")
     if database.is_empty():
+        print("database not found")
+        print("creating database, this might take a while...")
         file_dir = os.path.dirname(os.path.realpath('__file__'))
         ppdb_path = os.path.join(file_dir, "..", "data", "PPDB", "ppdb-2.0-s-all")
         ppdb = open(ppdb_path, "r")

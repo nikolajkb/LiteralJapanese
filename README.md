@@ -11,8 +11,7 @@ More in depth information can be read in the report written about the project: T
 `pip install https://object-storage.tyo2.conoha.io/v1/nc_2520839e1f9641b08211a5c85243124a/sudachi/SudachiDict_core-20191224.tar.gz`
 3. run LiteralJapanese.py\
 use the `-h` argument to display available commands
-4. Wiki name corpus TODO
-5. nltk download TODO
+5. Run the NltkDownload.py script to download nltk packages
 6. pickledb TODO
 
 #### Translating
