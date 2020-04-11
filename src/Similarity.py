@@ -37,7 +37,7 @@ class Similarity:
         e1 = self._remove_stopwords(e1).split()
         e2 = self._remove_stopwords(e2).split()
         if self._either_empty(e1,e2):
-            return 0  # TODO
+            return 0
         try:
             return self.vectors.n_similarity(e1,e2)
         except KeyError:

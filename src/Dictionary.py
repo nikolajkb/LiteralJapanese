@@ -110,11 +110,11 @@ class Dictionary:
         return Dictionary
 
 
-def _add_custom_definitions(dictionary): #TODO
+def _add_custom_definitions(dictionary):
     _add_definition(dictionary,"の","\'s",Grammar.PARTICLE,Grammar.USUALLY_KANA,100)
 
 
-def _add_definition(dictionary, jp, en, pos, misc=None, priority=999999):
+def _add_definition(dictionary, jp, en, pos, misc=None, priority=501):
     word = Word.Word([jp],[en],[pos],[misc],priority)
     old_entries = dictionary.get(jp,[])
     old_entries.append(word)

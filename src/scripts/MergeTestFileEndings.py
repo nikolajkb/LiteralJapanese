@@ -32,7 +32,7 @@ def merge_word_endings(sentences):
     return sentences
 
 
-def merge_token_list(tokens: List[SentenceToken]):  # TODO this is kinda ugly code
+def merge_token_list(tokens: List[SentenceToken]):
     merged = []
     i = 0
     while i < len(tokens):

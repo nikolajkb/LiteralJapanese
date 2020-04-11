@@ -92,7 +92,8 @@ def add_color(string, color):
     return fg(color) + string + attr("reset")
 
 
-def spaces_jp(maxi, string):  # TODO ? this is really dumb, the japanese letters are wider in the console than the english ones so I remove more spaces, this still does not work since there is a bit of float on longer sentences
+# the japanese letters are wider than the english ones, but the ratio depends on the font.
+def spaces_jp(maxi, string):
     maxi += 10
     ret = ""
     strlen = len(string) * 1.75
