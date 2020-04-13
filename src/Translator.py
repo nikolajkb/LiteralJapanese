@@ -15,6 +15,7 @@ class Translation:
 
 def translate(tokens, translation=None):
     translations = []
+    dict_translations = []
 
     inferred_meanings = None
     if translation is not None:
@@ -47,7 +48,8 @@ def translate(tokens, translation=None):
 
         translation = get_translation_from_dictionary(token)
         if translation:
-            translations.append(Translation(token, translation))
+            dict_translations.append((token,translation))
+            translations.append(None)
             continue
 
         if is_katakana(jp):
@@ -70,14 +72,19 @@ def translate(tokens, translation=None):
 def get_translation_from_dictionary(token):
     translations = Dictionary.match(token)
     if translations:
-        translation = clean_word(translations[0].meanings[0])
-        return translation
+        return [[clean_word(m) for m in translation.meanings] for translation in translations]
     else:
         translations = Dictionary.get_proper_noun(token.root)
         if translations:
             return translations[0].meanings[0]
         else:
             return None
+
+
+def add_dict_translations(translations,dict_translations):
+    for translation in translations:
+        if translation is None:
+            translation = dict_translations.pop(0)
 
 
 # the point of this method is to make the word look more

@@ -26,7 +26,3 @@ def best_combination(words: List[List[str]]):
             best_permutation = permutation
             max_score = total
     return best_permutation
-
-
-b = best_combination([["the","a","an"],["dog","man","owl"],["played","talked about"],["art","video games","me"]])
-print(b)
