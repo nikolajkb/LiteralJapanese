@@ -1,6 +1,13 @@
 import Constants
 import Similarity
 from statistics import mean
+from typing import List
+import itertools
+
+
+def best_combination(words: List[List[str]]):
+    permutations = list(itertools.product(*words))
+    return get_most_probable(permutations)
 
 
 def get_most_probable(sentences):
