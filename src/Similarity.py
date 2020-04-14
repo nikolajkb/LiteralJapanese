@@ -60,5 +60,5 @@ class Similarity:
 
 
 def init_similarity():
-    if Constants.PARAPHRASE and Constants.SIMILARITY is None:
+    if Constants.SIMILARITY is None:
         Constants.SIMILARITY = Similarity()

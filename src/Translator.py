@@ -5,7 +5,6 @@ from Grammar import Grammar, is_english, is_katakana, is_number
 import re
 import Katakana
 import SentenceSimilarity
-import BestCombination
 import itertools
 
 

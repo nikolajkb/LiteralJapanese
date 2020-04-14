@@ -10,11 +10,11 @@ def best_combination(words: List[List[str]]):
 
 
 def get_most_probable(sentences):
-    max_score = 99
+    max_score = 0
     best_sentence = None
     for sentence in sentences:
         score = co_score(sentence)
-        if score < max_score:
+        if score > max_score:
             max_score = score
             best_sentence = sentence
     return best_sentence
@@ -37,5 +37,9 @@ def compare(w1,sentence,vectors):
             similarity = vectors.similarity(w1,w2)
             total += similarity
         except KeyError:
-            pass
+            try:
+                similarity = vectors.n_similarity(w1.split(),w2.split())
+                total += similarity
+            except KeyError:
+                pass
     return total / len(sentence)
