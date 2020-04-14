@@ -1,6 +1,3 @@
-
-import os
-
 import PrintTools
 import Tokenizer
 import Translator
@@ -8,7 +5,6 @@ import Tests
 import sys
 import argparse
 import Constants
-import GoogleTranslate
 
 
 def translate(text, translation=None):

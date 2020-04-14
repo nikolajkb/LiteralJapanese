@@ -1,5 +1,4 @@
 import Constants
-import Similarity
 from statistics import mean
 from typing import List
 import itertools
@@ -25,7 +24,18 @@ def co_score(sentence):
     vectors = Constants.SIMILARITY.vectors
     total = 0
     for word in sentence:
-        similarity = vectors.distances(word,sentence)
-        total += mean(similarity)
+        score = compare(word,sentence,vectors)
+        total += score
     average = total / len(sentence)
     return average
+
+
+def compare(w1,sentence,vectors):
+    total = 0
+    for w2 in sentence:
+        try:
+            similarity = vectors.similarity(w1,w2)
+            total += similarity
+        except KeyError:
+            pass
+    return total / len(sentence)

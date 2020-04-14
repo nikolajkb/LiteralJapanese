@@ -4,6 +4,9 @@ import Numbers
 from Grammar import Grammar, is_english, is_katakana, is_number
 import re
 import Katakana
+import SentenceSimilarity
+import BestCombination
+import itertools
 
 
 class Translation:
@@ -11,6 +14,12 @@ class Translation:
         self.japanese = token.word  # this is technically redundant, but provides nicer access pattern
         self.english = english
         self.token = token
+
+    def __repr__(self):
+        return "("+self.japanese + " | " + self.english+")"
+
+    def __str__(self):
+        return "(" + self.japanese + " | " + self.english + ")"
 
 
 def translate(tokens, translation=None):
@@ -65,8 +74,27 @@ def translate(tokens, translation=None):
             continue
 
         translations.append(Translation(token, "OOV"))
-
+    dict_translations = select_best_dict_translations(dict_translations)
+    translations = add_dict_translations(translations,dict_translations)
     return translations
+
+
+def select_best_dict_translations(dict_translations):
+    flat = [list(itertools.chain(*t[1])) for t in dict_translations]
+    best = SentenceSimilarity.best_combination(flat)
+    best_and_tokens = [(o[0],b) for (o,b) in zip(dict_translations,best)]
+    return best_and_tokens
+
+
+def add_dict_translations(translations, dict_translations):
+    return [pop_or_original(translation, dict_translations) for translation in translations]
+
+
+def pop_or_original(translation, dict_translations):
+    if translation is None:
+        return dict_translations.pop(0)
+    else:
+        return translation
 
 
 def get_translation_from_dictionary(token):
@@ -79,12 +107,6 @@ def get_translation_from_dictionary(token):
             return translations[0].meanings[0]
         else:
             return None
-
-
-def add_dict_translations(translations,dict_translations):
-    for translation in translations:
-        if translation is None:
-            translation = dict_translations.pop(0)
 
 
 # the point of this method is to make the word look more
