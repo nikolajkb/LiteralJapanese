@@ -1,11 +1,12 @@
 from nltk.tokenize import sent_tokenize
 from gensim.parsing.preprocessing import remove_stopwords, strip_multiple_whitespaces, preprocess_string, strip_punctuation, strip_numeric
-from scipy.sparse import coo_matrix, save_npz, load_npz
+from scipy.sparse import lil_matrix, save_npz, load_npz
 import numpy as np
 import pickle
 
 
 filters = [lambda x: x.lower(), strip_numeric, strip_punctuation, strip_multiple_whitespaces]  # stopwords not removed
+wiki_path = r"C:\Users\Nikolaj\PycharmProjects\LitteralJapaneseTranslation\data\wiki_dump\wiki.20200412.en\wiki.20200412.en"
 file_name = r"C:\Users\Nikolaj\PycharmProjects\LitteralJapaneseTranslation\data\wiki_dump\wiki_matrix"
 matrix_file = file_name+".npz"
 vocab_file = file_name+".vocab"
@@ -25,34 +26,19 @@ class OneIter:
 # intermediate data structure
 class WordStats:
     def __init__(self):
-        self.row = []
-        self.column = []
         self.vocabulary = {}  # key = word, val = index, frequency
-        self.data_count = 0
+        self.matrix = lil_matrix((20000,20000),dtype=np.int16)
 
     def add(self,w1,w2):
         i1 = self.add_to_vocab(w1)
         i2 = self.add_to_vocab(w2)
-        self.row.append(i1)
-        self.column.append(i2)
-        self.data_count += 1
+        self.matrix[i1,i2] += 1
 
     def add_to_vocab(self,word):
         return self.vocabulary.setdefault(word,len(self.vocabulary))
 
-    def data(self):
-        # creates an array of only 1s. Using iterator avoids making a temp array
-        return np.fromiter(OneIter(self.data_count),dtype=int,count=self.data_count)
-
-    def rows(self):
-        return np.array(self.row)
-
-    def columns(self):
-        return np.array(self.column)
-
 
 def create_matrix():
-    wiki_path = r"C:\Users\Nikolaj\PycharmProjects\LitteralJapaneseTranslation\data\wiki_dump\wiki.20200412.en\wiki.20200412.en"
     file = open(wiki_path,encoding="utf-8")
     line = file.readline()
     line_nr = 0
@@ -67,7 +53,7 @@ def create_matrix():
         else:
             article += " " + line
 
-        if line_nr > 10000:
+        if len(stats.vocabulary) > 15000:
             break
         if line_nr % 1000 == 0:
             print(line_nr)
@@ -91,11 +77,7 @@ def is_heading(text):
 
 
 def save_matrix(stats):
-    print("creating matrix")
-    matrix = coo_matrix((stats.data(), (stats.rows(), stats.columns())))
-    print("converting to csr")
-    matrix = matrix.tocsr()
-    save_npz(matrix_file, matrix)
+    save_npz(matrix_file, stats.matrix)
 
     vocab_file_handler = open(vocab_file, "wb")
     pickle.dump(stats.vocabulary, vocab_file_handler)
@@ -118,5 +100,3 @@ def get_co_occurrence(matrix,vocab,w1,w2):
     i1 = vocab[w1]
     i2 = vocab[w2]
     return matrix[i1,i2]
-
-
