@@ -22,6 +22,7 @@ class OneIter:
         return 1
 
 
+# intermediate data structure
 class WordStats:
     def __init__(self):
         self.row = []
@@ -37,8 +38,7 @@ class WordStats:
         self.data_count += 1
 
     def add_to_vocab(self,word):
-        index = self.vocabulary.setdefault(word,len(self.vocabulary))
-        return index
+        return self.vocabulary.setdefault(word,len(self.vocabulary))
 
     def data(self):
         # creates an array of only 1s. Using iterator avoids making a temp array
@@ -67,7 +67,7 @@ def create_matrix():
         else:
             article += " " + line
 
-        if line_nr > 100000:
+        if line_nr > 10000:
             break
         if line_nr % 1000 == 0:
             print(line_nr)
@@ -115,6 +115,8 @@ def load_vocab():
 
 
 def get_co_occurrence(matrix,vocab,w1,w2):
-    return matrix[vocab[w1][0]][vocab[w2][0]]
+    i1 = vocab[w1]
+    i2 = vocab[w2]
+    return matrix[i1,i2]
 
 
