@@ -6,13 +6,12 @@ def equals(source, target):
     if source == target:
         return True
     if Constants.PARAPHRASE and not_small_words(source,target):
-        return is_paraphrase(source,target) or \
-               is_substring(source,target) or \
-               is_similar(source,target)
+        return is_similar(source,target) #or #is_substring(source,target) or #is_paraphrase(source,target)
     else:
         return False
 
 
+# only used for testing purposes
 def equals_rule(source, target):
     if source == target:
         return True,"strict equality"

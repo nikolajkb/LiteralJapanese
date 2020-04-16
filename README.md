@@ -6,6 +6,7 @@ Literal Japanese is intended as a tool for Japanese learners who want to learn a
 Examples of the type of translations this program produces can be seem in the sentences_dev and sentences_test documents in the data folder. 
 More in depth information can be read in the report written about the project: TODO
 #### Installation
+The system is developed for Python 3.6.8 and may not work for other versions.
 1. run setup.py
 2. install sudachipy dictionary using\
 `pip install https://object-storage.tyo2.conoha.io/v1/nc_2520839e1f9641b08211a5c85243124a/sudachi/SudachiDict_core-20191224.tar.gz`

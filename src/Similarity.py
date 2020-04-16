@@ -56,7 +56,7 @@ class Similarity:
     def _load_vectors(self):
         file_dir = Constants.PROJECT_DIR
         file_path = os.path.join(file_dir,"..","data","GoogleNewsVectors","GoogleNews-vectors-negative300.bin")
-        return KeyedVectors.load_word2vec_format(datapath(file_path), binary=True, limit=100_000)
+        return KeyedVectors.load_word2vec_format(datapath(file_path), binary=True, limit=100000)
 
 
 def init_similarity():
