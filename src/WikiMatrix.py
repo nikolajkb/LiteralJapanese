@@ -93,6 +93,7 @@ def load_matrix():
         file_handler = open(file_name, "rb")
         matrix = pickle.load(file_handler)
         file_handler.close()
+        print("loaded")
         return matrix
     except IOError:
         return None
