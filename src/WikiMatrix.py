@@ -1,41 +1,47 @@
 from nltk.tokenize import sent_tokenize
 from gensim.parsing.preprocessing import remove_stopwords, strip_multiple_whitespaces, preprocess_string, strip_punctuation, strip_numeric
-from scipy.sparse import lil_matrix, save_npz, load_npz
+from collections import defaultdict
 import numpy as np
+from scipy.sparse import csr_matrix, lil_matrix
 import pickle
-
+import psutil
+import os
 
 filters = [lambda x: x.lower(), strip_numeric, strip_punctuation, strip_multiple_whitespaces]  # stopwords not removed
+file_name = r"C:\Users\Nikolaj\PycharmProjects\LitteralJapaneseTranslation\data\wiki_dump\wiki_matrix_obj.wstats"
 wiki_path = r"C:\Users\Nikolaj\PycharmProjects\LitteralJapaneseTranslation\data\wiki_dump\wiki.20200412.en\wiki.20200412.en"
-file_name = r"C:\Users\Nikolaj\PycharmProjects\LitteralJapaneseTranslation\data\wiki_dump\wiki_matrix"
-matrix_file = file_name+".npz"
-vocab_file = file_name+".vocab"
+line_limit = 2000000
+
+low_freq_path = r"C:\Users\Nikolaj\PycharmProjects\LitteralJapaneseTranslation\data\wiki_dump\low_freq_words.bin"
+low_freq = set(pickle.load(open(low_freq_path,"rb")))
+
+def int_dict():
+    return defaultdict(int)
 
 
-class OneIter:
-    def __init__(self,limit):
-        self.limit = limit
-
-    def __iter__(self):
-        return self
-
-    def __next__(self):
-        return 1
-
-
-# intermediate data structure
 class WordStats:
     def __init__(self):
-        self.vocabulary = {}  # key = word, val = index, frequency
-        self.matrix = lil_matrix((20000,20000),dtype=np.int16)
+        self.matrix = defaultdict(int_dict)
+        self.frequencies = defaultdict(int)
 
     def add(self,w1,w2):
-        i1 = self.add_to_vocab(w1)
-        i2 = self.add_to_vocab(w2)
-        self.matrix[i1,i2] += 1
+        if w1 not in low_freq and w2 not in low_freq:
+            self.matrix[w1][w2] += 1
+            self.frequencies[w1] += 1
 
-    def add_to_vocab(self,word):
-        return self.vocabulary.setdefault(word,len(self.vocabulary))
+    def convert_to_scipy_matrix(self):
+        matrix = lil_matrix((len(self.frequencies),len(self.frequencies)), dtype=np.int16)
+        indices = {}
+        i = 0
+        for (w1,row) in self.matrix.items():
+            indices.setdefault(w1,len(indices))
+            j = 0
+            for (w2,frequency) in row.items():
+                matrix[i,j] = frequency
+                j += 1
+            i += 1
+
+        return matrix.tocsr(),indices
 
 
 def create_matrix():
@@ -53,7 +59,7 @@ def create_matrix():
         else:
             article += " " + line
 
-        if len(stats.vocabulary) > 15000:
+        if line_nr > line_limit:
             break
         if line_nr % 1000 == 0:
             print(line_nr)
@@ -76,27 +82,21 @@ def is_heading(text):
     return len(text) < 40 and "." not in text and "," not in text
 
 
-def save_matrix(stats):
-    save_npz(matrix_file, stats.matrix)
-
-    vocab_file_handler = open(vocab_file, "wb")
-    pickle.dump(stats.vocabulary, vocab_file_handler)
+def save_matrix(matrix):
+    file_handler = open(file_name, "wb")
+    pickle.dump(matrix, file_handler)
 
 
 def load_matrix():
     try:
-        return load_npz(matrix_file)
+        file_handler = open(file_name, "rb")
+        matrix = pickle.load(file_handler)
+        file_handler.close()
+        return matrix
     except IOError:
         return None
 
 
-def load_vocab():
-    file_handler = open(vocab_file, "rb")
-    vocab = pickle.load(file_handler)
-    return vocab
-
-
-def get_co_occurrence(matrix,vocab,w1,w2):
-    i1 = vocab[w1]
-    i2 = vocab[w2]
-    return matrix[i1,i2]
+def print_mem():
+    process = psutil.Process(os.getpid())
+    print(process.memory_info().rss/1000000,"MB")
