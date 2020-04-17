@@ -81,7 +81,7 @@ def translate(tokens, translation=None):
 
 def select_best_dict_translations(dict_translations):
     flat = [list(itertools.chain(*t[1])) for t in dict_translations]
-    best = SentenceSimilarity.best_combination(flat)
+    best = BestCombination.best_combination(flat)
     best_and_tokens = [Translation(o[0],b) for (o,b) in zip(dict_translations,best)]
     return best_and_tokens
 

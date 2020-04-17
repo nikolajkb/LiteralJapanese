@@ -49,4 +49,4 @@ def permutation_score(permutation):
                     score = Constants.WIKI_STATS.matrix[w1][w2]
                     score = score / Constants.WIKI_STATS.frequencies.get(w1)
                     total += score
-    return total / len(permutation)
+    return total / len(permutation)  # not really necessary since all permutations are same length, but enables comparing of sentences of differing lengths
