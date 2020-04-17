@@ -8,12 +8,13 @@ import psutil
 import os
 
 filters = [lambda x: x.lower(), strip_numeric, strip_punctuation, strip_multiple_whitespaces]  # stopwords not removed
-file_name = r"C:\Users\Nikolaj\PycharmProjects\LitteralJapaneseTranslation\data\wiki_dump\wiki_matrix_obj.wstats"
+file_name = r"C:\Users\Nikolaj\PycharmProjects\LitteralJapaneseTranslation\data\wiki_dump\wiki_matrix_obj_500k.wstats"
 wiki_path = r"C:\Users\Nikolaj\PycharmProjects\LitteralJapaneseTranslation\data\wiki_dump\wiki.20200412.en\wiki.20200412.en"
-line_limit = 2000000
+line_limit = 500000
 
 low_freq_path = r"C:\Users\Nikolaj\PycharmProjects\LitteralJapaneseTranslation\data\wiki_dump\low_freq_words.bin"
 low_freq = set(pickle.load(open(low_freq_path,"rb")))
+
 
 def int_dict():
     return defaultdict(int)
