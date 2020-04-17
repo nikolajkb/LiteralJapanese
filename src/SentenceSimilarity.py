@@ -1,23 +1,39 @@
 import Constants
-from statistics import mean
 from typing import List
-import itertools
 
 
 def best_combination(words: List[List[str]]):
-    permutations = list(itertools.product(*words))
-    return get_most_probable(permutations)
+    best_permutation = local_search(words)
+    return best_permutation
 
 
-def get_most_probable(sentences):
-    max_score = 0
-    best_sentence = None
-    for sentence in sentences:
-        score = co_score(sentence)
-        if score > max_score:
-            max_score = score
-            best_sentence = sentence
-    return best_sentence
+#  hillclimbing from the first words (most common) to a local maximum
+def local_search(words):
+    current_best = [w[0] for w in words]
+    max_score = co_score(current_best)
+    neighbours = get_neighbours(current_best,words)
+    while True:
+        for neighbour in neighbours:
+            score = co_score(neighbour)
+            if score > max_score:
+                max_score = score
+                current_best = neighbour
+                neighbours = get_neighbours(current_best,words)
+                continue
+        break
+    return current_best
+
+
+def get_neighbours(configuration, words):
+    neighbours = []
+    i = 0
+    for definitions in words:
+        for word in definitions:
+            neighbour = configuration.copy()
+            neighbour[i] = word
+            neighbours.append(neighbour)
+        i += 1
+    return neighbours
 
 
 def co_score(sentence):
@@ -38,6 +54,8 @@ def compare(w1,sentence,vectors):
             total += similarity
         except KeyError:
             try:
+                if w1 == " " or w2 == " ":
+                    continue
                 similarity = vectors.n_similarity(w1.split(),w2.split())
                 total += similarity
             except KeyError:

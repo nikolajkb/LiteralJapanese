@@ -58,7 +58,7 @@ def translate(tokens, translation=None):
         translation = get_translation_from_dictionary(token)
         if translation:
             dict_translations.append((token,translation))
-            translations.append(Translation(token,translation))
+            translations.append(None)
             continue
 
         if is_katakana(jp):
@@ -74,14 +74,14 @@ def translate(tokens, translation=None):
             continue
 
         translations.append(Translation(token, "OOV"))
-    #dict_translations = select_best_dict_translations(dict_translations)
-    #translations = add_dict_translations(translations,dict_translations)
+    dict_translations = select_best_dict_translations(dict_translations)
+    translations = add_dict_translations(translations,dict_translations)
     return translations
 
 
 def select_best_dict_translations(dict_translations):
     flat = [list(itertools.chain(*t[1])) for t in dict_translations]
-    best = BestCombination.best_combination(flat)
+    best = SentenceSimilarity.best_combination(flat)
     best_and_tokens = [Translation(o[0],b) for (o,b) in zip(dict_translations,best)]
     return best_and_tokens
 
@@ -100,7 +100,7 @@ def pop_or_original(translation, dict_translations):
 def get_translation_from_dictionary(token):
     translations = Dictionary.match(token)
     if translations:
-        return translations[0].meanings[0]#[[clean_word(m) for m in translation.meanings] for translation in translations]
+        return [[clean_word(m) for m in translation.meanings] for translation in translations]
     else:
         translations = Dictionary.get_proper_noun(token.root)
         if translations:
