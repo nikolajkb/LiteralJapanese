@@ -6,7 +6,7 @@ def equals(source, target):
     if source == target:
         return True
     if Constants.PARAPHRASE and not_small_words(source,target):
-        return is_similar(source,target) or is_substring(source,target) or is_paraphrase(source,target)
+        return is_paraphrase(source,target) #is_similar(source,target) or is_substring(source,target) or
     else:
         return False
 

@@ -10,7 +10,7 @@ class Size(Enum):
     LARGE = "ppdb-2.0-l-all"
 
 
-PPDB_SIZE = Size.SMALL
+PPDB_SIZE = Size.LARGE
 
 def _parse_ppdb():
     print("loading paraphrase database")
