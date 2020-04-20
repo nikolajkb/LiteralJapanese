@@ -2,17 +2,18 @@ from nltk.tokenize import sent_tokenize
 from gensim.parsing.preprocessing import remove_stopwords, strip_multiple_whitespaces, preprocess_string, strip_punctuation, strip_numeric
 from collections import defaultdict
 import numpy as np
-from scipy.sparse import csr_matrix, lil_matrix
+from scipy.sparse import lil_matrix
 import pickle
 import psutil
 import os
+import Constants
 
 filters = [lambda x: x.lower(), strip_numeric, strip_punctuation, strip_multiple_whitespaces]  # stopwords not removed
-file_name = r"C:\Users\Nikolaj\PycharmProjects\LitteralJapaneseTranslation\data\wiki_dump\wiki_matrix_obj.wstats"
-wiki_path = r"C:\Users\Nikolaj\PycharmProjects\LitteralJapaneseTranslation\data\wiki_dump\wiki.20200412.en\wiki.20200412.en"
+file_name = os.path.join(Constants.PROJECT_DIR,"..","data","wiki_dump","wiki_matrix_obj.wstats")
+wiki_path = os.path.join(Constants.PROJECT_DIR, "..","data","wiki_dump","wiki.20200412.en","wiki.20200412.en")
 line_limit = 500000
 
-low_freq_path = r"C:\Users\Nikolaj\PycharmProjects\LitteralJapaneseTranslation\data\wiki_dump\low_freq_words.bin"
+low_freq_path = os.path.join(Constants.PROJECT_DIR ,"..","data","wiki_dump","low_freq_words.bin")
 low_freq = set(pickle.load(open(low_freq_path,"rb")))
 
 
