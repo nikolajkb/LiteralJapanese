@@ -5,13 +5,9 @@ import Tests
 import sys
 import argparse
 import Constants
-import WikiMatrix
 
 
 def translate(text, translation=None):
-    #translation = GoogleTranslate.translate_google(text)
-    #translation = translation[:1].lower() + translation[1:]
-    translation = None
     tokens = Tokenizer.get_tokens(text)
     translations = Translator.translate(tokens,translation=translation)
     return translations
@@ -40,7 +36,6 @@ def start_interactive():
 
 
 def main(argv):
-    Constants.WIKI_STATS = WikiMatrix.load_matrix()
     parser = argparse.ArgumentParser()
     parser.add_argument("-t","--translate",type=str,help="translates a Japanese sentence to English and writes it to a file")
     parser.add_argument("--batch-translate",action="store_true", help="translates each line in a file and writes translations to a file")
