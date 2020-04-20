@@ -7,3 +7,4 @@ WEIGHTED_SIMILARITY = False
 TOKENIZER = sudachi_dict.Dictionary().create()
 PROJECT_DIR = os.path.dirname(os.path.realpath('__file__'))
 SIMILARITY = None
+WIKI_STATS = None

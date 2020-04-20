@@ -16,6 +16,8 @@ The system is developed for Python 3.6.8 and may not work for other versions.
 5. run LiteralJapanese.py\
 use the `-h` argument to display available commands
 
+The first run will take more time, as the program will generate necessary files. 
+
 #### Translating
 Translations can be done interactively in the command line:\
 `LiteralJapanese.py --interactive`\
