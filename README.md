@@ -1,5 +1,5 @@
 # Literal Japanese Translation
-**Note: this system was created as a Bachelor's project and should not be viewed as a production ready library**
+**Note: this system was created as a Bachelor's project and should not be viewed as a production-ready library**
 #### About
 Literal Japanese is a Japanese-English translator that translates word by word and thus preserves Japanese grammar. 
 Literal Japanese is intended as a tool for Japanese learners who want to learn about Japanese sentence structure.
@@ -11,9 +11,7 @@ The system is developed for Python 3.6.8 and may not work for other versions.
 2. install sudachipy dictionary using\
 `pip install https://object-storage.tyo2.conoha.io/v1/nc_2520839e1f9641b08211a5c85243124a/sudachi/SudachiDict_core-20191224.tar.gz`
 3. Run the NltkDownload.py script to download nltk packages
-4. Download the small version of PPDB and unzip it to the PPDB folder
-   http://paraphrase.org/#/download
-5. run LiteralJapanese.py\
+4. run LiteralJapanese.py\
 use the `-h` argument to display available commands
 
 The first run will take more time, as the program will generate necessary files. 
