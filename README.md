@@ -49,7 +49,8 @@ Using the ``-v`` argument prints the gold and system translations.\
 The system can count translations as correct if they are synonyms of the gold translation using the ``-p`` argument. 
 This requires two additional files.
 1. Google news vectors  
-https://code.google.com/archive/p/word2vec/ \
+https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit?usp=sharing 
+(from https://code.google.com/archive/p/word2vec/)  
 must be located in ``data/GoogleNewsVectors/GoogleNews-vectors-negative300.bin``
 2. Paraphrase database \
 http://paraphrase.org/#/download (small version) \
