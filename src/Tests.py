@@ -105,7 +105,8 @@ def test_tokenizer(file_path):
 
 def test_translator(file_path):
     sentences = read_test_data(file_path)
-    init_similarity()
+    if Constants.PARAPHRASE:
+        init_similarity()
 
     scores = []
 

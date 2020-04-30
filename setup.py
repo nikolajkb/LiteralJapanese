@@ -3,8 +3,7 @@ from setuptools import setup
 setup(
     name='LiteralJapaneseTranslation',
     version='0.1',
-    packages=[''],
-    package_dir={'': 'src'},
+    packages=['src'],
     url='https://github.itu.dk/nbje/LiteralJapaneseTranslation',
     license='GNU GPLv3',
     author='Nikolaj Bjerregaard',

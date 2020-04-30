@@ -7,12 +7,17 @@ Examples of the type of translations this program produces can be seem in the se
 More in depth information can be read in the report written about the project: TODO
 #### Installation
 The system is developed for Python 3.6.8 and may not work for other versions.
-1. run setup.py
+1. run ``pip install .`` to install dependencies
 2. install sudachipy dictionary using\
 `pip install https://object-storage.tyo2.conoha.io/v1/nc_2520839e1f9641b08211a5c85243124a/sudachi/SudachiDict_core-20191224.tar.gz`
-3. Run the NltkDownload.py script to download nltk packages
-4. run LiteralJapanese.py\
+3. Run the NltkDownload.py in script folder to download nltk packages
+4. Make sure that Visual C++ is installed (should only be necessary for Windows)\
+   https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads
+##### Usage
+1. run LiteralJapanese.py\
 use the `-h` argument to display available commands
+2. example command: ``LiteralJapanese.py --test "..\data\sentences_dev.txt" -v``
+3. must be run as administrator on Windows
 
 The first run will take more time, as the program will generate necessary files. 
 
