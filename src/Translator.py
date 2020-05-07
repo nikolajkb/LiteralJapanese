@@ -68,7 +68,7 @@ def translate(tokens, translation=None):
             translations.append(Translation(token,Numbers.convert(jp)))
             continue
 
-        translations.append(Translation(token, "OOV"))
+        translations.append(Translation(token, token.word))
 
     return translations
 
