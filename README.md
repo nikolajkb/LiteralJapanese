@@ -4,7 +4,7 @@
 Literal Japanese is a Japanese-English translator that translates word by word and thus preserves Japanese grammar. 
 Literal Japanese is intended as a tool for Japanese learners who want to learn about Japanese sentence structure.
 Examples of the type of translations this program produces can be seem in the sentences_dev and sentences_test documents in the data folder. 
-More in depth information can be read in the report written about the project: https://github.itu.dk/nbje/LiteralJapaneseTranslation/blob/master/data/Literal%20Japanese%20report.pdf
+More in depth information can be read in the report written about the project: https://github.com/nikolajkb/LiteralJapaneseMirror/blob/master/data/Literal%20Japanese%20report.pdf
 #### Installation
 The system is developed for Python 3.6.8 and may not work for other versions.
 1. run ``pip install .`` to install dependencies
